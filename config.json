@@ -3,7 +3,7 @@
     "composerVendorName": "spartera",
     "composerProjectName": "api-sdk",
     "clientPackage": "SparteraApiSdk",
-    "packageVersion": "1.0.69",
+    "packageVersion": "1.0.74",
     "packageDescription": "Official SDK for Spartera API - Interface to manage companies' accounts and process insights remotely",
     "invokerPackage": "SparteraApiSdk",
     "phpVersion": "7.4"
