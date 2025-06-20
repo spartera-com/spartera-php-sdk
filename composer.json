@@ -4,7 +4,7 @@
     "keywords": ["spartera", "api", "sdk", "data", "analytics"],
     "homepage": "https://github.com/spartera-com/spartera-php-sdk",
     "license": "Apache-2.0",
-    "version": "1.0.62",
+    "version": "1.0.68",
     "authors": [
         {
             "name": "Tony D",

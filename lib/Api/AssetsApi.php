@@ -96,12 +96,6 @@ class AssetsApi
         'companiesCompanyIdAssetsAssetIdPredictedPriceGet' => [
             'application/json',
         ],
-        'companiesCompanyIdAssetsAssetIdRecommendationsExplainGet' => [
-            'application/json',
-        ],
-        'companiesCompanyIdAssetsAssetIdRecommendationsGet' => [
-            'application/json',
-        ],
         'companiesCompanyIdAssetsAssetIdStatisticsGet' => [
             'application/json',
         ],
@@ -112,12 +106,6 @@ class AssetsApi
             'application/json',
         ],
         'companiesCompanyIdAssetsPost' => [
-            'application/json',
-        ],
-        'companiesCompanyIdAssetsRecommendationsBulkPost' => [
-            'application/json',
-        ],
-        'companiesCompanyIdAssetsRecommendationsHealthGet' => [
             'application/json',
         ],
         'companiesCompanyIdAssetsStatisticsGet' => [
@@ -174,38 +162,38 @@ class AssetsApi
     /**
      * Operation analyzeCompanyHandleAssetsAssetSlugGet
      *
-     * Process assets route that handles both owned and purchased assets.             Minimal route function that passes all logic to crudder.process_asset              Args:                 asset_path: The path after /analyze/ containing asset information                 company_handle: The subdomain from Flask&#39;s routing (if available)
+     * Process (analyze) an asset. Attempt to process an analytic on a backend warehouse/AI model.
      *
-     * @param  string $company_handle company_handle (required)
      * @param  string $asset_slug asset_slug (required)
+     * @param  string $company_handle company_handle (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['analyzeCompanyHandleAssetsAssetSlugGet'] to see the possible values for this operation
      *
      * @throws \SparteraApiSdk\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return object|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3
      */
-    public function analyzeCompanyHandleAssetsAssetSlugGet($company_handle, $asset_slug, string $contentType = self::contentTypes['analyzeCompanyHandleAssetsAssetSlugGet'][0])
+    public function analyzeCompanyHandleAssetsAssetSlugGet($asset_slug, $company_handle, string $contentType = self::contentTypes['analyzeCompanyHandleAssetsAssetSlugGet'][0])
     {
-        list($response) = $this->analyzeCompanyHandleAssetsAssetSlugGetWithHttpInfo($company_handle, $asset_slug, $contentType);
+        list($response) = $this->analyzeCompanyHandleAssetsAssetSlugGetWithHttpInfo($asset_slug, $company_handle, $contentType);
         return $response;
     }
 
     /**
      * Operation analyzeCompanyHandleAssetsAssetSlugGetWithHttpInfo
      *
-     * Process assets route that handles both owned and purchased assets.             Minimal route function that passes all logic to crudder.process_asset              Args:                 asset_path: The path after /analyze/ containing asset information                 company_handle: The subdomain from Flask&#39;s routing (if available)
+     * Process (analyze) an asset. Attempt to process an analytic on a backend warehouse/AI model.
      *
-     * @param  string $company_handle (required)
      * @param  string $asset_slug (required)
+     * @param  string $company_handle (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['analyzeCompanyHandleAssetsAssetSlugGet'] to see the possible values for this operation
      *
      * @throws \SparteraApiSdk\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of object|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3, HTTP status code, HTTP response headers (array of strings)
      */
-    public function analyzeCompanyHandleAssetsAssetSlugGetWithHttpInfo($company_handle, $asset_slug, string $contentType = self::contentTypes['analyzeCompanyHandleAssetsAssetSlugGet'][0])
+    public function analyzeCompanyHandleAssetsAssetSlugGetWithHttpInfo($asset_slug, $company_handle, string $contentType = self::contentTypes['analyzeCompanyHandleAssetsAssetSlugGet'][0])
     {
-        $request = $this->analyzeCompanyHandleAssetsAssetSlugGetRequest($company_handle, $asset_slug, $contentType);
+        $request = $this->analyzeCompanyHandleAssetsAssetSlugGetRequest($asset_slug, $company_handle, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -321,18 +309,18 @@ class AssetsApi
     /**
      * Operation analyzeCompanyHandleAssetsAssetSlugGetAsync
      *
-     * Process assets route that handles both owned and purchased assets.             Minimal route function that passes all logic to crudder.process_asset              Args:                 asset_path: The path after /analyze/ containing asset information                 company_handle: The subdomain from Flask&#39;s routing (if available)
+     * Process (analyze) an asset. Attempt to process an analytic on a backend warehouse/AI model.
      *
-     * @param  string $company_handle (required)
      * @param  string $asset_slug (required)
+     * @param  string $company_handle (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['analyzeCompanyHandleAssetsAssetSlugGet'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function analyzeCompanyHandleAssetsAssetSlugGetAsync($company_handle, $asset_slug, string $contentType = self::contentTypes['analyzeCompanyHandleAssetsAssetSlugGet'][0])
+    public function analyzeCompanyHandleAssetsAssetSlugGetAsync($asset_slug, $company_handle, string $contentType = self::contentTypes['analyzeCompanyHandleAssetsAssetSlugGet'][0])
     {
-        return $this->analyzeCompanyHandleAssetsAssetSlugGetAsyncWithHttpInfo($company_handle, $asset_slug, $contentType)
+        return $this->analyzeCompanyHandleAssetsAssetSlugGetAsyncWithHttpInfo($asset_slug, $company_handle, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -343,19 +331,19 @@ class AssetsApi
     /**
      * Operation analyzeCompanyHandleAssetsAssetSlugGetAsyncWithHttpInfo
      *
-     * Process assets route that handles both owned and purchased assets.             Minimal route function that passes all logic to crudder.process_asset              Args:                 asset_path: The path after /analyze/ containing asset information                 company_handle: The subdomain from Flask&#39;s routing (if available)
+     * Process (analyze) an asset. Attempt to process an analytic on a backend warehouse/AI model.
      *
-     * @param  string $company_handle (required)
      * @param  string $asset_slug (required)
+     * @param  string $company_handle (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['analyzeCompanyHandleAssetsAssetSlugGet'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function analyzeCompanyHandleAssetsAssetSlugGetAsyncWithHttpInfo($company_handle, $asset_slug, string $contentType = self::contentTypes['analyzeCompanyHandleAssetsAssetSlugGet'][0])
+    public function analyzeCompanyHandleAssetsAssetSlugGetAsyncWithHttpInfo($asset_slug, $company_handle, string $contentType = self::contentTypes['analyzeCompanyHandleAssetsAssetSlugGet'][0])
     {
         $returnType = 'object';
-        $request = $this->analyzeCompanyHandleAssetsAssetSlugGetRequest($company_handle, $asset_slug, $contentType);
+        $request = $this->analyzeCompanyHandleAssetsAssetSlugGetRequest($asset_slug, $company_handle, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -396,27 +384,27 @@ class AssetsApi
     /**
      * Create request for operation 'analyzeCompanyHandleAssetsAssetSlugGet'
      *
-     * @param  string $company_handle (required)
      * @param  string $asset_slug (required)
+     * @param  string $company_handle (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['analyzeCompanyHandleAssetsAssetSlugGet'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function analyzeCompanyHandleAssetsAssetSlugGetRequest($company_handle, $asset_slug, string $contentType = self::contentTypes['analyzeCompanyHandleAssetsAssetSlugGet'][0])
+    public function analyzeCompanyHandleAssetsAssetSlugGetRequest($asset_slug, $company_handle, string $contentType = self::contentTypes['analyzeCompanyHandleAssetsAssetSlugGet'][0])
     {
-
-        // verify the required parameter 'company_handle' is set
-        if ($company_handle === null || (is_array($company_handle) && count($company_handle) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $company_handle when calling analyzeCompanyHandleAssetsAssetSlugGet'
-            );
-        }
 
         // verify the required parameter 'asset_slug' is set
         if ($asset_slug === null || (is_array($asset_slug) && count($asset_slug) === 0)) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $asset_slug when calling analyzeCompanyHandleAssetsAssetSlugGet'
+            );
+        }
+
+        // verify the required parameter 'company_handle' is set
+        if ($company_handle === null || (is_array($company_handle) && count($company_handle) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $company_handle when calling analyzeCompanyHandleAssetsAssetSlugGet'
             );
         }
 
@@ -431,18 +419,18 @@ class AssetsApi
 
 
         // path params
-        if ($company_handle !== null) {
-            $resourcePath = str_replace(
-                '{' . 'company_handle' . '}',
-                ObjectSerializer::toPathValue($company_handle),
-                $resourcePath
-            );
-        }
-        // path params
         if ($asset_slug !== null) {
             $resourcePath = str_replace(
                 '{' . 'asset_slug' . '}',
                 ObjectSerializer::toPathValue($asset_slug),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($company_handle !== null) {
+            $resourcePath = str_replace(
+                '{' . 'company_handle' . '}',
+                ObjectSerializer::toPathValue($company_handle),
                 $resourcePath
             );
         }
@@ -479,9 +467,10 @@ class AssetsApi
             }
         }
 
-        // this endpoint requires Bearer (JWT) authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('x-api-key');
+        if ($apiKey !== null) {
+            $headers['x-api-key'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -813,9 +802,10 @@ class AssetsApi
             }
         }
 
-        // this endpoint requires Bearer (JWT) authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('x-api-key');
+        if ($apiKey !== null) {
+            $headers['x-api-key'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1147,9 +1137,10 @@ class AssetsApi
             }
         }
 
-        // this endpoint requires Bearer (JWT) authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('x-api-key');
+        if ($apiKey !== null) {
+            $headers['x-api-key'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1481,9 +1472,10 @@ class AssetsApi
             }
         }
 
-        // this endpoint requires Bearer (JWT) authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('x-api-key');
+        if ($apiKey !== null) {
+            $headers['x-api-key'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1510,7 +1502,7 @@ class AssetsApi
     /**
      * Operation companiesCompanyIdAssetsAssetIdInfoschemaSaveGet
      *
-     * Get the information schema for a specific asset and save it to the asset&#39;s asset_schema field
+     * Retrieve and save an asset&#39;s information schema
      *
      * @param  string $company_id company_id (required)
      * @param  string $asset_id asset_id (required)
@@ -1529,7 +1521,7 @@ class AssetsApi
     /**
      * Operation companiesCompanyIdAssetsAssetIdInfoschemaSaveGetWithHttpInfo
      *
-     * Get the information schema for a specific asset and save it to the asset&#39;s asset_schema field
+     * Retrieve and save an asset&#39;s information schema
      *
      * @param  string $company_id (required)
      * @param  string $asset_id (required)
@@ -1657,7 +1649,7 @@ class AssetsApi
     /**
      * Operation companiesCompanyIdAssetsAssetIdInfoschemaSaveGetAsync
      *
-     * Get the information schema for a specific asset and save it to the asset&#39;s asset_schema field
+     * Retrieve and save an asset&#39;s information schema
      *
      * @param  string $company_id (required)
      * @param  string $asset_id (required)
@@ -1679,7 +1671,7 @@ class AssetsApi
     /**
      * Operation companiesCompanyIdAssetsAssetIdInfoschemaSaveGetAsyncWithHttpInfo
      *
-     * Get the information schema for a specific asset and save it to the asset&#39;s asset_schema field
+     * Retrieve and save an asset&#39;s information schema
      *
      * @param  string $company_id (required)
      * @param  string $asset_id (required)
@@ -1815,9 +1807,10 @@ class AssetsApi
             }
         }
 
-        // this endpoint requires Bearer (JWT) authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('x-api-key');
+        if ($apiKey !== null) {
+            $headers['x-api-key'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -2182,9 +2175,10 @@ class AssetsApi
             }
         }
 
-        // this endpoint requires Bearer (JWT) authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('x-api-key');
+        if ($apiKey !== null) {
+            $headers['x-api-key'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -2516,722 +2510,10 @@ class AssetsApi
             }
         }
 
-        // this endpoint requires Bearer (JWT) authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation companiesCompanyIdAssetsAssetIdRecommendationsExplainGet
-     *
-     * Get detailed explanation of how asset recommendations are calculated for debugging purposes.
-     *
-     * @param  string $company_id company_id (required)
-     * @param  string $asset_id asset_id (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['companiesCompanyIdAssetsAssetIdRecommendationsExplainGet'] to see the possible values for this operation
-     *
-     * @throws \SparteraApiSdk\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return object|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3
-     */
-    public function companiesCompanyIdAssetsAssetIdRecommendationsExplainGet($company_id, $asset_id, string $contentType = self::contentTypes['companiesCompanyIdAssetsAssetIdRecommendationsExplainGet'][0])
-    {
-        list($response) = $this->companiesCompanyIdAssetsAssetIdRecommendationsExplainGetWithHttpInfo($company_id, $asset_id, $contentType);
-        return $response;
-    }
-
-    /**
-     * Operation companiesCompanyIdAssetsAssetIdRecommendationsExplainGetWithHttpInfo
-     *
-     * Get detailed explanation of how asset recommendations are calculated for debugging purposes.
-     *
-     * @param  string $company_id (required)
-     * @param  string $asset_id (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['companiesCompanyIdAssetsAssetIdRecommendationsExplainGet'] to see the possible values for this operation
-     *
-     * @throws \SparteraApiSdk\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of object|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function companiesCompanyIdAssetsAssetIdRecommendationsExplainGetWithHttpInfo($company_id, $asset_id, string $contentType = self::contentTypes['companiesCompanyIdAssetsAssetIdRecommendationsExplainGet'][0])
-    {
-        $request = $this->companiesCompanyIdAssetsAssetIdRecommendationsExplainGetRequest($company_id, $asset_id, $contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            switch($statusCode) {
-                case 200:
-                    return $this->handleResponseWithDataType(
-                        'object',
-                        $request,
-                        $response,
-                    );
-                case 401:
-                    return $this->handleResponseWithDataType(
-                        '\SparteraApiSdk\Model\InlineObject1',
-                        $request,
-                        $response,
-                    );
-                case 403:
-                    return $this->handleResponseWithDataType(
-                        '\SparteraApiSdk\Model\InlineObject2',
-                        $request,
-                        $response,
-                    );
-                case 404:
-                    return $this->handleResponseWithDataType(
-                        '\SparteraApiSdk\Model\InlineObject3',
-                        $request,
-                        $response,
-                    );
-            }
-
-            
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            return $this->handleResponseWithDataType(
-                'object',
-                $request,
-                $response,
-            );
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        'object',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-                case 401:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\SparteraApiSdk\Model\InlineObject1',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-                case 403:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\SparteraApiSdk\Model\InlineObject2',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-                case 404:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\SparteraApiSdk\Model\InlineObject3',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-            }
-        
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation companiesCompanyIdAssetsAssetIdRecommendationsExplainGetAsync
-     *
-     * Get detailed explanation of how asset recommendations are calculated for debugging purposes.
-     *
-     * @param  string $company_id (required)
-     * @param  string $asset_id (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['companiesCompanyIdAssetsAssetIdRecommendationsExplainGet'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function companiesCompanyIdAssetsAssetIdRecommendationsExplainGetAsync($company_id, $asset_id, string $contentType = self::contentTypes['companiesCompanyIdAssetsAssetIdRecommendationsExplainGet'][0])
-    {
-        return $this->companiesCompanyIdAssetsAssetIdRecommendationsExplainGetAsyncWithHttpInfo($company_id, $asset_id, $contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation companiesCompanyIdAssetsAssetIdRecommendationsExplainGetAsyncWithHttpInfo
-     *
-     * Get detailed explanation of how asset recommendations are calculated for debugging purposes.
-     *
-     * @param  string $company_id (required)
-     * @param  string $asset_id (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['companiesCompanyIdAssetsAssetIdRecommendationsExplainGet'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function companiesCompanyIdAssetsAssetIdRecommendationsExplainGetAsyncWithHttpInfo($company_id, $asset_id, string $contentType = self::contentTypes['companiesCompanyIdAssetsAssetIdRecommendationsExplainGet'][0])
-    {
-        $returnType = 'object';
-        $request = $this->companiesCompanyIdAssetsAssetIdRecommendationsExplainGetRequest($company_id, $asset_id, $contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'companiesCompanyIdAssetsAssetIdRecommendationsExplainGet'
-     *
-     * @param  string $company_id (required)
-     * @param  string $asset_id (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['companiesCompanyIdAssetsAssetIdRecommendationsExplainGet'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function companiesCompanyIdAssetsAssetIdRecommendationsExplainGetRequest($company_id, $asset_id, string $contentType = self::contentTypes['companiesCompanyIdAssetsAssetIdRecommendationsExplainGet'][0])
-    {
-
-        // verify the required parameter 'company_id' is set
-        if ($company_id === null || (is_array($company_id) && count($company_id) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $company_id when calling companiesCompanyIdAssetsAssetIdRecommendationsExplainGet'
-            );
-        }
-
-        // verify the required parameter 'asset_id' is set
-        if ($asset_id === null || (is_array($asset_id) && count($asset_id) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $asset_id when calling companiesCompanyIdAssetsAssetIdRecommendationsExplainGet'
-            );
-        }
-
-
-        $resourcePath = '/companies/{company_id}/assets/{asset_id}/recommendations/explain';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-        // path params
-        if ($company_id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'company_id' . '}',
-                ObjectSerializer::toPathValue($company_id),
-                $resourcePath
-            );
-        }
-        // path params
-        if ($asset_id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'asset_id' . '}',
-                ObjectSerializer::toPathValue($asset_id),
-                $resourcePath
-            );
-        }
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires Bearer (JWT) authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation companiesCompanyIdAssetsAssetIdRecommendationsGet
-     *
-     * Get asset recommendations for a specific asset using heuristic waterfall matching     Returns list of similar assets based on industry, company, connection, tags, etc.      Query Parameters:     - limit: Number of recommendations to return (default: 12, max: 50)     - min_score: Minimum similarity score threshold (default: 0.1)     - include_details: Include component similarity scores (default: false)
-     *
-     * @param  string $company_id company_id (required)
-     * @param  string $asset_id asset_id (required)
-     * @param  string|null $limit limit (optional)
-     * @param  string|null $min_score min_score (optional)
-     * @param  string|null $include_details include_details (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['companiesCompanyIdAssetsAssetIdRecommendationsGet'] to see the possible values for this operation
-     *
-     * @throws \SparteraApiSdk\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return object|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3
-     */
-    public function companiesCompanyIdAssetsAssetIdRecommendationsGet($company_id, $asset_id, $limit = null, $min_score = null, $include_details = null, string $contentType = self::contentTypes['companiesCompanyIdAssetsAssetIdRecommendationsGet'][0])
-    {
-        list($response) = $this->companiesCompanyIdAssetsAssetIdRecommendationsGetWithHttpInfo($company_id, $asset_id, $limit, $min_score, $include_details, $contentType);
-        return $response;
-    }
-
-    /**
-     * Operation companiesCompanyIdAssetsAssetIdRecommendationsGetWithHttpInfo
-     *
-     * Get asset recommendations for a specific asset using heuristic waterfall matching     Returns list of similar assets based on industry, company, connection, tags, etc.      Query Parameters:     - limit: Number of recommendations to return (default: 12, max: 50)     - min_score: Minimum similarity score threshold (default: 0.1)     - include_details: Include component similarity scores (default: false)
-     *
-     * @param  string $company_id (required)
-     * @param  string $asset_id (required)
-     * @param  string|null $limit (optional)
-     * @param  string|null $min_score (optional)
-     * @param  string|null $include_details (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['companiesCompanyIdAssetsAssetIdRecommendationsGet'] to see the possible values for this operation
-     *
-     * @throws \SparteraApiSdk\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of object|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function companiesCompanyIdAssetsAssetIdRecommendationsGetWithHttpInfo($company_id, $asset_id, $limit = null, $min_score = null, $include_details = null, string $contentType = self::contentTypes['companiesCompanyIdAssetsAssetIdRecommendationsGet'][0])
-    {
-        $request = $this->companiesCompanyIdAssetsAssetIdRecommendationsGetRequest($company_id, $asset_id, $limit, $min_score, $include_details, $contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            switch($statusCode) {
-                case 200:
-                    return $this->handleResponseWithDataType(
-                        'object',
-                        $request,
-                        $response,
-                    );
-                case 401:
-                    return $this->handleResponseWithDataType(
-                        '\SparteraApiSdk\Model\InlineObject1',
-                        $request,
-                        $response,
-                    );
-                case 403:
-                    return $this->handleResponseWithDataType(
-                        '\SparteraApiSdk\Model\InlineObject2',
-                        $request,
-                        $response,
-                    );
-                case 404:
-                    return $this->handleResponseWithDataType(
-                        '\SparteraApiSdk\Model\InlineObject3',
-                        $request,
-                        $response,
-                    );
-            }
-
-            
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            return $this->handleResponseWithDataType(
-                'object',
-                $request,
-                $response,
-            );
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        'object',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-                case 401:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\SparteraApiSdk\Model\InlineObject1',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-                case 403:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\SparteraApiSdk\Model\InlineObject2',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-                case 404:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\SparteraApiSdk\Model\InlineObject3',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-            }
-        
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation companiesCompanyIdAssetsAssetIdRecommendationsGetAsync
-     *
-     * Get asset recommendations for a specific asset using heuristic waterfall matching     Returns list of similar assets based on industry, company, connection, tags, etc.      Query Parameters:     - limit: Number of recommendations to return (default: 12, max: 50)     - min_score: Minimum similarity score threshold (default: 0.1)     - include_details: Include component similarity scores (default: false)
-     *
-     * @param  string $company_id (required)
-     * @param  string $asset_id (required)
-     * @param  string|null $limit (optional)
-     * @param  string|null $min_score (optional)
-     * @param  string|null $include_details (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['companiesCompanyIdAssetsAssetIdRecommendationsGet'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function companiesCompanyIdAssetsAssetIdRecommendationsGetAsync($company_id, $asset_id, $limit = null, $min_score = null, $include_details = null, string $contentType = self::contentTypes['companiesCompanyIdAssetsAssetIdRecommendationsGet'][0])
-    {
-        return $this->companiesCompanyIdAssetsAssetIdRecommendationsGetAsyncWithHttpInfo($company_id, $asset_id, $limit, $min_score, $include_details, $contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation companiesCompanyIdAssetsAssetIdRecommendationsGetAsyncWithHttpInfo
-     *
-     * Get asset recommendations for a specific asset using heuristic waterfall matching     Returns list of similar assets based on industry, company, connection, tags, etc.      Query Parameters:     - limit: Number of recommendations to return (default: 12, max: 50)     - min_score: Minimum similarity score threshold (default: 0.1)     - include_details: Include component similarity scores (default: false)
-     *
-     * @param  string $company_id (required)
-     * @param  string $asset_id (required)
-     * @param  string|null $limit (optional)
-     * @param  string|null $min_score (optional)
-     * @param  string|null $include_details (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['companiesCompanyIdAssetsAssetIdRecommendationsGet'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function companiesCompanyIdAssetsAssetIdRecommendationsGetAsyncWithHttpInfo($company_id, $asset_id, $limit = null, $min_score = null, $include_details = null, string $contentType = self::contentTypes['companiesCompanyIdAssetsAssetIdRecommendationsGet'][0])
-    {
-        $returnType = 'object';
-        $request = $this->companiesCompanyIdAssetsAssetIdRecommendationsGetRequest($company_id, $asset_id, $limit, $min_score, $include_details, $contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'companiesCompanyIdAssetsAssetIdRecommendationsGet'
-     *
-     * @param  string $company_id (required)
-     * @param  string $asset_id (required)
-     * @param  string|null $limit (optional)
-     * @param  string|null $min_score (optional)
-     * @param  string|null $include_details (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['companiesCompanyIdAssetsAssetIdRecommendationsGet'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function companiesCompanyIdAssetsAssetIdRecommendationsGetRequest($company_id, $asset_id, $limit = null, $min_score = null, $include_details = null, string $contentType = self::contentTypes['companiesCompanyIdAssetsAssetIdRecommendationsGet'][0])
-    {
-
-        // verify the required parameter 'company_id' is set
-        if ($company_id === null || (is_array($company_id) && count($company_id) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $company_id when calling companiesCompanyIdAssetsAssetIdRecommendationsGet'
-            );
-        }
-
-        // verify the required parameter 'asset_id' is set
-        if ($asset_id === null || (is_array($asset_id) && count($asset_id) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $asset_id when calling companiesCompanyIdAssetsAssetIdRecommendationsGet'
-            );
-        }
-
-
-
-
-
-        $resourcePath = '/companies/{company_id}/assets/{asset_id}/recommendations';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $limit,
-            'limit', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $min_score,
-            'min_score', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $include_details,
-            'include_details', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-
-
-        // path params
-        if ($company_id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'company_id' . '}',
-                ObjectSerializer::toPathValue($company_id),
-                $resourcePath
-            );
-        }
-        // path params
-        if ($asset_id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'asset_id' . '}',
-                ObjectSerializer::toPathValue($asset_id),
-                $resourcePath
-            );
-        }
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires Bearer (JWT) authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('x-api-key');
+        if ($apiKey !== null) {
+            $headers['x-api-key'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -3563,9 +2845,10 @@ class AssetsApi
             }
         }
 
-        // this endpoint requires Bearer (JWT) authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('x-api-key');
+        if ($apiKey !== null) {
+            $headers['x-api-key'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -3897,9 +3180,10 @@ class AssetsApi
             }
         }
 
-        // this endpoint requires Bearer (JWT) authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('x-api-key');
+        if ($apiKey !== null) {
+            $headers['x-api-key'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -4211,9 +3495,10 @@ class AssetsApi
             }
         }
 
-        // this endpoint requires Bearer (JWT) authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('x-api-key');
+        if ($apiKey !== null) {
+            $headers['x-api-key'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -4544,9 +3829,10 @@ class AssetsApi
             }
         }
 
-        // this endpoint requires Bearer (JWT) authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('x-api-key');
+        if ($apiKey !== null) {
+            $headers['x-api-key'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -4564,653 +3850,6 @@ class AssetsApi
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation companiesCompanyIdAssetsRecommendationsBulkPost
-     *
-     * Get recommendations for multiple assets in a single request. Useful for pre-loading recommendations.
-     *
-     * @param  string $company_id company_id (required)
-     * @param  \SparteraApiSdk\Model\Asset $asset asset (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['companiesCompanyIdAssetsRecommendationsBulkPost'] to see the possible values for this operation
-     *
-     * @throws \SparteraApiSdk\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return object|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject
-     */
-    public function companiesCompanyIdAssetsRecommendationsBulkPost($company_id, $asset, string $contentType = self::contentTypes['companiesCompanyIdAssetsRecommendationsBulkPost'][0])
-    {
-        list($response) = $this->companiesCompanyIdAssetsRecommendationsBulkPostWithHttpInfo($company_id, $asset, $contentType);
-        return $response;
-    }
-
-    /**
-     * Operation companiesCompanyIdAssetsRecommendationsBulkPostWithHttpInfo
-     *
-     * Get recommendations for multiple assets in a single request. Useful for pre-loading recommendations.
-     *
-     * @param  string $company_id (required)
-     * @param  \SparteraApiSdk\Model\Asset $asset (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['companiesCompanyIdAssetsRecommendationsBulkPost'] to see the possible values for this operation
-     *
-     * @throws \SparteraApiSdk\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of object|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function companiesCompanyIdAssetsRecommendationsBulkPostWithHttpInfo($company_id, $asset, string $contentType = self::contentTypes['companiesCompanyIdAssetsRecommendationsBulkPost'][0])
-    {
-        $request = $this->companiesCompanyIdAssetsRecommendationsBulkPostRequest($company_id, $asset, $contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            switch($statusCode) {
-                case 200:
-                    return $this->handleResponseWithDataType(
-                        'object',
-                        $request,
-                        $response,
-                    );
-                case 401:
-                    return $this->handleResponseWithDataType(
-                        '\SparteraApiSdk\Model\InlineObject1',
-                        $request,
-                        $response,
-                    );
-                case 403:
-                    return $this->handleResponseWithDataType(
-                        '\SparteraApiSdk\Model\InlineObject2',
-                        $request,
-                        $response,
-                    );
-                case 400:
-                    return $this->handleResponseWithDataType(
-                        '\SparteraApiSdk\Model\InlineObject',
-                        $request,
-                        $response,
-                    );
-            }
-
-            
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            return $this->handleResponseWithDataType(
-                'object',
-                $request,
-                $response,
-            );
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        'object',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-                case 401:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\SparteraApiSdk\Model\InlineObject1',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-                case 403:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\SparteraApiSdk\Model\InlineObject2',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-                case 400:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\SparteraApiSdk\Model\InlineObject',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-            }
-        
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation companiesCompanyIdAssetsRecommendationsBulkPostAsync
-     *
-     * Get recommendations for multiple assets in a single request. Useful for pre-loading recommendations.
-     *
-     * @param  string $company_id (required)
-     * @param  \SparteraApiSdk\Model\Asset $asset (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['companiesCompanyIdAssetsRecommendationsBulkPost'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function companiesCompanyIdAssetsRecommendationsBulkPostAsync($company_id, $asset, string $contentType = self::contentTypes['companiesCompanyIdAssetsRecommendationsBulkPost'][0])
-    {
-        return $this->companiesCompanyIdAssetsRecommendationsBulkPostAsyncWithHttpInfo($company_id, $asset, $contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation companiesCompanyIdAssetsRecommendationsBulkPostAsyncWithHttpInfo
-     *
-     * Get recommendations for multiple assets in a single request. Useful for pre-loading recommendations.
-     *
-     * @param  string $company_id (required)
-     * @param  \SparteraApiSdk\Model\Asset $asset (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['companiesCompanyIdAssetsRecommendationsBulkPost'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function companiesCompanyIdAssetsRecommendationsBulkPostAsyncWithHttpInfo($company_id, $asset, string $contentType = self::contentTypes['companiesCompanyIdAssetsRecommendationsBulkPost'][0])
-    {
-        $returnType = 'object';
-        $request = $this->companiesCompanyIdAssetsRecommendationsBulkPostRequest($company_id, $asset, $contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'companiesCompanyIdAssetsRecommendationsBulkPost'
-     *
-     * @param  string $company_id (required)
-     * @param  \SparteraApiSdk\Model\Asset $asset (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['companiesCompanyIdAssetsRecommendationsBulkPost'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function companiesCompanyIdAssetsRecommendationsBulkPostRequest($company_id, $asset, string $contentType = self::contentTypes['companiesCompanyIdAssetsRecommendationsBulkPost'][0])
-    {
-
-        // verify the required parameter 'company_id' is set
-        if ($company_id === null || (is_array($company_id) && count($company_id) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $company_id when calling companiesCompanyIdAssetsRecommendationsBulkPost'
-            );
-        }
-
-        // verify the required parameter 'asset' is set
-        if ($asset === null || (is_array($asset) && count($asset) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $asset when calling companiesCompanyIdAssetsRecommendationsBulkPost'
-            );
-        }
-
-
-        $resourcePath = '/companies/{company_id}/assets/recommendations/bulk';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-        // path params
-        if ($company_id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'company_id' . '}',
-                ObjectSerializer::toPathValue($company_id),
-                $resourcePath
-            );
-        }
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (isset($asset)) {
-            if (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the body
-                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($asset));
-            } else {
-                $httpBody = $asset;
-            }
-        } elseif (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires Bearer (JWT) authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'POST',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation companiesCompanyIdAssetsRecommendationsHealthGet
-     *
-     * Health check for the recommendations system with sample data and performance metrics.
-     *
-     * @param  string $company_id company_id (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['companiesCompanyIdAssetsRecommendationsHealthGet'] to see the possible values for this operation
-     *
-     * @throws \SparteraApiSdk\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return object|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3
-     */
-    public function companiesCompanyIdAssetsRecommendationsHealthGet($company_id, string $contentType = self::contentTypes['companiesCompanyIdAssetsRecommendationsHealthGet'][0])
-    {
-        list($response) = $this->companiesCompanyIdAssetsRecommendationsHealthGetWithHttpInfo($company_id, $contentType);
-        return $response;
-    }
-
-    /**
-     * Operation companiesCompanyIdAssetsRecommendationsHealthGetWithHttpInfo
-     *
-     * Health check for the recommendations system with sample data and performance metrics.
-     *
-     * @param  string $company_id (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['companiesCompanyIdAssetsRecommendationsHealthGet'] to see the possible values for this operation
-     *
-     * @throws \SparteraApiSdk\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of object|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function companiesCompanyIdAssetsRecommendationsHealthGetWithHttpInfo($company_id, string $contentType = self::contentTypes['companiesCompanyIdAssetsRecommendationsHealthGet'][0])
-    {
-        $request = $this->companiesCompanyIdAssetsRecommendationsHealthGetRequest($company_id, $contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-
-            switch($statusCode) {
-                case 200:
-                    return $this->handleResponseWithDataType(
-                        'object',
-                        $request,
-                        $response,
-                    );
-                case 401:
-                    return $this->handleResponseWithDataType(
-                        '\SparteraApiSdk\Model\InlineObject1',
-                        $request,
-                        $response,
-                    );
-                case 403:
-                    return $this->handleResponseWithDataType(
-                        '\SparteraApiSdk\Model\InlineObject2',
-                        $request,
-                        $response,
-                    );
-                case 404:
-                    return $this->handleResponseWithDataType(
-                        '\SparteraApiSdk\Model\InlineObject3',
-                        $request,
-                        $response,
-                    );
-            }
-
-            
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            return $this->handleResponseWithDataType(
-                'object',
-                $request,
-                $response,
-            );
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        'object',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-                case 401:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\SparteraApiSdk\Model\InlineObject1',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-                case 403:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\SparteraApiSdk\Model\InlineObject2',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-                case 404:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\SparteraApiSdk\Model\InlineObject3',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    throw $e;
-            }
-        
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation companiesCompanyIdAssetsRecommendationsHealthGetAsync
-     *
-     * Health check for the recommendations system with sample data and performance metrics.
-     *
-     * @param  string $company_id (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['companiesCompanyIdAssetsRecommendationsHealthGet'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function companiesCompanyIdAssetsRecommendationsHealthGetAsync($company_id, string $contentType = self::contentTypes['companiesCompanyIdAssetsRecommendationsHealthGet'][0])
-    {
-        return $this->companiesCompanyIdAssetsRecommendationsHealthGetAsyncWithHttpInfo($company_id, $contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation companiesCompanyIdAssetsRecommendationsHealthGetAsyncWithHttpInfo
-     *
-     * Health check for the recommendations system with sample data and performance metrics.
-     *
-     * @param  string $company_id (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['companiesCompanyIdAssetsRecommendationsHealthGet'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function companiesCompanyIdAssetsRecommendationsHealthGetAsyncWithHttpInfo($company_id, string $contentType = self::contentTypes['companiesCompanyIdAssetsRecommendationsHealthGet'][0])
-    {
-        $returnType = 'object';
-        $request = $this->companiesCompanyIdAssetsRecommendationsHealthGetRequest($company_id, $contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'companiesCompanyIdAssetsRecommendationsHealthGet'
-     *
-     * @param  string $company_id (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['companiesCompanyIdAssetsRecommendationsHealthGet'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function companiesCompanyIdAssetsRecommendationsHealthGetRequest($company_id, string $contentType = self::contentTypes['companiesCompanyIdAssetsRecommendationsHealthGet'][0])
-    {
-
-        // verify the required parameter 'company_id' is set
-        if ($company_id === null || (is_array($company_id) && count($company_id) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $company_id when calling companiesCompanyIdAssetsRecommendationsHealthGet'
-            );
-        }
-
-
-        $resourcePath = '/companies/{company_id}/assets/recommendations/health';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-
-
-        // path params
-        if ($company_id !== null) {
-            $resourcePath = str_replace(
-                '{' . 'company_id' . '}',
-                ObjectSerializer::toPathValue($company_id),
-                $resourcePath
-            );
-        }
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        // this endpoint requires Bearer (JWT) authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'GET',
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
@@ -5505,9 +4144,10 @@ class AssetsApi
             }
         }
 
-        // this endpoint requires Bearer (JWT) authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('x-api-key');
+        if ($apiKey !== null) {
+            $headers['x-api-key'] = $apiKey;
         }
 
         $defaultHeaders = [];

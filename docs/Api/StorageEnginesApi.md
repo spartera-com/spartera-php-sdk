@@ -1,20 +1,20 @@
-# SparteraApiSdk\CloudProvidersApi
+# SparteraApiSdk\StorageEnginesApi
 
 All URIs are relative to https://api.spartera.com, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**cloudProvidersGet()**](CloudProvidersApi.md#cloudProvidersGet) | **GET** /cloud-providers | Get a list of all cloud providers |
-| [**cloudProvidersProviderIdGet()**](CloudProvidersApi.md#cloudProvidersProviderIdGet) | **GET** /cloud-providers/{provider_id} | Get single cloud provider by ID |
+| [**cloudProvidersProviderIdStorageEnginesEngineIdGet()**](StorageEnginesApi.md#cloudProvidersProviderIdStorageEnginesEngineIdGet) | **GET** /cloud-providers/{provider_id}/storage-engines/{engine_id} | Get single storage engine by ID |
+| [**cloudProvidersProviderIdStorageEnginesGet()**](StorageEnginesApi.md#cloudProvidersProviderIdStorageEnginesGet) | **GET** /cloud-providers/{provider_id}/storage-engines | Get a list of all storage engines |
 
 
-## `cloudProvidersGet()`
+## `cloudProvidersProviderIdStorageEnginesEngineIdGet()`
 
 ```php
-cloudProvidersGet(): object
+cloudProvidersProviderIdStorageEnginesEngineIdGet($provider_id, $engine_id): object
 ```
 
-Get a list of all cloud providers
+Get single storage engine by ID
 
 ### Example
 
@@ -29,24 +29,29 @@ $config = SparteraApiSdk\Configuration::getDefaultConfiguration()->setApiKey('x-
 // $config = SparteraApiSdk\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
-$apiInstance = new SparteraApiSdk\Api\CloudProvidersApi(
+$apiInstance = new SparteraApiSdk\Api\StorageEnginesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
+$provider_id = 'provider_id_example'; // string
+$engine_id = 'engine_id_example'; // string
 
 try {
-    $result = $apiInstance->cloudProvidersGet();
+    $result = $apiInstance->cloudProvidersProviderIdStorageEnginesEngineIdGet($provider_id, $engine_id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CloudProvidersApi->cloudProvidersGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling StorageEnginesApi->cloudProvidersProviderIdStorageEnginesEngineIdGet: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
 ### Parameters
 
-This endpoint does not need any parameter.
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **provider_id** | **string**|  | |
+| **engine_id** | **string**|  | |
 
 ### Return type
 
@@ -65,13 +70,13 @@ This endpoint does not need any parameter.
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `cloudProvidersProviderIdGet()`
+## `cloudProvidersProviderIdStorageEnginesGet()`
 
 ```php
-cloudProvidersProviderIdGet($provider_id): object
+cloudProvidersProviderIdStorageEnginesGet($provider_id): object
 ```
 
-Get single cloud provider by ID
+Get a list of all storage engines
 
 ### Example
 
@@ -86,7 +91,7 @@ $config = SparteraApiSdk\Configuration::getDefaultConfiguration()->setApiKey('x-
 // $config = SparteraApiSdk\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
-$apiInstance = new SparteraApiSdk\Api\CloudProvidersApi(
+$apiInstance = new SparteraApiSdk\Api\StorageEnginesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
@@ -95,10 +100,10 @@ $apiInstance = new SparteraApiSdk\Api\CloudProvidersApi(
 $provider_id = 'provider_id_example'; // string
 
 try {
-    $result = $apiInstance->cloudProvidersProviderIdGet($provider_id);
+    $result = $apiInstance->cloudProvidersProviderIdStorageEnginesGet($provider_id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling CloudProvidersApi->cloudProvidersProviderIdGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling StorageEnginesApi->cloudProvidersProviderIdStorageEnginesGet: ', $e->getMessage(), PHP_EOL;
 }
 ```
 

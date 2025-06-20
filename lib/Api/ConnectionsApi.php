@@ -452,9 +452,10 @@ class ConnectionsApi
             }
         }
 
-        // this endpoint requires Bearer (JWT) authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('x-api-key');
+        if ($apiKey !== null) {
+            $headers['x-api-key'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -786,9 +787,10 @@ class ConnectionsApi
             }
         }
 
-        // this endpoint requires Bearer (JWT) authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('x-api-key');
+        if ($apiKey !== null) {
+            $headers['x-api-key'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1120,9 +1122,10 @@ class ConnectionsApi
             }
         }
 
-        // this endpoint requires Bearer (JWT) authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('x-api-key');
+        if ($apiKey !== null) {
+            $headers['x-api-key'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1487,9 +1490,10 @@ class ConnectionsApi
             }
         }
 
-        // this endpoint requires Bearer (JWT) authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('x-api-key');
+        if ($apiKey !== null) {
+            $headers['x-api-key'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1516,7 +1520,7 @@ class ConnectionsApi
     /**
      * Operation companiesCompanyIdConnectionsConnectionIdTestGet
      *
-     * Verify the specified connection to ensure it is functioning correctly
+     * Test the specified connection
      *
      * @param  string $company_id company_id (required)
      * @param  string $connection_id connection_id (required)
@@ -1535,7 +1539,7 @@ class ConnectionsApi
     /**
      * Operation companiesCompanyIdConnectionsConnectionIdTestGetWithHttpInfo
      *
-     * Verify the specified connection to ensure it is functioning correctly
+     * Test the specified connection
      *
      * @param  string $company_id (required)
      * @param  string $connection_id (required)
@@ -1663,7 +1667,7 @@ class ConnectionsApi
     /**
      * Operation companiesCompanyIdConnectionsConnectionIdTestGetAsync
      *
-     * Verify the specified connection to ensure it is functioning correctly
+     * Test the specified connection
      *
      * @param  string $company_id (required)
      * @param  string $connection_id (required)
@@ -1685,7 +1689,7 @@ class ConnectionsApi
     /**
      * Operation companiesCompanyIdConnectionsConnectionIdTestGetAsyncWithHttpInfo
      *
-     * Verify the specified connection to ensure it is functioning correctly
+     * Test the specified connection
      *
      * @param  string $company_id (required)
      * @param  string $connection_id (required)
@@ -1821,9 +1825,10 @@ class ConnectionsApi
             }
         }
 
-        // this endpoint requires Bearer (JWT) authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('x-api-key');
+        if ($apiKey !== null) {
+            $headers['x-api-key'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -2135,9 +2140,10 @@ class ConnectionsApi
             }
         }
 
-        // this endpoint requires Bearer (JWT) authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('x-api-key');
+        if ($apiKey !== null) {
+            $headers['x-api-key'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -2468,9 +2474,10 @@ class ConnectionsApi
             }
         }
 
-        // this endpoint requires Bearer (JWT) authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('x-api-key');
+        if ($apiKey !== null) {
+            $headers['x-api-key'] = $apiKey;
         }
 
         $defaultHeaders = [];

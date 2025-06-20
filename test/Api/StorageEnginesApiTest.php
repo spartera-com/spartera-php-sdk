@@ -1,6 +1,6 @@
 <?php
 /**
- * CloudProvidersApiTest
+ * StorageEnginesApiTest
  * PHP version 8.1
  *
  * @category Class
@@ -34,14 +34,14 @@ use \SparteraApiSdk\ObjectSerializer;
 use PHPUnit\Framework\TestCase;
 
 /**
- * CloudProvidersApiTest Class Doc Comment
+ * StorageEnginesApiTest Class Doc Comment
  *
  * @category Class
  * @package  SparteraApiSdk
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class CloudProvidersApiTest extends TestCase
+class StorageEnginesApiTest extends TestCase
 {
 
     /**
@@ -73,24 +73,24 @@ class CloudProvidersApiTest extends TestCase
     }
 
     /**
-     * Test case for cloudProvidersGet
+     * Test case for cloudProvidersProviderIdStorageEnginesEngineIdGet
      *
-     * Get a list of all cloud providers.
+     * Get single storage engine by ID.
      *
      */
-    public function testCloudProvidersGet()
+    public function testCloudProvidersProviderIdStorageEnginesEngineIdGet()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test case for cloudProvidersProviderIdGet
+     * Test case for cloudProvidersProviderIdStorageEnginesGet
      *
-     * Get single cloud provider by ID.
+     * Get a list of all storage engines.
      *
      */
-    public function testCloudProvidersProviderIdGet()
+    public function testCloudProvidersProviderIdStorageEnginesGet()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

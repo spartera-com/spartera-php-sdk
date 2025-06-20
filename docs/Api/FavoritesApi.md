@@ -5,11 +5,11 @@ All URIs are relative to https://api.spartera.com, except if the operation defin
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
 | [**companiesCompanyIdUsersUserIdFavoritesCategoryCategoryGet()**](FavoritesApi.md#companiesCompanyIdUsersUserIdFavoritesCategoryCategoryGet) | **GET** /companies/{company_id}/users/{user_id}/favorites/category/{category} | Get all favorites for the specified user in a specific category |
-| [**companiesCompanyIdUsersUserIdFavoritesCheckAssetIdGet()**](FavoritesApi.md#companiesCompanyIdUsersUserIdFavoritesCheckAssetIdGet) | **GET** /companies/{company_id}/users/{user_id}/favorites/check/{asset_id} | Check if the specified user has favorited a specific asset     Returns the favorite record if it exists, or empty result if not     Useful for UI to show/hide favorite button states |
+| [**companiesCompanyIdUsersUserIdFavoritesCheckAssetIdGet()**](FavoritesApi.md#companiesCompanyIdUsersUserIdFavoritesCheckAssetIdGet) | **GET** /companies/{company_id}/users/{user_id}/favorites/check/{asset_id} | Check if the specified user has favorited a specific asset |
 | [**companiesCompanyIdUsersUserIdFavoritesFavoriteIdDelete()**](FavoritesApi.md#companiesCompanyIdUsersUserIdFavoritesFavoriteIdDelete) | **DELETE** /companies/{company_id}/users/{user_id}/favorites/{favorite_id} | Delete single favorite by ID (unfavorite an asset) |
 | [**companiesCompanyIdUsersUserIdFavoritesFavoriteIdGet()**](FavoritesApi.md#companiesCompanyIdUsersUserIdFavoritesFavoriteIdGet) | **GET** /companies/{company_id}/users/{user_id}/favorites/{favorite_id} | Get single favorite by ID |
-| [**companiesCompanyIdUsersUserIdFavoritesFavoriteIdPatch()**](FavoritesApi.md#companiesCompanyIdUsersUserIdFavoritesFavoriteIdPatch) | **PATCH** /companies/{company_id}/users/{user_id}/favorites/{favorite_id} | Update an existing favorite by ID     Can update notes, category, priority |
-| [**companiesCompanyIdUsersUserIdFavoritesGet()**](FavoritesApi.md#companiesCompanyIdUsersUserIdFavoritesGet) | **GET** /companies/{company_id}/users/{user_id}/favorites | Get a list of all favorites for a specific user     Query params:     - category: filter by category     - sort: sort field (priority, date_created, etc.)     - order: sort direction (asc, desc) |
+| [**companiesCompanyIdUsersUserIdFavoritesFavoriteIdPatch()**](FavoritesApi.md#companiesCompanyIdUsersUserIdFavoritesFavoriteIdPatch) | **PATCH** /companies/{company_id}/users/{user_id}/favorites/{favorite_id} | Update an existing favorite by ID |
+| [**companiesCompanyIdUsersUserIdFavoritesGet()**](FavoritesApi.md#companiesCompanyIdUsersUserIdFavoritesGet) | **GET** /companies/{company_id}/users/{user_id}/favorites | Get a list of all favorites for a specific user |
 | [**companiesCompanyIdUsersUserIdFavoritesPost()**](FavoritesApi.md#companiesCompanyIdUsersUserIdFavoritesPost) | **POST** /companies/{company_id}/users/{user_id}/favorites | POST /companies/{company_id}/users/{user_id}/favorites |
 | [**companiesCompanyIdUsersUserIdFavoritesUncategorizedGet()**](FavoritesApi.md#companiesCompanyIdUsersUserIdFavoritesUncategorizedGet) | **GET** /companies/{company_id}/users/{user_id}/favorites/uncategorized | Get all favorites for the specified user that don&#39;t have a category |
 
@@ -29,8 +29,10 @@ Get all favorites for the specified user in a specific category
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer (JWT) authorization: bearerAuth
-$config = SparteraApiSdk\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+// Configure API key authorization: ApiKeyAuth
+$config = SparteraApiSdk\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = SparteraApiSdk\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new SparteraApiSdk\Api\FavoritesApi(
@@ -65,7 +67,7 @@ try {
 
 ### Authorization
 
-[bearerAuth](../../README.md#bearerAuth)
+[ApiKeyAuth](../../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -82,7 +84,7 @@ try {
 companiesCompanyIdUsersUserIdFavoritesCheckAssetIdGet($company_id, $user_id, $asset_id): object
 ```
 
-Check if the specified user has favorited a specific asset     Returns the favorite record if it exists, or empty result if not     Useful for UI to show/hide favorite button states
+Check if the specified user has favorited a specific asset
 
 ### Example
 
@@ -91,8 +93,10 @@ Check if the specified user has favorited a specific asset     Returns the favor
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer (JWT) authorization: bearerAuth
-$config = SparteraApiSdk\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+// Configure API key authorization: ApiKeyAuth
+$config = SparteraApiSdk\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = SparteraApiSdk\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new SparteraApiSdk\Api\FavoritesApi(
@@ -127,7 +131,7 @@ try {
 
 ### Authorization
 
-[bearerAuth](../../README.md#bearerAuth)
+[ApiKeyAuth](../../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -153,8 +157,10 @@ Delete single favorite by ID (unfavorite an asset)
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer (JWT) authorization: bearerAuth
-$config = SparteraApiSdk\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+// Configure API key authorization: ApiKeyAuth
+$config = SparteraApiSdk\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = SparteraApiSdk\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new SparteraApiSdk\Api\FavoritesApi(
@@ -189,7 +195,7 @@ try {
 
 ### Authorization
 
-[bearerAuth](../../README.md#bearerAuth)
+[ApiKeyAuth](../../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -215,8 +221,10 @@ Get single favorite by ID
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer (JWT) authorization: bearerAuth
-$config = SparteraApiSdk\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+// Configure API key authorization: ApiKeyAuth
+$config = SparteraApiSdk\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = SparteraApiSdk\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new SparteraApiSdk\Api\FavoritesApi(
@@ -251,7 +259,7 @@ try {
 
 ### Authorization
 
-[bearerAuth](../../README.md#bearerAuth)
+[ApiKeyAuth](../../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -268,7 +276,7 @@ try {
 companiesCompanyIdUsersUserIdFavoritesFavoriteIdPatch($company_id, $user_id, $favorite_id, $favorite): object
 ```
 
-Update an existing favorite by ID     Can update notes, category, priority
+Update an existing favorite by ID
 
 ### Example
 
@@ -277,8 +285,10 @@ Update an existing favorite by ID     Can update notes, category, priority
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer (JWT) authorization: bearerAuth
-$config = SparteraApiSdk\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+// Configure API key authorization: ApiKeyAuth
+$config = SparteraApiSdk\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = SparteraApiSdk\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new SparteraApiSdk\Api\FavoritesApi(
@@ -315,7 +325,7 @@ try {
 
 ### Authorization
 
-[bearerAuth](../../README.md#bearerAuth)
+[ApiKeyAuth](../../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -332,7 +342,7 @@ try {
 companiesCompanyIdUsersUserIdFavoritesGet($company_id, $user_id): object
 ```
 
-Get a list of all favorites for a specific user     Query params:     - category: filter by category     - sort: sort field (priority, date_created, etc.)     - order: sort direction (asc, desc)
+Get a list of all favorites for a specific user
 
 ### Example
 
@@ -341,8 +351,10 @@ Get a list of all favorites for a specific user     Query params:     - category
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer (JWT) authorization: bearerAuth
-$config = SparteraApiSdk\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+// Configure API key authorization: ApiKeyAuth
+$config = SparteraApiSdk\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = SparteraApiSdk\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new SparteraApiSdk\Api\FavoritesApi(
@@ -375,7 +387,7 @@ try {
 
 ### Authorization
 
-[bearerAuth](../../README.md#bearerAuth)
+[ApiKeyAuth](../../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -401,8 +413,10 @@ POST /companies/{company_id}/users/{user_id}/favorites
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer (JWT) authorization: bearerAuth
-$config = SparteraApiSdk\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+// Configure API key authorization: ApiKeyAuth
+$config = SparteraApiSdk\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = SparteraApiSdk\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new SparteraApiSdk\Api\FavoritesApi(
@@ -437,7 +451,7 @@ try {
 
 ### Authorization
 
-[bearerAuth](../../README.md#bearerAuth)
+[ApiKeyAuth](../../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -463,8 +477,10 @@ Get all favorites for the specified user that don't have a category
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer (JWT) authorization: bearerAuth
-$config = SparteraApiSdk\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
+// Configure API key authorization: ApiKeyAuth
+$config = SparteraApiSdk\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = SparteraApiSdk\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
 $apiInstance = new SparteraApiSdk\Api\FavoritesApi(
@@ -497,7 +513,7 @@ try {
 
 ### Authorization
 
-[bearerAuth](../../README.md#bearerAuth)
+[ApiKeyAuth](../../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 

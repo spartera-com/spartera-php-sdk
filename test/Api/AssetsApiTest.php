@@ -75,7 +75,7 @@ class AssetsApiTest extends TestCase
     /**
      * Test case for analyzeCompanyHandleAssetsAssetSlugGet
      *
-     * Process assets route that handles both owned and purchased assets.             Minimal route function that passes all logic to crudder.process_asset              Args:                 asset_path: The path after /analyze/ containing asset information                 company_handle: The subdomain from Flask's routing (if available).
+     * Process (analyze) an asset. Attempt to process an analytic on a backend warehouse/AI model..
      *
      */
     public function testAnalyzeCompanyHandleAssetsAssetSlugGet()
@@ -123,7 +123,7 @@ class AssetsApiTest extends TestCase
     /**
      * Test case for companiesCompanyIdAssetsAssetIdInfoschemaSaveGet
      *
-     * Get the information schema for a specific asset and save it to the asset's asset_schema field.
+     * Retrieve and save an asset's information schema.
      *
      */
     public function testCompaniesCompanyIdAssetsAssetIdInfoschemaSaveGet()
@@ -151,30 +151,6 @@ class AssetsApiTest extends TestCase
      *
      */
     public function testCompaniesCompanyIdAssetsAssetIdPredictedPriceGet()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for companiesCompanyIdAssetsAssetIdRecommendationsExplainGet
-     *
-     * Get detailed explanation of how asset recommendations are calculated for debugging purposes..
-     *
-     */
-    public function testCompaniesCompanyIdAssetsAssetIdRecommendationsExplainGet()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for companiesCompanyIdAssetsAssetIdRecommendationsGet
-     *
-     * Get asset recommendations for a specific asset using heuristic waterfall matching     Returns list of similar assets based on industry, company, connection, tags, etc.      Query Parameters:     - limit: Number of recommendations to return (default: 12, max: 50)     - min_score: Minimum similarity score threshold (default: 0.1)     - include_details: Include component similarity scores (default: false).
-     *
-     */
-    public function testCompaniesCompanyIdAssetsAssetIdRecommendationsGet()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
@@ -223,30 +199,6 @@ class AssetsApiTest extends TestCase
      *
      */
     public function testCompaniesCompanyIdAssetsPost()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for companiesCompanyIdAssetsRecommendationsBulkPost
-     *
-     * Get recommendations for multiple assets in a single request. Useful for pre-loading recommendations..
-     *
-     */
-    public function testCompaniesCompanyIdAssetsRecommendationsBulkPost()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test case for companiesCompanyIdAssetsRecommendationsHealthGet
-     *
-     * Health check for the recommendations system with sample data and performance metrics..
-     *
-     */
-    public function testCompaniesCompanyIdAssetsRecommendationsHealthGet()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

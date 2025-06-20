@@ -123,7 +123,7 @@ class AssetPriceHistoryApiTest extends TestCase
     /**
      * Test case for companiesCompanyIdAssetsAssetIdPricesCalculateCreditsPost
      *
-     * Calculate the credit equivalent for a given USD price without saving.
+     * POST /companies/{company_id}/assets/{asset_id}/prices/calculate_credits.
      *
      */
     public function testCompaniesCompanyIdAssetsAssetIdPricesCalculateCreditsPost()
@@ -135,7 +135,7 @@ class AssetPriceHistoryApiTest extends TestCase
     /**
      * Test case for companiesCompanyIdAssetsAssetIdPricesDiscountPost
      *
-     * Apply a discount to the active price for an asset.
+     * POST /companies/{company_id}/assets/{asset_id}/prices/discount.
      *
      */
     public function testCompaniesCompanyIdAssetsAssetIdPricesDiscountPost()

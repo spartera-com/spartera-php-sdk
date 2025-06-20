@@ -475,9 +475,10 @@ class FavoritesApi
             }
         }
 
-        // this endpoint requires Bearer (JWT) authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('x-api-key');
+        if ($apiKey !== null) {
+            $headers['x-api-key'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -504,7 +505,7 @@ class FavoritesApi
     /**
      * Operation companiesCompanyIdUsersUserIdFavoritesCheckAssetIdGet
      *
-     * Check if the specified user has favorited a specific asset     Returns the favorite record if it exists, or empty result if not     Useful for UI to show/hide favorite button states
+     * Check if the specified user has favorited a specific asset
      *
      * @param  string $company_id company_id (required)
      * @param  string $user_id user_id (required)
@@ -524,7 +525,7 @@ class FavoritesApi
     /**
      * Operation companiesCompanyIdUsersUserIdFavoritesCheckAssetIdGetWithHttpInfo
      *
-     * Check if the specified user has favorited a specific asset     Returns the favorite record if it exists, or empty result if not     Useful for UI to show/hide favorite button states
+     * Check if the specified user has favorited a specific asset
      *
      * @param  string $company_id (required)
      * @param  string $user_id (required)
@@ -653,7 +654,7 @@ class FavoritesApi
     /**
      * Operation companiesCompanyIdUsersUserIdFavoritesCheckAssetIdGetAsync
      *
-     * Check if the specified user has favorited a specific asset     Returns the favorite record if it exists, or empty result if not     Useful for UI to show/hide favorite button states
+     * Check if the specified user has favorited a specific asset
      *
      * @param  string $company_id (required)
      * @param  string $user_id (required)
@@ -676,7 +677,7 @@ class FavoritesApi
     /**
      * Operation companiesCompanyIdUsersUserIdFavoritesCheckAssetIdGetAsyncWithHttpInfo
      *
-     * Check if the specified user has favorited a specific asset     Returns the favorite record if it exists, or empty result if not     Useful for UI to show/hide favorite button states
+     * Check if the specified user has favorited a specific asset
      *
      * @param  string $company_id (required)
      * @param  string $user_id (required)
@@ -829,9 +830,10 @@ class FavoritesApi
             }
         }
 
-        // this endpoint requires Bearer (JWT) authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('x-api-key');
+        if ($apiKey !== null) {
+            $headers['x-api-key'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1183,9 +1185,10 @@ class FavoritesApi
             }
         }
 
-        // this endpoint requires Bearer (JWT) authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('x-api-key');
+        if ($apiKey !== null) {
+            $headers['x-api-key'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1537,9 +1540,10 @@ class FavoritesApi
             }
         }
 
-        // this endpoint requires Bearer (JWT) authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('x-api-key');
+        if ($apiKey !== null) {
+            $headers['x-api-key'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1566,7 +1570,7 @@ class FavoritesApi
     /**
      * Operation companiesCompanyIdUsersUserIdFavoritesFavoriteIdPatch
      *
-     * Update an existing favorite by ID     Can update notes, category, priority
+     * Update an existing favorite by ID
      *
      * @param  string $company_id company_id (required)
      * @param  string $user_id user_id (required)
@@ -1587,7 +1591,7 @@ class FavoritesApi
     /**
      * Operation companiesCompanyIdUsersUserIdFavoritesFavoriteIdPatchWithHttpInfo
      *
-     * Update an existing favorite by ID     Can update notes, category, priority
+     * Update an existing favorite by ID
      *
      * @param  string $company_id (required)
      * @param  string $user_id (required)
@@ -1731,7 +1735,7 @@ class FavoritesApi
     /**
      * Operation companiesCompanyIdUsersUserIdFavoritesFavoriteIdPatchAsync
      *
-     * Update an existing favorite by ID     Can update notes, category, priority
+     * Update an existing favorite by ID
      *
      * @param  string $company_id (required)
      * @param  string $user_id (required)
@@ -1755,7 +1759,7 @@ class FavoritesApi
     /**
      * Operation companiesCompanyIdUsersUserIdFavoritesFavoriteIdPatchAsyncWithHttpInfo
      *
-     * Update an existing favorite by ID     Can update notes, category, priority
+     * Update an existing favorite by ID
      *
      * @param  string $company_id (required)
      * @param  string $user_id (required)
@@ -1924,9 +1928,10 @@ class FavoritesApi
             }
         }
 
-        // this endpoint requires Bearer (JWT) authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('x-api-key');
+        if ($apiKey !== null) {
+            $headers['x-api-key'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1953,7 +1958,7 @@ class FavoritesApi
     /**
      * Operation companiesCompanyIdUsersUserIdFavoritesGet
      *
-     * Get a list of all favorites for a specific user     Query params:     - category: filter by category     - sort: sort field (priority, date_created, etc.)     - order: sort direction (asc, desc)
+     * Get a list of all favorites for a specific user
      *
      * @param  string $company_id company_id (required)
      * @param  string $user_id user_id (required)
@@ -1972,7 +1977,7 @@ class FavoritesApi
     /**
      * Operation companiesCompanyIdUsersUserIdFavoritesGetWithHttpInfo
      *
-     * Get a list of all favorites for a specific user     Query params:     - category: filter by category     - sort: sort field (priority, date_created, etc.)     - order: sort direction (asc, desc)
+     * Get a list of all favorites for a specific user
      *
      * @param  string $company_id (required)
      * @param  string $user_id (required)
@@ -2100,7 +2105,7 @@ class FavoritesApi
     /**
      * Operation companiesCompanyIdUsersUserIdFavoritesGetAsync
      *
-     * Get a list of all favorites for a specific user     Query params:     - category: filter by category     - sort: sort field (priority, date_created, etc.)     - order: sort direction (asc, desc)
+     * Get a list of all favorites for a specific user
      *
      * @param  string $company_id (required)
      * @param  string $user_id (required)
@@ -2122,7 +2127,7 @@ class FavoritesApi
     /**
      * Operation companiesCompanyIdUsersUserIdFavoritesGetAsyncWithHttpInfo
      *
-     * Get a list of all favorites for a specific user     Query params:     - category: filter by category     - sort: sort field (priority, date_created, etc.)     - order: sort direction (asc, desc)
+     * Get a list of all favorites for a specific user
      *
      * @param  string $company_id (required)
      * @param  string $user_id (required)
@@ -2258,9 +2263,10 @@ class FavoritesApi
             }
         }
 
-        // this endpoint requires Bearer (JWT) authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('x-api-key');
+        if ($apiKey !== null) {
+            $headers['x-api-key'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -2611,9 +2617,10 @@ class FavoritesApi
             }
         }
 
-        // this endpoint requires Bearer (JWT) authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('x-api-key');
+        if ($apiKey !== null) {
+            $headers['x-api-key'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -2945,9 +2952,10 @@ class FavoritesApi
             }
         }
 
-        // this endpoint requires Bearer (JWT) authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('x-api-key');
+        if ($apiKey !== null) {
+            $headers['x-api-key'] = $apiKey;
         }
 
         $defaultHeaders = [];

@@ -472,9 +472,10 @@ class AlertsApi
             }
         }
 
-        // this endpoint requires Bearer (JWT) authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('x-api-key');
+        if ($apiKey !== null) {
+            $headers['x-api-key'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -826,9 +827,10 @@ class AlertsApi
             }
         }
 
-        // this endpoint requires Bearer (JWT) authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('x-api-key');
+        if ($apiKey !== null) {
+            $headers['x-api-key'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1213,9 +1215,10 @@ class AlertsApi
             }
         }
 
-        // this endpoint requires Bearer (JWT) authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('x-api-key');
+        if ($apiKey !== null) {
+            $headers['x-api-key'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1242,7 +1245,7 @@ class AlertsApi
     /**
      * Operation companiesCompanyIdUsersUserIdAlertsAssetAssetIdAllGet
      *
-     * Get all alerts for a specific asset (from all users)     This would typically be restricted to asset owners or admins
+     * Get all alerts for a specific asset
      *
      * @param  string $company_id company_id (required)
      * @param  string $user_id user_id (required)
@@ -1262,7 +1265,7 @@ class AlertsApi
     /**
      * Operation companiesCompanyIdUsersUserIdAlertsAssetAssetIdAllGetWithHttpInfo
      *
-     * Get all alerts for a specific asset (from all users)     This would typically be restricted to asset owners or admins
+     * Get all alerts for a specific asset
      *
      * @param  string $company_id (required)
      * @param  string $user_id (required)
@@ -1391,7 +1394,7 @@ class AlertsApi
     /**
      * Operation companiesCompanyIdUsersUserIdAlertsAssetAssetIdAllGetAsync
      *
-     * Get all alerts for a specific asset (from all users)     This would typically be restricted to asset owners or admins
+     * Get all alerts for a specific asset
      *
      * @param  string $company_id (required)
      * @param  string $user_id (required)
@@ -1414,7 +1417,7 @@ class AlertsApi
     /**
      * Operation companiesCompanyIdUsersUserIdAlertsAssetAssetIdAllGetAsyncWithHttpInfo
      *
-     * Get all alerts for a specific asset (from all users)     This would typically be restricted to asset owners or admins
+     * Get all alerts for a specific asset
      *
      * @param  string $company_id (required)
      * @param  string $user_id (required)
@@ -1567,9 +1570,10 @@ class AlertsApi
             }
         }
 
-        // this endpoint requires Bearer (JWT) authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('x-api-key');
+        if ($apiKey !== null) {
+            $headers['x-api-key'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1596,7 +1600,7 @@ class AlertsApi
     /**
      * Operation companiesCompanyIdUsersUserIdAlertsAssetAssetIdGet
      *
-     * Get all alerts for a specific asset by the specified user     Useful for checking if user already has an alert set up for an asset
+     * Get all alerts for a specific asset (by user)
      *
      * @param  string $company_id company_id (required)
      * @param  string $user_id user_id (required)
@@ -1616,7 +1620,7 @@ class AlertsApi
     /**
      * Operation companiesCompanyIdUsersUserIdAlertsAssetAssetIdGetWithHttpInfo
      *
-     * Get all alerts for a specific asset by the specified user     Useful for checking if user already has an alert set up for an asset
+     * Get all alerts for a specific asset (by user)
      *
      * @param  string $company_id (required)
      * @param  string $user_id (required)
@@ -1745,7 +1749,7 @@ class AlertsApi
     /**
      * Operation companiesCompanyIdUsersUserIdAlertsAssetAssetIdGetAsync
      *
-     * Get all alerts for a specific asset by the specified user     Useful for checking if user already has an alert set up for an asset
+     * Get all alerts for a specific asset (by user)
      *
      * @param  string $company_id (required)
      * @param  string $user_id (required)
@@ -1768,7 +1772,7 @@ class AlertsApi
     /**
      * Operation companiesCompanyIdUsersUserIdAlertsAssetAssetIdGetAsyncWithHttpInfo
      *
-     * Get all alerts for a specific asset by the specified user     Useful for checking if user already has an alert set up for an asset
+     * Get all alerts for a specific asset (by user)
      *
      * @param  string $company_id (required)
      * @param  string $user_id (required)
@@ -1921,9 +1925,10 @@ class AlertsApi
             }
         }
 
-        // this endpoint requires Bearer (JWT) authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('x-api-key');
+        if ($apiKey !== null) {
+            $headers['x-api-key'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -2255,9 +2260,10 @@ class AlertsApi
             }
         }
 
-        // this endpoint requires Bearer (JWT) authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('x-api-key');
+        if ($apiKey !== null) {
+            $headers['x-api-key'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -2608,9 +2614,10 @@ class AlertsApi
             }
         }
 
-        // this endpoint requires Bearer (JWT) authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('x-api-key');
+        if ($apiKey !== null) {
+            $headers['x-api-key'] = $apiKey;
         }
 
         $defaultHeaders = [];

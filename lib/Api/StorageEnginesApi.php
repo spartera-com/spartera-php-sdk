@@ -1,6 +1,6 @@
 <?php
 /**
- * CloudProvidersApi
+ * StorageEnginesApi
  * PHP version 8.1
  *
  * @category Class
@@ -44,14 +44,14 @@ use SparteraApiSdk\HeaderSelector;
 use SparteraApiSdk\ObjectSerializer;
 
 /**
- * CloudProvidersApi Class Doc Comment
+ * StorageEnginesApi Class Doc Comment
  *
  * @category Class
  * @package  SparteraApiSdk
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  */
-class CloudProvidersApi
+class StorageEnginesApi
 {
     /**
      * @var ClientInterface
@@ -75,10 +75,10 @@ class CloudProvidersApi
 
     /** @var string[] $contentTypes **/
     public const contentTypes = [
-        'cloudProvidersGet' => [
+        'cloudProvidersProviderIdStorageEnginesEngineIdGet' => [
             'application/json',
         ],
-        'cloudProvidersProviderIdGet' => [
+        'cloudProvidersProviderIdStorageEnginesGet' => [
             'application/json',
         ],
     ];
@@ -130,36 +130,40 @@ class CloudProvidersApi
     }
 
     /**
-     * Operation cloudProvidersGet
+     * Operation cloudProvidersProviderIdStorageEnginesEngineIdGet
      *
-     * Get a list of all cloud providers
+     * Get single storage engine by ID
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cloudProvidersGet'] to see the possible values for this operation
+     * @param  string $provider_id provider_id (required)
+     * @param  string $engine_id engine_id (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cloudProvidersProviderIdStorageEnginesEngineIdGet'] to see the possible values for this operation
      *
      * @throws \SparteraApiSdk\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return object|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3
      */
-    public function cloudProvidersGet(string $contentType = self::contentTypes['cloudProvidersGet'][0])
+    public function cloudProvidersProviderIdStorageEnginesEngineIdGet($provider_id, $engine_id, string $contentType = self::contentTypes['cloudProvidersProviderIdStorageEnginesEngineIdGet'][0])
     {
-        list($response) = $this->cloudProvidersGetWithHttpInfo($contentType);
+        list($response) = $this->cloudProvidersProviderIdStorageEnginesEngineIdGetWithHttpInfo($provider_id, $engine_id, $contentType);
         return $response;
     }
 
     /**
-     * Operation cloudProvidersGetWithHttpInfo
+     * Operation cloudProvidersProviderIdStorageEnginesEngineIdGetWithHttpInfo
      *
-     * Get a list of all cloud providers
+     * Get single storage engine by ID
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cloudProvidersGet'] to see the possible values for this operation
+     * @param  string $provider_id (required)
+     * @param  string $engine_id (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cloudProvidersProviderIdStorageEnginesEngineIdGet'] to see the possible values for this operation
      *
      * @throws \SparteraApiSdk\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of object|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cloudProvidersGetWithHttpInfo(string $contentType = self::contentTypes['cloudProvidersGet'][0])
+    public function cloudProvidersProviderIdStorageEnginesEngineIdGetWithHttpInfo($provider_id, $engine_id, string $contentType = self::contentTypes['cloudProvidersProviderIdStorageEnginesEngineIdGet'][0])
     {
-        $request = $this->cloudProvidersGetRequest($contentType);
+        $request = $this->cloudProvidersProviderIdStorageEnginesEngineIdGetRequest($provider_id, $engine_id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -273,18 +277,20 @@ class CloudProvidersApi
     }
 
     /**
-     * Operation cloudProvidersGetAsync
+     * Operation cloudProvidersProviderIdStorageEnginesEngineIdGetAsync
      *
-     * Get a list of all cloud providers
+     * Get single storage engine by ID
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cloudProvidersGet'] to see the possible values for this operation
+     * @param  string $provider_id (required)
+     * @param  string $engine_id (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cloudProvidersProviderIdStorageEnginesEngineIdGet'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cloudProvidersGetAsync(string $contentType = self::contentTypes['cloudProvidersGet'][0])
+    public function cloudProvidersProviderIdStorageEnginesEngineIdGetAsync($provider_id, $engine_id, string $contentType = self::contentTypes['cloudProvidersProviderIdStorageEnginesEngineIdGet'][0])
     {
-        return $this->cloudProvidersGetAsyncWithHttpInfo($contentType)
+        return $this->cloudProvidersProviderIdStorageEnginesEngineIdGetAsyncWithHttpInfo($provider_id, $engine_id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -293,19 +299,21 @@ class CloudProvidersApi
     }
 
     /**
-     * Operation cloudProvidersGetAsyncWithHttpInfo
+     * Operation cloudProvidersProviderIdStorageEnginesEngineIdGetAsyncWithHttpInfo
      *
-     * Get a list of all cloud providers
+     * Get single storage engine by ID
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cloudProvidersGet'] to see the possible values for this operation
+     * @param  string $provider_id (required)
+     * @param  string $engine_id (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cloudProvidersProviderIdStorageEnginesEngineIdGet'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cloudProvidersGetAsyncWithHttpInfo(string $contentType = self::contentTypes['cloudProvidersGet'][0])
+    public function cloudProvidersProviderIdStorageEnginesEngineIdGetAsyncWithHttpInfo($provider_id, $engine_id, string $contentType = self::contentTypes['cloudProvidersProviderIdStorageEnginesEngineIdGet'][0])
     {
         $returnType = 'object';
-        $request = $this->cloudProvidersGetRequest($contentType);
+        $request = $this->cloudProvidersProviderIdStorageEnginesEngineIdGetRequest($provider_id, $engine_id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -344,18 +352,34 @@ class CloudProvidersApi
     }
 
     /**
-     * Create request for operation 'cloudProvidersGet'
+     * Create request for operation 'cloudProvidersProviderIdStorageEnginesEngineIdGet'
      *
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cloudProvidersGet'] to see the possible values for this operation
+     * @param  string $provider_id (required)
+     * @param  string $engine_id (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cloudProvidersProviderIdStorageEnginesEngineIdGet'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function cloudProvidersGetRequest(string $contentType = self::contentTypes['cloudProvidersGet'][0])
+    public function cloudProvidersProviderIdStorageEnginesEngineIdGetRequest($provider_id, $engine_id, string $contentType = self::contentTypes['cloudProvidersProviderIdStorageEnginesEngineIdGet'][0])
     {
 
+        // verify the required parameter 'provider_id' is set
+        if ($provider_id === null || (is_array($provider_id) && count($provider_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $provider_id when calling cloudProvidersProviderIdStorageEnginesEngineIdGet'
+            );
+        }
 
-        $resourcePath = '/cloud-providers';
+        // verify the required parameter 'engine_id' is set
+        if ($engine_id === null || (is_array($engine_id) && count($engine_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $engine_id when calling cloudProvidersProviderIdStorageEnginesEngineIdGet'
+            );
+        }
+
+
+        $resourcePath = '/cloud-providers/{provider_id}/storage-engines/{engine_id}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -364,6 +388,22 @@ class CloudProvidersApi
 
 
 
+        // path params
+        if ($provider_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'provider_id' . '}',
+                ObjectSerializer::toPathValue($provider_id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($engine_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'engine_id' . '}',
+                ObjectSerializer::toPathValue($engine_id),
+                $resourcePath
+            );
+        }
 
 
         $headers = $this->headerSelector->selectHeaders(
@@ -425,38 +465,38 @@ class CloudProvidersApi
     }
 
     /**
-     * Operation cloudProvidersProviderIdGet
+     * Operation cloudProvidersProviderIdStorageEnginesGet
      *
-     * Get single cloud provider by ID
+     * Get a list of all storage engines
      *
      * @param  string $provider_id provider_id (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cloudProvidersProviderIdGet'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cloudProvidersProviderIdStorageEnginesGet'] to see the possible values for this operation
      *
      * @throws \SparteraApiSdk\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return object|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3
      */
-    public function cloudProvidersProviderIdGet($provider_id, string $contentType = self::contentTypes['cloudProvidersProviderIdGet'][0])
+    public function cloudProvidersProviderIdStorageEnginesGet($provider_id, string $contentType = self::contentTypes['cloudProvidersProviderIdStorageEnginesGet'][0])
     {
-        list($response) = $this->cloudProvidersProviderIdGetWithHttpInfo($provider_id, $contentType);
+        list($response) = $this->cloudProvidersProviderIdStorageEnginesGetWithHttpInfo($provider_id, $contentType);
         return $response;
     }
 
     /**
-     * Operation cloudProvidersProviderIdGetWithHttpInfo
+     * Operation cloudProvidersProviderIdStorageEnginesGetWithHttpInfo
      *
-     * Get single cloud provider by ID
+     * Get a list of all storage engines
      *
      * @param  string $provider_id (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cloudProvidersProviderIdGet'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cloudProvidersProviderIdStorageEnginesGet'] to see the possible values for this operation
      *
      * @throws \SparteraApiSdk\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of object|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3, HTTP status code, HTTP response headers (array of strings)
      */
-    public function cloudProvidersProviderIdGetWithHttpInfo($provider_id, string $contentType = self::contentTypes['cloudProvidersProviderIdGet'][0])
+    public function cloudProvidersProviderIdStorageEnginesGetWithHttpInfo($provider_id, string $contentType = self::contentTypes['cloudProvidersProviderIdStorageEnginesGet'][0])
     {
-        $request = $this->cloudProvidersProviderIdGetRequest($provider_id, $contentType);
+        $request = $this->cloudProvidersProviderIdStorageEnginesGetRequest($provider_id, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -570,19 +610,19 @@ class CloudProvidersApi
     }
 
     /**
-     * Operation cloudProvidersProviderIdGetAsync
+     * Operation cloudProvidersProviderIdStorageEnginesGetAsync
      *
-     * Get single cloud provider by ID
+     * Get a list of all storage engines
      *
      * @param  string $provider_id (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cloudProvidersProviderIdGet'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cloudProvidersProviderIdStorageEnginesGet'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cloudProvidersProviderIdGetAsync($provider_id, string $contentType = self::contentTypes['cloudProvidersProviderIdGet'][0])
+    public function cloudProvidersProviderIdStorageEnginesGetAsync($provider_id, string $contentType = self::contentTypes['cloudProvidersProviderIdStorageEnginesGet'][0])
     {
-        return $this->cloudProvidersProviderIdGetAsyncWithHttpInfo($provider_id, $contentType)
+        return $this->cloudProvidersProviderIdStorageEnginesGetAsyncWithHttpInfo($provider_id, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -591,20 +631,20 @@ class CloudProvidersApi
     }
 
     /**
-     * Operation cloudProvidersProviderIdGetAsyncWithHttpInfo
+     * Operation cloudProvidersProviderIdStorageEnginesGetAsyncWithHttpInfo
      *
-     * Get single cloud provider by ID
+     * Get a list of all storage engines
      *
      * @param  string $provider_id (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cloudProvidersProviderIdGet'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cloudProvidersProviderIdStorageEnginesGet'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function cloudProvidersProviderIdGetAsyncWithHttpInfo($provider_id, string $contentType = self::contentTypes['cloudProvidersProviderIdGet'][0])
+    public function cloudProvidersProviderIdStorageEnginesGetAsyncWithHttpInfo($provider_id, string $contentType = self::contentTypes['cloudProvidersProviderIdStorageEnginesGet'][0])
     {
         $returnType = 'object';
-        $request = $this->cloudProvidersProviderIdGetRequest($provider_id, $contentType);
+        $request = $this->cloudProvidersProviderIdStorageEnginesGetRequest($provider_id, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -643,26 +683,26 @@ class CloudProvidersApi
     }
 
     /**
-     * Create request for operation 'cloudProvidersProviderIdGet'
+     * Create request for operation 'cloudProvidersProviderIdStorageEnginesGet'
      *
      * @param  string $provider_id (required)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cloudProvidersProviderIdGet'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['cloudProvidersProviderIdStorageEnginesGet'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function cloudProvidersProviderIdGetRequest($provider_id, string $contentType = self::contentTypes['cloudProvidersProviderIdGet'][0])
+    public function cloudProvidersProviderIdStorageEnginesGetRequest($provider_id, string $contentType = self::contentTypes['cloudProvidersProviderIdStorageEnginesGet'][0])
     {
 
         // verify the required parameter 'provider_id' is set
         if ($provider_id === null || (is_array($provider_id) && count($provider_id) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $provider_id when calling cloudProvidersProviderIdGet'
+                'Missing the required parameter $provider_id when calling cloudProvidersProviderIdStorageEnginesGet'
             );
         }
 
 
-        $resourcePath = '/cloud-providers/{provider_id}';
+        $resourcePath = '/cloud-providers/{provider_id}/storage-engines';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

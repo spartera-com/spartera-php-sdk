@@ -141,7 +141,7 @@ class UsersApi
     /**
      * Operation companiesCompanyIdUsersGet
      *
-     * Get a list of all users for a particular company
+     * Get a list of all users in a company
      *
      * @param  string $company_id company_id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['companiesCompanyIdUsersGet'] to see the possible values for this operation
@@ -159,7 +159,7 @@ class UsersApi
     /**
      * Operation companiesCompanyIdUsersGetWithHttpInfo
      *
-     * Get a list of all users for a particular company
+     * Get a list of all users in a company
      *
      * @param  string $company_id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['companiesCompanyIdUsersGet'] to see the possible values for this operation
@@ -286,7 +286,7 @@ class UsersApi
     /**
      * Operation companiesCompanyIdUsersGetAsync
      *
-     * Get a list of all users for a particular company
+     * Get a list of all users in a company
      *
      * @param  string $company_id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['companiesCompanyIdUsersGet'] to see the possible values for this operation
@@ -307,7 +307,7 @@ class UsersApi
     /**
      * Operation companiesCompanyIdUsersGetAsyncWithHttpInfo
      *
-     * Get a list of all users for a particular company
+     * Get a list of all users in a company
      *
      * @param  string $company_id (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['companiesCompanyIdUsersGet'] to see the possible values for this operation
@@ -426,9 +426,10 @@ class UsersApi
             }
         }
 
-        // this endpoint requires Bearer (JWT) authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('x-api-key');
+        if ($apiKey !== null) {
+            $headers['x-api-key'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -759,9 +760,10 @@ class UsersApi
             }
         }
 
-        // this endpoint requires Bearer (JWT) authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('x-api-key');
+        if ($apiKey !== null) {
+            $headers['x-api-key'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1093,9 +1095,10 @@ class UsersApi
             }
         }
 
-        // this endpoint requires Bearer (JWT) authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('x-api-key');
+        if ($apiKey !== null) {
+            $headers['x-api-key'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1427,9 +1430,10 @@ class UsersApi
             }
         }
 
-        // this endpoint requires Bearer (JWT) authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('x-api-key');
+        if ($apiKey !== null) {
+            $headers['x-api-key'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1794,9 +1798,10 @@ class UsersApi
             }
         }
 
-        // this endpoint requires Bearer (JWT) authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('x-api-key');
+        if ($apiKey !== null) {
+            $headers['x-api-key'] = $apiKey;
         }
 
         $defaultHeaders = [];

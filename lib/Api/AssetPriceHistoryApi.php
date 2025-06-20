@@ -455,9 +455,10 @@ class AssetPriceHistoryApi
             }
         }
 
-        // this endpoint requires Bearer (JWT) authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('x-api-key');
+        if ($apiKey !== null) {
+            $headers['x-api-key'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -809,9 +810,10 @@ class AssetPriceHistoryApi
             }
         }
 
-        // this endpoint requires Bearer (JWT) authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('x-api-key');
+        if ($apiKey !== null) {
+            $headers['x-api-key'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1163,9 +1165,10 @@ class AssetPriceHistoryApi
             }
         }
 
-        // this endpoint requires Bearer (JWT) authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('x-api-key');
+        if ($apiKey !== null) {
+            $headers['x-api-key'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1531,9 +1534,10 @@ class AssetPriceHistoryApi
             }
         }
 
-        // this endpoint requires Bearer (JWT) authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('x-api-key');
+        if ($apiKey !== null) {
+            $headers['x-api-key'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1560,7 +1564,7 @@ class AssetPriceHistoryApi
     /**
      * Operation companiesCompanyIdAssetsAssetIdPricesCalculateCreditsPost
      *
-     * Calculate the credit equivalent for a given USD price without saving
+     * POST /companies/{company_id}/assets/{asset_id}/prices/calculate_credits
      *
      * @param  string $company_id company_id (required)
      * @param  string $asset_id asset_id (required)
@@ -1579,7 +1583,7 @@ class AssetPriceHistoryApi
     /**
      * Operation companiesCompanyIdAssetsAssetIdPricesCalculateCreditsPostWithHttpInfo
      *
-     * Calculate the credit equivalent for a given USD price without saving
+     * POST /companies/{company_id}/assets/{asset_id}/prices/calculate_credits
      *
      * @param  string $company_id (required)
      * @param  string $asset_id (required)
@@ -1707,7 +1711,7 @@ class AssetPriceHistoryApi
     /**
      * Operation companiesCompanyIdAssetsAssetIdPricesCalculateCreditsPostAsync
      *
-     * Calculate the credit equivalent for a given USD price without saving
+     * POST /companies/{company_id}/assets/{asset_id}/prices/calculate_credits
      *
      * @param  string $company_id (required)
      * @param  string $asset_id (required)
@@ -1729,7 +1733,7 @@ class AssetPriceHistoryApi
     /**
      * Operation companiesCompanyIdAssetsAssetIdPricesCalculateCreditsPostAsyncWithHttpInfo
      *
-     * Calculate the credit equivalent for a given USD price without saving
+     * POST /companies/{company_id}/assets/{asset_id}/prices/calculate_credits
      *
      * @param  string $company_id (required)
      * @param  string $asset_id (required)
@@ -1865,9 +1869,10 @@ class AssetPriceHistoryApi
             }
         }
 
-        // this endpoint requires Bearer (JWT) authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('x-api-key');
+        if ($apiKey !== null) {
+            $headers['x-api-key'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -1894,7 +1899,7 @@ class AssetPriceHistoryApi
     /**
      * Operation companiesCompanyIdAssetsAssetIdPricesDiscountPost
      *
-     * Apply a discount to the active price for an asset
+     * POST /companies/{company_id}/assets/{asset_id}/prices/discount
      *
      * @param  string $company_id company_id (required)
      * @param  string $asset_id asset_id (required)
@@ -1913,7 +1918,7 @@ class AssetPriceHistoryApi
     /**
      * Operation companiesCompanyIdAssetsAssetIdPricesDiscountPostWithHttpInfo
      *
-     * Apply a discount to the active price for an asset
+     * POST /companies/{company_id}/assets/{asset_id}/prices/discount
      *
      * @param  string $company_id (required)
      * @param  string $asset_id (required)
@@ -2041,7 +2046,7 @@ class AssetPriceHistoryApi
     /**
      * Operation companiesCompanyIdAssetsAssetIdPricesDiscountPostAsync
      *
-     * Apply a discount to the active price for an asset
+     * POST /companies/{company_id}/assets/{asset_id}/prices/discount
      *
      * @param  string $company_id (required)
      * @param  string $asset_id (required)
@@ -2063,7 +2068,7 @@ class AssetPriceHistoryApi
     /**
      * Operation companiesCompanyIdAssetsAssetIdPricesDiscountPostAsyncWithHttpInfo
      *
-     * Apply a discount to the active price for an asset
+     * POST /companies/{company_id}/assets/{asset_id}/prices/discount
      *
      * @param  string $company_id (required)
      * @param  string $asset_id (required)
@@ -2199,9 +2204,10 @@ class AssetPriceHistoryApi
             }
         }
 
-        // this endpoint requires Bearer (JWT) authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('x-api-key');
+        if ($apiKey !== null) {
+            $headers['x-api-key'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -2533,9 +2539,10 @@ class AssetPriceHistoryApi
             }
         }
 
-        // this endpoint requires Bearer (JWT) authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('x-api-key');
+        if ($apiKey !== null) {
+            $headers['x-api-key'] = $apiKey;
         }
 
         $defaultHeaders = [];
@@ -2867,9 +2874,10 @@ class AssetPriceHistoryApi
             }
         }
 
-        // this endpoint requires Bearer (JWT) authentication (access token)
-        if (!empty($this->config->getAccessToken())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getAccessToken();
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('x-api-key');
+        if ($apiKey !== null) {
+            $headers['x-api-key'] = $apiKey;
         }
 
         $defaultHeaders = [];

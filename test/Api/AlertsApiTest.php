@@ -111,7 +111,7 @@ class AlertsApiTest extends TestCase
     /**
      * Test case for companiesCompanyIdUsersUserIdAlertsAssetAssetIdAllGet
      *
-     * Get all alerts for a specific asset (from all users)     This would typically be restricted to asset owners or admins.
+     * Get all alerts for a specific asset.
      *
      */
     public function testCompaniesCompanyIdUsersUserIdAlertsAssetAssetIdAllGet()
@@ -123,7 +123,7 @@ class AlertsApiTest extends TestCase
     /**
      * Test case for companiesCompanyIdUsersUserIdAlertsAssetAssetIdGet
      *
-     * Get all alerts for a specific asset by the specified user     Useful for checking if user already has an alert set up for an asset.
+     * Get all alerts for a specific asset (by user).
      *
      */
     public function testCompaniesCompanyIdUsersUserIdAlertsAssetAssetIdGet()

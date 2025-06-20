@@ -87,7 +87,7 @@ class FavoritesApiTest extends TestCase
     /**
      * Test case for companiesCompanyIdUsersUserIdFavoritesCheckAssetIdGet
      *
-     * Check if the specified user has favorited a specific asset     Returns the favorite record if it exists, or empty result if not     Useful for UI to show/hide favorite button states.
+     * Check if the specified user has favorited a specific asset.
      *
      */
     public function testCompaniesCompanyIdUsersUserIdFavoritesCheckAssetIdGet()
@@ -123,7 +123,7 @@ class FavoritesApiTest extends TestCase
     /**
      * Test case for companiesCompanyIdUsersUserIdFavoritesFavoriteIdPatch
      *
-     * Update an existing favorite by ID     Can update notes, category, priority.
+     * Update an existing favorite by ID.
      *
      */
     public function testCompaniesCompanyIdUsersUserIdFavoritesFavoriteIdPatch()
@@ -135,7 +135,7 @@ class FavoritesApiTest extends TestCase
     /**
      * Test case for companiesCompanyIdUsersUserIdFavoritesGet
      *
-     * Get a list of all favorites for a specific user     Query params:     - category: filter by category     - sort: sort field (priority, date_created, etc.)     - order: sort direction (asc, desc).
+     * Get a list of all favorites for a specific user.
      *
      */
     public function testCompaniesCompanyIdUsersUserIdFavoritesGet()

@@ -75,7 +75,7 @@ class UsersApiTest extends TestCase
     /**
      * Test case for companiesCompanyIdUsersGet
      *
-     * Get a list of all users for a particular company.
+     * Get a list of all users in a company.
      *
      */
     public function testCompaniesCompanyIdUsersGet()

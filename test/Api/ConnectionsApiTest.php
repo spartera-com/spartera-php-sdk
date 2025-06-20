@@ -123,7 +123,7 @@ class ConnectionsApiTest extends TestCase
     /**
      * Test case for companiesCompanyIdConnectionsConnectionIdTestGet
      *
-     * Verify the specified connection to ensure it is functioning correctly.
+     * Test the specified connection.
      *
      */
     public function testCompaniesCompanyIdConnectionsConnectionIdTestGet()
