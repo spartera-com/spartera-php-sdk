@@ -1,0 +1,28 @@
+# Dependencies
+/vendor/
+composer.phar
+composer.lock
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment variables
+.env
+.env.local
+
+# Testing
+/phpunit.xml
+/phpunit.xml.dist
+/.phpunit.result.cache
+/coverage/
+
+# Build outputs
+/build/
+/dist/
