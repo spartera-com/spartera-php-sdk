@@ -17,7 +17,7 @@ All URIs are relative to https://api.spartera.com, except if the operation defin
 ## `companiesCompanyIdUsersUserIdFavoritesCategoryCategoryGet()`
 
 ```php
-companiesCompanyIdUsersUserIdFavoritesCategoryCategoryGet($company_id, $user_id, $category): object
+companiesCompanyIdUsersUserIdFavoritesCategoryCategoryGet($company_id, $user_id, $category): \SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdGet200Response
 ```
 
 Get all favorites for the specified user in a specific category
@@ -63,7 +63,7 @@ try {
 
 ### Return type
 
-**object**
+[**\SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdGet200Response**](../Model/CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdGet200Response.md)
 
 ### Authorization
 
@@ -81,7 +81,7 @@ try {
 ## `companiesCompanyIdUsersUserIdFavoritesCheckAssetIdGet()`
 
 ```php
-companiesCompanyIdUsersUserIdFavoritesCheckAssetIdGet($company_id, $user_id, $asset_id): object
+companiesCompanyIdUsersUserIdFavoritesCheckAssetIdGet($company_id, $user_id, $asset_id): \SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdGet200Response
 ```
 
 Check if the specified user has favorited a specific asset
@@ -127,7 +127,7 @@ try {
 
 ### Return type
 
-**object**
+[**\SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdGet200Response**](../Model/CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdGet200Response.md)
 
 ### Authorization
 
@@ -145,7 +145,7 @@ try {
 ## `companiesCompanyIdUsersUserIdFavoritesFavoriteIdDelete()`
 
 ```php
-companiesCompanyIdUsersUserIdFavoritesFavoriteIdDelete($company_id, $user_id, $favorite_id): object
+companiesCompanyIdUsersUserIdFavoritesFavoriteIdDelete($company_id, $user_id, $favorite_id): \SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdDelete200Response
 ```
 
 Delete single favorite by ID (unfavorite an asset)
@@ -191,7 +191,7 @@ try {
 
 ### Return type
 
-**object**
+[**\SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdDelete200Response**](../Model/CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdDelete200Response.md)
 
 ### Authorization
 
@@ -209,7 +209,7 @@ try {
 ## `companiesCompanyIdUsersUserIdFavoritesFavoriteIdGet()`
 
 ```php
-companiesCompanyIdUsersUserIdFavoritesFavoriteIdGet($company_id, $user_id, $favorite_id): object
+companiesCompanyIdUsersUserIdFavoritesFavoriteIdGet($company_id, $user_id, $favorite_id): \SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdGet200Response
 ```
 
 Get single favorite by ID
@@ -255,7 +255,7 @@ try {
 
 ### Return type
 
-**object**
+[**\SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdGet200Response**](../Model/CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdGet200Response.md)
 
 ### Authorization
 
@@ -273,7 +273,7 @@ try {
 ## `companiesCompanyIdUsersUserIdFavoritesFavoriteIdPatch()`
 
 ```php
-companiesCompanyIdUsersUserIdFavoritesFavoriteIdPatch($company_id, $user_id, $favorite_id, $favorite): object
+companiesCompanyIdUsersUserIdFavoritesFavoriteIdPatch($company_id, $user_id, $favorite_id, $favorite): \SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdPatch200Response
 ```
 
 Update an existing favorite by ID
@@ -321,7 +321,7 @@ try {
 
 ### Return type
 
-**object**
+[**\SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdPatch200Response**](../Model/CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdPatch200Response.md)
 
 ### Authorization
 
@@ -339,7 +339,7 @@ try {
 ## `companiesCompanyIdUsersUserIdFavoritesGet()`
 
 ```php
-companiesCompanyIdUsersUserIdFavoritesGet($company_id, $user_id): object
+companiesCompanyIdUsersUserIdFavoritesGet($company_id, $user_id): \SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdFavoritesGet200Response
 ```
 
 Get a list of all favorites for a specific user
@@ -383,7 +383,7 @@ try {
 
 ### Return type
 
-**object**
+[**\SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdFavoritesGet200Response**](../Model/CompaniesCompanyIdUsersUserIdFavoritesGet200Response.md)
 
 ### Authorization
 
@@ -401,7 +401,7 @@ try {
 ## `companiesCompanyIdUsersUserIdFavoritesPost()`
 
 ```php
-companiesCompanyIdUsersUserIdFavoritesPost($company_id, $user_id, $favorite): object
+companiesCompanyIdUsersUserIdFavoritesPost($company_id, $user_id, $favorite): \SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdFavoritesPost200Response
 ```
 
 POST /companies/{company_id}/users/{user_id}/favorites
@@ -447,7 +447,7 @@ try {
 
 ### Return type
 
-**object**
+[**\SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdFavoritesPost200Response**](../Model/CompaniesCompanyIdUsersUserIdFavoritesPost200Response.md)
 
 ### Authorization
 
@@ -465,7 +465,7 @@ try {
 ## `companiesCompanyIdUsersUserIdFavoritesUncategorizedGet()`
 
 ```php
-companiesCompanyIdUsersUserIdFavoritesUncategorizedGet($company_id, $user_id): object
+companiesCompanyIdUsersUserIdFavoritesUncategorizedGet($company_id, $user_id): \SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdFavoritesGet200Response
 ```
 
 Get all favorites for the specified user that don't have a category
@@ -509,7 +509,7 @@ try {
 
 ### Return type
 
-**object**
+[**\SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdFavoritesGet200Response**](../Model/CompaniesCompanyIdUsersUserIdFavoritesGet200Response.md)
 
 ### Authorization
 

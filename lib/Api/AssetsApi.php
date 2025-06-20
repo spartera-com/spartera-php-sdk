@@ -164,17 +164,17 @@ class AssetsApi
      *
      * Process (analyze) an asset. Attempt to process an analytic on a backend warehouse/AI model.
      *
-     * @param  string $asset_slug asset_slug (required)
      * @param  string $company_handle company_handle (required)
+     * @param  string $asset_slug asset_slug (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['analyzeCompanyHandleAssetsAssetSlugGet'] to see the possible values for this operation
      *
      * @throws \SparteraApiSdk\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return object|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3
+     * @return \SparteraApiSdk\Model\CompaniesCompanyIdAssetsAssetIdGet200Response|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3
      */
-    public function analyzeCompanyHandleAssetsAssetSlugGet($asset_slug, $company_handle, string $contentType = self::contentTypes['analyzeCompanyHandleAssetsAssetSlugGet'][0])
+    public function analyzeCompanyHandleAssetsAssetSlugGet($company_handle, $asset_slug, string $contentType = self::contentTypes['analyzeCompanyHandleAssetsAssetSlugGet'][0])
     {
-        list($response) = $this->analyzeCompanyHandleAssetsAssetSlugGetWithHttpInfo($asset_slug, $company_handle, $contentType);
+        list($response) = $this->analyzeCompanyHandleAssetsAssetSlugGetWithHttpInfo($company_handle, $asset_slug, $contentType);
         return $response;
     }
 
@@ -183,17 +183,17 @@ class AssetsApi
      *
      * Process (analyze) an asset. Attempt to process an analytic on a backend warehouse/AI model.
      *
-     * @param  string $asset_slug (required)
      * @param  string $company_handle (required)
+     * @param  string $asset_slug (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['analyzeCompanyHandleAssetsAssetSlugGet'] to see the possible values for this operation
      *
      * @throws \SparteraApiSdk\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of object|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SparteraApiSdk\Model\CompaniesCompanyIdAssetsAssetIdGet200Response|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3, HTTP status code, HTTP response headers (array of strings)
      */
-    public function analyzeCompanyHandleAssetsAssetSlugGetWithHttpInfo($asset_slug, $company_handle, string $contentType = self::contentTypes['analyzeCompanyHandleAssetsAssetSlugGet'][0])
+    public function analyzeCompanyHandleAssetsAssetSlugGetWithHttpInfo($company_handle, $asset_slug, string $contentType = self::contentTypes['analyzeCompanyHandleAssetsAssetSlugGet'][0])
     {
-        $request = $this->analyzeCompanyHandleAssetsAssetSlugGetRequest($asset_slug, $company_handle, $contentType);
+        $request = $this->analyzeCompanyHandleAssetsAssetSlugGetRequest($company_handle, $asset_slug, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -221,7 +221,7 @@ class AssetsApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        'object',
+                        '\SparteraApiSdk\Model\CompaniesCompanyIdAssetsAssetIdGet200Response',
                         $request,
                         $response,
                     );
@@ -261,7 +261,7 @@ class AssetsApi
             }
 
             return $this->handleResponseWithDataType(
-                'object',
+                '\SparteraApiSdk\Model\CompaniesCompanyIdAssetsAssetIdGet200Response',
                 $request,
                 $response,
             );
@@ -270,7 +270,7 @@ class AssetsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        'object',
+                        '\SparteraApiSdk\Model\CompaniesCompanyIdAssetsAssetIdGet200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -311,16 +311,16 @@ class AssetsApi
      *
      * Process (analyze) an asset. Attempt to process an analytic on a backend warehouse/AI model.
      *
-     * @param  string $asset_slug (required)
      * @param  string $company_handle (required)
+     * @param  string $asset_slug (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['analyzeCompanyHandleAssetsAssetSlugGet'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function analyzeCompanyHandleAssetsAssetSlugGetAsync($asset_slug, $company_handle, string $contentType = self::contentTypes['analyzeCompanyHandleAssetsAssetSlugGet'][0])
+    public function analyzeCompanyHandleAssetsAssetSlugGetAsync($company_handle, $asset_slug, string $contentType = self::contentTypes['analyzeCompanyHandleAssetsAssetSlugGet'][0])
     {
-        return $this->analyzeCompanyHandleAssetsAssetSlugGetAsyncWithHttpInfo($asset_slug, $company_handle, $contentType)
+        return $this->analyzeCompanyHandleAssetsAssetSlugGetAsyncWithHttpInfo($company_handle, $asset_slug, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -333,17 +333,17 @@ class AssetsApi
      *
      * Process (analyze) an asset. Attempt to process an analytic on a backend warehouse/AI model.
      *
-     * @param  string $asset_slug (required)
      * @param  string $company_handle (required)
+     * @param  string $asset_slug (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['analyzeCompanyHandleAssetsAssetSlugGet'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function analyzeCompanyHandleAssetsAssetSlugGetAsyncWithHttpInfo($asset_slug, $company_handle, string $contentType = self::contentTypes['analyzeCompanyHandleAssetsAssetSlugGet'][0])
+    public function analyzeCompanyHandleAssetsAssetSlugGetAsyncWithHttpInfo($company_handle, $asset_slug, string $contentType = self::contentTypes['analyzeCompanyHandleAssetsAssetSlugGet'][0])
     {
-        $returnType = 'object';
-        $request = $this->analyzeCompanyHandleAssetsAssetSlugGetRequest($asset_slug, $company_handle, $contentType);
+        $returnType = '\SparteraApiSdk\Model\CompaniesCompanyIdAssetsAssetIdGet200Response';
+        $request = $this->analyzeCompanyHandleAssetsAssetSlugGetRequest($company_handle, $asset_slug, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -384,27 +384,27 @@ class AssetsApi
     /**
      * Create request for operation 'analyzeCompanyHandleAssetsAssetSlugGet'
      *
-     * @param  string $asset_slug (required)
      * @param  string $company_handle (required)
+     * @param  string $asset_slug (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['analyzeCompanyHandleAssetsAssetSlugGet'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function analyzeCompanyHandleAssetsAssetSlugGetRequest($asset_slug, $company_handle, string $contentType = self::contentTypes['analyzeCompanyHandleAssetsAssetSlugGet'][0])
+    public function analyzeCompanyHandleAssetsAssetSlugGetRequest($company_handle, $asset_slug, string $contentType = self::contentTypes['analyzeCompanyHandleAssetsAssetSlugGet'][0])
     {
-
-        // verify the required parameter 'asset_slug' is set
-        if ($asset_slug === null || (is_array($asset_slug) && count($asset_slug) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $asset_slug when calling analyzeCompanyHandleAssetsAssetSlugGet'
-            );
-        }
 
         // verify the required parameter 'company_handle' is set
         if ($company_handle === null || (is_array($company_handle) && count($company_handle) === 0)) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $company_handle when calling analyzeCompanyHandleAssetsAssetSlugGet'
+            );
+        }
+
+        // verify the required parameter 'asset_slug' is set
+        if ($asset_slug === null || (is_array($asset_slug) && count($asset_slug) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $asset_slug when calling analyzeCompanyHandleAssetsAssetSlugGet'
             );
         }
 
@@ -419,18 +419,18 @@ class AssetsApi
 
 
         // path params
-        if ($asset_slug !== null) {
-            $resourcePath = str_replace(
-                '{' . 'asset_slug' . '}',
-                ObjectSerializer::toPathValue($asset_slug),
-                $resourcePath
-            );
-        }
-        // path params
         if ($company_handle !== null) {
             $resourcePath = str_replace(
                 '{' . 'company_handle' . '}',
                 ObjectSerializer::toPathValue($company_handle),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($asset_slug !== null) {
+            $resourcePath = str_replace(
+                '{' . 'asset_slug' . '}',
+                ObjectSerializer::toPathValue($asset_slug),
                 $resourcePath
             );
         }
@@ -505,7 +505,7 @@ class AssetsApi
      *
      * @throws \SparteraApiSdk\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return object|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3
+     * @return \SparteraApiSdk\Model\CompaniesCompanyIdAssetsAssetIdDelete200Response|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3
      */
     public function companiesCompanyIdAssetsAssetIdDelete($company_id, $asset_id, string $contentType = self::contentTypes['companiesCompanyIdAssetsAssetIdDelete'][0])
     {
@@ -524,7 +524,7 @@ class AssetsApi
      *
      * @throws \SparteraApiSdk\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of object|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SparteraApiSdk\Model\CompaniesCompanyIdAssetsAssetIdDelete200Response|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3, HTTP status code, HTTP response headers (array of strings)
      */
     public function companiesCompanyIdAssetsAssetIdDeleteWithHttpInfo($company_id, $asset_id, string $contentType = self::contentTypes['companiesCompanyIdAssetsAssetIdDelete'][0])
     {
@@ -556,7 +556,7 @@ class AssetsApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        'object',
+                        '\SparteraApiSdk\Model\CompaniesCompanyIdAssetsAssetIdDelete200Response',
                         $request,
                         $response,
                     );
@@ -596,7 +596,7 @@ class AssetsApi
             }
 
             return $this->handleResponseWithDataType(
-                'object',
+                '\SparteraApiSdk\Model\CompaniesCompanyIdAssetsAssetIdDelete200Response',
                 $request,
                 $response,
             );
@@ -605,7 +605,7 @@ class AssetsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        'object',
+                        '\SparteraApiSdk\Model\CompaniesCompanyIdAssetsAssetIdDelete200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -677,7 +677,7 @@ class AssetsApi
      */
     public function companiesCompanyIdAssetsAssetIdDeleteAsyncWithHttpInfo($company_id, $asset_id, string $contentType = self::contentTypes['companiesCompanyIdAssetsAssetIdDelete'][0])
     {
-        $returnType = 'object';
+        $returnType = '\SparteraApiSdk\Model\CompaniesCompanyIdAssetsAssetIdDelete200Response';
         $request = $this->companiesCompanyIdAssetsAssetIdDeleteRequest($company_id, $asset_id, $contentType);
 
         return $this->client
@@ -840,7 +840,7 @@ class AssetsApi
      *
      * @throws \SparteraApiSdk\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return object|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3
+     * @return \SparteraApiSdk\Model\CompaniesCompanyIdAssetsAssetIdGet200Response|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3
      */
     public function companiesCompanyIdAssetsAssetIdGet($company_id, $asset_id, string $contentType = self::contentTypes['companiesCompanyIdAssetsAssetIdGet'][0])
     {
@@ -859,7 +859,7 @@ class AssetsApi
      *
      * @throws \SparteraApiSdk\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of object|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SparteraApiSdk\Model\CompaniesCompanyIdAssetsAssetIdGet200Response|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3, HTTP status code, HTTP response headers (array of strings)
      */
     public function companiesCompanyIdAssetsAssetIdGetWithHttpInfo($company_id, $asset_id, string $contentType = self::contentTypes['companiesCompanyIdAssetsAssetIdGet'][0])
     {
@@ -891,7 +891,7 @@ class AssetsApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        'object',
+                        '\SparteraApiSdk\Model\CompaniesCompanyIdAssetsAssetIdGet200Response',
                         $request,
                         $response,
                     );
@@ -931,7 +931,7 @@ class AssetsApi
             }
 
             return $this->handleResponseWithDataType(
-                'object',
+                '\SparteraApiSdk\Model\CompaniesCompanyIdAssetsAssetIdGet200Response',
                 $request,
                 $response,
             );
@@ -940,7 +940,7 @@ class AssetsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        'object',
+                        '\SparteraApiSdk\Model\CompaniesCompanyIdAssetsAssetIdGet200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1012,7 +1012,7 @@ class AssetsApi
      */
     public function companiesCompanyIdAssetsAssetIdGetAsyncWithHttpInfo($company_id, $asset_id, string $contentType = self::contentTypes['companiesCompanyIdAssetsAssetIdGet'][0])
     {
-        $returnType = 'object';
+        $returnType = '\SparteraApiSdk\Model\CompaniesCompanyIdAssetsAssetIdGet200Response';
         $request = $this->companiesCompanyIdAssetsAssetIdGetRequest($company_id, $asset_id, $contentType);
 
         return $this->client
@@ -1175,7 +1175,7 @@ class AssetsApi
      *
      * @throws \SparteraApiSdk\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return object|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3
+     * @return \SparteraApiSdk\Model\CompaniesCompanyIdAssetsGet200Response|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3
      */
     public function companiesCompanyIdAssetsAssetIdInfoschemaGet($company_id, $asset_id, string $contentType = self::contentTypes['companiesCompanyIdAssetsAssetIdInfoschemaGet'][0])
     {
@@ -1194,7 +1194,7 @@ class AssetsApi
      *
      * @throws \SparteraApiSdk\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of object|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SparteraApiSdk\Model\CompaniesCompanyIdAssetsGet200Response|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3, HTTP status code, HTTP response headers (array of strings)
      */
     public function companiesCompanyIdAssetsAssetIdInfoschemaGetWithHttpInfo($company_id, $asset_id, string $contentType = self::contentTypes['companiesCompanyIdAssetsAssetIdInfoschemaGet'][0])
     {
@@ -1226,7 +1226,7 @@ class AssetsApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        'object',
+                        '\SparteraApiSdk\Model\CompaniesCompanyIdAssetsGet200Response',
                         $request,
                         $response,
                     );
@@ -1266,7 +1266,7 @@ class AssetsApi
             }
 
             return $this->handleResponseWithDataType(
-                'object',
+                '\SparteraApiSdk\Model\CompaniesCompanyIdAssetsGet200Response',
                 $request,
                 $response,
             );
@@ -1275,7 +1275,7 @@ class AssetsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        'object',
+                        '\SparteraApiSdk\Model\CompaniesCompanyIdAssetsGet200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1347,7 +1347,7 @@ class AssetsApi
      */
     public function companiesCompanyIdAssetsAssetIdInfoschemaGetAsyncWithHttpInfo($company_id, $asset_id, string $contentType = self::contentTypes['companiesCompanyIdAssetsAssetIdInfoschemaGet'][0])
     {
-        $returnType = 'object';
+        $returnType = '\SparteraApiSdk\Model\CompaniesCompanyIdAssetsGet200Response';
         $request = $this->companiesCompanyIdAssetsAssetIdInfoschemaGetRequest($company_id, $asset_id, $contentType);
 
         return $this->client
@@ -1510,7 +1510,7 @@ class AssetsApi
      *
      * @throws \SparteraApiSdk\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return object|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3
+     * @return \SparteraApiSdk\Model\CompaniesCompanyIdAssetsGet200Response|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3
      */
     public function companiesCompanyIdAssetsAssetIdInfoschemaSaveGet($company_id, $asset_id, string $contentType = self::contentTypes['companiesCompanyIdAssetsAssetIdInfoschemaSaveGet'][0])
     {
@@ -1529,7 +1529,7 @@ class AssetsApi
      *
      * @throws \SparteraApiSdk\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of object|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SparteraApiSdk\Model\CompaniesCompanyIdAssetsGet200Response|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3, HTTP status code, HTTP response headers (array of strings)
      */
     public function companiesCompanyIdAssetsAssetIdInfoschemaSaveGetWithHttpInfo($company_id, $asset_id, string $contentType = self::contentTypes['companiesCompanyIdAssetsAssetIdInfoschemaSaveGet'][0])
     {
@@ -1561,7 +1561,7 @@ class AssetsApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        'object',
+                        '\SparteraApiSdk\Model\CompaniesCompanyIdAssetsGet200Response',
                         $request,
                         $response,
                     );
@@ -1601,7 +1601,7 @@ class AssetsApi
             }
 
             return $this->handleResponseWithDataType(
-                'object',
+                '\SparteraApiSdk\Model\CompaniesCompanyIdAssetsGet200Response',
                 $request,
                 $response,
             );
@@ -1610,7 +1610,7 @@ class AssetsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        'object',
+                        '\SparteraApiSdk\Model\CompaniesCompanyIdAssetsGet200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1682,7 +1682,7 @@ class AssetsApi
      */
     public function companiesCompanyIdAssetsAssetIdInfoschemaSaveGetAsyncWithHttpInfo($company_id, $asset_id, string $contentType = self::contentTypes['companiesCompanyIdAssetsAssetIdInfoschemaSaveGet'][0])
     {
-        $returnType = 'object';
+        $returnType = '\SparteraApiSdk\Model\CompaniesCompanyIdAssetsGet200Response';
         $request = $this->companiesCompanyIdAssetsAssetIdInfoschemaSaveGetRequest($company_id, $asset_id, $contentType);
 
         return $this->client
@@ -1846,7 +1846,7 @@ class AssetsApi
      *
      * @throws \SparteraApiSdk\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return object|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject|\SparteraApiSdk\Model\InlineObject3
+     * @return \SparteraApiSdk\Model\CompaniesCompanyIdAssetsAssetIdPatch200Response|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject|\SparteraApiSdk\Model\InlineObject3
      */
     public function companiesCompanyIdAssetsAssetIdPatch($company_id, $asset_id, $asset, string $contentType = self::contentTypes['companiesCompanyIdAssetsAssetIdPatch'][0])
     {
@@ -1866,7 +1866,7 @@ class AssetsApi
      *
      * @throws \SparteraApiSdk\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of object|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject|\SparteraApiSdk\Model\InlineObject3, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SparteraApiSdk\Model\CompaniesCompanyIdAssetsAssetIdPatch200Response|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject|\SparteraApiSdk\Model\InlineObject3, HTTP status code, HTTP response headers (array of strings)
      */
     public function companiesCompanyIdAssetsAssetIdPatchWithHttpInfo($company_id, $asset_id, $asset, string $contentType = self::contentTypes['companiesCompanyIdAssetsAssetIdPatch'][0])
     {
@@ -1898,7 +1898,7 @@ class AssetsApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        'object',
+                        '\SparteraApiSdk\Model\CompaniesCompanyIdAssetsAssetIdPatch200Response',
                         $request,
                         $response,
                     );
@@ -1944,7 +1944,7 @@ class AssetsApi
             }
 
             return $this->handleResponseWithDataType(
-                'object',
+                '\SparteraApiSdk\Model\CompaniesCompanyIdAssetsAssetIdPatch200Response',
                 $request,
                 $response,
             );
@@ -1953,7 +1953,7 @@ class AssetsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        'object',
+                        '\SparteraApiSdk\Model\CompaniesCompanyIdAssetsAssetIdPatch200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2035,7 +2035,7 @@ class AssetsApi
      */
     public function companiesCompanyIdAssetsAssetIdPatchAsyncWithHttpInfo($company_id, $asset_id, $asset, string $contentType = self::contentTypes['companiesCompanyIdAssetsAssetIdPatch'][0])
     {
-        $returnType = 'object';
+        $returnType = '\SparteraApiSdk\Model\CompaniesCompanyIdAssetsAssetIdPatch200Response';
         $request = $this->companiesCompanyIdAssetsAssetIdPatchRequest($company_id, $asset_id, $asset, $contentType);
 
         return $this->client
@@ -2213,7 +2213,7 @@ class AssetsApi
      *
      * @throws \SparteraApiSdk\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return object|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3
+     * @return \SparteraApiSdk\Model\CompaniesCompanyIdAssetsGet200Response|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3
      */
     public function companiesCompanyIdAssetsAssetIdPredictedPriceGet($company_id, $asset_id, string $contentType = self::contentTypes['companiesCompanyIdAssetsAssetIdPredictedPriceGet'][0])
     {
@@ -2232,7 +2232,7 @@ class AssetsApi
      *
      * @throws \SparteraApiSdk\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of object|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SparteraApiSdk\Model\CompaniesCompanyIdAssetsGet200Response|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3, HTTP status code, HTTP response headers (array of strings)
      */
     public function companiesCompanyIdAssetsAssetIdPredictedPriceGetWithHttpInfo($company_id, $asset_id, string $contentType = self::contentTypes['companiesCompanyIdAssetsAssetIdPredictedPriceGet'][0])
     {
@@ -2264,7 +2264,7 @@ class AssetsApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        'object',
+                        '\SparteraApiSdk\Model\CompaniesCompanyIdAssetsGet200Response',
                         $request,
                         $response,
                     );
@@ -2304,7 +2304,7 @@ class AssetsApi
             }
 
             return $this->handleResponseWithDataType(
-                'object',
+                '\SparteraApiSdk\Model\CompaniesCompanyIdAssetsGet200Response',
                 $request,
                 $response,
             );
@@ -2313,7 +2313,7 @@ class AssetsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        'object',
+                        '\SparteraApiSdk\Model\CompaniesCompanyIdAssetsGet200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2385,7 +2385,7 @@ class AssetsApi
      */
     public function companiesCompanyIdAssetsAssetIdPredictedPriceGetAsyncWithHttpInfo($company_id, $asset_id, string $contentType = self::contentTypes['companiesCompanyIdAssetsAssetIdPredictedPriceGet'][0])
     {
-        $returnType = 'object';
+        $returnType = '\SparteraApiSdk\Model\CompaniesCompanyIdAssetsGet200Response';
         $request = $this->companiesCompanyIdAssetsAssetIdPredictedPriceGetRequest($company_id, $asset_id, $contentType);
 
         return $this->client
@@ -2548,7 +2548,7 @@ class AssetsApi
      *
      * @throws \SparteraApiSdk\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return object|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3
+     * @return \SparteraApiSdk\Model\CompaniesCompanyIdAssetsGet200Response|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3
      */
     public function companiesCompanyIdAssetsAssetIdStatisticsGet($company_id, $asset_id, string $contentType = self::contentTypes['companiesCompanyIdAssetsAssetIdStatisticsGet'][0])
     {
@@ -2567,7 +2567,7 @@ class AssetsApi
      *
      * @throws \SparteraApiSdk\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of object|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SparteraApiSdk\Model\CompaniesCompanyIdAssetsGet200Response|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3, HTTP status code, HTTP response headers (array of strings)
      */
     public function companiesCompanyIdAssetsAssetIdStatisticsGetWithHttpInfo($company_id, $asset_id, string $contentType = self::contentTypes['companiesCompanyIdAssetsAssetIdStatisticsGet'][0])
     {
@@ -2599,7 +2599,7 @@ class AssetsApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        'object',
+                        '\SparteraApiSdk\Model\CompaniesCompanyIdAssetsGet200Response',
                         $request,
                         $response,
                     );
@@ -2639,7 +2639,7 @@ class AssetsApi
             }
 
             return $this->handleResponseWithDataType(
-                'object',
+                '\SparteraApiSdk\Model\CompaniesCompanyIdAssetsGet200Response',
                 $request,
                 $response,
             );
@@ -2648,7 +2648,7 @@ class AssetsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        'object',
+                        '\SparteraApiSdk\Model\CompaniesCompanyIdAssetsGet200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2720,7 +2720,7 @@ class AssetsApi
      */
     public function companiesCompanyIdAssetsAssetIdStatisticsGetAsyncWithHttpInfo($company_id, $asset_id, string $contentType = self::contentTypes['companiesCompanyIdAssetsAssetIdStatisticsGet'][0])
     {
-        $returnType = 'object';
+        $returnType = '\SparteraApiSdk\Model\CompaniesCompanyIdAssetsGet200Response';
         $request = $this->companiesCompanyIdAssetsAssetIdStatisticsGetRequest($company_id, $asset_id, $contentType);
 
         return $this->client
@@ -2883,7 +2883,7 @@ class AssetsApi
      *
      * @throws \SparteraApiSdk\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return object|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3
+     * @return \SparteraApiSdk\Model\CompaniesCompanyIdAssetsGet200Response|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3
      */
     public function companiesCompanyIdAssetsAssetIdTestGet($company_id, $asset_id, string $contentType = self::contentTypes['companiesCompanyIdAssetsAssetIdTestGet'][0])
     {
@@ -2902,7 +2902,7 @@ class AssetsApi
      *
      * @throws \SparteraApiSdk\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of object|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SparteraApiSdk\Model\CompaniesCompanyIdAssetsGet200Response|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3, HTTP status code, HTTP response headers (array of strings)
      */
     public function companiesCompanyIdAssetsAssetIdTestGetWithHttpInfo($company_id, $asset_id, string $contentType = self::contentTypes['companiesCompanyIdAssetsAssetIdTestGet'][0])
     {
@@ -2934,7 +2934,7 @@ class AssetsApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        'object',
+                        '\SparteraApiSdk\Model\CompaniesCompanyIdAssetsGet200Response',
                         $request,
                         $response,
                     );
@@ -2974,7 +2974,7 @@ class AssetsApi
             }
 
             return $this->handleResponseWithDataType(
-                'object',
+                '\SparteraApiSdk\Model\CompaniesCompanyIdAssetsGet200Response',
                 $request,
                 $response,
             );
@@ -2983,7 +2983,7 @@ class AssetsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        'object',
+                        '\SparteraApiSdk\Model\CompaniesCompanyIdAssetsGet200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3055,7 +3055,7 @@ class AssetsApi
      */
     public function companiesCompanyIdAssetsAssetIdTestGetAsyncWithHttpInfo($company_id, $asset_id, string $contentType = self::contentTypes['companiesCompanyIdAssetsAssetIdTestGet'][0])
     {
-        $returnType = 'object';
+        $returnType = '\SparteraApiSdk\Model\CompaniesCompanyIdAssetsGet200Response';
         $request = $this->companiesCompanyIdAssetsAssetIdTestGetRequest($company_id, $asset_id, $contentType);
 
         return $this->client
@@ -3217,7 +3217,7 @@ class AssetsApi
      *
      * @throws \SparteraApiSdk\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return object|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3
+     * @return \SparteraApiSdk\Model\CompaniesCompanyIdAssetsGet200Response|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3
      */
     public function companiesCompanyIdAssetsGet($company_id, string $contentType = self::contentTypes['companiesCompanyIdAssetsGet'][0])
     {
@@ -3235,7 +3235,7 @@ class AssetsApi
      *
      * @throws \SparteraApiSdk\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of object|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SparteraApiSdk\Model\CompaniesCompanyIdAssetsGet200Response|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3, HTTP status code, HTTP response headers (array of strings)
      */
     public function companiesCompanyIdAssetsGetWithHttpInfo($company_id, string $contentType = self::contentTypes['companiesCompanyIdAssetsGet'][0])
     {
@@ -3267,7 +3267,7 @@ class AssetsApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        'object',
+                        '\SparteraApiSdk\Model\CompaniesCompanyIdAssetsGet200Response',
                         $request,
                         $response,
                     );
@@ -3307,7 +3307,7 @@ class AssetsApi
             }
 
             return $this->handleResponseWithDataType(
-                'object',
+                '\SparteraApiSdk\Model\CompaniesCompanyIdAssetsGet200Response',
                 $request,
                 $response,
             );
@@ -3316,7 +3316,7 @@ class AssetsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        'object',
+                        '\SparteraApiSdk\Model\CompaniesCompanyIdAssetsGet200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3386,7 +3386,7 @@ class AssetsApi
      */
     public function companiesCompanyIdAssetsGetAsyncWithHttpInfo($company_id, string $contentType = self::contentTypes['companiesCompanyIdAssetsGet'][0])
     {
-        $returnType = 'object';
+        $returnType = '\SparteraApiSdk\Model\CompaniesCompanyIdAssetsGet200Response';
         $request = $this->companiesCompanyIdAssetsGetRequest($company_id, $contentType);
 
         return $this->client
@@ -3533,7 +3533,7 @@ class AssetsApi
      *
      * @throws \SparteraApiSdk\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return object|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject
+     * @return \SparteraApiSdk\Model\CompaniesCompanyIdAssetsPost200Response|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject
      */
     public function companiesCompanyIdAssetsPost($company_id, $asset, string $contentType = self::contentTypes['companiesCompanyIdAssetsPost'][0])
     {
@@ -3552,7 +3552,7 @@ class AssetsApi
      *
      * @throws \SparteraApiSdk\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of object|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SparteraApiSdk\Model\CompaniesCompanyIdAssetsPost200Response|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject, HTTP status code, HTTP response headers (array of strings)
      */
     public function companiesCompanyIdAssetsPostWithHttpInfo($company_id, $asset, string $contentType = self::contentTypes['companiesCompanyIdAssetsPost'][0])
     {
@@ -3584,7 +3584,7 @@ class AssetsApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        'object',
+                        '\SparteraApiSdk\Model\CompaniesCompanyIdAssetsPost200Response',
                         $request,
                         $response,
                     );
@@ -3624,7 +3624,7 @@ class AssetsApi
             }
 
             return $this->handleResponseWithDataType(
-                'object',
+                '\SparteraApiSdk\Model\CompaniesCompanyIdAssetsPost200Response',
                 $request,
                 $response,
             );
@@ -3633,7 +3633,7 @@ class AssetsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        'object',
+                        '\SparteraApiSdk\Model\CompaniesCompanyIdAssetsPost200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3705,7 +3705,7 @@ class AssetsApi
      */
     public function companiesCompanyIdAssetsPostAsyncWithHttpInfo($company_id, $asset, string $contentType = self::contentTypes['companiesCompanyIdAssetsPost'][0])
     {
-        $returnType = 'object';
+        $returnType = '\SparteraApiSdk\Model\CompaniesCompanyIdAssetsPost200Response';
         $request = $this->companiesCompanyIdAssetsPostRequest($company_id, $asset, $contentType);
 
         return $this->client
@@ -3866,7 +3866,7 @@ class AssetsApi
      *
      * @throws \SparteraApiSdk\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return object|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3
+     * @return \SparteraApiSdk\Model\CompaniesCompanyIdAssetsGet200Response|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3
      */
     public function companiesCompanyIdAssetsStatisticsGet($company_id, string $contentType = self::contentTypes['companiesCompanyIdAssetsStatisticsGet'][0])
     {
@@ -3884,7 +3884,7 @@ class AssetsApi
      *
      * @throws \SparteraApiSdk\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of object|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SparteraApiSdk\Model\CompaniesCompanyIdAssetsGet200Response|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3, HTTP status code, HTTP response headers (array of strings)
      */
     public function companiesCompanyIdAssetsStatisticsGetWithHttpInfo($company_id, string $contentType = self::contentTypes['companiesCompanyIdAssetsStatisticsGet'][0])
     {
@@ -3916,7 +3916,7 @@ class AssetsApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        'object',
+                        '\SparteraApiSdk\Model\CompaniesCompanyIdAssetsGet200Response',
                         $request,
                         $response,
                     );
@@ -3956,7 +3956,7 @@ class AssetsApi
             }
 
             return $this->handleResponseWithDataType(
-                'object',
+                '\SparteraApiSdk\Model\CompaniesCompanyIdAssetsGet200Response',
                 $request,
                 $response,
             );
@@ -3965,7 +3965,7 @@ class AssetsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        'object',
+                        '\SparteraApiSdk\Model\CompaniesCompanyIdAssetsGet200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -4035,7 +4035,7 @@ class AssetsApi
      */
     public function companiesCompanyIdAssetsStatisticsGetAsyncWithHttpInfo($company_id, string $contentType = self::contentTypes['companiesCompanyIdAssetsStatisticsGet'][0])
     {
-        $returnType = 'object';
+        $returnType = '\SparteraApiSdk\Model\CompaniesCompanyIdAssetsGet200Response';
         $request = $this->companiesCompanyIdAssetsStatisticsGetRequest($company_id, $contentType);
 
         return $this->client

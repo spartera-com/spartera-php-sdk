@@ -159,7 +159,7 @@ class FavoritesApi
      *
      * @throws \SparteraApiSdk\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return object|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3
+     * @return \SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdGet200Response|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3
      */
     public function companiesCompanyIdUsersUserIdFavoritesCategoryCategoryGet($company_id, $user_id, $category, string $contentType = self::contentTypes['companiesCompanyIdUsersUserIdFavoritesCategoryCategoryGet'][0])
     {
@@ -179,7 +179,7 @@ class FavoritesApi
      *
      * @throws \SparteraApiSdk\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of object|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdGet200Response|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3, HTTP status code, HTTP response headers (array of strings)
      */
     public function companiesCompanyIdUsersUserIdFavoritesCategoryCategoryGetWithHttpInfo($company_id, $user_id, $category, string $contentType = self::contentTypes['companiesCompanyIdUsersUserIdFavoritesCategoryCategoryGet'][0])
     {
@@ -211,7 +211,7 @@ class FavoritesApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        'object',
+                        '\SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdGet200Response',
                         $request,
                         $response,
                     );
@@ -251,7 +251,7 @@ class FavoritesApi
             }
 
             return $this->handleResponseWithDataType(
-                'object',
+                '\SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdGet200Response',
                 $request,
                 $response,
             );
@@ -260,7 +260,7 @@ class FavoritesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        'object',
+                        '\SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdGet200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -334,7 +334,7 @@ class FavoritesApi
      */
     public function companiesCompanyIdUsersUserIdFavoritesCategoryCategoryGetAsyncWithHttpInfo($company_id, $user_id, $category, string $contentType = self::contentTypes['companiesCompanyIdUsersUserIdFavoritesCategoryCategoryGet'][0])
     {
-        $returnType = 'object';
+        $returnType = '\SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdGet200Response';
         $request = $this->companiesCompanyIdUsersUserIdFavoritesCategoryCategoryGetRequest($company_id, $user_id, $category, $contentType);
 
         return $this->client
@@ -514,7 +514,7 @@ class FavoritesApi
      *
      * @throws \SparteraApiSdk\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return object|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3
+     * @return \SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdGet200Response|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3
      */
     public function companiesCompanyIdUsersUserIdFavoritesCheckAssetIdGet($company_id, $user_id, $asset_id, string $contentType = self::contentTypes['companiesCompanyIdUsersUserIdFavoritesCheckAssetIdGet'][0])
     {
@@ -534,7 +534,7 @@ class FavoritesApi
      *
      * @throws \SparteraApiSdk\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of object|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdGet200Response|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3, HTTP status code, HTTP response headers (array of strings)
      */
     public function companiesCompanyIdUsersUserIdFavoritesCheckAssetIdGetWithHttpInfo($company_id, $user_id, $asset_id, string $contentType = self::contentTypes['companiesCompanyIdUsersUserIdFavoritesCheckAssetIdGet'][0])
     {
@@ -566,7 +566,7 @@ class FavoritesApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        'object',
+                        '\SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdGet200Response',
                         $request,
                         $response,
                     );
@@ -606,7 +606,7 @@ class FavoritesApi
             }
 
             return $this->handleResponseWithDataType(
-                'object',
+                '\SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdGet200Response',
                 $request,
                 $response,
             );
@@ -615,7 +615,7 @@ class FavoritesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        'object',
+                        '\SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdGet200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -689,7 +689,7 @@ class FavoritesApi
      */
     public function companiesCompanyIdUsersUserIdFavoritesCheckAssetIdGetAsyncWithHttpInfo($company_id, $user_id, $asset_id, string $contentType = self::contentTypes['companiesCompanyIdUsersUserIdFavoritesCheckAssetIdGet'][0])
     {
-        $returnType = 'object';
+        $returnType = '\SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdGet200Response';
         $request = $this->companiesCompanyIdUsersUserIdFavoritesCheckAssetIdGetRequest($company_id, $user_id, $asset_id, $contentType);
 
         return $this->client
@@ -869,7 +869,7 @@ class FavoritesApi
      *
      * @throws \SparteraApiSdk\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return object|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3
+     * @return \SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdDelete200Response|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3
      */
     public function companiesCompanyIdUsersUserIdFavoritesFavoriteIdDelete($company_id, $user_id, $favorite_id, string $contentType = self::contentTypes['companiesCompanyIdUsersUserIdFavoritesFavoriteIdDelete'][0])
     {
@@ -889,7 +889,7 @@ class FavoritesApi
      *
      * @throws \SparteraApiSdk\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of object|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdDelete200Response|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3, HTTP status code, HTTP response headers (array of strings)
      */
     public function companiesCompanyIdUsersUserIdFavoritesFavoriteIdDeleteWithHttpInfo($company_id, $user_id, $favorite_id, string $contentType = self::contentTypes['companiesCompanyIdUsersUserIdFavoritesFavoriteIdDelete'][0])
     {
@@ -921,7 +921,7 @@ class FavoritesApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        'object',
+                        '\SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdDelete200Response',
                         $request,
                         $response,
                     );
@@ -961,7 +961,7 @@ class FavoritesApi
             }
 
             return $this->handleResponseWithDataType(
-                'object',
+                '\SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdDelete200Response',
                 $request,
                 $response,
             );
@@ -970,7 +970,7 @@ class FavoritesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        'object',
+                        '\SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdDelete200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1044,7 +1044,7 @@ class FavoritesApi
      */
     public function companiesCompanyIdUsersUserIdFavoritesFavoriteIdDeleteAsyncWithHttpInfo($company_id, $user_id, $favorite_id, string $contentType = self::contentTypes['companiesCompanyIdUsersUserIdFavoritesFavoriteIdDelete'][0])
     {
-        $returnType = 'object';
+        $returnType = '\SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdDelete200Response';
         $request = $this->companiesCompanyIdUsersUserIdFavoritesFavoriteIdDeleteRequest($company_id, $user_id, $favorite_id, $contentType);
 
         return $this->client
@@ -1224,7 +1224,7 @@ class FavoritesApi
      *
      * @throws \SparteraApiSdk\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return object|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3
+     * @return \SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdGet200Response|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3
      */
     public function companiesCompanyIdUsersUserIdFavoritesFavoriteIdGet($company_id, $user_id, $favorite_id, string $contentType = self::contentTypes['companiesCompanyIdUsersUserIdFavoritesFavoriteIdGet'][0])
     {
@@ -1244,7 +1244,7 @@ class FavoritesApi
      *
      * @throws \SparteraApiSdk\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of object|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdGet200Response|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3, HTTP status code, HTTP response headers (array of strings)
      */
     public function companiesCompanyIdUsersUserIdFavoritesFavoriteIdGetWithHttpInfo($company_id, $user_id, $favorite_id, string $contentType = self::contentTypes['companiesCompanyIdUsersUserIdFavoritesFavoriteIdGet'][0])
     {
@@ -1276,7 +1276,7 @@ class FavoritesApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        'object',
+                        '\SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdGet200Response',
                         $request,
                         $response,
                     );
@@ -1316,7 +1316,7 @@ class FavoritesApi
             }
 
             return $this->handleResponseWithDataType(
-                'object',
+                '\SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdGet200Response',
                 $request,
                 $response,
             );
@@ -1325,7 +1325,7 @@ class FavoritesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        'object',
+                        '\SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdGet200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1399,7 +1399,7 @@ class FavoritesApi
      */
     public function companiesCompanyIdUsersUserIdFavoritesFavoriteIdGetAsyncWithHttpInfo($company_id, $user_id, $favorite_id, string $contentType = self::contentTypes['companiesCompanyIdUsersUserIdFavoritesFavoriteIdGet'][0])
     {
-        $returnType = 'object';
+        $returnType = '\SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdGet200Response';
         $request = $this->companiesCompanyIdUsersUserIdFavoritesFavoriteIdGetRequest($company_id, $user_id, $favorite_id, $contentType);
 
         return $this->client
@@ -1580,7 +1580,7 @@ class FavoritesApi
      *
      * @throws \SparteraApiSdk\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return object|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject|\SparteraApiSdk\Model\InlineObject3
+     * @return \SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdPatch200Response|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject|\SparteraApiSdk\Model\InlineObject3
      */
     public function companiesCompanyIdUsersUserIdFavoritesFavoriteIdPatch($company_id, $user_id, $favorite_id, $favorite, string $contentType = self::contentTypes['companiesCompanyIdUsersUserIdFavoritesFavoriteIdPatch'][0])
     {
@@ -1601,7 +1601,7 @@ class FavoritesApi
      *
      * @throws \SparteraApiSdk\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of object|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject|\SparteraApiSdk\Model\InlineObject3, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdPatch200Response|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject|\SparteraApiSdk\Model\InlineObject3, HTTP status code, HTTP response headers (array of strings)
      */
     public function companiesCompanyIdUsersUserIdFavoritesFavoriteIdPatchWithHttpInfo($company_id, $user_id, $favorite_id, $favorite, string $contentType = self::contentTypes['companiesCompanyIdUsersUserIdFavoritesFavoriteIdPatch'][0])
     {
@@ -1633,7 +1633,7 @@ class FavoritesApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        'object',
+                        '\SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdPatch200Response',
                         $request,
                         $response,
                     );
@@ -1679,7 +1679,7 @@ class FavoritesApi
             }
 
             return $this->handleResponseWithDataType(
-                'object',
+                '\SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdPatch200Response',
                 $request,
                 $response,
             );
@@ -1688,7 +1688,7 @@ class FavoritesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        'object',
+                        '\SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdPatch200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1772,7 +1772,7 @@ class FavoritesApi
      */
     public function companiesCompanyIdUsersUserIdFavoritesFavoriteIdPatchAsyncWithHttpInfo($company_id, $user_id, $favorite_id, $favorite, string $contentType = self::contentTypes['companiesCompanyIdUsersUserIdFavoritesFavoriteIdPatch'][0])
     {
-        $returnType = 'object';
+        $returnType = '\SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdPatch200Response';
         $request = $this->companiesCompanyIdUsersUserIdFavoritesFavoriteIdPatchRequest($company_id, $user_id, $favorite_id, $favorite, $contentType);
 
         return $this->client
@@ -1966,7 +1966,7 @@ class FavoritesApi
      *
      * @throws \SparteraApiSdk\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return object|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3
+     * @return \SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdFavoritesGet200Response|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3
      */
     public function companiesCompanyIdUsersUserIdFavoritesGet($company_id, $user_id, string $contentType = self::contentTypes['companiesCompanyIdUsersUserIdFavoritesGet'][0])
     {
@@ -1985,7 +1985,7 @@ class FavoritesApi
      *
      * @throws \SparteraApiSdk\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of object|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdFavoritesGet200Response|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3, HTTP status code, HTTP response headers (array of strings)
      */
     public function companiesCompanyIdUsersUserIdFavoritesGetWithHttpInfo($company_id, $user_id, string $contentType = self::contentTypes['companiesCompanyIdUsersUserIdFavoritesGet'][0])
     {
@@ -2017,7 +2017,7 @@ class FavoritesApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        'object',
+                        '\SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdFavoritesGet200Response',
                         $request,
                         $response,
                     );
@@ -2057,7 +2057,7 @@ class FavoritesApi
             }
 
             return $this->handleResponseWithDataType(
-                'object',
+                '\SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdFavoritesGet200Response',
                 $request,
                 $response,
             );
@@ -2066,7 +2066,7 @@ class FavoritesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        'object',
+                        '\SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdFavoritesGet200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2138,7 +2138,7 @@ class FavoritesApi
      */
     public function companiesCompanyIdUsersUserIdFavoritesGetAsyncWithHttpInfo($company_id, $user_id, string $contentType = self::contentTypes['companiesCompanyIdUsersUserIdFavoritesGet'][0])
     {
-        $returnType = 'object';
+        $returnType = '\SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdFavoritesGet200Response';
         $request = $this->companiesCompanyIdUsersUserIdFavoritesGetRequest($company_id, $user_id, $contentType);
 
         return $this->client
@@ -2302,7 +2302,7 @@ class FavoritesApi
      *
      * @throws \SparteraApiSdk\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return object|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject
+     * @return \SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdFavoritesPost200Response|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject
      */
     public function companiesCompanyIdUsersUserIdFavoritesPost($company_id, $user_id, $favorite, string $contentType = self::contentTypes['companiesCompanyIdUsersUserIdFavoritesPost'][0])
     {
@@ -2322,7 +2322,7 @@ class FavoritesApi
      *
      * @throws \SparteraApiSdk\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of object|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdFavoritesPost200Response|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject, HTTP status code, HTTP response headers (array of strings)
      */
     public function companiesCompanyIdUsersUserIdFavoritesPostWithHttpInfo($company_id, $user_id, $favorite, string $contentType = self::contentTypes['companiesCompanyIdUsersUserIdFavoritesPost'][0])
     {
@@ -2354,7 +2354,7 @@ class FavoritesApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        'object',
+                        '\SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdFavoritesPost200Response',
                         $request,
                         $response,
                     );
@@ -2394,7 +2394,7 @@ class FavoritesApi
             }
 
             return $this->handleResponseWithDataType(
-                'object',
+                '\SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdFavoritesPost200Response',
                 $request,
                 $response,
             );
@@ -2403,7 +2403,7 @@ class FavoritesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        'object',
+                        '\SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdFavoritesPost200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2477,7 +2477,7 @@ class FavoritesApi
      */
     public function companiesCompanyIdUsersUserIdFavoritesPostAsyncWithHttpInfo($company_id, $user_id, $favorite, string $contentType = self::contentTypes['companiesCompanyIdUsersUserIdFavoritesPost'][0])
     {
-        $returnType = 'object';
+        $returnType = '\SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdFavoritesPost200Response';
         $request = $this->companiesCompanyIdUsersUserIdFavoritesPostRequest($company_id, $user_id, $favorite, $contentType);
 
         return $this->client
@@ -2655,7 +2655,7 @@ class FavoritesApi
      *
      * @throws \SparteraApiSdk\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return object|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3
+     * @return \SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdFavoritesGet200Response|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3
      */
     public function companiesCompanyIdUsersUserIdFavoritesUncategorizedGet($company_id, $user_id, string $contentType = self::contentTypes['companiesCompanyIdUsersUserIdFavoritesUncategorizedGet'][0])
     {
@@ -2674,7 +2674,7 @@ class FavoritesApi
      *
      * @throws \SparteraApiSdk\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of object|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdFavoritesGet200Response|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3, HTTP status code, HTTP response headers (array of strings)
      */
     public function companiesCompanyIdUsersUserIdFavoritesUncategorizedGetWithHttpInfo($company_id, $user_id, string $contentType = self::contentTypes['companiesCompanyIdUsersUserIdFavoritesUncategorizedGet'][0])
     {
@@ -2706,7 +2706,7 @@ class FavoritesApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        'object',
+                        '\SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdFavoritesGet200Response',
                         $request,
                         $response,
                     );
@@ -2746,7 +2746,7 @@ class FavoritesApi
             }
 
             return $this->handleResponseWithDataType(
-                'object',
+                '\SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdFavoritesGet200Response',
                 $request,
                 $response,
             );
@@ -2755,7 +2755,7 @@ class FavoritesApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        'object',
+                        '\SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdFavoritesGet200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2827,7 +2827,7 @@ class FavoritesApi
      */
     public function companiesCompanyIdUsersUserIdFavoritesUncategorizedGetAsyncWithHttpInfo($company_id, $user_id, string $contentType = self::contentTypes['companiesCompanyIdUsersUserIdFavoritesUncategorizedGet'][0])
     {
-        $returnType = 'object';
+        $returnType = '\SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdFavoritesGet200Response';
         $request = $this->companiesCompanyIdUsersUserIdFavoritesUncategorizedGetRequest($company_id, $user_id, $contentType);
 
         return $this->client

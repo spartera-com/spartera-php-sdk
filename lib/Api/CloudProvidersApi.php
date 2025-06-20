@@ -138,7 +138,7 @@ class CloudProvidersApi
      *
      * @throws \SparteraApiSdk\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return object|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3
+     * @return \SparteraApiSdk\Model\CompaniesCompanyIdApiKeysGet200Response|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3
      */
     public function cloudProvidersGet(string $contentType = self::contentTypes['cloudProvidersGet'][0])
     {
@@ -155,7 +155,7 @@ class CloudProvidersApi
      *
      * @throws \SparteraApiSdk\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of object|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SparteraApiSdk\Model\CompaniesCompanyIdApiKeysGet200Response|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3, HTTP status code, HTTP response headers (array of strings)
      */
     public function cloudProvidersGetWithHttpInfo(string $contentType = self::contentTypes['cloudProvidersGet'][0])
     {
@@ -187,7 +187,7 @@ class CloudProvidersApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        'object',
+                        '\SparteraApiSdk\Model\CompaniesCompanyIdApiKeysGet200Response',
                         $request,
                         $response,
                     );
@@ -227,7 +227,7 @@ class CloudProvidersApi
             }
 
             return $this->handleResponseWithDataType(
-                'object',
+                '\SparteraApiSdk\Model\CompaniesCompanyIdApiKeysGet200Response',
                 $request,
                 $response,
             );
@@ -236,7 +236,7 @@ class CloudProvidersApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        'object',
+                        '\SparteraApiSdk\Model\CompaniesCompanyIdApiKeysGet200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -304,7 +304,7 @@ class CloudProvidersApi
      */
     public function cloudProvidersGetAsyncWithHttpInfo(string $contentType = self::contentTypes['cloudProvidersGet'][0])
     {
-        $returnType = 'object';
+        $returnType = '\SparteraApiSdk\Model\CompaniesCompanyIdApiKeysGet200Response';
         $request = $this->cloudProvidersGetRequest($contentType);
 
         return $this->client
@@ -434,7 +434,7 @@ class CloudProvidersApi
      *
      * @throws \SparteraApiSdk\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return object|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3
+     * @return \SparteraApiSdk\Model\CompaniesCompanyIdApiKeysGet200Response|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3
      */
     public function cloudProvidersProviderIdGet($provider_id, string $contentType = self::contentTypes['cloudProvidersProviderIdGet'][0])
     {
@@ -452,7 +452,7 @@ class CloudProvidersApi
      *
      * @throws \SparteraApiSdk\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of object|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SparteraApiSdk\Model\CompaniesCompanyIdApiKeysGet200Response|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3, HTTP status code, HTTP response headers (array of strings)
      */
     public function cloudProvidersProviderIdGetWithHttpInfo($provider_id, string $contentType = self::contentTypes['cloudProvidersProviderIdGet'][0])
     {
@@ -484,7 +484,7 @@ class CloudProvidersApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        'object',
+                        '\SparteraApiSdk\Model\CompaniesCompanyIdApiKeysGet200Response',
                         $request,
                         $response,
                     );
@@ -524,7 +524,7 @@ class CloudProvidersApi
             }
 
             return $this->handleResponseWithDataType(
-                'object',
+                '\SparteraApiSdk\Model\CompaniesCompanyIdApiKeysGet200Response',
                 $request,
                 $response,
             );
@@ -533,7 +533,7 @@ class CloudProvidersApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        'object',
+                        '\SparteraApiSdk\Model\CompaniesCompanyIdApiKeysGet200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -603,7 +603,7 @@ class CloudProvidersApi
      */
     public function cloudProvidersProviderIdGetAsyncWithHttpInfo($provider_id, string $contentType = self::contentTypes['cloudProvidersProviderIdGet'][0])
     {
-        $returnType = 'object';
+        $returnType = '\SparteraApiSdk\Model\CompaniesCompanyIdApiKeysGet200Response';
         $request = $this->cloudProvidersProviderIdGetRequest($provider_id, $contentType);
 
         return $this->client

@@ -11,7 +11,7 @@ All URIs are relative to https://api.spartera.com, except if the operation defin
 ## `cloudProvidersGet()`
 
 ```php
-cloudProvidersGet(): object
+cloudProvidersGet(): \SparteraApiSdk\Model\CompaniesCompanyIdApiKeysGet200Response
 ```
 
 Get a list of all cloud providers
@@ -50,7 +50,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-**object**
+[**\SparteraApiSdk\Model\CompaniesCompanyIdApiKeysGet200Response**](../Model/CompaniesCompanyIdApiKeysGet200Response.md)
 
 ### Authorization
 
@@ -68,7 +68,7 @@ This endpoint does not need any parameter.
 ## `cloudProvidersProviderIdGet()`
 
 ```php
-cloudProvidersProviderIdGet($provider_id): object
+cloudProvidersProviderIdGet($provider_id): \SparteraApiSdk\Model\CompaniesCompanyIdApiKeysGet200Response
 ```
 
 Get single cloud provider by ID
@@ -110,7 +110,7 @@ try {
 
 ### Return type
 
-**object**
+[**\SparteraApiSdk\Model\CompaniesCompanyIdApiKeysGet200Response**](../Model/CompaniesCompanyIdApiKeysGet200Response.md)
 
 ### Authorization
 

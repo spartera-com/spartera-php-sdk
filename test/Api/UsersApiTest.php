@@ -131,4 +131,16 @@ class UsersApiTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
+
+    /**
+     * Test case for meGet
+     *
+     * Get current authenticated user's profile information.              Returns:                 JSON response with user profile data from database.
+     *
+     */
+    public function testMeGet()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
 }

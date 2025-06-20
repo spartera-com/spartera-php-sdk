@@ -90,6 +90,9 @@ class UsersApi
         'companiesCompanyIdUsersUserIdPatch' => [
             'application/json',
         ],
+        'meGet' => [
+            'application/json',
+        ],
     ];
 
     /**
@@ -148,7 +151,7 @@ class UsersApi
      *
      * @throws \SparteraApiSdk\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return object|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3
+     * @return \SparteraApiSdk\Model\CompaniesCompanyIdUsersGet200Response|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3
      */
     public function companiesCompanyIdUsersGet($company_id, string $contentType = self::contentTypes['companiesCompanyIdUsersGet'][0])
     {
@@ -166,7 +169,7 @@ class UsersApi
      *
      * @throws \SparteraApiSdk\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of object|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SparteraApiSdk\Model\CompaniesCompanyIdUsersGet200Response|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3, HTTP status code, HTTP response headers (array of strings)
      */
     public function companiesCompanyIdUsersGetWithHttpInfo($company_id, string $contentType = self::contentTypes['companiesCompanyIdUsersGet'][0])
     {
@@ -198,7 +201,7 @@ class UsersApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        'object',
+                        '\SparteraApiSdk\Model\CompaniesCompanyIdUsersGet200Response',
                         $request,
                         $response,
                     );
@@ -238,7 +241,7 @@ class UsersApi
             }
 
             return $this->handleResponseWithDataType(
-                'object',
+                '\SparteraApiSdk\Model\CompaniesCompanyIdUsersGet200Response',
                 $request,
                 $response,
             );
@@ -247,7 +250,7 @@ class UsersApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        'object',
+                        '\SparteraApiSdk\Model\CompaniesCompanyIdUsersGet200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -317,7 +320,7 @@ class UsersApi
      */
     public function companiesCompanyIdUsersGetAsyncWithHttpInfo($company_id, string $contentType = self::contentTypes['companiesCompanyIdUsersGet'][0])
     {
-        $returnType = 'object';
+        $returnType = '\SparteraApiSdk\Model\CompaniesCompanyIdUsersGet200Response';
         $request = $this->companiesCompanyIdUsersGetRequest($company_id, $contentType);
 
         return $this->client
@@ -464,7 +467,7 @@ class UsersApi
      *
      * @throws \SparteraApiSdk\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return object|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject
+     * @return \SparteraApiSdk\Model\CompaniesCompanyIdUsersPost200Response|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject
      */
     public function companiesCompanyIdUsersPost($company_id, $user, string $contentType = self::contentTypes['companiesCompanyIdUsersPost'][0])
     {
@@ -483,7 +486,7 @@ class UsersApi
      *
      * @throws \SparteraApiSdk\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of object|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SparteraApiSdk\Model\CompaniesCompanyIdUsersPost200Response|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject, HTTP status code, HTTP response headers (array of strings)
      */
     public function companiesCompanyIdUsersPostWithHttpInfo($company_id, $user, string $contentType = self::contentTypes['companiesCompanyIdUsersPost'][0])
     {
@@ -515,7 +518,7 @@ class UsersApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        'object',
+                        '\SparteraApiSdk\Model\CompaniesCompanyIdUsersPost200Response',
                         $request,
                         $response,
                     );
@@ -555,7 +558,7 @@ class UsersApi
             }
 
             return $this->handleResponseWithDataType(
-                'object',
+                '\SparteraApiSdk\Model\CompaniesCompanyIdUsersPost200Response',
                 $request,
                 $response,
             );
@@ -564,7 +567,7 @@ class UsersApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        'object',
+                        '\SparteraApiSdk\Model\CompaniesCompanyIdUsersPost200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -636,7 +639,7 @@ class UsersApi
      */
     public function companiesCompanyIdUsersPostAsyncWithHttpInfo($company_id, $user, string $contentType = self::contentTypes['companiesCompanyIdUsersPost'][0])
     {
-        $returnType = 'object';
+        $returnType = '\SparteraApiSdk\Model\CompaniesCompanyIdUsersPost200Response';
         $request = $this->companiesCompanyIdUsersPostRequest($company_id, $user, $contentType);
 
         return $this->client
@@ -798,7 +801,7 @@ class UsersApi
      *
      * @throws \SparteraApiSdk\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return object|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3
+     * @return \SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdDelete200Response|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3
      */
     public function companiesCompanyIdUsersUserIdDelete($company_id, $user_id, string $contentType = self::contentTypes['companiesCompanyIdUsersUserIdDelete'][0])
     {
@@ -817,7 +820,7 @@ class UsersApi
      *
      * @throws \SparteraApiSdk\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of object|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdDelete200Response|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3, HTTP status code, HTTP response headers (array of strings)
      */
     public function companiesCompanyIdUsersUserIdDeleteWithHttpInfo($company_id, $user_id, string $contentType = self::contentTypes['companiesCompanyIdUsersUserIdDelete'][0])
     {
@@ -849,7 +852,7 @@ class UsersApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        'object',
+                        '\SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdDelete200Response',
                         $request,
                         $response,
                     );
@@ -889,7 +892,7 @@ class UsersApi
             }
 
             return $this->handleResponseWithDataType(
-                'object',
+                '\SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdDelete200Response',
                 $request,
                 $response,
             );
@@ -898,7 +901,7 @@ class UsersApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        'object',
+                        '\SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdDelete200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -970,7 +973,7 @@ class UsersApi
      */
     public function companiesCompanyIdUsersUserIdDeleteAsyncWithHttpInfo($company_id, $user_id, string $contentType = self::contentTypes['companiesCompanyIdUsersUserIdDelete'][0])
     {
-        $returnType = 'object';
+        $returnType = '\SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdDelete200Response';
         $request = $this->companiesCompanyIdUsersUserIdDeleteRequest($company_id, $user_id, $contentType);
 
         return $this->client
@@ -1133,7 +1136,7 @@ class UsersApi
      *
      * @throws \SparteraApiSdk\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return object|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3
+     * @return \SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdGet200Response|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3
      */
     public function companiesCompanyIdUsersUserIdGet($company_id, $user_id, string $contentType = self::contentTypes['companiesCompanyIdUsersUserIdGet'][0])
     {
@@ -1152,7 +1155,7 @@ class UsersApi
      *
      * @throws \SparteraApiSdk\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of object|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdGet200Response|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3, HTTP status code, HTTP response headers (array of strings)
      */
     public function companiesCompanyIdUsersUserIdGetWithHttpInfo($company_id, $user_id, string $contentType = self::contentTypes['companiesCompanyIdUsersUserIdGet'][0])
     {
@@ -1184,7 +1187,7 @@ class UsersApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        'object',
+                        '\SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdGet200Response',
                         $request,
                         $response,
                     );
@@ -1224,7 +1227,7 @@ class UsersApi
             }
 
             return $this->handleResponseWithDataType(
-                'object',
+                '\SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdGet200Response',
                 $request,
                 $response,
             );
@@ -1233,7 +1236,7 @@ class UsersApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        'object',
+                        '\SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdGet200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1305,7 +1308,7 @@ class UsersApi
      */
     public function companiesCompanyIdUsersUserIdGetAsyncWithHttpInfo($company_id, $user_id, string $contentType = self::contentTypes['companiesCompanyIdUsersUserIdGet'][0])
     {
-        $returnType = 'object';
+        $returnType = '\SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdGet200Response';
         $request = $this->companiesCompanyIdUsersUserIdGetRequest($company_id, $user_id, $contentType);
 
         return $this->client
@@ -1469,7 +1472,7 @@ class UsersApi
      *
      * @throws \SparteraApiSdk\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return object|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject|\SparteraApiSdk\Model\InlineObject3
+     * @return \SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdPatch200Response|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject|\SparteraApiSdk\Model\InlineObject3
      */
     public function companiesCompanyIdUsersUserIdPatch($company_id, $user_id, $user, string $contentType = self::contentTypes['companiesCompanyIdUsersUserIdPatch'][0])
     {
@@ -1489,7 +1492,7 @@ class UsersApi
      *
      * @throws \SparteraApiSdk\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of object|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject|\SparteraApiSdk\Model\InlineObject3, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdPatch200Response|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject|\SparteraApiSdk\Model\InlineObject3, HTTP status code, HTTP response headers (array of strings)
      */
     public function companiesCompanyIdUsersUserIdPatchWithHttpInfo($company_id, $user_id, $user, string $contentType = self::contentTypes['companiesCompanyIdUsersUserIdPatch'][0])
     {
@@ -1521,7 +1524,7 @@ class UsersApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        'object',
+                        '\SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdPatch200Response',
                         $request,
                         $response,
                     );
@@ -1567,7 +1570,7 @@ class UsersApi
             }
 
             return $this->handleResponseWithDataType(
-                'object',
+                '\SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdPatch200Response',
                 $request,
                 $response,
             );
@@ -1576,7 +1579,7 @@ class UsersApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        'object',
+                        '\SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdPatch200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1658,7 +1661,7 @@ class UsersApi
      */
     public function companiesCompanyIdUsersUserIdPatchAsyncWithHttpInfo($company_id, $user_id, $user, string $contentType = self::contentTypes['companiesCompanyIdUsersUserIdPatch'][0])
     {
-        $returnType = 'object';
+        $returnType = '\SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdPatch200Response';
         $request = $this->companiesCompanyIdUsersUserIdPatchRequest($company_id, $user_id, $user, $contentType);
 
         return $this->client
@@ -1819,6 +1822,301 @@ class UsersApi
         $query = ObjectSerializer::buildQuery($queryParams);
         return new Request(
             'PATCH',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation meGet
+     *
+     * Get current authenticated user&#39;s profile information.              Returns:                 JSON response with user profile data from database
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meGet'] to see the possible values for this operation
+     *
+     * @throws \SparteraApiSdk\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \SparteraApiSdk\Model\MeGet200Response|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3
+     */
+    public function meGet(string $contentType = self::contentTypes['meGet'][0])
+    {
+        list($response) = $this->meGetWithHttpInfo($contentType);
+        return $response;
+    }
+
+    /**
+     * Operation meGetWithHttpInfo
+     *
+     * Get current authenticated user&#39;s profile information.              Returns:                 JSON response with user profile data from database
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meGet'] to see the possible values for this operation
+     *
+     * @throws \SparteraApiSdk\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \SparteraApiSdk\Model\MeGet200Response|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function meGetWithHttpInfo(string $contentType = self::contentTypes['meGet'][0])
+    {
+        $request = $this->meGetRequest($contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\SparteraApiSdk\Model\MeGet200Response',
+                        $request,
+                        $response,
+                    );
+                case 401:
+                    return $this->handleResponseWithDataType(
+                        '\SparteraApiSdk\Model\InlineObject1',
+                        $request,
+                        $response,
+                    );
+                case 403:
+                    return $this->handleResponseWithDataType(
+                        '\SparteraApiSdk\Model\InlineObject2',
+                        $request,
+                        $response,
+                    );
+                case 404:
+                    return $this->handleResponseWithDataType(
+                        '\SparteraApiSdk\Model\InlineObject3',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\SparteraApiSdk\Model\MeGet200Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SparteraApiSdk\Model\MeGet200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SparteraApiSdk\Model\InlineObject1',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SparteraApiSdk\Model\InlineObject2',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\SparteraApiSdk\Model\InlineObject3',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation meGetAsync
+     *
+     * Get current authenticated user&#39;s profile information.              Returns:                 JSON response with user profile data from database
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meGet'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function meGetAsync(string $contentType = self::contentTypes['meGet'][0])
+    {
+        return $this->meGetAsyncWithHttpInfo($contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation meGetAsyncWithHttpInfo
+     *
+     * Get current authenticated user&#39;s profile information.              Returns:                 JSON response with user profile data from database
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meGet'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function meGetAsyncWithHttpInfo(string $contentType = self::contentTypes['meGet'][0])
+    {
+        $returnType = '\SparteraApiSdk\Model\MeGet200Response';
+        $request = $this->meGetRequest($contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'meGet'
+     *
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['meGet'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function meGetRequest(string $contentType = self::contentTypes['meGet'][0])
+    {
+
+
+        $resourcePath = '/me';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('x-api-key');
+        if ($apiKey !== null) {
+            $headers['x-api-key'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
             $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody

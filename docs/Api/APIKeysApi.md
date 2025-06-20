@@ -14,7 +14,7 @@ All URIs are relative to https://api.spartera.com, except if the operation defin
 ## `companiesCompanyIdApiKeysApiKeyIdGet()`
 
 ```php
-companiesCompanyIdApiKeysApiKeyIdGet($company_id, $api_key_id): object
+companiesCompanyIdApiKeysApiKeyIdGet($company_id, $api_key_id): \SparteraApiSdk\Model\CompaniesCompanyIdApiKeysGet200Response
 ```
 
 Get single API key by ID
@@ -58,7 +58,7 @@ try {
 
 ### Return type
 
-**object**
+[**\SparteraApiSdk\Model\CompaniesCompanyIdApiKeysGet200Response**](../Model/CompaniesCompanyIdApiKeysGet200Response.md)
 
 ### Authorization
 
@@ -76,7 +76,7 @@ try {
 ## `companiesCompanyIdApiKeysApiKeyIdPatch()`
 
 ```php
-companiesCompanyIdApiKeysApiKeyIdPatch($company_id, $api_key_id): object
+companiesCompanyIdApiKeysApiKeyIdPatch($company_id, $api_key_id): \SparteraApiSdk\Model\CompaniesCompanyIdApiKeysGet200Response
 ```
 
 Update an existing API key by ID
@@ -120,7 +120,7 @@ try {
 
 ### Return type
 
-**object**
+[**\SparteraApiSdk\Model\CompaniesCompanyIdApiKeysGet200Response**](../Model/CompaniesCompanyIdApiKeysGet200Response.md)
 
 ### Authorization
 
@@ -138,7 +138,7 @@ try {
 ## `companiesCompanyIdApiKeysGet()`
 
 ```php
-companiesCompanyIdApiKeysGet($company_id): object
+companiesCompanyIdApiKeysGet($company_id): \SparteraApiSdk\Model\CompaniesCompanyIdApiKeysGet200Response
 ```
 
 Get all API keys
@@ -180,7 +180,7 @@ try {
 
 ### Return type
 
-**object**
+[**\SparteraApiSdk\Model\CompaniesCompanyIdApiKeysGet200Response**](../Model/CompaniesCompanyIdApiKeysGet200Response.md)
 
 ### Authorization
 
@@ -198,7 +198,7 @@ try {
 ## `companiesCompanyIdApiKeysPost()`
 
 ```php
-companiesCompanyIdApiKeysPost($company_id): object
+companiesCompanyIdApiKeysPost($company_id): \SparteraApiSdk\Model\CompaniesCompanyIdApiKeysGet200Response
 ```
 
 Create single API key
@@ -240,7 +240,7 @@ try {
 
 ### Return type
 
-**object**
+[**\SparteraApiSdk\Model\CompaniesCompanyIdApiKeysGet200Response**](../Model/CompaniesCompanyIdApiKeysGet200Response.md)
 
 ### Authorization
 
@@ -258,7 +258,7 @@ try {
 ## `companiesCompanyIdApiKeysTokenDelete()`
 
 ```php
-companiesCompanyIdApiKeysTokenDelete($company_id, $token): object
+companiesCompanyIdApiKeysTokenDelete($company_id, $token): \SparteraApiSdk\Model\CompaniesCompanyIdApiKeysGet200Response
 ```
 
 Delete single API key by token
@@ -302,7 +302,7 @@ try {
 
 ### Return type
 
-**object**
+[**\SparteraApiSdk\Model\CompaniesCompanyIdApiKeysGet200Response**](../Model/CompaniesCompanyIdApiKeysGet200Response.md)
 
 ### Authorization
 

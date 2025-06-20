@@ -16,7 +16,7 @@ All URIs are relative to https://api.spartera.com, except if the operation defin
 ## `companiesCompanyIdConnectionsConnectionIdDelete()`
 
 ```php
-companiesCompanyIdConnectionsConnectionIdDelete($company_id, $connection_id): object
+companiesCompanyIdConnectionsConnectionIdDelete($company_id, $connection_id): \SparteraApiSdk\Model\CompaniesCompanyIdConnectionsConnectionIdDelete200Response
 ```
 
 Delete single connection by ID
@@ -60,7 +60,7 @@ try {
 
 ### Return type
 
-**object**
+[**\SparteraApiSdk\Model\CompaniesCompanyIdConnectionsConnectionIdDelete200Response**](../Model/CompaniesCompanyIdConnectionsConnectionIdDelete200Response.md)
 
 ### Authorization
 
@@ -78,7 +78,7 @@ try {
 ## `companiesCompanyIdConnectionsConnectionIdGet()`
 
 ```php
-companiesCompanyIdConnectionsConnectionIdGet($company_id, $connection_id): object
+companiesCompanyIdConnectionsConnectionIdGet($company_id, $connection_id): \SparteraApiSdk\Model\CompaniesCompanyIdConnectionsConnectionIdGet200Response
 ```
 
 Get single connection by ID
@@ -122,7 +122,7 @@ try {
 
 ### Return type
 
-**object**
+[**\SparteraApiSdk\Model\CompaniesCompanyIdConnectionsConnectionIdGet200Response**](../Model/CompaniesCompanyIdConnectionsConnectionIdGet200Response.md)
 
 ### Authorization
 
@@ -140,7 +140,7 @@ try {
 ## `companiesCompanyIdConnectionsConnectionIdInfoschemaGet()`
 
 ```php
-companiesCompanyIdConnectionsConnectionIdInfoschemaGet($company_id, $connection_id): object
+companiesCompanyIdConnectionsConnectionIdInfoschemaGet($company_id, $connection_id): \SparteraApiSdk\Model\CompaniesCompanyIdConnectionsGet200Response
 ```
 
 Retrieve the information schema for the specified connection
@@ -184,7 +184,7 @@ try {
 
 ### Return type
 
-**object**
+[**\SparteraApiSdk\Model\CompaniesCompanyIdConnectionsGet200Response**](../Model/CompaniesCompanyIdConnectionsGet200Response.md)
 
 ### Authorization
 
@@ -202,7 +202,7 @@ try {
 ## `companiesCompanyIdConnectionsConnectionIdPatch()`
 
 ```php
-companiesCompanyIdConnectionsConnectionIdPatch($company_id, $connection_id, $connection): object
+companiesCompanyIdConnectionsConnectionIdPatch($company_id, $connection_id, $connection): \SparteraApiSdk\Model\CompaniesCompanyIdConnectionsConnectionIdPatch200Response
 ```
 
 Update an existing connection by ID
@@ -248,7 +248,7 @@ try {
 
 ### Return type
 
-**object**
+[**\SparteraApiSdk\Model\CompaniesCompanyIdConnectionsConnectionIdPatch200Response**](../Model/CompaniesCompanyIdConnectionsConnectionIdPatch200Response.md)
 
 ### Authorization
 
@@ -266,7 +266,7 @@ try {
 ## `companiesCompanyIdConnectionsConnectionIdTestGet()`
 
 ```php
-companiesCompanyIdConnectionsConnectionIdTestGet($company_id, $connection_id): object
+companiesCompanyIdConnectionsConnectionIdTestGet($company_id, $connection_id): \SparteraApiSdk\Model\CompaniesCompanyIdConnectionsGet200Response
 ```
 
 Test the specified connection
@@ -310,7 +310,7 @@ try {
 
 ### Return type
 
-**object**
+[**\SparteraApiSdk\Model\CompaniesCompanyIdConnectionsGet200Response**](../Model/CompaniesCompanyIdConnectionsGet200Response.md)
 
 ### Authorization
 
@@ -328,7 +328,7 @@ try {
 ## `companiesCompanyIdConnectionsGet()`
 
 ```php
-companiesCompanyIdConnectionsGet($company_id): object
+companiesCompanyIdConnectionsGet($company_id): \SparteraApiSdk\Model\CompaniesCompanyIdConnectionsGet200Response
 ```
 
 Get all connections for a specific company
@@ -370,7 +370,7 @@ try {
 
 ### Return type
 
-**object**
+[**\SparteraApiSdk\Model\CompaniesCompanyIdConnectionsGet200Response**](../Model/CompaniesCompanyIdConnectionsGet200Response.md)
 
 ### Authorization
 
@@ -388,7 +388,7 @@ try {
 ## `companiesCompanyIdConnectionsPost()`
 
 ```php
-companiesCompanyIdConnectionsPost($company_id, $connection): object
+companiesCompanyIdConnectionsPost($company_id, $connection): \SparteraApiSdk\Model\CompaniesCompanyIdConnectionsPost200Response
 ```
 
 Create a new connection by ID
@@ -432,7 +432,7 @@ try {
 
 ### Return type
 
-**object**
+[**\SparteraApiSdk\Model\CompaniesCompanyIdConnectionsPost200Response**](../Model/CompaniesCompanyIdConnectionsPost200Response.md)
 
 ### Authorization
 

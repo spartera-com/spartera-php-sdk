@@ -17,7 +17,7 @@ All URIs are relative to https://api.spartera.com, except if the operation defin
 ## `companiesCompanyIdAssetsAssetIdPricesActiveGet()`
 
 ```php
-companiesCompanyIdAssetsAssetIdPricesActiveGet($company_id, $asset_id): object
+companiesCompanyIdAssetsAssetIdPricesActiveGet($company_id, $asset_id): \SparteraApiSdk\Model\CompaniesCompanyIdApiKeysGet200Response
 ```
 
 Get the currently active price for an asset
@@ -61,7 +61,7 @@ try {
 
 ### Return type
 
-**object**
+[**\SparteraApiSdk\Model\CompaniesCompanyIdApiKeysGet200Response**](../Model/CompaniesCompanyIdApiKeysGet200Response.md)
 
 ### Authorization
 
@@ -79,7 +79,7 @@ try {
 ## `companiesCompanyIdAssetsAssetIdPricesAphIdDelete()`
 
 ```php
-companiesCompanyIdAssetsAssetIdPricesAphIdDelete($company_id, $asset_id, $aph_id): object
+companiesCompanyIdAssetsAssetIdPricesAphIdDelete($company_id, $asset_id, $aph_id): \SparteraApiSdk\Model\CompaniesCompanyIdApiKeysGet200Response
 ```
 
 Delete single price history record by ID
@@ -125,7 +125,7 @@ try {
 
 ### Return type
 
-**object**
+[**\SparteraApiSdk\Model\CompaniesCompanyIdApiKeysGet200Response**](../Model/CompaniesCompanyIdApiKeysGet200Response.md)
 
 ### Authorization
 
@@ -143,7 +143,7 @@ try {
 ## `companiesCompanyIdAssetsAssetIdPricesAphIdGet()`
 
 ```php
-companiesCompanyIdAssetsAssetIdPricesAphIdGet($company_id, $asset_id, $aph_id): object
+companiesCompanyIdAssetsAssetIdPricesAphIdGet($company_id, $asset_id, $aph_id): \SparteraApiSdk\Model\CompaniesCompanyIdApiKeysGet200Response
 ```
 
 Get single price history record by ID
@@ -189,7 +189,7 @@ try {
 
 ### Return type
 
-**object**
+[**\SparteraApiSdk\Model\CompaniesCompanyIdApiKeysGet200Response**](../Model/CompaniesCompanyIdApiKeysGet200Response.md)
 
 ### Authorization
 
@@ -207,7 +207,7 @@ try {
 ## `companiesCompanyIdAssetsAssetIdPricesAphIdPatch()`
 
 ```php
-companiesCompanyIdAssetsAssetIdPricesAphIdPatch($company_id, $asset_id, $aph_id): object
+companiesCompanyIdAssetsAssetIdPricesAphIdPatch($company_id, $asset_id, $aph_id): \SparteraApiSdk\Model\CompaniesCompanyIdApiKeysGet200Response
 ```
 
 Update an existing price history record by ID
@@ -253,7 +253,7 @@ try {
 
 ### Return type
 
-**object**
+[**\SparteraApiSdk\Model\CompaniesCompanyIdApiKeysGet200Response**](../Model/CompaniesCompanyIdApiKeysGet200Response.md)
 
 ### Authorization
 
@@ -271,7 +271,7 @@ try {
 ## `companiesCompanyIdAssetsAssetIdPricesCalculateCreditsPost()`
 
 ```php
-companiesCompanyIdAssetsAssetIdPricesCalculateCreditsPost($company_id, $asset_id): object
+companiesCompanyIdAssetsAssetIdPricesCalculateCreditsPost($company_id, $asset_id): \SparteraApiSdk\Model\CompaniesCompanyIdApiKeysGet200Response
 ```
 
 POST /companies/{company_id}/assets/{asset_id}/prices/calculate_credits
@@ -315,7 +315,7 @@ try {
 
 ### Return type
 
-**object**
+[**\SparteraApiSdk\Model\CompaniesCompanyIdApiKeysGet200Response**](../Model/CompaniesCompanyIdApiKeysGet200Response.md)
 
 ### Authorization
 
@@ -333,7 +333,7 @@ try {
 ## `companiesCompanyIdAssetsAssetIdPricesDiscountPost()`
 
 ```php
-companiesCompanyIdAssetsAssetIdPricesDiscountPost($company_id, $asset_id): object
+companiesCompanyIdAssetsAssetIdPricesDiscountPost($company_id, $asset_id): \SparteraApiSdk\Model\CompaniesCompanyIdApiKeysGet200Response
 ```
 
 POST /companies/{company_id}/assets/{asset_id}/prices/discount
@@ -377,7 +377,7 @@ try {
 
 ### Return type
 
-**object**
+[**\SparteraApiSdk\Model\CompaniesCompanyIdApiKeysGet200Response**](../Model/CompaniesCompanyIdApiKeysGet200Response.md)
 
 ### Authorization
 
@@ -395,7 +395,7 @@ try {
 ## `companiesCompanyIdAssetsAssetIdPricesGet()`
 
 ```php
-companiesCompanyIdAssetsAssetIdPricesGet($company_id, $asset_id): object
+companiesCompanyIdAssetsAssetIdPricesGet($company_id, $asset_id): \SparteraApiSdk\Model\CompaniesCompanyIdApiKeysGet200Response
 ```
 
 Get all price history records for a specific asset
@@ -439,7 +439,7 @@ try {
 
 ### Return type
 
-**object**
+[**\SparteraApiSdk\Model\CompaniesCompanyIdApiKeysGet200Response**](../Model/CompaniesCompanyIdApiKeysGet200Response.md)
 
 ### Authorization
 
@@ -457,7 +457,7 @@ try {
 ## `companiesCompanyIdAssetsAssetIdPricesPost()`
 
 ```php
-companiesCompanyIdAssetsAssetIdPricesPost($company_id, $asset_id): object
+companiesCompanyIdAssetsAssetIdPricesPost($company_id, $asset_id): \SparteraApiSdk\Model\CompaniesCompanyIdApiKeysGet200Response
 ```
 
 Create a new price history record for an asset
@@ -501,7 +501,7 @@ try {
 
 ### Return type
 
-**object**
+[**\SparteraApiSdk\Model\CompaniesCompanyIdApiKeysGet200Response**](../Model/CompaniesCompanyIdApiKeysGet200Response.md)
 
 ### Authorization
 

@@ -18,7 +18,7 @@ All URIs are relative to https://api.spartera.com, except if the operation defin
 ## `companiesCompanyIdAnalyticsAssetsGet()`
 
 ```php
-companiesCompanyIdAnalyticsAssetsGet($company_id): object
+companiesCompanyIdAnalyticsAssetsGet($company_id): \SparteraApiSdk\Model\CompaniesCompanyIdApiKeysGet200Response
 ```
 
 Get asset performance analytics     Query params: start_date, end_date, limit, sort_by, include
@@ -60,7 +60,7 @@ try {
 
 ### Return type
 
-**object**
+[**\SparteraApiSdk\Model\CompaniesCompanyIdApiKeysGet200Response**](../Model/CompaniesCompanyIdApiKeysGet200Response.md)
 
 ### Authorization
 
@@ -78,7 +78,7 @@ try {
 ## `companiesCompanyIdAnalyticsCustomersGet()`
 
 ```php
-companiesCompanyIdAnalyticsCustomersGet($company_id): object
+companiesCompanyIdAnalyticsCustomersGet($company_id): \SparteraApiSdk\Model\CompaniesCompanyIdApiKeysGet200Response
 ```
 
 Get customer analytics including growth and segmentation     Query params: start_date, end_date, group_by, segment_by
@@ -120,7 +120,7 @@ try {
 
 ### Return type
 
-**object**
+[**\SparteraApiSdk\Model\CompaniesCompanyIdApiKeysGet200Response**](../Model/CompaniesCompanyIdApiKeysGet200Response.md)
 
 ### Authorization
 
@@ -138,7 +138,7 @@ try {
 ## `companiesCompanyIdAnalyticsDashboardGet()`
 
 ```php
-companiesCompanyIdAnalyticsDashboardGet($company_id): object
+companiesCompanyIdAnalyticsDashboardGet($company_id): \SparteraApiSdk\Model\CompaniesCompanyIdApiKeysGet200Response
 ```
 
 Get comprehensive dashboard analytics for seller dashboard     Includes all metrics needed for dashboard charts in one call     Query params: start_date, end_date, period (day/week/month/quarter)
@@ -180,7 +180,7 @@ try {
 
 ### Return type
 
-**object**
+[**\SparteraApiSdk\Model\CompaniesCompanyIdApiKeysGet200Response**](../Model/CompaniesCompanyIdApiKeysGet200Response.md)
 
 ### Authorization
 
@@ -198,7 +198,7 @@ try {
 ## `companiesCompanyIdAnalyticsSalesGet()`
 
 ```php
-companiesCompanyIdAnalyticsSalesGet($company_id): object
+companiesCompanyIdAnalyticsSalesGet($company_id): \SparteraApiSdk\Model\CompaniesCompanyIdApiKeysGet200Response
 ```
 
 Get sales over time analytics     Query params: start_date, end_date, group_by (day/week/month/quarter), metrics
@@ -240,7 +240,7 @@ try {
 
 ### Return type
 
-**object**
+[**\SparteraApiSdk\Model\CompaniesCompanyIdApiKeysGet200Response**](../Model/CompaniesCompanyIdApiKeysGet200Response.md)
 
 ### Authorization
 
@@ -258,7 +258,7 @@ try {
 ## `companiesCompanyIdGet()`
 
 ```php
-companiesCompanyIdGet($company_id): object
+companiesCompanyIdGet($company_id): \SparteraApiSdk\Model\CompaniesCompanyIdApiKeysGet200Response
 ```
 
 Get details of the requestor's own company
@@ -300,7 +300,7 @@ try {
 
 ### Return type
 
-**object**
+[**\SparteraApiSdk\Model\CompaniesCompanyIdApiKeysGet200Response**](../Model/CompaniesCompanyIdApiKeysGet200Response.md)
 
 ### Authorization
 
@@ -318,7 +318,7 @@ try {
 ## `companiesCompanyIdObjectsGet()`
 
 ```php
-companiesCompanyIdObjectsGet($company_id): object
+companiesCompanyIdObjectsGet($company_id): \SparteraApiSdk\Model\CompaniesCompanyIdApiKeysGet200Response
 ```
 
 Get all objects (connections, assets) of a single company
@@ -360,7 +360,7 @@ try {
 
 ### Return type
 
-**object**
+[**\SparteraApiSdk\Model\CompaniesCompanyIdApiKeysGet200Response**](../Model/CompaniesCompanyIdApiKeysGet200Response.md)
 
 ### Authorization
 
@@ -378,7 +378,7 @@ try {
 ## `companiesCompanyIdPatch()`
 
 ```php
-companiesCompanyIdPatch($company_id): object
+companiesCompanyIdPatch($company_id): \SparteraApiSdk\Model\CompaniesCompanyIdApiKeysGet200Response
 ```
 
 Update an existing company by ID
@@ -420,7 +420,7 @@ try {
 
 ### Return type
 
-**object**
+[**\SparteraApiSdk\Model\CompaniesCompanyIdApiKeysGet200Response**](../Model/CompaniesCompanyIdApiKeysGet200Response.md)
 
 ### Authorization
 
@@ -438,7 +438,7 @@ try {
 ## `companiesCompanyIdRequestsPlanGet()`
 
 ```php
-companiesCompanyIdRequestsPlanGet($company_id): object
+companiesCompanyIdRequestsPlanGet($company_id): \SparteraApiSdk\Model\CompaniesCompanyIdApiKeysGet200Response
 ```
 
 Get the total number of requests allocated in the company's current subscription plan.
@@ -480,7 +480,7 @@ try {
 
 ### Return type
 
-**object**
+[**\SparteraApiSdk\Model\CompaniesCompanyIdApiKeysGet200Response**](../Model/CompaniesCompanyIdApiKeysGet200Response.md)
 
 ### Authorization
 
@@ -498,7 +498,7 @@ try {
 ## `companiesCompanyIdRequestsUsageGet()`
 
 ```php
-companiesCompanyIdRequestsUsageGet($company_id): object
+companiesCompanyIdRequestsUsageGet($company_id): \SparteraApiSdk\Model\CompaniesCompanyIdApiKeysGet200Response
 ```
 
 Get company request usage data for a specific month. Returns JSON metrics by default or CSV logs when download parameter is included.
@@ -540,7 +540,7 @@ try {
 
 ### Return type
 
-**object**
+[**\SparteraApiSdk\Model\CompaniesCompanyIdApiKeysGet200Response**](../Model/CompaniesCompanyIdApiKeysGet200Response.md)
 
 ### Authorization
 

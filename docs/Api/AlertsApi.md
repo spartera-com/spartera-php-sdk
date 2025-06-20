@@ -16,7 +16,7 @@ All URIs are relative to https://api.spartera.com, except if the operation defin
 ## `companiesCompanyIdUsersUserIdAlertsAlertIdDelete()`
 
 ```php
-companiesCompanyIdUsersUserIdAlertsAlertIdDelete($company_id, $user_id, $alert_id): object
+companiesCompanyIdUsersUserIdAlertsAlertIdDelete($company_id, $user_id, $alert_id): \SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdAlertsAlertIdDelete200Response
 ```
 
 Delete single alert by ID
@@ -62,7 +62,7 @@ try {
 
 ### Return type
 
-**object**
+[**\SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdAlertsAlertIdDelete200Response**](../Model/CompaniesCompanyIdUsersUserIdAlertsAlertIdDelete200Response.md)
 
 ### Authorization
 
@@ -80,7 +80,7 @@ try {
 ## `companiesCompanyIdUsersUserIdAlertsAlertIdGet()`
 
 ```php
-companiesCompanyIdUsersUserIdAlertsAlertIdGet($company_id, $user_id, $alert_id): object
+companiesCompanyIdUsersUserIdAlertsAlertIdGet($company_id, $user_id, $alert_id): \SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdAlertsAlertIdGet200Response
 ```
 
 Get single alert by ID
@@ -126,7 +126,7 @@ try {
 
 ### Return type
 
-**object**
+[**\SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdAlertsAlertIdGet200Response**](../Model/CompaniesCompanyIdUsersUserIdAlertsAlertIdGet200Response.md)
 
 ### Authorization
 
@@ -144,7 +144,7 @@ try {
 ## `companiesCompanyIdUsersUserIdAlertsAlertIdPatch()`
 
 ```php
-companiesCompanyIdUsersUserIdAlertsAlertIdPatch($company_id, $user_id, $alert_id, $alert): object
+companiesCompanyIdUsersUserIdAlertsAlertIdPatch($company_id, $user_id, $alert_id, $alert): \SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdAlertsAlertIdPatch200Response
 ```
 
 Update an existing alert by ID
@@ -192,7 +192,7 @@ try {
 
 ### Return type
 
-**object**
+[**\SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdAlertsAlertIdPatch200Response**](../Model/CompaniesCompanyIdUsersUserIdAlertsAlertIdPatch200Response.md)
 
 ### Authorization
 
@@ -210,7 +210,7 @@ try {
 ## `companiesCompanyIdUsersUserIdAlertsAssetAssetIdAllGet()`
 
 ```php
-companiesCompanyIdUsersUserIdAlertsAssetAssetIdAllGet($company_id, $user_id, $asset_id): object
+companiesCompanyIdUsersUserIdAlertsAssetAssetIdAllGet($company_id, $user_id, $asset_id): \SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdAlertsGet200Response
 ```
 
 Get all alerts for a specific asset
@@ -256,7 +256,7 @@ try {
 
 ### Return type
 
-**object**
+[**\SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdAlertsGet200Response**](../Model/CompaniesCompanyIdUsersUserIdAlertsGet200Response.md)
 
 ### Authorization
 
@@ -274,7 +274,7 @@ try {
 ## `companiesCompanyIdUsersUserIdAlertsAssetAssetIdGet()`
 
 ```php
-companiesCompanyIdUsersUserIdAlertsAssetAssetIdGet($company_id, $user_id, $asset_id): object
+companiesCompanyIdUsersUserIdAlertsAssetAssetIdGet($company_id, $user_id, $asset_id): \SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdAlertsAlertIdGet200Response
 ```
 
 Get all alerts for a specific asset (by user)
@@ -320,7 +320,7 @@ try {
 
 ### Return type
 
-**object**
+[**\SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdAlertsAlertIdGet200Response**](../Model/CompaniesCompanyIdUsersUserIdAlertsAlertIdGet200Response.md)
 
 ### Authorization
 
@@ -338,7 +338,7 @@ try {
 ## `companiesCompanyIdUsersUserIdAlertsGet()`
 
 ```php
-companiesCompanyIdUsersUserIdAlertsGet($company_id, $user_id): object
+companiesCompanyIdUsersUserIdAlertsGet($company_id, $user_id): \SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdAlertsGet200Response
 ```
 
 Get a list of all alerts for a specific user
@@ -382,7 +382,7 @@ try {
 
 ### Return type
 
-**object**
+[**\SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdAlertsGet200Response**](../Model/CompaniesCompanyIdUsersUserIdAlertsGet200Response.md)
 
 ### Authorization
 
@@ -400,7 +400,7 @@ try {
 ## `companiesCompanyIdUsersUserIdAlertsPost()`
 
 ```php
-companiesCompanyIdUsersUserIdAlertsPost($company_id, $user_id, $alert): object
+companiesCompanyIdUsersUserIdAlertsPost($company_id, $user_id, $alert): \SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdAlertsPost200Response
 ```
 
 POST /companies/{company_id}/users/{user_id}/alerts
@@ -446,7 +446,7 @@ try {
 
 ### Return type
 
-**object**
+[**\SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdAlertsPost200Response**](../Model/CompaniesCompanyIdUsersUserIdAlertsPost200Response.md)
 
 ### Authorization
 

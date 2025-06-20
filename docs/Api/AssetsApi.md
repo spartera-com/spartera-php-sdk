@@ -21,7 +21,7 @@ All URIs are relative to https://api.spartera.com, except if the operation defin
 ## `analyzeCompanyHandleAssetsAssetSlugGet()`
 
 ```php
-analyzeCompanyHandleAssetsAssetSlugGet($asset_slug, $company_handle): object
+analyzeCompanyHandleAssetsAssetSlugGet($company_handle, $asset_slug): \SparteraApiSdk\Model\CompaniesCompanyIdAssetsAssetIdGet200Response
 ```
 
 Process (analyze) an asset. Attempt to process an analytic on a backend warehouse/AI model.
@@ -45,11 +45,11 @@ $apiInstance = new SparteraApiSdk\Api\AssetsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$asset_slug = 'asset_slug_example'; // string
 $company_handle = 'company_handle_example'; // string
+$asset_slug = 'asset_slug_example'; // string
 
 try {
-    $result = $apiInstance->analyzeCompanyHandleAssetsAssetSlugGet($asset_slug, $company_handle);
+    $result = $apiInstance->analyzeCompanyHandleAssetsAssetSlugGet($company_handle, $asset_slug);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AssetsApi->analyzeCompanyHandleAssetsAssetSlugGet: ', $e->getMessage(), PHP_EOL;
@@ -60,12 +60,12 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **asset_slug** | **string**|  | |
 | **company_handle** | **string**|  | |
+| **asset_slug** | **string**|  | |
 
 ### Return type
 
-**object**
+[**\SparteraApiSdk\Model\CompaniesCompanyIdAssetsAssetIdGet200Response**](../Model/CompaniesCompanyIdAssetsAssetIdGet200Response.md)
 
 ### Authorization
 
@@ -83,7 +83,7 @@ try {
 ## `companiesCompanyIdAssetsAssetIdDelete()`
 
 ```php
-companiesCompanyIdAssetsAssetIdDelete($company_id, $asset_id): object
+companiesCompanyIdAssetsAssetIdDelete($company_id, $asset_id): \SparteraApiSdk\Model\CompaniesCompanyIdAssetsAssetIdDelete200Response
 ```
 
 Delete single asset by ID
@@ -127,7 +127,7 @@ try {
 
 ### Return type
 
-**object**
+[**\SparteraApiSdk\Model\CompaniesCompanyIdAssetsAssetIdDelete200Response**](../Model/CompaniesCompanyIdAssetsAssetIdDelete200Response.md)
 
 ### Authorization
 
@@ -145,7 +145,7 @@ try {
 ## `companiesCompanyIdAssetsAssetIdGet()`
 
 ```php
-companiesCompanyIdAssetsAssetIdGet($company_id, $asset_id): object
+companiesCompanyIdAssetsAssetIdGet($company_id, $asset_id): \SparteraApiSdk\Model\CompaniesCompanyIdAssetsAssetIdGet200Response
 ```
 
 Get single asset by ID
@@ -189,7 +189,7 @@ try {
 
 ### Return type
 
-**object**
+[**\SparteraApiSdk\Model\CompaniesCompanyIdAssetsAssetIdGet200Response**](../Model/CompaniesCompanyIdAssetsAssetIdGet200Response.md)
 
 ### Authorization
 
@@ -207,7 +207,7 @@ try {
 ## `companiesCompanyIdAssetsAssetIdInfoschemaGet()`
 
 ```php
-companiesCompanyIdAssetsAssetIdInfoschemaGet($company_id, $asset_id): object
+companiesCompanyIdAssetsAssetIdInfoschemaGet($company_id, $asset_id): \SparteraApiSdk\Model\CompaniesCompanyIdAssetsGet200Response
 ```
 
 Get the information schema for a specific asset's table
@@ -251,7 +251,7 @@ try {
 
 ### Return type
 
-**object**
+[**\SparteraApiSdk\Model\CompaniesCompanyIdAssetsGet200Response**](../Model/CompaniesCompanyIdAssetsGet200Response.md)
 
 ### Authorization
 
@@ -269,7 +269,7 @@ try {
 ## `companiesCompanyIdAssetsAssetIdInfoschemaSaveGet()`
 
 ```php
-companiesCompanyIdAssetsAssetIdInfoschemaSaveGet($company_id, $asset_id): object
+companiesCompanyIdAssetsAssetIdInfoschemaSaveGet($company_id, $asset_id): \SparteraApiSdk\Model\CompaniesCompanyIdAssetsGet200Response
 ```
 
 Retrieve and save an asset's information schema
@@ -313,7 +313,7 @@ try {
 
 ### Return type
 
-**object**
+[**\SparteraApiSdk\Model\CompaniesCompanyIdAssetsGet200Response**](../Model/CompaniesCompanyIdAssetsGet200Response.md)
 
 ### Authorization
 
@@ -331,7 +331,7 @@ try {
 ## `companiesCompanyIdAssetsAssetIdPatch()`
 
 ```php
-companiesCompanyIdAssetsAssetIdPatch($company_id, $asset_id, $asset): object
+companiesCompanyIdAssetsAssetIdPatch($company_id, $asset_id, $asset): \SparteraApiSdk\Model\CompaniesCompanyIdAssetsAssetIdPatch200Response
 ```
 
 Update an existing asset by ID
@@ -377,7 +377,7 @@ try {
 
 ### Return type
 
-**object**
+[**\SparteraApiSdk\Model\CompaniesCompanyIdAssetsAssetIdPatch200Response**](../Model/CompaniesCompanyIdAssetsAssetIdPatch200Response.md)
 
 ### Authorization
 
@@ -395,7 +395,7 @@ try {
 ## `companiesCompanyIdAssetsAssetIdPredictedPriceGet()`
 
 ```php
-companiesCompanyIdAssetsAssetIdPredictedPriceGet($company_id, $asset_id): object
+companiesCompanyIdAssetsAssetIdPredictedPriceGet($company_id, $asset_id): \SparteraApiSdk\Model\CompaniesCompanyIdAssetsGet200Response
 ```
 
 Get AI-predicted pricing for a specific asset
@@ -439,7 +439,7 @@ try {
 
 ### Return type
 
-**object**
+[**\SparteraApiSdk\Model\CompaniesCompanyIdAssetsGet200Response**](../Model/CompaniesCompanyIdAssetsGet200Response.md)
 
 ### Authorization
 
@@ -457,7 +457,7 @@ try {
 ## `companiesCompanyIdAssetsAssetIdStatisticsGet()`
 
 ```php
-companiesCompanyIdAssetsAssetIdStatisticsGet($company_id, $asset_id): object
+companiesCompanyIdAssetsAssetIdStatisticsGet($company_id, $asset_id): \SparteraApiSdk\Model\CompaniesCompanyIdAssetsGet200Response
 ```
 
 Get statistics for a specific asset (public endpoint)
@@ -501,7 +501,7 @@ try {
 
 ### Return type
 
-**object**
+[**\SparteraApiSdk\Model\CompaniesCompanyIdAssetsGet200Response**](../Model/CompaniesCompanyIdAssetsGet200Response.md)
 
 ### Authorization
 
@@ -519,7 +519,7 @@ try {
 ## `companiesCompanyIdAssetsAssetIdTestGet()`
 
 ```php
-companiesCompanyIdAssetsAssetIdTestGet($company_id, $asset_id): object
+companiesCompanyIdAssetsAssetIdTestGet($company_id, $asset_id): \SparteraApiSdk\Model\CompaniesCompanyIdAssetsGet200Response
 ```
 
 Test out an Asset (on a subset of data)
@@ -563,7 +563,7 @@ try {
 
 ### Return type
 
-**object**
+[**\SparteraApiSdk\Model\CompaniesCompanyIdAssetsGet200Response**](../Model/CompaniesCompanyIdAssetsGet200Response.md)
 
 ### Authorization
 
@@ -581,7 +581,7 @@ try {
 ## `companiesCompanyIdAssetsGet()`
 
 ```php
-companiesCompanyIdAssetsGet($company_id): object
+companiesCompanyIdAssetsGet($company_id): \SparteraApiSdk\Model\CompaniesCompanyIdAssetsGet200Response
 ```
 
 Get all assets for a specific company
@@ -623,7 +623,7 @@ try {
 
 ### Return type
 
-**object**
+[**\SparteraApiSdk\Model\CompaniesCompanyIdAssetsGet200Response**](../Model/CompaniesCompanyIdAssetsGet200Response.md)
 
 ### Authorization
 
@@ -641,7 +641,7 @@ try {
 ## `companiesCompanyIdAssetsPost()`
 
 ```php
-companiesCompanyIdAssetsPost($company_id, $asset): object
+companiesCompanyIdAssetsPost($company_id, $asset): \SparteraApiSdk\Model\CompaniesCompanyIdAssetsPost200Response
 ```
 
 Create a new asset
@@ -685,7 +685,7 @@ try {
 
 ### Return type
 
-**object**
+[**\SparteraApiSdk\Model\CompaniesCompanyIdAssetsPost200Response**](../Model/CompaniesCompanyIdAssetsPost200Response.md)
 
 ### Authorization
 
@@ -703,7 +703,7 @@ try {
 ## `companiesCompanyIdAssetsStatisticsGet()`
 
 ```php
-companiesCompanyIdAssetsStatisticsGet($company_id): object
+companiesCompanyIdAssetsStatisticsGet($company_id): \SparteraApiSdk\Model\CompaniesCompanyIdAssetsGet200Response
 ```
 
 Get statistics for all assets the user has access to
@@ -745,7 +745,7 @@ try {
 
 ### Return type
 
-**object**
+[**\SparteraApiSdk\Model\CompaniesCompanyIdAssetsGet200Response**](../Model/CompaniesCompanyIdAssetsGet200Response.md)
 
 ### Authorization
 

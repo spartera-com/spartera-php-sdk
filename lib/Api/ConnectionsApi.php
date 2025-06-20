@@ -155,7 +155,7 @@ class ConnectionsApi
      *
      * @throws \SparteraApiSdk\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return object|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3
+     * @return \SparteraApiSdk\Model\CompaniesCompanyIdConnectionsConnectionIdDelete200Response|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3
      */
     public function companiesCompanyIdConnectionsConnectionIdDelete($company_id, $connection_id, string $contentType = self::contentTypes['companiesCompanyIdConnectionsConnectionIdDelete'][0])
     {
@@ -174,7 +174,7 @@ class ConnectionsApi
      *
      * @throws \SparteraApiSdk\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of object|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SparteraApiSdk\Model\CompaniesCompanyIdConnectionsConnectionIdDelete200Response|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3, HTTP status code, HTTP response headers (array of strings)
      */
     public function companiesCompanyIdConnectionsConnectionIdDeleteWithHttpInfo($company_id, $connection_id, string $contentType = self::contentTypes['companiesCompanyIdConnectionsConnectionIdDelete'][0])
     {
@@ -206,7 +206,7 @@ class ConnectionsApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        'object',
+                        '\SparteraApiSdk\Model\CompaniesCompanyIdConnectionsConnectionIdDelete200Response',
                         $request,
                         $response,
                     );
@@ -246,7 +246,7 @@ class ConnectionsApi
             }
 
             return $this->handleResponseWithDataType(
-                'object',
+                '\SparteraApiSdk\Model\CompaniesCompanyIdConnectionsConnectionIdDelete200Response',
                 $request,
                 $response,
             );
@@ -255,7 +255,7 @@ class ConnectionsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        'object',
+                        '\SparteraApiSdk\Model\CompaniesCompanyIdConnectionsConnectionIdDelete200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -327,7 +327,7 @@ class ConnectionsApi
      */
     public function companiesCompanyIdConnectionsConnectionIdDeleteAsyncWithHttpInfo($company_id, $connection_id, string $contentType = self::contentTypes['companiesCompanyIdConnectionsConnectionIdDelete'][0])
     {
-        $returnType = 'object';
+        $returnType = '\SparteraApiSdk\Model\CompaniesCompanyIdConnectionsConnectionIdDelete200Response';
         $request = $this->companiesCompanyIdConnectionsConnectionIdDeleteRequest($company_id, $connection_id, $contentType);
 
         return $this->client
@@ -490,7 +490,7 @@ class ConnectionsApi
      *
      * @throws \SparteraApiSdk\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return object|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3
+     * @return \SparteraApiSdk\Model\CompaniesCompanyIdConnectionsConnectionIdGet200Response|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3
      */
     public function companiesCompanyIdConnectionsConnectionIdGet($company_id, $connection_id, string $contentType = self::contentTypes['companiesCompanyIdConnectionsConnectionIdGet'][0])
     {
@@ -509,7 +509,7 @@ class ConnectionsApi
      *
      * @throws \SparteraApiSdk\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of object|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SparteraApiSdk\Model\CompaniesCompanyIdConnectionsConnectionIdGet200Response|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3, HTTP status code, HTTP response headers (array of strings)
      */
     public function companiesCompanyIdConnectionsConnectionIdGetWithHttpInfo($company_id, $connection_id, string $contentType = self::contentTypes['companiesCompanyIdConnectionsConnectionIdGet'][0])
     {
@@ -541,7 +541,7 @@ class ConnectionsApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        'object',
+                        '\SparteraApiSdk\Model\CompaniesCompanyIdConnectionsConnectionIdGet200Response',
                         $request,
                         $response,
                     );
@@ -581,7 +581,7 @@ class ConnectionsApi
             }
 
             return $this->handleResponseWithDataType(
-                'object',
+                '\SparteraApiSdk\Model\CompaniesCompanyIdConnectionsConnectionIdGet200Response',
                 $request,
                 $response,
             );
@@ -590,7 +590,7 @@ class ConnectionsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        'object',
+                        '\SparteraApiSdk\Model\CompaniesCompanyIdConnectionsConnectionIdGet200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -662,7 +662,7 @@ class ConnectionsApi
      */
     public function companiesCompanyIdConnectionsConnectionIdGetAsyncWithHttpInfo($company_id, $connection_id, string $contentType = self::contentTypes['companiesCompanyIdConnectionsConnectionIdGet'][0])
     {
-        $returnType = 'object';
+        $returnType = '\SparteraApiSdk\Model\CompaniesCompanyIdConnectionsConnectionIdGet200Response';
         $request = $this->companiesCompanyIdConnectionsConnectionIdGetRequest($company_id, $connection_id, $contentType);
 
         return $this->client
@@ -825,7 +825,7 @@ class ConnectionsApi
      *
      * @throws \SparteraApiSdk\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return object|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3
+     * @return \SparteraApiSdk\Model\CompaniesCompanyIdConnectionsGet200Response|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3
      */
     public function companiesCompanyIdConnectionsConnectionIdInfoschemaGet($company_id, $connection_id, string $contentType = self::contentTypes['companiesCompanyIdConnectionsConnectionIdInfoschemaGet'][0])
     {
@@ -844,7 +844,7 @@ class ConnectionsApi
      *
      * @throws \SparteraApiSdk\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of object|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SparteraApiSdk\Model\CompaniesCompanyIdConnectionsGet200Response|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3, HTTP status code, HTTP response headers (array of strings)
      */
     public function companiesCompanyIdConnectionsConnectionIdInfoschemaGetWithHttpInfo($company_id, $connection_id, string $contentType = self::contentTypes['companiesCompanyIdConnectionsConnectionIdInfoschemaGet'][0])
     {
@@ -876,7 +876,7 @@ class ConnectionsApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        'object',
+                        '\SparteraApiSdk\Model\CompaniesCompanyIdConnectionsGet200Response',
                         $request,
                         $response,
                     );
@@ -916,7 +916,7 @@ class ConnectionsApi
             }
 
             return $this->handleResponseWithDataType(
-                'object',
+                '\SparteraApiSdk\Model\CompaniesCompanyIdConnectionsGet200Response',
                 $request,
                 $response,
             );
@@ -925,7 +925,7 @@ class ConnectionsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        'object',
+                        '\SparteraApiSdk\Model\CompaniesCompanyIdConnectionsGet200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -997,7 +997,7 @@ class ConnectionsApi
      */
     public function companiesCompanyIdConnectionsConnectionIdInfoschemaGetAsyncWithHttpInfo($company_id, $connection_id, string $contentType = self::contentTypes['companiesCompanyIdConnectionsConnectionIdInfoschemaGet'][0])
     {
-        $returnType = 'object';
+        $returnType = '\SparteraApiSdk\Model\CompaniesCompanyIdConnectionsGet200Response';
         $request = $this->companiesCompanyIdConnectionsConnectionIdInfoschemaGetRequest($company_id, $connection_id, $contentType);
 
         return $this->client
@@ -1161,7 +1161,7 @@ class ConnectionsApi
      *
      * @throws \SparteraApiSdk\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return object|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject|\SparteraApiSdk\Model\InlineObject3
+     * @return \SparteraApiSdk\Model\CompaniesCompanyIdConnectionsConnectionIdPatch200Response|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject|\SparteraApiSdk\Model\InlineObject3
      */
     public function companiesCompanyIdConnectionsConnectionIdPatch($company_id, $connection_id, $connection, string $contentType = self::contentTypes['companiesCompanyIdConnectionsConnectionIdPatch'][0])
     {
@@ -1181,7 +1181,7 @@ class ConnectionsApi
      *
      * @throws \SparteraApiSdk\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of object|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject|\SparteraApiSdk\Model\InlineObject3, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SparteraApiSdk\Model\CompaniesCompanyIdConnectionsConnectionIdPatch200Response|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject|\SparteraApiSdk\Model\InlineObject3, HTTP status code, HTTP response headers (array of strings)
      */
     public function companiesCompanyIdConnectionsConnectionIdPatchWithHttpInfo($company_id, $connection_id, $connection, string $contentType = self::contentTypes['companiesCompanyIdConnectionsConnectionIdPatch'][0])
     {
@@ -1213,7 +1213,7 @@ class ConnectionsApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        'object',
+                        '\SparteraApiSdk\Model\CompaniesCompanyIdConnectionsConnectionIdPatch200Response',
                         $request,
                         $response,
                     );
@@ -1259,7 +1259,7 @@ class ConnectionsApi
             }
 
             return $this->handleResponseWithDataType(
-                'object',
+                '\SparteraApiSdk\Model\CompaniesCompanyIdConnectionsConnectionIdPatch200Response',
                 $request,
                 $response,
             );
@@ -1268,7 +1268,7 @@ class ConnectionsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        'object',
+                        '\SparteraApiSdk\Model\CompaniesCompanyIdConnectionsConnectionIdPatch200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1350,7 +1350,7 @@ class ConnectionsApi
      */
     public function companiesCompanyIdConnectionsConnectionIdPatchAsyncWithHttpInfo($company_id, $connection_id, $connection, string $contentType = self::contentTypes['companiesCompanyIdConnectionsConnectionIdPatch'][0])
     {
-        $returnType = 'object';
+        $returnType = '\SparteraApiSdk\Model\CompaniesCompanyIdConnectionsConnectionIdPatch200Response';
         $request = $this->companiesCompanyIdConnectionsConnectionIdPatchRequest($company_id, $connection_id, $connection, $contentType);
 
         return $this->client
@@ -1528,7 +1528,7 @@ class ConnectionsApi
      *
      * @throws \SparteraApiSdk\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return object|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3
+     * @return \SparteraApiSdk\Model\CompaniesCompanyIdConnectionsGet200Response|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3
      */
     public function companiesCompanyIdConnectionsConnectionIdTestGet($company_id, $connection_id, string $contentType = self::contentTypes['companiesCompanyIdConnectionsConnectionIdTestGet'][0])
     {
@@ -1547,7 +1547,7 @@ class ConnectionsApi
      *
      * @throws \SparteraApiSdk\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of object|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SparteraApiSdk\Model\CompaniesCompanyIdConnectionsGet200Response|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3, HTTP status code, HTTP response headers (array of strings)
      */
     public function companiesCompanyIdConnectionsConnectionIdTestGetWithHttpInfo($company_id, $connection_id, string $contentType = self::contentTypes['companiesCompanyIdConnectionsConnectionIdTestGet'][0])
     {
@@ -1579,7 +1579,7 @@ class ConnectionsApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        'object',
+                        '\SparteraApiSdk\Model\CompaniesCompanyIdConnectionsGet200Response',
                         $request,
                         $response,
                     );
@@ -1619,7 +1619,7 @@ class ConnectionsApi
             }
 
             return $this->handleResponseWithDataType(
-                'object',
+                '\SparteraApiSdk\Model\CompaniesCompanyIdConnectionsGet200Response',
                 $request,
                 $response,
             );
@@ -1628,7 +1628,7 @@ class ConnectionsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        'object',
+                        '\SparteraApiSdk\Model\CompaniesCompanyIdConnectionsGet200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1700,7 +1700,7 @@ class ConnectionsApi
      */
     public function companiesCompanyIdConnectionsConnectionIdTestGetAsyncWithHttpInfo($company_id, $connection_id, string $contentType = self::contentTypes['companiesCompanyIdConnectionsConnectionIdTestGet'][0])
     {
-        $returnType = 'object';
+        $returnType = '\SparteraApiSdk\Model\CompaniesCompanyIdConnectionsGet200Response';
         $request = $this->companiesCompanyIdConnectionsConnectionIdTestGetRequest($company_id, $connection_id, $contentType);
 
         return $this->client
@@ -1862,7 +1862,7 @@ class ConnectionsApi
      *
      * @throws \SparteraApiSdk\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return object|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3
+     * @return \SparteraApiSdk\Model\CompaniesCompanyIdConnectionsGet200Response|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3
      */
     public function companiesCompanyIdConnectionsGet($company_id, string $contentType = self::contentTypes['companiesCompanyIdConnectionsGet'][0])
     {
@@ -1880,7 +1880,7 @@ class ConnectionsApi
      *
      * @throws \SparteraApiSdk\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of object|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SparteraApiSdk\Model\CompaniesCompanyIdConnectionsGet200Response|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject3, HTTP status code, HTTP response headers (array of strings)
      */
     public function companiesCompanyIdConnectionsGetWithHttpInfo($company_id, string $contentType = self::contentTypes['companiesCompanyIdConnectionsGet'][0])
     {
@@ -1912,7 +1912,7 @@ class ConnectionsApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        'object',
+                        '\SparteraApiSdk\Model\CompaniesCompanyIdConnectionsGet200Response',
                         $request,
                         $response,
                     );
@@ -1952,7 +1952,7 @@ class ConnectionsApi
             }
 
             return $this->handleResponseWithDataType(
-                'object',
+                '\SparteraApiSdk\Model\CompaniesCompanyIdConnectionsGet200Response',
                 $request,
                 $response,
             );
@@ -1961,7 +1961,7 @@ class ConnectionsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        'object',
+                        '\SparteraApiSdk\Model\CompaniesCompanyIdConnectionsGet200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2031,7 +2031,7 @@ class ConnectionsApi
      */
     public function companiesCompanyIdConnectionsGetAsyncWithHttpInfo($company_id, string $contentType = self::contentTypes['companiesCompanyIdConnectionsGet'][0])
     {
-        $returnType = 'object';
+        $returnType = '\SparteraApiSdk\Model\CompaniesCompanyIdConnectionsGet200Response';
         $request = $this->companiesCompanyIdConnectionsGetRequest($company_id, $contentType);
 
         return $this->client
@@ -2178,7 +2178,7 @@ class ConnectionsApi
      *
      * @throws \SparteraApiSdk\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return object|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject
+     * @return \SparteraApiSdk\Model\CompaniesCompanyIdConnectionsPost200Response|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject
      */
     public function companiesCompanyIdConnectionsPost($company_id, $connection, string $contentType = self::contentTypes['companiesCompanyIdConnectionsPost'][0])
     {
@@ -2197,7 +2197,7 @@ class ConnectionsApi
      *
      * @throws \SparteraApiSdk\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of object|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SparteraApiSdk\Model\CompaniesCompanyIdConnectionsPost200Response|\SparteraApiSdk\Model\InlineObject1|\SparteraApiSdk\Model\InlineObject2|\SparteraApiSdk\Model\InlineObject, HTTP status code, HTTP response headers (array of strings)
      */
     public function companiesCompanyIdConnectionsPostWithHttpInfo($company_id, $connection, string $contentType = self::contentTypes['companiesCompanyIdConnectionsPost'][0])
     {
@@ -2229,7 +2229,7 @@ class ConnectionsApi
             switch($statusCode) {
                 case 200:
                     return $this->handleResponseWithDataType(
-                        'object',
+                        '\SparteraApiSdk\Model\CompaniesCompanyIdConnectionsPost200Response',
                         $request,
                         $response,
                     );
@@ -2269,7 +2269,7 @@ class ConnectionsApi
             }
 
             return $this->handleResponseWithDataType(
-                'object',
+                '\SparteraApiSdk\Model\CompaniesCompanyIdConnectionsPost200Response',
                 $request,
                 $response,
             );
@@ -2278,7 +2278,7 @@ class ConnectionsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        'object',
+                        '\SparteraApiSdk\Model\CompaniesCompanyIdConnectionsPost200Response',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2350,7 +2350,7 @@ class ConnectionsApi
      */
     public function companiesCompanyIdConnectionsPostAsyncWithHttpInfo($company_id, $connection, string $contentType = self::contentTypes['companiesCompanyIdConnectionsPost'][0])
     {
-        $returnType = 'object';
+        $returnType = '\SparteraApiSdk\Model\CompaniesCompanyIdConnectionsPost200Response';
         $request = $this->companiesCompanyIdConnectionsPostRequest($company_id, $connection, $contentType);
 
         return $this->client

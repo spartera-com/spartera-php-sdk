@@ -9,12 +9,13 @@ All URIs are relative to https://api.spartera.com, except if the operation defin
 | [**companiesCompanyIdUsersUserIdDelete()**](UsersApi.md#companiesCompanyIdUsersUserIdDelete) | **DELETE** /companies/{company_id}/users/{user_id} | Delete single user by ID |
 | [**companiesCompanyIdUsersUserIdGet()**](UsersApi.md#companiesCompanyIdUsersUserIdGet) | **GET** /companies/{company_id}/users/{user_id} | Get single user by ID |
 | [**companiesCompanyIdUsersUserIdPatch()**](UsersApi.md#companiesCompanyIdUsersUserIdPatch) | **PATCH** /companies/{company_id}/users/{user_id} | Update an existing user by ID |
+| [**meGet()**](UsersApi.md#meGet) | **GET** /me | Get current authenticated user&#39;s profile information.              Returns:                 JSON response with user profile data from database |
 
 
 ## `companiesCompanyIdUsersGet()`
 
 ```php
-companiesCompanyIdUsersGet($company_id): object
+companiesCompanyIdUsersGet($company_id): \SparteraApiSdk\Model\CompaniesCompanyIdUsersGet200Response
 ```
 
 Get a list of all users in a company
@@ -56,7 +57,7 @@ try {
 
 ### Return type
 
-**object**
+[**\SparteraApiSdk\Model\CompaniesCompanyIdUsersGet200Response**](../Model/CompaniesCompanyIdUsersGet200Response.md)
 
 ### Authorization
 
@@ -74,7 +75,7 @@ try {
 ## `companiesCompanyIdUsersPost()`
 
 ```php
-companiesCompanyIdUsersPost($company_id, $user): object
+companiesCompanyIdUsersPost($company_id, $user): \SparteraApiSdk\Model\CompaniesCompanyIdUsersPost200Response
 ```
 
 Create a new user
@@ -118,7 +119,7 @@ try {
 
 ### Return type
 
-**object**
+[**\SparteraApiSdk\Model\CompaniesCompanyIdUsersPost200Response**](../Model/CompaniesCompanyIdUsersPost200Response.md)
 
 ### Authorization
 
@@ -136,7 +137,7 @@ try {
 ## `companiesCompanyIdUsersUserIdDelete()`
 
 ```php
-companiesCompanyIdUsersUserIdDelete($company_id, $user_id): object
+companiesCompanyIdUsersUserIdDelete($company_id, $user_id): \SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdDelete200Response
 ```
 
 Delete single user by ID
@@ -180,7 +181,7 @@ try {
 
 ### Return type
 
-**object**
+[**\SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdDelete200Response**](../Model/CompaniesCompanyIdUsersUserIdDelete200Response.md)
 
 ### Authorization
 
@@ -198,7 +199,7 @@ try {
 ## `companiesCompanyIdUsersUserIdGet()`
 
 ```php
-companiesCompanyIdUsersUserIdGet($company_id, $user_id): object
+companiesCompanyIdUsersUserIdGet($company_id, $user_id): \SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdGet200Response
 ```
 
 Get single user by ID
@@ -242,7 +243,7 @@ try {
 
 ### Return type
 
-**object**
+[**\SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdGet200Response**](../Model/CompaniesCompanyIdUsersUserIdGet200Response.md)
 
 ### Authorization
 
@@ -260,7 +261,7 @@ try {
 ## `companiesCompanyIdUsersUserIdPatch()`
 
 ```php
-companiesCompanyIdUsersUserIdPatch($company_id, $user_id, $user): object
+companiesCompanyIdUsersUserIdPatch($company_id, $user_id, $user): \SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdPatch200Response
 ```
 
 Update an existing user by ID
@@ -306,7 +307,7 @@ try {
 
 ### Return type
 
-**object**
+[**\SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdPatch200Response**](../Model/CompaniesCompanyIdUsersUserIdPatch200Response.md)
 
 ### Authorization
 
@@ -315,6 +316,63 @@ try {
 ### HTTP request headers
 
 - **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `meGet()`
+
+```php
+meGet(): \SparteraApiSdk\Model\MeGet200Response
+```
+
+Get current authenticated user's profile information.              Returns:                 JSON response with user profile data from database
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: ApiKeyAuth
+$config = SparteraApiSdk\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = SparteraApiSdk\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
+
+
+$apiInstance = new SparteraApiSdk\Api\UsersApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+
+try {
+    $result = $apiInstance->meGet();
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling UsersApi->meGet: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+[**\SparteraApiSdk\Model\MeGet200Response**](../Model/MeGet200Response.md)
+
+### Authorization
+
+[ApiKeyAuth](../../README.md#ApiKeyAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
