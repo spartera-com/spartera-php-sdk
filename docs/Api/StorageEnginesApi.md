@@ -11,7 +11,7 @@ All URIs are relative to https://api.spartera.com, except if the operation defin
 ## `cloudProvidersProviderIdStorageEnginesEngineIdGet()`
 
 ```php
-cloudProvidersProviderIdStorageEnginesEngineIdGet($provider_id, $engine_id): \SparteraApiSdk\Model\CompaniesCompanyIdApiKeysGet200Response
+cloudProvidersProviderIdStorageEnginesEngineIdGet($provider_id, $engine_id): \SparteraApiSdk\Model\CloudProvidersProviderIdStorageEnginesGet200Response
 ```
 
 Get single storage engine by ID
@@ -55,7 +55,7 @@ try {
 
 ### Return type
 
-[**\SparteraApiSdk\Model\CompaniesCompanyIdApiKeysGet200Response**](../Model/CompaniesCompanyIdApiKeysGet200Response.md)
+[**\SparteraApiSdk\Model\CloudProvidersProviderIdStorageEnginesGet200Response**](../Model/CloudProvidersProviderIdStorageEnginesGet200Response.md)
 
 ### Authorization
 
@@ -73,7 +73,7 @@ try {
 ## `cloudProvidersProviderIdStorageEnginesGet()`
 
 ```php
-cloudProvidersProviderIdStorageEnginesGet($provider_id): \SparteraApiSdk\Model\CompaniesCompanyIdApiKeysGet200Response
+cloudProvidersProviderIdStorageEnginesGet($provider_id): \SparteraApiSdk\Model\CloudProvidersProviderIdStorageEnginesGet200Response
 ```
 
 Get a list of all storage engines
@@ -115,7 +115,7 @@ try {
 
 ### Return type
 
-[**\SparteraApiSdk\Model\CompaniesCompanyIdApiKeysGet200Response**](../Model/CompaniesCompanyIdApiKeysGet200Response.md)
+[**\SparteraApiSdk\Model\CloudProvidersProviderIdStorageEnginesGet200Response**](../Model/CloudProvidersProviderIdStorageEnginesGet200Response.md)
 
 ### Authorization
 

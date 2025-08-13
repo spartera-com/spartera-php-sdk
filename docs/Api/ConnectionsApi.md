@@ -202,7 +202,7 @@ try {
 ## `companiesCompanyIdConnectionsConnectionIdPatch()`
 
 ```php
-companiesCompanyIdConnectionsConnectionIdPatch($company_id, $connection_id, $connection): \SparteraApiSdk\Model\CompaniesCompanyIdConnectionsConnectionIdPatch200Response
+companiesCompanyIdConnectionsConnectionIdPatch($company_id, $connection_id, $connections_update): \SparteraApiSdk\Model\CompaniesCompanyIdConnectionsConnectionIdPatch200Response
 ```
 
 Update an existing connection by ID
@@ -228,10 +228,10 @@ $apiInstance = new SparteraApiSdk\Api\ConnectionsApi(
 );
 $company_id = 'company_id_example'; // string
 $connection_id = 'connection_id_example'; // string
-$connection = new \SparteraApiSdk\Model\Connection(); // \SparteraApiSdk\Model\Connection
+$connections_update = new \SparteraApiSdk\Model\ConnectionsUpdate(); // \SparteraApiSdk\Model\ConnectionsUpdate
 
 try {
-    $result = $apiInstance->companiesCompanyIdConnectionsConnectionIdPatch($company_id, $connection_id, $connection);
+    $result = $apiInstance->companiesCompanyIdConnectionsConnectionIdPatch($company_id, $connection_id, $connections_update);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ConnectionsApi->companiesCompanyIdConnectionsConnectionIdPatch: ', $e->getMessage(), PHP_EOL;
@@ -244,7 +244,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **company_id** | **string**|  | |
 | **connection_id** | **string**|  | |
-| **connection** | [**\SparteraApiSdk\Model\Connection**](../Model/Connection.md)|  | |
+| **connections_update** | [**\SparteraApiSdk\Model\ConnectionsUpdate**](../Model/ConnectionsUpdate.md)|  | |
 
 ### Return type
 
@@ -388,7 +388,7 @@ try {
 ## `companiesCompanyIdConnectionsPost()`
 
 ```php
-companiesCompanyIdConnectionsPost($company_id, $connection): \SparteraApiSdk\Model\CompaniesCompanyIdConnectionsPost200Response
+companiesCompanyIdConnectionsPost($company_id, $connections_input): \SparteraApiSdk\Model\CompaniesCompanyIdConnectionsPost200Response
 ```
 
 Create a new connection by ID
@@ -413,10 +413,10 @@ $apiInstance = new SparteraApiSdk\Api\ConnectionsApi(
     $config
 );
 $company_id = 'company_id_example'; // string
-$connection = new \SparteraApiSdk\Model\Connection(); // \SparteraApiSdk\Model\Connection
+$connections_input = new \SparteraApiSdk\Model\ConnectionsInput(); // \SparteraApiSdk\Model\ConnectionsInput
 
 try {
-    $result = $apiInstance->companiesCompanyIdConnectionsPost($company_id, $connection);
+    $result = $apiInstance->companiesCompanyIdConnectionsPost($company_id, $connections_input);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ConnectionsApi->companiesCompanyIdConnectionsPost: ', $e->getMessage(), PHP_EOL;
@@ -428,7 +428,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **company_id** | **string**|  | |
-| **connection** | [**\SparteraApiSdk\Model\Connection**](../Model/Connection.md)|  | |
+| **connections_input** | [**\SparteraApiSdk\Model\ConnectionsInput**](../Model/ConnectionsInput.md)|  | |
 
 ### Return type
 

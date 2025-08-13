@@ -17,7 +17,7 @@ All URIs are relative to https://api.spartera.com, except if the operation defin
 ## `companiesCompanyIdUsersUserIdFavoritesCategoryCategoryGet()`
 
 ```php
-companiesCompanyIdUsersUserIdFavoritesCategoryCategoryGet($company_id, $user_id, $category): \SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdGet200Response
+companiesCompanyIdUsersUserIdFavoritesCategoryCategoryGet($company_id, $user_id, $category): \SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdFavoritesCategoryCategoryGet200Response
 ```
 
 Get all favorites for the specified user in a specific category
@@ -63,7 +63,7 @@ try {
 
 ### Return type
 
-[**\SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdGet200Response**](../Model/CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdGet200Response.md)
+[**\SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdFavoritesCategoryCategoryGet200Response**](../Model/CompaniesCompanyIdUsersUserIdFavoritesCategoryCategoryGet200Response.md)
 
 ### Authorization
 
@@ -81,7 +81,7 @@ try {
 ## `companiesCompanyIdUsersUserIdFavoritesCheckAssetIdGet()`
 
 ```php
-companiesCompanyIdUsersUserIdFavoritesCheckAssetIdGet($company_id, $user_id, $asset_id): \SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdGet200Response
+companiesCompanyIdUsersUserIdFavoritesCheckAssetIdGet($company_id, $user_id, $asset_id): \SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdFavoritesCategoryCategoryGet200Response
 ```
 
 Check if the specified user has favorited a specific asset
@@ -127,7 +127,7 @@ try {
 
 ### Return type
 
-[**\SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdGet200Response**](../Model/CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdGet200Response.md)
+[**\SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdFavoritesCategoryCategoryGet200Response**](../Model/CompaniesCompanyIdUsersUserIdFavoritesCategoryCategoryGet200Response.md)
 
 ### Authorization
 
@@ -209,7 +209,7 @@ try {
 ## `companiesCompanyIdUsersUserIdFavoritesFavoriteIdGet()`
 
 ```php
-companiesCompanyIdUsersUserIdFavoritesFavoriteIdGet($company_id, $user_id, $favorite_id): \SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdGet200Response
+companiesCompanyIdUsersUserIdFavoritesFavoriteIdGet($company_id, $user_id, $favorite_id): \SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdFavoritesCategoryCategoryGet200Response
 ```
 
 Get single favorite by ID
@@ -255,7 +255,7 @@ try {
 
 ### Return type
 
-[**\SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdGet200Response**](../Model/CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdGet200Response.md)
+[**\SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdFavoritesCategoryCategoryGet200Response**](../Model/CompaniesCompanyIdUsersUserIdFavoritesCategoryCategoryGet200Response.md)
 
 ### Authorization
 
@@ -273,7 +273,7 @@ try {
 ## `companiesCompanyIdUsersUserIdFavoritesFavoriteIdPatch()`
 
 ```php
-companiesCompanyIdUsersUserIdFavoritesFavoriteIdPatch($company_id, $user_id, $favorite_id, $favorite): \SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdPatch200Response
+companiesCompanyIdUsersUserIdFavoritesFavoriteIdPatch($company_id, $user_id, $favorite_id, $favorites_update): \SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdFavoritesFavoriteIdPatch200Response
 ```
 
 Update an existing favorite by ID
@@ -300,10 +300,10 @@ $apiInstance = new SparteraApiSdk\Api\FavoritesApi(
 $company_id = 'company_id_example'; // string
 $user_id = 'user_id_example'; // string
 $favorite_id = 'favorite_id_example'; // string
-$favorite = new \SparteraApiSdk\Model\Favorite(); // \SparteraApiSdk\Model\Favorite
+$favorites_update = new \SparteraApiSdk\Model\FavoritesUpdate(); // \SparteraApiSdk\Model\FavoritesUpdate
 
 try {
-    $result = $apiInstance->companiesCompanyIdUsersUserIdFavoritesFavoriteIdPatch($company_id, $user_id, $favorite_id, $favorite);
+    $result = $apiInstance->companiesCompanyIdUsersUserIdFavoritesFavoriteIdPatch($company_id, $user_id, $favorite_id, $favorites_update);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling FavoritesApi->companiesCompanyIdUsersUserIdFavoritesFavoriteIdPatch: ', $e->getMessage(), PHP_EOL;
@@ -317,7 +317,7 @@ try {
 | **company_id** | **string**|  | |
 | **user_id** | **string**|  | |
 | **favorite_id** | **string**|  | |
-| **favorite** | [**\SparteraApiSdk\Model\Favorite**](../Model/Favorite.md)|  | |
+| **favorites_update** | [**\SparteraApiSdk\Model\FavoritesUpdate**](../Model/FavoritesUpdate.md)|  | |
 
 ### Return type
 
@@ -401,7 +401,7 @@ try {
 ## `companiesCompanyIdUsersUserIdFavoritesPost()`
 
 ```php
-companiesCompanyIdUsersUserIdFavoritesPost($company_id, $user_id, $favorite): \SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdFavoritesPost200Response
+companiesCompanyIdUsersUserIdFavoritesPost($company_id, $user_id, $favorites_input): \SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdFavoritesPost200Response
 ```
 
 POST /companies/{company_id}/users/{user_id}/favorites
@@ -427,10 +427,10 @@ $apiInstance = new SparteraApiSdk\Api\FavoritesApi(
 );
 $company_id = 'company_id_example'; // string
 $user_id = 'user_id_example'; // string
-$favorite = new \SparteraApiSdk\Model\Favorite(); // \SparteraApiSdk\Model\Favorite
+$favorites_input = new \SparteraApiSdk\Model\FavoritesInput(); // \SparteraApiSdk\Model\FavoritesInput
 
 try {
-    $result = $apiInstance->companiesCompanyIdUsersUserIdFavoritesPost($company_id, $user_id, $favorite);
+    $result = $apiInstance->companiesCompanyIdUsersUserIdFavoritesPost($company_id, $user_id, $favorites_input);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling FavoritesApi->companiesCompanyIdUsersUserIdFavoritesPost: ', $e->getMessage(), PHP_EOL;
@@ -443,7 +443,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **company_id** | **string**|  | |
 | **user_id** | **string**|  | |
-| **favorite** | [**\SparteraApiSdk\Model\Favorite**](../Model/Favorite.md)|  | |
+| **favorites_input** | [**\SparteraApiSdk\Model\FavoritesInput**](../Model/FavoritesInput.md)|  | |
 
 ### Return type
 

@@ -8,7 +8,7 @@ All URIs are relative to https://api.spartera.com, except if the operation defin
 | [**companiesCompanyIdAssetsAssetIdPricesAphIdDelete()**](AssetPriceHistoryApi.md#companiesCompanyIdAssetsAssetIdPricesAphIdDelete) | **DELETE** /companies/{company_id}/assets/{asset_id}/prices/{aph_id} | Delete single price history record by ID |
 | [**companiesCompanyIdAssetsAssetIdPricesAphIdGet()**](AssetPriceHistoryApi.md#companiesCompanyIdAssetsAssetIdPricesAphIdGet) | **GET** /companies/{company_id}/assets/{asset_id}/prices/{aph_id} | Get single price history record by ID |
 | [**companiesCompanyIdAssetsAssetIdPricesAphIdPatch()**](AssetPriceHistoryApi.md#companiesCompanyIdAssetsAssetIdPricesAphIdPatch) | **PATCH** /companies/{company_id}/assets/{asset_id}/prices/{aph_id} | Update an existing price history record by ID |
-| [**companiesCompanyIdAssetsAssetIdPricesCalculateCreditsPost()**](AssetPriceHistoryApi.md#companiesCompanyIdAssetsAssetIdPricesCalculateCreditsPost) | **POST** /companies/{company_id}/assets/{asset_id}/prices/calculate_credits | POST /companies/{company_id}/assets/{asset_id}/prices/calculate_credits |
+| [**companiesCompanyIdAssetsAssetIdPricesCalculateCreditsPost()**](AssetPriceHistoryApi.md#companiesCompanyIdAssetsAssetIdPricesCalculateCreditsPost) | **POST** /companies/{company_id}/assets/{asset_id}/prices/calculate_credits | Calculate the credit equivalent for a given USD price without saving |
 | [**companiesCompanyIdAssetsAssetIdPricesDiscountPost()**](AssetPriceHistoryApi.md#companiesCompanyIdAssetsAssetIdPricesDiscountPost) | **POST** /companies/{company_id}/assets/{asset_id}/prices/discount | POST /companies/{company_id}/assets/{asset_id}/prices/discount |
 | [**companiesCompanyIdAssetsAssetIdPricesGet()**](AssetPriceHistoryApi.md#companiesCompanyIdAssetsAssetIdPricesGet) | **GET** /companies/{company_id}/assets/{asset_id}/prices | Get all price history records for a specific asset |
 | [**companiesCompanyIdAssetsAssetIdPricesPost()**](AssetPriceHistoryApi.md#companiesCompanyIdAssetsAssetIdPricesPost) | **POST** /companies/{company_id}/assets/{asset_id}/prices | Create a new price history record for an asset |
@@ -17,7 +17,7 @@ All URIs are relative to https://api.spartera.com, except if the operation defin
 ## `companiesCompanyIdAssetsAssetIdPricesActiveGet()`
 
 ```php
-companiesCompanyIdAssetsAssetIdPricesActiveGet($company_id, $asset_id): \SparteraApiSdk\Model\CompaniesCompanyIdApiKeysGet200Response
+companiesCompanyIdAssetsAssetIdPricesActiveGet($company_id, $asset_id): \SparteraApiSdk\Model\CompaniesCompanyIdAssetsAssetIdPricesGet200Response
 ```
 
 Get the currently active price for an asset
@@ -61,7 +61,7 @@ try {
 
 ### Return type
 
-[**\SparteraApiSdk\Model\CompaniesCompanyIdApiKeysGet200Response**](../Model/CompaniesCompanyIdApiKeysGet200Response.md)
+[**\SparteraApiSdk\Model\CompaniesCompanyIdAssetsAssetIdPricesGet200Response**](../Model/CompaniesCompanyIdAssetsAssetIdPricesGet200Response.md)
 
 ### Authorization
 
@@ -79,7 +79,7 @@ try {
 ## `companiesCompanyIdAssetsAssetIdPricesAphIdDelete()`
 
 ```php
-companiesCompanyIdAssetsAssetIdPricesAphIdDelete($company_id, $asset_id, $aph_id): \SparteraApiSdk\Model\CompaniesCompanyIdApiKeysGet200Response
+companiesCompanyIdAssetsAssetIdPricesAphIdDelete($company_id, $asset_id, $aph_id): \SparteraApiSdk\Model\CompaniesCompanyIdAssetsAssetIdPricesAphIdDelete200Response
 ```
 
 Delete single price history record by ID
@@ -125,7 +125,7 @@ try {
 
 ### Return type
 
-[**\SparteraApiSdk\Model\CompaniesCompanyIdApiKeysGet200Response**](../Model/CompaniesCompanyIdApiKeysGet200Response.md)
+[**\SparteraApiSdk\Model\CompaniesCompanyIdAssetsAssetIdPricesAphIdDelete200Response**](../Model/CompaniesCompanyIdAssetsAssetIdPricesAphIdDelete200Response.md)
 
 ### Authorization
 
@@ -143,7 +143,7 @@ try {
 ## `companiesCompanyIdAssetsAssetIdPricesAphIdGet()`
 
 ```php
-companiesCompanyIdAssetsAssetIdPricesAphIdGet($company_id, $asset_id, $aph_id): \SparteraApiSdk\Model\CompaniesCompanyIdApiKeysGet200Response
+companiesCompanyIdAssetsAssetIdPricesAphIdGet($company_id, $asset_id, $aph_id): \SparteraApiSdk\Model\CompaniesCompanyIdAssetsAssetIdPricesAphIdGet200Response
 ```
 
 Get single price history record by ID
@@ -189,7 +189,7 @@ try {
 
 ### Return type
 
-[**\SparteraApiSdk\Model\CompaniesCompanyIdApiKeysGet200Response**](../Model/CompaniesCompanyIdApiKeysGet200Response.md)
+[**\SparteraApiSdk\Model\CompaniesCompanyIdAssetsAssetIdPricesAphIdGet200Response**](../Model/CompaniesCompanyIdAssetsAssetIdPricesAphIdGet200Response.md)
 
 ### Authorization
 
@@ -207,7 +207,7 @@ try {
 ## `companiesCompanyIdAssetsAssetIdPricesAphIdPatch()`
 
 ```php
-companiesCompanyIdAssetsAssetIdPricesAphIdPatch($company_id, $asset_id, $aph_id): \SparteraApiSdk\Model\CompaniesCompanyIdApiKeysGet200Response
+companiesCompanyIdAssetsAssetIdPricesAphIdPatch($company_id, $asset_id, $aph_id, $asset_price_history_update): \SparteraApiSdk\Model\CompaniesCompanyIdAssetsAssetIdPricesAphIdPatch200Response
 ```
 
 Update an existing price history record by ID
@@ -234,9 +234,10 @@ $apiInstance = new SparteraApiSdk\Api\AssetPriceHistoryApi(
 $company_id = 'company_id_example'; // string
 $asset_id = 'asset_id_example'; // string
 $aph_id = 'aph_id_example'; // string
+$asset_price_history_update = new \SparteraApiSdk\Model\AssetPriceHistoryUpdate(); // \SparteraApiSdk\Model\AssetPriceHistoryUpdate
 
 try {
-    $result = $apiInstance->companiesCompanyIdAssetsAssetIdPricesAphIdPatch($company_id, $asset_id, $aph_id);
+    $result = $apiInstance->companiesCompanyIdAssetsAssetIdPricesAphIdPatch($company_id, $asset_id, $aph_id, $asset_price_history_update);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AssetPriceHistoryApi->companiesCompanyIdAssetsAssetIdPricesAphIdPatch: ', $e->getMessage(), PHP_EOL;
@@ -250,10 +251,11 @@ try {
 | **company_id** | **string**|  | |
 | **asset_id** | **string**|  | |
 | **aph_id** | **string**|  | |
+| **asset_price_history_update** | [**\SparteraApiSdk\Model\AssetPriceHistoryUpdate**](../Model/AssetPriceHistoryUpdate.md)|  | |
 
 ### Return type
 
-[**\SparteraApiSdk\Model\CompaniesCompanyIdApiKeysGet200Response**](../Model/CompaniesCompanyIdApiKeysGet200Response.md)
+[**\SparteraApiSdk\Model\CompaniesCompanyIdAssetsAssetIdPricesAphIdPatch200Response**](../Model/CompaniesCompanyIdAssetsAssetIdPricesAphIdPatch200Response.md)
 
 ### Authorization
 
@@ -261,7 +263,7 @@ try {
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: `application/json`
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
@@ -271,10 +273,10 @@ try {
 ## `companiesCompanyIdAssetsAssetIdPricesCalculateCreditsPost()`
 
 ```php
-companiesCompanyIdAssetsAssetIdPricesCalculateCreditsPost($company_id, $asset_id): \SparteraApiSdk\Model\CompaniesCompanyIdApiKeysGet200Response
+companiesCompanyIdAssetsAssetIdPricesCalculateCreditsPost($company_id, $asset_id, $asset_price_history_input): \SparteraApiSdk\Model\CompaniesCompanyIdAssetsAssetIdPricesPost200Response
 ```
 
-POST /companies/{company_id}/assets/{asset_id}/prices/calculate_credits
+Calculate the credit equivalent for a given USD price without saving
 
 ### Example
 
@@ -297,9 +299,10 @@ $apiInstance = new SparteraApiSdk\Api\AssetPriceHistoryApi(
 );
 $company_id = 'company_id_example'; // string
 $asset_id = 'asset_id_example'; // string
+$asset_price_history_input = new \SparteraApiSdk\Model\AssetPriceHistoryInput(); // \SparteraApiSdk\Model\AssetPriceHistoryInput
 
 try {
-    $result = $apiInstance->companiesCompanyIdAssetsAssetIdPricesCalculateCreditsPost($company_id, $asset_id);
+    $result = $apiInstance->companiesCompanyIdAssetsAssetIdPricesCalculateCreditsPost($company_id, $asset_id, $asset_price_history_input);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AssetPriceHistoryApi->companiesCompanyIdAssetsAssetIdPricesCalculateCreditsPost: ', $e->getMessage(), PHP_EOL;
@@ -312,10 +315,11 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **company_id** | **string**|  | |
 | **asset_id** | **string**|  | |
+| **asset_price_history_input** | [**\SparteraApiSdk\Model\AssetPriceHistoryInput**](../Model/AssetPriceHistoryInput.md)|  | |
 
 ### Return type
 
-[**\SparteraApiSdk\Model\CompaniesCompanyIdApiKeysGet200Response**](../Model/CompaniesCompanyIdApiKeysGet200Response.md)
+[**\SparteraApiSdk\Model\CompaniesCompanyIdAssetsAssetIdPricesPost200Response**](../Model/CompaniesCompanyIdAssetsAssetIdPricesPost200Response.md)
 
 ### Authorization
 
@@ -323,7 +327,7 @@ try {
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: `application/json`
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
@@ -333,7 +337,7 @@ try {
 ## `companiesCompanyIdAssetsAssetIdPricesDiscountPost()`
 
 ```php
-companiesCompanyIdAssetsAssetIdPricesDiscountPost($company_id, $asset_id): \SparteraApiSdk\Model\CompaniesCompanyIdApiKeysGet200Response
+companiesCompanyIdAssetsAssetIdPricesDiscountPost($company_id, $asset_id, $asset_price_history_input): \SparteraApiSdk\Model\CompaniesCompanyIdAssetsAssetIdPricesPost200Response
 ```
 
 POST /companies/{company_id}/assets/{asset_id}/prices/discount
@@ -359,9 +363,10 @@ $apiInstance = new SparteraApiSdk\Api\AssetPriceHistoryApi(
 );
 $company_id = 'company_id_example'; // string
 $asset_id = 'asset_id_example'; // string
+$asset_price_history_input = new \SparteraApiSdk\Model\AssetPriceHistoryInput(); // \SparteraApiSdk\Model\AssetPriceHistoryInput
 
 try {
-    $result = $apiInstance->companiesCompanyIdAssetsAssetIdPricesDiscountPost($company_id, $asset_id);
+    $result = $apiInstance->companiesCompanyIdAssetsAssetIdPricesDiscountPost($company_id, $asset_id, $asset_price_history_input);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AssetPriceHistoryApi->companiesCompanyIdAssetsAssetIdPricesDiscountPost: ', $e->getMessage(), PHP_EOL;
@@ -374,10 +379,11 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **company_id** | **string**|  | |
 | **asset_id** | **string**|  | |
+| **asset_price_history_input** | [**\SparteraApiSdk\Model\AssetPriceHistoryInput**](../Model/AssetPriceHistoryInput.md)|  | |
 
 ### Return type
 
-[**\SparteraApiSdk\Model\CompaniesCompanyIdApiKeysGet200Response**](../Model/CompaniesCompanyIdApiKeysGet200Response.md)
+[**\SparteraApiSdk\Model\CompaniesCompanyIdAssetsAssetIdPricesPost200Response**](../Model/CompaniesCompanyIdAssetsAssetIdPricesPost200Response.md)
 
 ### Authorization
 
@@ -385,7 +391,7 @@ try {
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: `application/json`
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
@@ -395,7 +401,7 @@ try {
 ## `companiesCompanyIdAssetsAssetIdPricesGet()`
 
 ```php
-companiesCompanyIdAssetsAssetIdPricesGet($company_id, $asset_id): \SparteraApiSdk\Model\CompaniesCompanyIdApiKeysGet200Response
+companiesCompanyIdAssetsAssetIdPricesGet($company_id, $asset_id): \SparteraApiSdk\Model\CompaniesCompanyIdAssetsAssetIdPricesGet200Response
 ```
 
 Get all price history records for a specific asset
@@ -439,7 +445,7 @@ try {
 
 ### Return type
 
-[**\SparteraApiSdk\Model\CompaniesCompanyIdApiKeysGet200Response**](../Model/CompaniesCompanyIdApiKeysGet200Response.md)
+[**\SparteraApiSdk\Model\CompaniesCompanyIdAssetsAssetIdPricesGet200Response**](../Model/CompaniesCompanyIdAssetsAssetIdPricesGet200Response.md)
 
 ### Authorization
 
@@ -457,7 +463,7 @@ try {
 ## `companiesCompanyIdAssetsAssetIdPricesPost()`
 
 ```php
-companiesCompanyIdAssetsAssetIdPricesPost($company_id, $asset_id): \SparteraApiSdk\Model\CompaniesCompanyIdApiKeysGet200Response
+companiesCompanyIdAssetsAssetIdPricesPost($company_id, $asset_id, $asset_price_history_input): \SparteraApiSdk\Model\CompaniesCompanyIdAssetsAssetIdPricesPost200Response
 ```
 
 Create a new price history record for an asset
@@ -483,9 +489,10 @@ $apiInstance = new SparteraApiSdk\Api\AssetPriceHistoryApi(
 );
 $company_id = 'company_id_example'; // string
 $asset_id = 'asset_id_example'; // string
+$asset_price_history_input = new \SparteraApiSdk\Model\AssetPriceHistoryInput(); // \SparteraApiSdk\Model\AssetPriceHistoryInput
 
 try {
-    $result = $apiInstance->companiesCompanyIdAssetsAssetIdPricesPost($company_id, $asset_id);
+    $result = $apiInstance->companiesCompanyIdAssetsAssetIdPricesPost($company_id, $asset_id, $asset_price_history_input);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AssetPriceHistoryApi->companiesCompanyIdAssetsAssetIdPricesPost: ', $e->getMessage(), PHP_EOL;
@@ -498,10 +505,11 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **company_id** | **string**|  | |
 | **asset_id** | **string**|  | |
+| **asset_price_history_input** | [**\SparteraApiSdk\Model\AssetPriceHistoryInput**](../Model/AssetPriceHistoryInput.md)|  | |
 
 ### Return type
 
-[**\SparteraApiSdk\Model\CompaniesCompanyIdApiKeysGet200Response**](../Model/CompaniesCompanyIdApiKeysGet200Response.md)
+[**\SparteraApiSdk\Model\CompaniesCompanyIdAssetsAssetIdPricesPost200Response**](../Model/CompaniesCompanyIdAssetsAssetIdPricesPost200Response.md)
 
 ### Authorization
 
@@ -509,7 +517,7 @@ try {
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: `application/json`
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

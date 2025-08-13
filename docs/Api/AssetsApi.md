@@ -4,7 +4,7 @@ All URIs are relative to https://api.spartera.com, except if the operation defin
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**analyzeCompanyHandleAssetsAssetSlugGet()**](AssetsApi.md#analyzeCompanyHandleAssetsAssetSlugGet) | **GET** /analyze/{company_handle}/assets/{asset_slug} | Process (analyze) an asset. Attempt to process an analytic on a backend warehouse/AI model. |
+| [**analyzeCompanyHandleAssetsAssetSlugGet()**](AssetsApi.md#analyzeCompanyHandleAssetsAssetSlugGet) | **GET** /analyze/{company_handle}/assets/{asset_slug} | Process (analyze) an asset. |
 | [**companiesCompanyIdAssetsAssetIdDelete()**](AssetsApi.md#companiesCompanyIdAssetsAssetIdDelete) | **DELETE** /companies/{company_id}/assets/{asset_id} | Delete single asset by ID |
 | [**companiesCompanyIdAssetsAssetIdGet()**](AssetsApi.md#companiesCompanyIdAssetsAssetIdGet) | **GET** /companies/{company_id}/assets/{asset_id} | Get single asset by ID |
 | [**companiesCompanyIdAssetsAssetIdInfoschemaGet()**](AssetsApi.md#companiesCompanyIdAssetsAssetIdInfoschemaGet) | **GET** /companies/{company_id}/assets/{asset_id}/infoschema | Get the information schema for a specific asset&#39;s table |
@@ -21,10 +21,10 @@ All URIs are relative to https://api.spartera.com, except if the operation defin
 ## `analyzeCompanyHandleAssetsAssetSlugGet()`
 
 ```php
-analyzeCompanyHandleAssetsAssetSlugGet($company_handle, $asset_slug): \SparteraApiSdk\Model\CompaniesCompanyIdAssetsAssetIdGet200Response
+analyzeCompanyHandleAssetsAssetSlugGet($asset_slug, $company_handle): \SparteraApiSdk\Model\AnalyzeCompanyHandleAssetsAssetSlugGet200Response
 ```
 
-Process (analyze) an asset. Attempt to process an analytic on a backend warehouse/AI model.
+Process (analyze) an asset.
 
 ### Example
 
@@ -45,11 +45,11 @@ $apiInstance = new SparteraApiSdk\Api\AssetsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$company_handle = 'company_handle_example'; // string
 $asset_slug = 'asset_slug_example'; // string
+$company_handle = 'company_handle_example'; // string
 
 try {
-    $result = $apiInstance->analyzeCompanyHandleAssetsAssetSlugGet($company_handle, $asset_slug);
+    $result = $apiInstance->analyzeCompanyHandleAssetsAssetSlugGet($asset_slug, $company_handle);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AssetsApi->analyzeCompanyHandleAssetsAssetSlugGet: ', $e->getMessage(), PHP_EOL;
@@ -60,12 +60,12 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **company_handle** | **string**|  | |
 | **asset_slug** | **string**|  | |
+| **company_handle** | **string**|  | |
 
 ### Return type
 
-[**\SparteraApiSdk\Model\CompaniesCompanyIdAssetsAssetIdGet200Response**](../Model/CompaniesCompanyIdAssetsAssetIdGet200Response.md)
+[**\SparteraApiSdk\Model\AnalyzeCompanyHandleAssetsAssetSlugGet200Response**](../Model/AnalyzeCompanyHandleAssetsAssetSlugGet200Response.md)
 
 ### Authorization
 
@@ -145,7 +145,7 @@ try {
 ## `companiesCompanyIdAssetsAssetIdGet()`
 
 ```php
-companiesCompanyIdAssetsAssetIdGet($company_id, $asset_id): \SparteraApiSdk\Model\CompaniesCompanyIdAssetsAssetIdGet200Response
+companiesCompanyIdAssetsAssetIdGet($company_id, $asset_id): \SparteraApiSdk\Model\AnalyzeCompanyHandleAssetsAssetSlugGet200Response
 ```
 
 Get single asset by ID
@@ -189,7 +189,7 @@ try {
 
 ### Return type
 
-[**\SparteraApiSdk\Model\CompaniesCompanyIdAssetsAssetIdGet200Response**](../Model/CompaniesCompanyIdAssetsAssetIdGet200Response.md)
+[**\SparteraApiSdk\Model\AnalyzeCompanyHandleAssetsAssetSlugGet200Response**](../Model/AnalyzeCompanyHandleAssetsAssetSlugGet200Response.md)
 
 ### Authorization
 
@@ -331,7 +331,7 @@ try {
 ## `companiesCompanyIdAssetsAssetIdPatch()`
 
 ```php
-companiesCompanyIdAssetsAssetIdPatch($company_id, $asset_id, $asset): \SparteraApiSdk\Model\CompaniesCompanyIdAssetsAssetIdPatch200Response
+companiesCompanyIdAssetsAssetIdPatch($company_id, $asset_id, $assets_update): \SparteraApiSdk\Model\CompaniesCompanyIdAssetsAssetIdPatch200Response
 ```
 
 Update an existing asset by ID
@@ -357,10 +357,10 @@ $apiInstance = new SparteraApiSdk\Api\AssetsApi(
 );
 $company_id = 'company_id_example'; // string
 $asset_id = 'asset_id_example'; // string
-$asset = new \SparteraApiSdk\Model\Asset(); // \SparteraApiSdk\Model\Asset
+$assets_update = new \SparteraApiSdk\Model\AssetsUpdate(); // \SparteraApiSdk\Model\AssetsUpdate
 
 try {
-    $result = $apiInstance->companiesCompanyIdAssetsAssetIdPatch($company_id, $asset_id, $asset);
+    $result = $apiInstance->companiesCompanyIdAssetsAssetIdPatch($company_id, $asset_id, $assets_update);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AssetsApi->companiesCompanyIdAssetsAssetIdPatch: ', $e->getMessage(), PHP_EOL;
@@ -373,7 +373,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **company_id** | **string**|  | |
 | **asset_id** | **string**|  | |
-| **asset** | [**\SparteraApiSdk\Model\Asset**](../Model/Asset.md)|  | |
+| **assets_update** | [**\SparteraApiSdk\Model\AssetsUpdate**](../Model/AssetsUpdate.md)|  | |
 
 ### Return type
 
@@ -641,7 +641,7 @@ try {
 ## `companiesCompanyIdAssetsPost()`
 
 ```php
-companiesCompanyIdAssetsPost($company_id, $asset): \SparteraApiSdk\Model\CompaniesCompanyIdAssetsPost200Response
+companiesCompanyIdAssetsPost($company_id, $assets_input): \SparteraApiSdk\Model\CompaniesCompanyIdAssetsPost200Response
 ```
 
 Create a new asset
@@ -666,10 +666,10 @@ $apiInstance = new SparteraApiSdk\Api\AssetsApi(
     $config
 );
 $company_id = 'company_id_example'; // string
-$asset = new \SparteraApiSdk\Model\Asset(); // \SparteraApiSdk\Model\Asset
+$assets_input = new \SparteraApiSdk\Model\AssetsInput(); // \SparteraApiSdk\Model\AssetsInput
 
 try {
-    $result = $apiInstance->companiesCompanyIdAssetsPost($company_id, $asset);
+    $result = $apiInstance->companiesCompanyIdAssetsPost($company_id, $assets_input);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AssetsApi->companiesCompanyIdAssetsPost: ', $e->getMessage(), PHP_EOL;
@@ -681,7 +681,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **company_id** | **string**|  | |
-| **asset** | [**\SparteraApiSdk\Model\Asset**](../Model/Asset.md)|  | |
+| **assets_input** | [**\SparteraApiSdk\Model\AssetsInput**](../Model/AssetsInput.md)|  | |
 
 ### Return type
 

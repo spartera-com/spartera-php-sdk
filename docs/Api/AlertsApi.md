@@ -80,7 +80,7 @@ try {
 ## `companiesCompanyIdUsersUserIdAlertsAlertIdGet()`
 
 ```php
-companiesCompanyIdUsersUserIdAlertsAlertIdGet($company_id, $user_id, $alert_id): \SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdAlertsAlertIdGet200Response
+companiesCompanyIdUsersUserIdAlertsAlertIdGet($company_id, $user_id, $alert_id): \SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdAlertsAssetAssetIdGet200Response
 ```
 
 Get single alert by ID
@@ -126,7 +126,7 @@ try {
 
 ### Return type
 
-[**\SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdAlertsAlertIdGet200Response**](../Model/CompaniesCompanyIdUsersUserIdAlertsAlertIdGet200Response.md)
+[**\SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdAlertsAssetAssetIdGet200Response**](../Model/CompaniesCompanyIdUsersUserIdAlertsAssetAssetIdGet200Response.md)
 
 ### Authorization
 
@@ -144,7 +144,7 @@ try {
 ## `companiesCompanyIdUsersUserIdAlertsAlertIdPatch()`
 
 ```php
-companiesCompanyIdUsersUserIdAlertsAlertIdPatch($company_id, $user_id, $alert_id, $alert): \SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdAlertsAlertIdPatch200Response
+companiesCompanyIdUsersUserIdAlertsAlertIdPatch($company_id, $user_id, $alert_id, $alerts_update): \SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdAlertsAlertIdPatch200Response
 ```
 
 Update an existing alert by ID
@@ -171,10 +171,10 @@ $apiInstance = new SparteraApiSdk\Api\AlertsApi(
 $company_id = 'company_id_example'; // string
 $user_id = 'user_id_example'; // string
 $alert_id = 'alert_id_example'; // string
-$alert = new \SparteraApiSdk\Model\Alert(); // \SparteraApiSdk\Model\Alert
+$alerts_update = new \SparteraApiSdk\Model\AlertsUpdate(); // \SparteraApiSdk\Model\AlertsUpdate
 
 try {
-    $result = $apiInstance->companiesCompanyIdUsersUserIdAlertsAlertIdPatch($company_id, $user_id, $alert_id, $alert);
+    $result = $apiInstance->companiesCompanyIdUsersUserIdAlertsAlertIdPatch($company_id, $user_id, $alert_id, $alerts_update);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AlertsApi->companiesCompanyIdUsersUserIdAlertsAlertIdPatch: ', $e->getMessage(), PHP_EOL;
@@ -188,7 +188,7 @@ try {
 | **company_id** | **string**|  | |
 | **user_id** | **string**|  | |
 | **alert_id** | **string**|  | |
-| **alert** | [**\SparteraApiSdk\Model\Alert**](../Model/Alert.md)|  | |
+| **alerts_update** | [**\SparteraApiSdk\Model\AlertsUpdate**](../Model/AlertsUpdate.md)|  | |
 
 ### Return type
 
@@ -274,7 +274,7 @@ try {
 ## `companiesCompanyIdUsersUserIdAlertsAssetAssetIdGet()`
 
 ```php
-companiesCompanyIdUsersUserIdAlertsAssetAssetIdGet($company_id, $user_id, $asset_id): \SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdAlertsAlertIdGet200Response
+companiesCompanyIdUsersUserIdAlertsAssetAssetIdGet($company_id, $user_id, $asset_id): \SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdAlertsAssetAssetIdGet200Response
 ```
 
 Get all alerts for a specific asset (by user)
@@ -320,7 +320,7 @@ try {
 
 ### Return type
 
-[**\SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdAlertsAlertIdGet200Response**](../Model/CompaniesCompanyIdUsersUserIdAlertsAlertIdGet200Response.md)
+[**\SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdAlertsAssetAssetIdGet200Response**](../Model/CompaniesCompanyIdUsersUserIdAlertsAssetAssetIdGet200Response.md)
 
 ### Authorization
 
@@ -400,7 +400,7 @@ try {
 ## `companiesCompanyIdUsersUserIdAlertsPost()`
 
 ```php
-companiesCompanyIdUsersUserIdAlertsPost($company_id, $user_id, $alert): \SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdAlertsPost200Response
+companiesCompanyIdUsersUserIdAlertsPost($company_id, $user_id, $alerts_input): \SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdAlertsPost200Response
 ```
 
 POST /companies/{company_id}/users/{user_id}/alerts
@@ -426,10 +426,10 @@ $apiInstance = new SparteraApiSdk\Api\AlertsApi(
 );
 $company_id = 'company_id_example'; // string
 $user_id = 'user_id_example'; // string
-$alert = new \SparteraApiSdk\Model\Alert(); // \SparteraApiSdk\Model\Alert
+$alerts_input = new \SparteraApiSdk\Model\AlertsInput(); // \SparteraApiSdk\Model\AlertsInput
 
 try {
-    $result = $apiInstance->companiesCompanyIdUsersUserIdAlertsPost($company_id, $user_id, $alert);
+    $result = $apiInstance->companiesCompanyIdUsersUserIdAlertsPost($company_id, $user_id, $alerts_input);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AlertsApi->companiesCompanyIdUsersUserIdAlertsPost: ', $e->getMessage(), PHP_EOL;
@@ -442,7 +442,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **company_id** | **string**|  | |
 | **user_id** | **string**|  | |
-| **alert** | [**\SparteraApiSdk\Model\Alert**](../Model/Alert.md)|  | |
+| **alerts_input** | [**\SparteraApiSdk\Model\AlertsInput**](../Model/AlertsInput.md)|  | |
 
 ### Return type
 

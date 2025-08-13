@@ -1,19 +1,14 @@
-# # Assetpricehistory
+# # AssetPriceHistory
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**date_created** | **\DateTime** |  | [optional]
+**last_updated** | **\DateTime** |  | [optional]
 **aph_id** | **string** |  | [optional]
 **asset_id** | **string** |  |
 **price_usd** | **float** |  | [optional]
-**price_credits** | **string** |  | [optional]
-**discount_percentage** | **float** |  | [optional]
-**sale_start_date** | **string** |  | [optional]
-**sale_end_date** | **string** |  | [optional]
-**date_ended** | **string** |  | [optional]
-**date_created** | **string** |  | [optional] [readonly]
-**last_updated** | **string** |  | [optional] [readonly]
-**active** | **string** |  |
+**date_ended** | **\DateTime** | When did the price end (Datetime) | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

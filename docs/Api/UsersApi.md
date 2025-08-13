@@ -9,7 +9,7 @@ All URIs are relative to https://api.spartera.com, except if the operation defin
 | [**companiesCompanyIdUsersUserIdDelete()**](UsersApi.md#companiesCompanyIdUsersUserIdDelete) | **DELETE** /companies/{company_id}/users/{user_id} | Delete single user by ID |
 | [**companiesCompanyIdUsersUserIdGet()**](UsersApi.md#companiesCompanyIdUsersUserIdGet) | **GET** /companies/{company_id}/users/{user_id} | Get single user by ID |
 | [**companiesCompanyIdUsersUserIdPatch()**](UsersApi.md#companiesCompanyIdUsersUserIdPatch) | **PATCH** /companies/{company_id}/users/{user_id} | Update an existing user by ID |
-| [**meGet()**](UsersApi.md#meGet) | **GET** /me | Get current authenticated user&#39;s profile information.              Returns:                 JSON response with user profile data from database |
+| [**meGet()**](UsersApi.md#meGet) | **GET** /me | Get current authenticated user&#39;s profile. |
 
 
 ## `companiesCompanyIdUsersGet()`
@@ -75,7 +75,7 @@ try {
 ## `companiesCompanyIdUsersPost()`
 
 ```php
-companiesCompanyIdUsersPost($company_id, $user): \SparteraApiSdk\Model\CompaniesCompanyIdUsersPost200Response
+companiesCompanyIdUsersPost($company_id, $users_input): \SparteraApiSdk\Model\CompaniesCompanyIdUsersPost200Response
 ```
 
 Create a new user
@@ -100,10 +100,10 @@ $apiInstance = new SparteraApiSdk\Api\UsersApi(
     $config
 );
 $company_id = 'company_id_example'; // string
-$user = new \SparteraApiSdk\Model\User(); // \SparteraApiSdk\Model\User
+$users_input = new \SparteraApiSdk\Model\UsersInput(); // \SparteraApiSdk\Model\UsersInput
 
 try {
-    $result = $apiInstance->companiesCompanyIdUsersPost($company_id, $user);
+    $result = $apiInstance->companiesCompanyIdUsersPost($company_id, $users_input);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UsersApi->companiesCompanyIdUsersPost: ', $e->getMessage(), PHP_EOL;
@@ -115,7 +115,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **company_id** | **string**|  | |
-| **user** | [**\SparteraApiSdk\Model\User**](../Model/User.md)|  | |
+| **users_input** | [**\SparteraApiSdk\Model\UsersInput**](../Model/UsersInput.md)|  | |
 
 ### Return type
 
@@ -261,7 +261,7 @@ try {
 ## `companiesCompanyIdUsersUserIdPatch()`
 
 ```php
-companiesCompanyIdUsersUserIdPatch($company_id, $user_id, $user): \SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdPatch200Response
+companiesCompanyIdUsersUserIdPatch($company_id, $user_id, $users_update): \SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdPatch200Response
 ```
 
 Update an existing user by ID
@@ -287,10 +287,10 @@ $apiInstance = new SparteraApiSdk\Api\UsersApi(
 );
 $company_id = 'company_id_example'; // string
 $user_id = 'user_id_example'; // string
-$user = new \SparteraApiSdk\Model\User(); // \SparteraApiSdk\Model\User
+$users_update = new \SparteraApiSdk\Model\UsersUpdate(); // \SparteraApiSdk\Model\UsersUpdate
 
 try {
-    $result = $apiInstance->companiesCompanyIdUsersUserIdPatch($company_id, $user_id, $user);
+    $result = $apiInstance->companiesCompanyIdUsersUserIdPatch($company_id, $user_id, $users_update);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UsersApi->companiesCompanyIdUsersUserIdPatch: ', $e->getMessage(), PHP_EOL;
@@ -303,7 +303,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **company_id** | **string**|  | |
 | **user_id** | **string**|  | |
-| **user** | [**\SparteraApiSdk\Model\User**](../Model/User.md)|  | |
+| **users_update** | [**\SparteraApiSdk\Model\UsersUpdate**](../Model/UsersUpdate.md)|  | |
 
 ### Return type
 
@@ -325,10 +325,10 @@ try {
 ## `meGet()`
 
 ```php
-meGet(): \SparteraApiSdk\Model\MeGet200Response
+meGet(): \SparteraApiSdk\Model\CompaniesCompanyIdUsersGet200Response
 ```
 
-Get current authenticated user's profile information.              Returns:                 JSON response with user profile data from database
+Get current authenticated user's profile.
 
 ### Example
 
@@ -364,7 +364,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\SparteraApiSdk\Model\MeGet200Response**](../Model/MeGet200Response.md)
+[**\SparteraApiSdk\Model\CompaniesCompanyIdUsersGet200Response**](../Model/CompaniesCompanyIdUsersGet200Response.md)
 
 ### Authorization
 
