@@ -1,25 +1,27 @@
-# SparteraApiSdk\ConnectionsApi
+# OpenAPI\Client\ConnectionsApi
+
+Connections operations
 
 All URIs are relative to https://api.spartera.com, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**companiesCompanyIdConnectionsConnectionIdDelete()**](ConnectionsApi.md#companiesCompanyIdConnectionsConnectionIdDelete) | **DELETE** /companies/{company_id}/connections/{connection_id} | Delete single connection by ID |
-| [**companiesCompanyIdConnectionsConnectionIdGet()**](ConnectionsApi.md#companiesCompanyIdConnectionsConnectionIdGet) | **GET** /companies/{company_id}/connections/{connection_id} | Get single connection by ID |
-| [**companiesCompanyIdConnectionsConnectionIdInfoschemaGet()**](ConnectionsApi.md#companiesCompanyIdConnectionsConnectionIdInfoschemaGet) | **GET** /companies/{company_id}/connections/{connection_id}/infoschema | Retrieve the information schema for the specified connection |
-| [**companiesCompanyIdConnectionsConnectionIdPatch()**](ConnectionsApi.md#companiesCompanyIdConnectionsConnectionIdPatch) | **PATCH** /companies/{company_id}/connections/{connection_id} | Update an existing connection by ID |
-| [**companiesCompanyIdConnectionsConnectionIdTestGet()**](ConnectionsApi.md#companiesCompanyIdConnectionsConnectionIdTestGet) | **GET** /companies/{company_id}/connections/{connection_id}/test | Test the specified connection |
-| [**companiesCompanyIdConnectionsGet()**](ConnectionsApi.md#companiesCompanyIdConnectionsGet) | **GET** /companies/{company_id}/connections | Get all connections for a specific company |
-| [**companiesCompanyIdConnectionsPost()**](ConnectionsApi.md#companiesCompanyIdConnectionsPost) | **POST** /companies/{company_id}/connections | Create a new connection by ID |
+| [**createConnections()**](ConnectionsApi.md#createConnections) | **POST** /companies/{company_id}/connections | Create a new connection by ID |
+| [**deleteConnections()**](ConnectionsApi.md#deleteConnections) | **DELETE** /companies/{company_id}/connections/{connection_id} | Delete single connection by ID |
+| [**getConnectionsById()**](ConnectionsApi.md#getConnectionsById) | **GET** /companies/{company_id}/connections/{connection_id} | Get single connection by ID |
+| [**getConnectionsById2()**](ConnectionsApi.md#getConnectionsById2) | **GET** /companies/{company_id}/connections/{connection_id}/test | Test the specified connection |
+| [**getConnectionsByIdInfoschema()**](ConnectionsApi.md#getConnectionsByIdInfoschema) | **GET** /companies/{company_id}/connections/{connection_id}/infoschema | Retrieve the information schema for the specified connection |
+| [**listConnections()**](ConnectionsApi.md#listConnections) | **GET** /companies/{company_id}/connections | Get all connections for a specific company |
+| [**updateConnections()**](ConnectionsApi.md#updateConnections) | **PATCH** /companies/{company_id}/connections/{connection_id} | Update an existing connection by ID |
 
 
-## `companiesCompanyIdConnectionsConnectionIdDelete()`
+## `createConnections()`
 
 ```php
-companiesCompanyIdConnectionsConnectionIdDelete($company_id, $connection_id): \SparteraApiSdk\Model\CompaniesCompanyIdConnectionsConnectionIdDelete200Response
+createConnections($company_id, $connections_input, $page, $limit, $sort_by, $sort_order, $search): \OpenAPI\Client\Model\CreateConnections200Response
 ```
 
-Delete single connection by ID
+Create a new connection by ID
 
 ### Example
 
@@ -29,25 +31,30 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: ApiKeyAuth
-$config = SparteraApiSdk\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SparteraApiSdk\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
-$apiInstance = new SparteraApiSdk\Api\ConnectionsApi(
+$apiInstance = new OpenAPI\Client\Api\ConnectionsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 'company_id_example'; // string
-$connection_id = 'connection_id_example'; // string
+$company_id = 'company_id_example'; // string | Unique identifier for the Company
+$connections_input = new \OpenAPI\Client\Model\ConnectionsInput(); // \OpenAPI\Client\Model\ConnectionsInput
+$page = 1; // int | Page number for pagination
+$limit = 20; // int | Number of items per page
+$sort_by = 'sort_by_example'; // string | Field to sort by
+$sort_order = 'desc'; // string | Sort order (ascending or descending)
+$search = 'search_example'; // string | Search term to filter results
 
 try {
-    $result = $apiInstance->companiesCompanyIdConnectionsConnectionIdDelete($company_id, $connection_id);
+    $result = $apiInstance->createConnections($company_id, $connections_input, $page, $limit, $sort_by, $sort_order, $search);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ConnectionsApi->companiesCompanyIdConnectionsConnectionIdDelete: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ConnectionsApi->createConnections: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -55,200 +62,17 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **company_id** | **string**|  | |
-| **connection_id** | **string**|  | |
+| **company_id** | **string**| Unique identifier for the Company | |
+| **connections_input** | [**\OpenAPI\Client\Model\ConnectionsInput**](../Model/ConnectionsInput.md)|  | |
+| **page** | **int**| Page number for pagination | [optional] [default to 1] |
+| **limit** | **int**| Number of items per page | [optional] [default to 20] |
+| **sort_by** | **string**| Field to sort by | [optional] |
+| **sort_order** | **string**| Sort order (ascending or descending) | [optional] [default to &#39;desc&#39;] |
+| **search** | **string**| Search term to filter results | [optional] |
 
 ### Return type
 
-[**\SparteraApiSdk\Model\CompaniesCompanyIdConnectionsConnectionIdDelete200Response**](../Model/CompaniesCompanyIdConnectionsConnectionIdDelete200Response.md)
-
-### Authorization
-
-[ApiKeyAuth](../../README.md#ApiKeyAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `companiesCompanyIdConnectionsConnectionIdGet()`
-
-```php
-companiesCompanyIdConnectionsConnectionIdGet($company_id, $connection_id): \SparteraApiSdk\Model\CompaniesCompanyIdConnectionsConnectionIdGet200Response
-```
-
-Get single connection by ID
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure API key authorization: ApiKeyAuth
-$config = SparteraApiSdk\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SparteraApiSdk\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
-
-
-$apiInstance = new SparteraApiSdk\Api\ConnectionsApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$company_id = 'company_id_example'; // string
-$connection_id = 'connection_id_example'; // string
-
-try {
-    $result = $apiInstance->companiesCompanyIdConnectionsConnectionIdGet($company_id, $connection_id);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ConnectionsApi->companiesCompanyIdConnectionsConnectionIdGet: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **company_id** | **string**|  | |
-| **connection_id** | **string**|  | |
-
-### Return type
-
-[**\SparteraApiSdk\Model\CompaniesCompanyIdConnectionsConnectionIdGet200Response**](../Model/CompaniesCompanyIdConnectionsConnectionIdGet200Response.md)
-
-### Authorization
-
-[ApiKeyAuth](../../README.md#ApiKeyAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `companiesCompanyIdConnectionsConnectionIdInfoschemaGet()`
-
-```php
-companiesCompanyIdConnectionsConnectionIdInfoschemaGet($company_id, $connection_id): \SparteraApiSdk\Model\CompaniesCompanyIdConnectionsGet200Response
-```
-
-Retrieve the information schema for the specified connection
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure API key authorization: ApiKeyAuth
-$config = SparteraApiSdk\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SparteraApiSdk\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
-
-
-$apiInstance = new SparteraApiSdk\Api\ConnectionsApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$company_id = 'company_id_example'; // string
-$connection_id = 'connection_id_example'; // string
-
-try {
-    $result = $apiInstance->companiesCompanyIdConnectionsConnectionIdInfoschemaGet($company_id, $connection_id);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ConnectionsApi->companiesCompanyIdConnectionsConnectionIdInfoschemaGet: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **company_id** | **string**|  | |
-| **connection_id** | **string**|  | |
-
-### Return type
-
-[**\SparteraApiSdk\Model\CompaniesCompanyIdConnectionsGet200Response**](../Model/CompaniesCompanyIdConnectionsGet200Response.md)
-
-### Authorization
-
-[ApiKeyAuth](../../README.md#ApiKeyAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `companiesCompanyIdConnectionsConnectionIdPatch()`
-
-```php
-companiesCompanyIdConnectionsConnectionIdPatch($company_id, $connection_id, $connections_update): \SparteraApiSdk\Model\CompaniesCompanyIdConnectionsConnectionIdPatch200Response
-```
-
-Update an existing connection by ID
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure API key authorization: ApiKeyAuth
-$config = SparteraApiSdk\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SparteraApiSdk\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
-
-
-$apiInstance = new SparteraApiSdk\Api\ConnectionsApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$company_id = 'company_id_example'; // string
-$connection_id = 'connection_id_example'; // string
-$connections_update = new \SparteraApiSdk\Model\ConnectionsUpdate(); // \SparteraApiSdk\Model\ConnectionsUpdate
-
-try {
-    $result = $apiInstance->companiesCompanyIdConnectionsConnectionIdPatch($company_id, $connection_id, $connections_update);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ConnectionsApi->companiesCompanyIdConnectionsConnectionIdPatch: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **company_id** | **string**|  | |
-| **connection_id** | **string**|  | |
-| **connections_update** | [**\SparteraApiSdk\Model\ConnectionsUpdate**](../Model/ConnectionsUpdate.md)|  | |
-
-### Return type
-
-[**\SparteraApiSdk\Model\CompaniesCompanyIdConnectionsConnectionIdPatch200Response**](../Model/CompaniesCompanyIdConnectionsConnectionIdPatch200Response.md)
+[**\OpenAPI\Client\Model\CreateConnections200Response**](../Model/CreateConnections200Response.md)
 
 ### Authorization
 
@@ -263,10 +87,134 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `companiesCompanyIdConnectionsConnectionIdTestGet()`
+## `deleteConnections()`
 
 ```php
-companiesCompanyIdConnectionsConnectionIdTestGet($company_id, $connection_id): \SparteraApiSdk\Model\CompaniesCompanyIdConnectionsGet200Response
+deleteConnections($company_id, $connection_id): \OpenAPI\Client\Model\DeleteConnections200Response
+```
+
+Delete single connection by ID
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: ApiKeyAuth
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
+
+
+$apiInstance = new OpenAPI\Client\Api\ConnectionsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$company_id = 'company_id_example'; // string | Unique identifier for the Company
+$connection_id = 'connection_id_example'; // string | Unique identifier for the Connection
+
+try {
+    $result = $apiInstance->deleteConnections($company_id, $connection_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ConnectionsApi->deleteConnections: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **string**| Unique identifier for the Company | |
+| **connection_id** | **string**| Unique identifier for the Connection | |
+
+### Return type
+
+[**\OpenAPI\Client\Model\DeleteConnections200Response**](../Model/DeleteConnections200Response.md)
+
+### Authorization
+
+[ApiKeyAuth](../../README.md#ApiKeyAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getConnectionsById()`
+
+```php
+getConnectionsById($company_id, $connection_id): \OpenAPI\Client\Model\GetConnectionsById200Response
+```
+
+Get single connection by ID
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: ApiKeyAuth
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
+
+
+$apiInstance = new OpenAPI\Client\Api\ConnectionsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$company_id = 'company_id_example'; // string | Unique identifier for the Company
+$connection_id = 'connection_id_example'; // string | Unique identifier for the Connection
+
+try {
+    $result = $apiInstance->getConnectionsById($company_id, $connection_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ConnectionsApi->getConnectionsById: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **string**| Unique identifier for the Company | |
+| **connection_id** | **string**| Unique identifier for the Connection | |
+
+### Return type
+
+[**\OpenAPI\Client\Model\GetConnectionsById200Response**](../Model/GetConnectionsById200Response.md)
+
+### Authorization
+
+[ApiKeyAuth](../../README.md#ApiKeyAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getConnectionsById2()`
+
+```php
+getConnectionsById2($company_id, $connection_id): \OpenAPI\Client\Model\GetConnectionsById200Response
 ```
 
 Test the specified connection
@@ -279,25 +227,25 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: ApiKeyAuth
-$config = SparteraApiSdk\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SparteraApiSdk\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
-$apiInstance = new SparteraApiSdk\Api\ConnectionsApi(
+$apiInstance = new OpenAPI\Client\Api\ConnectionsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 'company_id_example'; // string
-$connection_id = 'connection_id_example'; // string
+$company_id = 'company_id_example'; // string | Unique identifier for the Company
+$connection_id = 'connection_id_example'; // string | Unique identifier for the Connection
 
 try {
-    $result = $apiInstance->companiesCompanyIdConnectionsConnectionIdTestGet($company_id, $connection_id);
+    $result = $apiInstance->getConnectionsById2($company_id, $connection_id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ConnectionsApi->companiesCompanyIdConnectionsConnectionIdTestGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ConnectionsApi->getConnectionsById2: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -305,12 +253,12 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **company_id** | **string**|  | |
-| **connection_id** | **string**|  | |
+| **company_id** | **string**| Unique identifier for the Company | |
+| **connection_id** | **string**| Unique identifier for the Connection | |
 
 ### Return type
 
-[**\SparteraApiSdk\Model\CompaniesCompanyIdConnectionsGet200Response**](../Model/CompaniesCompanyIdConnectionsGet200Response.md)
+[**\OpenAPI\Client\Model\GetConnectionsById200Response**](../Model/GetConnectionsById200Response.md)
 
 ### Authorization
 
@@ -325,10 +273,72 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `companiesCompanyIdConnectionsGet()`
+## `getConnectionsByIdInfoschema()`
 
 ```php
-companiesCompanyIdConnectionsGet($company_id): \SparteraApiSdk\Model\CompaniesCompanyIdConnectionsGet200Response
+getConnectionsByIdInfoschema($company_id, $connection_id): \OpenAPI\Client\Model\GetConnectionsById200Response
+```
+
+Retrieve the information schema for the specified connection
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: ApiKeyAuth
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
+
+
+$apiInstance = new OpenAPI\Client\Api\ConnectionsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$company_id = 'company_id_example'; // string | Unique identifier for the Company
+$connection_id = 'connection_id_example'; // string | Unique identifier for the Connection
+
+try {
+    $result = $apiInstance->getConnectionsByIdInfoschema($company_id, $connection_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ConnectionsApi->getConnectionsByIdInfoschema: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **string**| Unique identifier for the Company | |
+| **connection_id** | **string**| Unique identifier for the Connection | |
+
+### Return type
+
+[**\OpenAPI\Client\Model\GetConnectionsById200Response**](../Model/GetConnectionsById200Response.md)
+
+### Authorization
+
+[ApiKeyAuth](../../README.md#ApiKeyAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `listConnections()`
+
+```php
+listConnections($company_id, $page, $limit, $sort_by, $sort_order, $search): \OpenAPI\Client\Model\ListConnections200Response
 ```
 
 Get all connections for a specific company
@@ -341,24 +351,29 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: ApiKeyAuth
-$config = SparteraApiSdk\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SparteraApiSdk\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
-$apiInstance = new SparteraApiSdk\Api\ConnectionsApi(
+$apiInstance = new OpenAPI\Client\Api\ConnectionsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 'company_id_example'; // string
+$company_id = 'company_id_example'; // string | Unique identifier for the Company
+$page = 1; // int | Page number for pagination
+$limit = 20; // int | Number of items per page
+$sort_by = 'sort_by_example'; // string | Field to sort by
+$sort_order = 'desc'; // string | Sort order (ascending or descending)
+$search = 'search_example'; // string | Search term to filter results
 
 try {
-    $result = $apiInstance->companiesCompanyIdConnectionsGet($company_id);
+    $result = $apiInstance->listConnections($company_id, $page, $limit, $sort_by, $sort_order, $search);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ConnectionsApi->companiesCompanyIdConnectionsGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ConnectionsApi->listConnections: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -366,11 +381,16 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **company_id** | **string**|  | |
+| **company_id** | **string**| Unique identifier for the Company | |
+| **page** | **int**| Page number for pagination | [optional] [default to 1] |
+| **limit** | **int**| Number of items per page | [optional] [default to 20] |
+| **sort_by** | **string**| Field to sort by | [optional] |
+| **sort_order** | **string**| Sort order (ascending or descending) | [optional] [default to &#39;desc&#39;] |
+| **search** | **string**| Search term to filter results | [optional] |
 
 ### Return type
 
-[**\SparteraApiSdk\Model\CompaniesCompanyIdConnectionsGet200Response**](../Model/CompaniesCompanyIdConnectionsGet200Response.md)
+[**\OpenAPI\Client\Model\ListConnections200Response**](../Model/ListConnections200Response.md)
 
 ### Authorization
 
@@ -385,13 +405,13 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `companiesCompanyIdConnectionsPost()`
+## `updateConnections()`
 
 ```php
-companiesCompanyIdConnectionsPost($company_id, $connections_input): \SparteraApiSdk\Model\CompaniesCompanyIdConnectionsPost200Response
+updateConnections($company_id, $connection_id, $connections_update): \OpenAPI\Client\Model\UpdateConnections200Response
 ```
 
-Create a new connection by ID
+Update an existing connection by ID
 
 ### Example
 
@@ -401,25 +421,26 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: ApiKeyAuth
-$config = SparteraApiSdk\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SparteraApiSdk\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
-$apiInstance = new SparteraApiSdk\Api\ConnectionsApi(
+$apiInstance = new OpenAPI\Client\Api\ConnectionsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 'company_id_example'; // string
-$connections_input = new \SparteraApiSdk\Model\ConnectionsInput(); // \SparteraApiSdk\Model\ConnectionsInput
+$company_id = 'company_id_example'; // string | Unique identifier for the Company
+$connection_id = 'connection_id_example'; // string | Unique identifier for the Connection
+$connections_update = new \OpenAPI\Client\Model\ConnectionsUpdate(); // \OpenAPI\Client\Model\ConnectionsUpdate
 
 try {
-    $result = $apiInstance->companiesCompanyIdConnectionsPost($company_id, $connections_input);
+    $result = $apiInstance->updateConnections($company_id, $connection_id, $connections_update);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ConnectionsApi->companiesCompanyIdConnectionsPost: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ConnectionsApi->updateConnections: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -427,12 +448,13 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **company_id** | **string**|  | |
-| **connections_input** | [**\SparteraApiSdk\Model\ConnectionsInput**](../Model/ConnectionsInput.md)|  | |
+| **company_id** | **string**| Unique identifier for the Company | |
+| **connection_id** | **string**| Unique identifier for the Connection | |
+| **connections_update** | [**\OpenAPI\Client\Model\ConnectionsUpdate**](../Model/ConnectionsUpdate.md)|  | |
 
 ### Return type
 
-[**\SparteraApiSdk\Model\CompaniesCompanyIdConnectionsPost200Response**](../Model/CompaniesCompanyIdConnectionsPost200Response.md)
+[**\OpenAPI\Client\Model\UpdateConnections200Response**](../Model/UpdateConnections200Response.md)
 
 ### Authorization
 

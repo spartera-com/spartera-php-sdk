@@ -1,4 +1,4 @@
-# # InlineObject2
+# InlineObject2
 
 ## Properties
 

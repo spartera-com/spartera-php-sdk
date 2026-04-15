@@ -1,17 +1,19 @@
-# SparteraApiSdk\JobFunctionsApi
+# OpenAPI\Client\JobFunctionsApi
+
+
 
 All URIs are relative to https://api.spartera.com, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**jobFunctionsFunctionIdGet()**](JobFunctionsApi.md#jobFunctionsFunctionIdGet) | **GET** /job-functions/{function_id} | Get single job function by ID |
-| [**jobFunctionsGet()**](JobFunctionsApi.md#jobFunctionsGet) | **GET** /job-functions | Get a list of all job functions |
+| [**getJobFunctionsById()**](JobFunctionsApi.md#getJobFunctionsById) | **GET** /job-functions/{function_id} | Get single job function by ID |
+| [**listJobFunctions()**](JobFunctionsApi.md#listJobFunctions) | **GET** /job-functions | Get a list of all job functions |
 
 
-## `jobFunctionsFunctionIdGet()`
+## `getJobFunctionsById()`
 
 ```php
-jobFunctionsFunctionIdGet($function_id): \SparteraApiSdk\Model\JobFunctionsFunctionIdGet200Response
+getJobFunctionsById($function_id): \OpenAPI\Client\Model\GetJobFunctionsById200Response
 ```
 
 Get single job function by ID
@@ -24,24 +26,24 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: ApiKeyAuth
-$config = SparteraApiSdk\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SparteraApiSdk\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
-$apiInstance = new SparteraApiSdk\Api\JobFunctionsApi(
+$apiInstance = new OpenAPI\Client\Api\JobFunctionsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$function_id = 'function_id_example'; // string
+$function_id = 'function_id_example'; // string | Unique identifier for the Function
 
 try {
-    $result = $apiInstance->jobFunctionsFunctionIdGet($function_id);
+    $result = $apiInstance->getJobFunctionsById($function_id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling JobFunctionsApi->jobFunctionsFunctionIdGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling JobFunctionsApi->getJobFunctionsById: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -49,11 +51,11 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **function_id** | **string**|  | |
+| **function_id** | **string**| Unique identifier for the Function | |
 
 ### Return type
 
-[**\SparteraApiSdk\Model\JobFunctionsFunctionIdGet200Response**](../Model/JobFunctionsFunctionIdGet200Response.md)
+[**\OpenAPI\Client\Model\GetJobFunctionsById200Response**](../Model/GetJobFunctionsById200Response.md)
 
 ### Authorization
 
@@ -68,10 +70,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `jobFunctionsGet()`
+## `listJobFunctions()`
 
 ```php
-jobFunctionsGet(): \SparteraApiSdk\Model\JobFunctionsGet200Response
+listJobFunctions($page, $limit, $sort_by, $sort_order, $search): \OpenAPI\Client\Model\ListJobFunctions200Response
 ```
 
 Get a list of all job functions
@@ -84,33 +86,44 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: ApiKeyAuth
-$config = SparteraApiSdk\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SparteraApiSdk\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
-$apiInstance = new SparteraApiSdk\Api\JobFunctionsApi(
+$apiInstance = new OpenAPI\Client\Api\JobFunctionsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
+$page = 1; // int | Page number for pagination
+$limit = 20; // int | Number of items per page
+$sort_by = 'sort_by_example'; // string | Field to sort by
+$sort_order = 'desc'; // string | Sort order (ascending or descending)
+$search = 'search_example'; // string | Search term to filter results
 
 try {
-    $result = $apiInstance->jobFunctionsGet();
+    $result = $apiInstance->listJobFunctions($page, $limit, $sort_by, $sort_order, $search);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling JobFunctionsApi->jobFunctionsGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling JobFunctionsApi->listJobFunctions: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
 ### Parameters
 
-This endpoint does not need any parameter.
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **page** | **int**| Page number for pagination | [optional] [default to 1] |
+| **limit** | **int**| Number of items per page | [optional] [default to 20] |
+| **sort_by** | **string**| Field to sort by | [optional] |
+| **sort_order** | **string**| Sort order (ascending or descending) | [optional] [default to &#39;desc&#39;] |
+| **search** | **string**| Search term to filter results | [optional] |
 
 ### Return type
 
-[**\SparteraApiSdk\Model\JobFunctionsGet200Response**](../Model/JobFunctionsGet200Response.md)
+[**\OpenAPI\Client\Model\ListJobFunctions200Response**](../Model/ListJobFunctions200Response.md)
 
 ### Authorization
 

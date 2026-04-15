@@ -1,81 +1,25 @@
-# SparteraApiSdk\UsersApi
+# OpenAPI\Client\UsersApi
+
+Users operations
 
 All URIs are relative to https://api.spartera.com, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**companiesCompanyIdUsersGet()**](UsersApi.md#companiesCompanyIdUsersGet) | **GET** /companies/{company_id}/users | Get a list of all users in a company |
-| [**companiesCompanyIdUsersPost()**](UsersApi.md#companiesCompanyIdUsersPost) | **POST** /companies/{company_id}/users | Create a new user |
-| [**companiesCompanyIdUsersUserIdDelete()**](UsersApi.md#companiesCompanyIdUsersUserIdDelete) | **DELETE** /companies/{company_id}/users/{user_id} | Delete single user by ID |
-| [**companiesCompanyIdUsersUserIdGet()**](UsersApi.md#companiesCompanyIdUsersUserIdGet) | **GET** /companies/{company_id}/users/{user_id} | Get single user by ID |
-| [**companiesCompanyIdUsersUserIdPatch()**](UsersApi.md#companiesCompanyIdUsersUserIdPatch) | **PATCH** /companies/{company_id}/users/{user_id} | Update an existing user by ID |
-| [**meGet()**](UsersApi.md#meGet) | **GET** /me | Get current authenticated user&#39;s profile. |
+| [**createUsers()**](UsersApi.md#createUsers) | **POST** /companies/{company_id}/users | Create a new user |
+| [**createUsersGoogleOauth()**](UsersApi.md#createUsersGoogleOauth) | **POST** /companies/{company_id}/users/google-oauth | POST /companies/{company_id}/users/google-oauth |
+| [**createUsersLogout()**](UsersApi.md#createUsersLogout) | **POST** /companies/{company_id}/users/logout | Logout current user by revoking their sessions |
+| [**deleteUsers()**](UsersApi.md#deleteUsers) | **DELETE** /companies/{company_id}/users/{user_id} | Delete single user by ID |
+| [**getUsersById()**](UsersApi.md#getUsersById) | **GET** /companies/{company_id}/users/{user_id} | Get single user by ID |
+| [**listUsers()**](UsersApi.md#listUsers) | **GET** /companies/{company_id}/users | Get a list of all users in a company |
+| [**listUsersMe()**](UsersApi.md#listUsersMe) | **GET** /me | Get current authenticated user&#39;s profile. |
+| [**updateUsers()**](UsersApi.md#updateUsers) | **PATCH** /companies/{company_id}/users/{user_id} | Update an existing user by ID |
 
 
-## `companiesCompanyIdUsersGet()`
-
-```php
-companiesCompanyIdUsersGet($company_id): \SparteraApiSdk\Model\CompaniesCompanyIdUsersGet200Response
-```
-
-Get a list of all users in a company
-
-### Example
+## `createUsers()`
 
 ```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure API key authorization: ApiKeyAuth
-$config = SparteraApiSdk\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
-// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SparteraApiSdk\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
-
-
-$apiInstance = new SparteraApiSdk\Api\UsersApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$company_id = 'company_id_example'; // string
-
-try {
-    $result = $apiInstance->companiesCompanyIdUsersGet($company_id);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling UsersApi->companiesCompanyIdUsersGet: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **company_id** | **string**|  | |
-
-### Return type
-
-[**\SparteraApiSdk\Model\CompaniesCompanyIdUsersGet200Response**](../Model/CompaniesCompanyIdUsersGet200Response.md)
-
-### Authorization
-
-[ApiKeyAuth](../../README.md#ApiKeyAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `companiesCompanyIdUsersPost()`
-
-```php
-companiesCompanyIdUsersPost($company_id, $users_input): \SparteraApiSdk\Model\CompaniesCompanyIdUsersPost200Response
+createUsers($company_id, $users_input, $page, $limit, $sort_by, $sort_order, $search): \OpenAPI\Client\Model\CreateUsers200Response
 ```
 
 Create a new user
@@ -88,25 +32,30 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: ApiKeyAuth
-$config = SparteraApiSdk\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SparteraApiSdk\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
-$apiInstance = new SparteraApiSdk\Api\UsersApi(
+$apiInstance = new OpenAPI\Client\Api\UsersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 'company_id_example'; // string
-$users_input = new \SparteraApiSdk\Model\UsersInput(); // \SparteraApiSdk\Model\UsersInput
+$company_id = 'company_id_example'; // string | Unique identifier for the Company
+$users_input = new \OpenAPI\Client\Model\UsersInput(); // \OpenAPI\Client\Model\UsersInput
+$page = 1; // int | Page number for pagination
+$limit = 20; // int | Number of items per page
+$sort_by = 'sort_by_example'; // string | Field to sort by
+$sort_order = 'desc'; // string | Sort order (ascending or descending)
+$search = 'search_example'; // string | Search term to filter results
 
 try {
-    $result = $apiInstance->companiesCompanyIdUsersPost($company_id, $users_input);
+    $result = $apiInstance->createUsers($company_id, $users_input, $page, $limit, $sort_by, $sort_order, $search);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling UsersApi->companiesCompanyIdUsersPost: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling UsersApi->createUsers: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -114,12 +63,17 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **company_id** | **string**|  | |
-| **users_input** | [**\SparteraApiSdk\Model\UsersInput**](../Model/UsersInput.md)|  | |
+| **company_id** | **string**| Unique identifier for the Company | |
+| **users_input** | [**\OpenAPI\Client\Model\UsersInput**](../Model/UsersInput.md)|  | |
+| **page** | **int**| Page number for pagination | [optional] [default to 1] |
+| **limit** | **int**| Number of items per page | [optional] [default to 20] |
+| **sort_by** | **string**| Field to sort by | [optional] |
+| **sort_order** | **string**| Sort order (ascending or descending) | [optional] [default to &#39;desc&#39;] |
+| **search** | **string**| Search term to filter results | [optional] |
 
 ### Return type
 
-[**\SparteraApiSdk\Model\CompaniesCompanyIdUsersPost200Response**](../Model/CompaniesCompanyIdUsersPost200Response.md)
+[**\OpenAPI\Client\Model\CreateUsers200Response**](../Model/CreateUsers200Response.md)
 
 ### Authorization
 
@@ -134,10 +88,154 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `companiesCompanyIdUsersUserIdDelete()`
+## `createUsersGoogleOauth()`
 
 ```php
-companiesCompanyIdUsersUserIdDelete($company_id, $user_id): \SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdDelete200Response
+createUsersGoogleOauth($company_id, $users_input, $page, $limit, $sort_by, $sort_order, $search): \OpenAPI\Client\Model\CreateUsers200Response
+```
+
+POST /companies/{company_id}/users/google-oauth
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: ApiKeyAuth
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
+
+
+$apiInstance = new OpenAPI\Client\Api\UsersApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$company_id = 'company_id_example'; // string | Unique identifier for the Company
+$users_input = new \OpenAPI\Client\Model\UsersInput(); // \OpenAPI\Client\Model\UsersInput
+$page = 1; // int | Page number for pagination
+$limit = 20; // int | Number of items per page
+$sort_by = 'sort_by_example'; // string | Field to sort by
+$sort_order = 'desc'; // string | Sort order (ascending or descending)
+$search = 'search_example'; // string | Search term to filter results
+
+try {
+    $result = $apiInstance->createUsersGoogleOauth($company_id, $users_input, $page, $limit, $sort_by, $sort_order, $search);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling UsersApi->createUsersGoogleOauth: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **string**| Unique identifier for the Company | |
+| **users_input** | [**\OpenAPI\Client\Model\UsersInput**](../Model/UsersInput.md)|  | |
+| **page** | **int**| Page number for pagination | [optional] [default to 1] |
+| **limit** | **int**| Number of items per page | [optional] [default to 20] |
+| **sort_by** | **string**| Field to sort by | [optional] |
+| **sort_order** | **string**| Sort order (ascending or descending) | [optional] [default to &#39;desc&#39;] |
+| **search** | **string**| Search term to filter results | [optional] |
+
+### Return type
+
+[**\OpenAPI\Client\Model\CreateUsers200Response**](../Model/CreateUsers200Response.md)
+
+### Authorization
+
+[ApiKeyAuth](../../README.md#ApiKeyAuth)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `createUsersLogout()`
+
+```php
+createUsersLogout($company_id, $users_input, $page, $limit, $sort_by, $sort_order, $search): \OpenAPI\Client\Model\CreateUsers200Response
+```
+
+Logout current user by revoking their sessions
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: ApiKeyAuth
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
+
+
+$apiInstance = new OpenAPI\Client\Api\UsersApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$company_id = 'company_id_example'; // string | Unique identifier for the Company
+$users_input = new \OpenAPI\Client\Model\UsersInput(); // \OpenAPI\Client\Model\UsersInput
+$page = 1; // int | Page number for pagination
+$limit = 20; // int | Number of items per page
+$sort_by = 'sort_by_example'; // string | Field to sort by
+$sort_order = 'desc'; // string | Sort order (ascending or descending)
+$search = 'search_example'; // string | Search term to filter results
+
+try {
+    $result = $apiInstance->createUsersLogout($company_id, $users_input, $page, $limit, $sort_by, $sort_order, $search);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling UsersApi->createUsersLogout: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **string**| Unique identifier for the Company | |
+| **users_input** | [**\OpenAPI\Client\Model\UsersInput**](../Model/UsersInput.md)|  | |
+| **page** | **int**| Page number for pagination | [optional] [default to 1] |
+| **limit** | **int**| Number of items per page | [optional] [default to 20] |
+| **sort_by** | **string**| Field to sort by | [optional] |
+| **sort_order** | **string**| Sort order (ascending or descending) | [optional] [default to &#39;desc&#39;] |
+| **search** | **string**| Search term to filter results | [optional] |
+
+### Return type
+
+[**\OpenAPI\Client\Model\CreateUsers200Response**](../Model/CreateUsers200Response.md)
+
+### Authorization
+
+[ApiKeyAuth](../../README.md#ApiKeyAuth)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `deleteUsers()`
+
+```php
+deleteUsers($company_id, $user_id): \OpenAPI\Client\Model\DeleteUsers200Response
 ```
 
 Delete single user by ID
@@ -150,25 +248,25 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: ApiKeyAuth
-$config = SparteraApiSdk\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SparteraApiSdk\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
-$apiInstance = new SparteraApiSdk\Api\UsersApi(
+$apiInstance = new OpenAPI\Client\Api\UsersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 'company_id_example'; // string
-$user_id = 'user_id_example'; // string
+$company_id = 'company_id_example'; // string | Unique identifier for the Company
+$user_id = 'user_id_example'; // string | Unique identifier for the User
 
 try {
-    $result = $apiInstance->companiesCompanyIdUsersUserIdDelete($company_id, $user_id);
+    $result = $apiInstance->deleteUsers($company_id, $user_id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling UsersApi->companiesCompanyIdUsersUserIdDelete: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling UsersApi->deleteUsers: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -176,12 +274,12 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **company_id** | **string**|  | |
-| **user_id** | **string**|  | |
+| **company_id** | **string**| Unique identifier for the Company | |
+| **user_id** | **string**| Unique identifier for the User | |
 
 ### Return type
 
-[**\SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdDelete200Response**](../Model/CompaniesCompanyIdUsersUserIdDelete200Response.md)
+[**\OpenAPI\Client\Model\DeleteUsers200Response**](../Model/DeleteUsers200Response.md)
 
 ### Authorization
 
@@ -196,10 +294,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `companiesCompanyIdUsersUserIdGet()`
+## `getUsersById()`
 
 ```php
-companiesCompanyIdUsersUserIdGet($company_id, $user_id): \SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdGet200Response
+getUsersById($company_id, $user_id): \OpenAPI\Client\Model\GetUsersById200Response
 ```
 
 Get single user by ID
@@ -212,25 +310,25 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: ApiKeyAuth
-$config = SparteraApiSdk\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SparteraApiSdk\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
-$apiInstance = new SparteraApiSdk\Api\UsersApi(
+$apiInstance = new OpenAPI\Client\Api\UsersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 'company_id_example'; // string
-$user_id = 'user_id_example'; // string
+$company_id = 'company_id_example'; // string | Unique identifier for the Company
+$user_id = 'user_id_example'; // string | Unique identifier for the User
 
 try {
-    $result = $apiInstance->companiesCompanyIdUsersUserIdGet($company_id, $user_id);
+    $result = $apiInstance->getUsersById($company_id, $user_id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling UsersApi->companiesCompanyIdUsersUserIdGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling UsersApi->getUsersById: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -238,12 +336,12 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **company_id** | **string**|  | |
-| **user_id** | **string**|  | |
+| **company_id** | **string**| Unique identifier for the Company | |
+| **user_id** | **string**| Unique identifier for the User | |
 
 ### Return type
 
-[**\SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdGet200Response**](../Model/CompaniesCompanyIdUsersUserIdGet200Response.md)
+[**\OpenAPI\Client\Model\GetUsersById200Response**](../Model/GetUsersById200Response.md)
 
 ### Authorization
 
@@ -258,13 +356,13 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `companiesCompanyIdUsersUserIdPatch()`
+## `listUsers()`
 
 ```php
-companiesCompanyIdUsersUserIdPatch($company_id, $user_id, $users_update): \SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdPatch200Response
+listUsers($company_id, $page, $limit, $sort_by, $sort_order, $search): \OpenAPI\Client\Model\ListUsers200Response
 ```
 
-Update an existing user by ID
+Get a list of all users in a company
 
 ### Example
 
@@ -274,26 +372,29 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: ApiKeyAuth
-$config = SparteraApiSdk\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SparteraApiSdk\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
-$apiInstance = new SparteraApiSdk\Api\UsersApi(
+$apiInstance = new OpenAPI\Client\Api\UsersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$company_id = 'company_id_example'; // string
-$user_id = 'user_id_example'; // string
-$users_update = new \SparteraApiSdk\Model\UsersUpdate(); // \SparteraApiSdk\Model\UsersUpdate
+$company_id = 'company_id_example'; // string | Unique identifier for the Company
+$page = 1; // int | Page number for pagination
+$limit = 20; // int | Number of items per page
+$sort_by = 'sort_by_example'; // string | Field to sort by
+$sort_order = 'desc'; // string | Sort order (ascending or descending)
+$search = 'search_example'; // string | Search term to filter results
 
 try {
-    $result = $apiInstance->companiesCompanyIdUsersUserIdPatch($company_id, $user_id, $users_update);
+    $result = $apiInstance->listUsers($company_id, $page, $limit, $sort_by, $sort_order, $search);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling UsersApi->companiesCompanyIdUsersUserIdPatch: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling UsersApi->listUsers: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -301,13 +402,16 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **company_id** | **string**|  | |
-| **user_id** | **string**|  | |
-| **users_update** | [**\SparteraApiSdk\Model\UsersUpdate**](../Model/UsersUpdate.md)|  | |
+| **company_id** | **string**| Unique identifier for the Company | |
+| **page** | **int**| Page number for pagination | [optional] [default to 1] |
+| **limit** | **int**| Number of items per page | [optional] [default to 20] |
+| **sort_by** | **string**| Field to sort by | [optional] |
+| **sort_order** | **string**| Sort order (ascending or descending) | [optional] [default to &#39;desc&#39;] |
+| **search** | **string**| Search term to filter results | [optional] |
 
 ### Return type
 
-[**\SparteraApiSdk\Model\CompaniesCompanyIdUsersUserIdPatch200Response**](../Model/CompaniesCompanyIdUsersUserIdPatch200Response.md)
+[**\OpenAPI\Client\Model\ListUsers200Response**](../Model/ListUsers200Response.md)
 
 ### Authorization
 
@@ -315,17 +419,17 @@ try {
 
 ### HTTP request headers
 
-- **Content-Type**: `application/json`
+- **Content-Type**: Not defined
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `meGet()`
+## `listUsersMe()`
 
 ```php
-meGet(): \SparteraApiSdk\Model\CompaniesCompanyIdUsersGet200Response
+listUsersMe($page, $limit, $sort_by, $sort_order, $search): \OpenAPI\Client\Model\ListUsers200Response
 ```
 
 Get current authenticated user's profile.
@@ -338,33 +442,44 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: ApiKeyAuth
-$config = SparteraApiSdk\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SparteraApiSdk\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
-$apiInstance = new SparteraApiSdk\Api\UsersApi(
+$apiInstance = new OpenAPI\Client\Api\UsersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
+$page = 1; // int | Page number for pagination
+$limit = 20; // int | Number of items per page
+$sort_by = 'sort_by_example'; // string | Field to sort by
+$sort_order = 'desc'; // string | Sort order (ascending or descending)
+$search = 'search_example'; // string | Search term to filter results
 
 try {
-    $result = $apiInstance->meGet();
+    $result = $apiInstance->listUsersMe($page, $limit, $sort_by, $sort_order, $search);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling UsersApi->meGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling UsersApi->listUsersMe: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
 ### Parameters
 
-This endpoint does not need any parameter.
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **page** | **int**| Page number for pagination | [optional] [default to 1] |
+| **limit** | **int**| Number of items per page | [optional] [default to 20] |
+| **sort_by** | **string**| Field to sort by | [optional] |
+| **sort_order** | **string**| Sort order (ascending or descending) | [optional] [default to &#39;desc&#39;] |
+| **search** | **string**| Search term to filter results | [optional] |
 
 ### Return type
 
-[**\SparteraApiSdk\Model\CompaniesCompanyIdUsersGet200Response**](../Model/CompaniesCompanyIdUsersGet200Response.md)
+[**\OpenAPI\Client\Model\ListUsers200Response**](../Model/ListUsers200Response.md)
 
 ### Authorization
 
@@ -373,6 +488,70 @@ This endpoint does not need any parameter.
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `updateUsers()`
+
+```php
+updateUsers($company_id, $user_id, $users_update): \OpenAPI\Client\Model\UpdateUsers200Response
+```
+
+Update an existing user by ID
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: ApiKeyAuth
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
+
+
+$apiInstance = new OpenAPI\Client\Api\UsersApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$company_id = 'company_id_example'; // string | Unique identifier for the Company
+$user_id = 'user_id_example'; // string | Unique identifier for the User
+$users_update = new \OpenAPI\Client\Model\UsersUpdate(); // \OpenAPI\Client\Model\UsersUpdate
+
+try {
+    $result = $apiInstance->updateUsers($company_id, $user_id, $users_update);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling UsersApi->updateUsers: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **string**| Unique identifier for the Company | |
+| **user_id** | **string**| Unique identifier for the User | |
+| **users_update** | [**\OpenAPI\Client\Model\UsersUpdate**](../Model/UsersUpdate.md)|  | |
+
+### Return type
+
+[**\OpenAPI\Client\Model\UpdateUsers200Response**](../Model/UpdateUsers200Response.md)
+
+### Authorization
+
+[ApiKeyAuth](../../README.md#ApiKeyAuth)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

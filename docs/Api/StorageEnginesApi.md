@@ -1,17 +1,19 @@
-# SparteraApiSdk\StorageEnginesApi
+# OpenAPI\Client\StorageEnginesApi
+
+
 
 All URIs are relative to https://api.spartera.com, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**cloudProvidersProviderIdStorageEnginesEngineIdGet()**](StorageEnginesApi.md#cloudProvidersProviderIdStorageEnginesEngineIdGet) | **GET** /cloud-providers/{provider_id}/storage-engines/{engine_id} | Get single storage engine by ID |
-| [**cloudProvidersProviderIdStorageEnginesGet()**](StorageEnginesApi.md#cloudProvidersProviderIdStorageEnginesGet) | **GET** /cloud-providers/{provider_id}/storage-engines | Get a list of all storage engines |
+| [**getStorageEnginesById()**](StorageEnginesApi.md#getStorageEnginesById) | **GET** /cloud-providers/{provider_id}/storage-engines/{engine_id} | Get single storage engine by ID |
+| [**listStorageEngines()**](StorageEnginesApi.md#listStorageEngines) | **GET** /cloud-providers/{provider_id}/storage-engines | Get a list of all storage engines |
 
 
-## `cloudProvidersProviderIdStorageEnginesEngineIdGet()`
+## `getStorageEnginesById()`
 
 ```php
-cloudProvidersProviderIdStorageEnginesEngineIdGet($provider_id, $engine_id): \SparteraApiSdk\Model\CloudProvidersProviderIdStorageEnginesGet200Response
+getStorageEnginesById($provider_id, $engine_id): \OpenAPI\Client\Model\GetStorageEnginesById200Response
 ```
 
 Get single storage engine by ID
@@ -24,25 +26,25 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: ApiKeyAuth
-$config = SparteraApiSdk\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SparteraApiSdk\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
-$apiInstance = new SparteraApiSdk\Api\StorageEnginesApi(
+$apiInstance = new OpenAPI\Client\Api\StorageEnginesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$provider_id = 'provider_id_example'; // string
-$engine_id = 'engine_id_example'; // string
+$provider_id = 'provider_id_example'; // string | Unique identifier for the Provider
+$engine_id = 'engine_id_example'; // string | Unique identifier for the Engine
 
 try {
-    $result = $apiInstance->cloudProvidersProviderIdStorageEnginesEngineIdGet($provider_id, $engine_id);
+    $result = $apiInstance->getStorageEnginesById($provider_id, $engine_id);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling StorageEnginesApi->cloudProvidersProviderIdStorageEnginesEngineIdGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling StorageEnginesApi->getStorageEnginesById: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -50,12 +52,12 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **provider_id** | **string**|  | |
-| **engine_id** | **string**|  | |
+| **provider_id** | **string**| Unique identifier for the Provider | |
+| **engine_id** | **string**| Unique identifier for the Engine | |
 
 ### Return type
 
-[**\SparteraApiSdk\Model\CloudProvidersProviderIdStorageEnginesGet200Response**](../Model/CloudProvidersProviderIdStorageEnginesGet200Response.md)
+[**\OpenAPI\Client\Model\GetStorageEnginesById200Response**](../Model/GetStorageEnginesById200Response.md)
 
 ### Authorization
 
@@ -70,10 +72,10 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `cloudProvidersProviderIdStorageEnginesGet()`
+## `listStorageEngines()`
 
 ```php
-cloudProvidersProviderIdStorageEnginesGet($provider_id): \SparteraApiSdk\Model\CloudProvidersProviderIdStorageEnginesGet200Response
+listStorageEngines($provider_id, $page, $limit, $sort_by, $sort_order, $search): \OpenAPI\Client\Model\ListStorageEngines200Response
 ```
 
 Get a list of all storage engines
@@ -86,24 +88,29 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 // Configure API key authorization: ApiKeyAuth
-$config = SparteraApiSdk\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
 // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-// $config = SparteraApiSdk\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
 
 
-$apiInstance = new SparteraApiSdk\Api\StorageEnginesApi(
+$apiInstance = new OpenAPI\Client\Api\StorageEnginesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$provider_id = 'provider_id_example'; // string
+$provider_id = 'provider_id_example'; // string | Unique identifier for the Provider
+$page = 1; // int | Page number for pagination
+$limit = 20; // int | Number of items per page
+$sort_by = 'sort_by_example'; // string | Field to sort by
+$sort_order = 'desc'; // string | Sort order (ascending or descending)
+$search = 'search_example'; // string | Search term to filter results
 
 try {
-    $result = $apiInstance->cloudProvidersProviderIdStorageEnginesGet($provider_id);
+    $result = $apiInstance->listStorageEngines($provider_id, $page, $limit, $sort_by, $sort_order, $search);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling StorageEnginesApi->cloudProvidersProviderIdStorageEnginesGet: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling StorageEnginesApi->listStorageEngines: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -111,11 +118,16 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **provider_id** | **string**|  | |
+| **provider_id** | **string**| Unique identifier for the Provider | |
+| **page** | **int**| Page number for pagination | [optional] [default to 1] |
+| **limit** | **int**| Number of items per page | [optional] [default to 20] |
+| **sort_by** | **string**| Field to sort by | [optional] |
+| **sort_order** | **string**| Sort order (ascending or descending) | [optional] [default to &#39;desc&#39;] |
+| **search** | **string**| Search term to filter results | [optional] |
 
 ### Return type
 
-[**\SparteraApiSdk\Model\CloudProvidersProviderIdStorageEnginesGet200Response**](../Model/CloudProvidersProviderIdStorageEnginesGet200Response.md)
+[**\OpenAPI\Client\Model\ListStorageEngines200Response**](../Model/ListStorageEngines200Response.md)
 
 ### Authorization
 
