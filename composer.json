@@ -1,4 +1,5 @@
 {
+    "name": "spartera/api-sdk",
     "description": "Auto-generated API documentation for REST services of the Spartera platform",
     "keywords": [
         "openapitools",
