@@ -665,8 +665,8 @@ class AssetsApi
      *
      * Process (analyze) an asset with dynamic rate limiting applied via decorator.
      *
-     * @param  string $asset_slug URL-friendly slug for the Asset (required)
      * @param  string $company_handle Human-readable handle for the Company (required)
+     * @param  string $asset_slug URL-friendly slug for the Asset (required)
      * @param  \OpenAPI\Client\Model\AssetsInput $assets_input assets_input (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createAssetsAnalyze'] to see the possible values for this operation
      *
@@ -674,9 +674,9 @@ class AssetsApi
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\CreateAssetsAnalyze200Response|\OpenAPI\Client\Model\InlineObject1|\OpenAPI\Client\Model\InlineObject2|\OpenAPI\Client\Model\InlineObject|\OpenAPI\Client\Model\InlineObject4|\OpenAPI\Client\Model\InlineObject5|\OpenAPI\Client\Model\InlineObject6|\OpenAPI\Client\Model\InlineObject7
      */
-    public function createAssetsAnalyze($asset_slug, $company_handle, $assets_input, string $contentType = self::contentTypes['createAssetsAnalyze'][0])
+    public function createAssetsAnalyze($company_handle, $asset_slug, $assets_input, string $contentType = self::contentTypes['createAssetsAnalyze'][0])
     {
-        list($response) = $this->createAssetsAnalyzeWithHttpInfo($asset_slug, $company_handle, $assets_input, $contentType);
+        list($response) = $this->createAssetsAnalyzeWithHttpInfo($company_handle, $asset_slug, $assets_input, $contentType);
         return $response;
     }
 
@@ -685,8 +685,8 @@ class AssetsApi
      *
      * Process (analyze) an asset with dynamic rate limiting applied via decorator.
      *
-     * @param  string $asset_slug URL-friendly slug for the Asset (required)
      * @param  string $company_handle Human-readable handle for the Company (required)
+     * @param  string $asset_slug URL-friendly slug for the Asset (required)
      * @param  \OpenAPI\Client\Model\AssetsInput $assets_input (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createAssetsAnalyze'] to see the possible values for this operation
      *
@@ -694,9 +694,9 @@ class AssetsApi
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\CreateAssetsAnalyze200Response|\OpenAPI\Client\Model\InlineObject1|\OpenAPI\Client\Model\InlineObject2|\OpenAPI\Client\Model\InlineObject|\OpenAPI\Client\Model\InlineObject4|\OpenAPI\Client\Model\InlineObject5|\OpenAPI\Client\Model\InlineObject6|\OpenAPI\Client\Model\InlineObject7, HTTP status code, HTTP response headers (array of strings)
      */
-    public function createAssetsAnalyzeWithHttpInfo($asset_slug, $company_handle, $assets_input, string $contentType = self::contentTypes['createAssetsAnalyze'][0])
+    public function createAssetsAnalyzeWithHttpInfo($company_handle, $asset_slug, $assets_input, string $contentType = self::contentTypes['createAssetsAnalyze'][0])
     {
-        $request = $this->createAssetsAnalyzeRequest($asset_slug, $company_handle, $assets_input, $contentType);
+        $request = $this->createAssetsAnalyzeRequest($company_handle, $asset_slug, $assets_input, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -870,17 +870,17 @@ class AssetsApi
      *
      * Process (analyze) an asset with dynamic rate limiting applied via decorator.
      *
-     * @param  string $asset_slug URL-friendly slug for the Asset (required)
      * @param  string $company_handle Human-readable handle for the Company (required)
+     * @param  string $asset_slug URL-friendly slug for the Asset (required)
      * @param  \OpenAPI\Client\Model\AssetsInput $assets_input (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createAssetsAnalyze'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createAssetsAnalyzeAsync($asset_slug, $company_handle, $assets_input, string $contentType = self::contentTypes['createAssetsAnalyze'][0])
+    public function createAssetsAnalyzeAsync($company_handle, $asset_slug, $assets_input, string $contentType = self::contentTypes['createAssetsAnalyze'][0])
     {
-        return $this->createAssetsAnalyzeAsyncWithHttpInfo($asset_slug, $company_handle, $assets_input, $contentType)
+        return $this->createAssetsAnalyzeAsyncWithHttpInfo($company_handle, $asset_slug, $assets_input, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -893,18 +893,18 @@ class AssetsApi
      *
      * Process (analyze) an asset with dynamic rate limiting applied via decorator.
      *
-     * @param  string $asset_slug URL-friendly slug for the Asset (required)
      * @param  string $company_handle Human-readable handle for the Company (required)
+     * @param  string $asset_slug URL-friendly slug for the Asset (required)
      * @param  \OpenAPI\Client\Model\AssetsInput $assets_input (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createAssetsAnalyze'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function createAssetsAnalyzeAsyncWithHttpInfo($asset_slug, $company_handle, $assets_input, string $contentType = self::contentTypes['createAssetsAnalyze'][0])
+    public function createAssetsAnalyzeAsyncWithHttpInfo($company_handle, $asset_slug, $assets_input, string $contentType = self::contentTypes['createAssetsAnalyze'][0])
     {
         $returnType = '\OpenAPI\Client\Model\CreateAssetsAnalyze200Response';
-        $request = $this->createAssetsAnalyzeRequest($asset_slug, $company_handle, $assets_input, $contentType);
+        $request = $this->createAssetsAnalyzeRequest($company_handle, $asset_slug, $assets_input, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -945,28 +945,28 @@ class AssetsApi
     /**
      * Create request for operation 'createAssetsAnalyze'
      *
-     * @param  string $asset_slug URL-friendly slug for the Asset (required)
      * @param  string $company_handle Human-readable handle for the Company (required)
+     * @param  string $asset_slug URL-friendly slug for the Asset (required)
      * @param  \OpenAPI\Client\Model\AssetsInput $assets_input (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createAssetsAnalyze'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function createAssetsAnalyzeRequest($asset_slug, $company_handle, $assets_input, string $contentType = self::contentTypes['createAssetsAnalyze'][0])
+    public function createAssetsAnalyzeRequest($company_handle, $asset_slug, $assets_input, string $contentType = self::contentTypes['createAssetsAnalyze'][0])
     {
-
-        // verify the required parameter 'asset_slug' is set
-        if ($asset_slug === null || (is_array($asset_slug) && count($asset_slug) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $asset_slug when calling createAssetsAnalyze'
-            );
-        }
 
         // verify the required parameter 'company_handle' is set
         if ($company_handle === null || (is_array($company_handle) && count($company_handle) === 0)) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $company_handle when calling createAssetsAnalyze'
+            );
+        }
+
+        // verify the required parameter 'asset_slug' is set
+        if ($asset_slug === null || (is_array($asset_slug) && count($asset_slug) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $asset_slug when calling createAssetsAnalyze'
             );
         }
 
@@ -988,18 +988,18 @@ class AssetsApi
 
 
         // path params
-        if ($asset_slug !== null) {
-            $resourcePath = str_replace(
-                '{' . 'asset_slug' . '}',
-                ObjectSerializer::toPathValue($asset_slug),
-                $resourcePath
-            );
-        }
-        // path params
         if ($company_handle !== null) {
             $resourcePath = str_replace(
                 '{' . 'company_handle' . '}',
                 ObjectSerializer::toPathValue($company_handle),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($asset_slug !== null) {
+            $resourcePath = str_replace(
+                '{' . 'asset_slug' . '}',
+                ObjectSerializer::toPathValue($asset_slug),
                 $resourcePath
             );
         }
@@ -3074,17 +3074,17 @@ class AssetsApi
      *
      * Process (analyze) an asset with dynamic rate limiting applied via decorator.
      *
-     * @param  string $asset_slug URL-friendly slug for the Asset (required)
      * @param  string $company_handle Human-readable handle for the Company (required)
+     * @param  string $asset_slug URL-friendly slug for the Asset (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAssetsByIdAnalyze'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \OpenAPI\Client\Model\GetAssetsByIdAnalyze200Response|\OpenAPI\Client\Model\InlineObject1|\OpenAPI\Client\Model\InlineObject2|\OpenAPI\Client\Model\InlineObject3|\OpenAPI\Client\Model\InlineObject6|\OpenAPI\Client\Model\InlineObject7
      */
-    public function getAssetsByIdAnalyze($asset_slug, $company_handle, string $contentType = self::contentTypes['getAssetsByIdAnalyze'][0])
+    public function getAssetsByIdAnalyze($company_handle, $asset_slug, string $contentType = self::contentTypes['getAssetsByIdAnalyze'][0])
     {
-        list($response) = $this->getAssetsByIdAnalyzeWithHttpInfo($asset_slug, $company_handle, $contentType);
+        list($response) = $this->getAssetsByIdAnalyzeWithHttpInfo($company_handle, $asset_slug, $contentType);
         return $response;
     }
 
@@ -3093,17 +3093,17 @@ class AssetsApi
      *
      * Process (analyze) an asset with dynamic rate limiting applied via decorator.
      *
-     * @param  string $asset_slug URL-friendly slug for the Asset (required)
      * @param  string $company_handle Human-readable handle for the Company (required)
+     * @param  string $asset_slug URL-friendly slug for the Asset (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAssetsByIdAnalyze'] to see the possible values for this operation
      *
      * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \OpenAPI\Client\Model\GetAssetsByIdAnalyze200Response|\OpenAPI\Client\Model\InlineObject1|\OpenAPI\Client\Model\InlineObject2|\OpenAPI\Client\Model\InlineObject3|\OpenAPI\Client\Model\InlineObject6|\OpenAPI\Client\Model\InlineObject7, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getAssetsByIdAnalyzeWithHttpInfo($asset_slug, $company_handle, string $contentType = self::contentTypes['getAssetsByIdAnalyze'][0])
+    public function getAssetsByIdAnalyzeWithHttpInfo($company_handle, $asset_slug, string $contentType = self::contentTypes['getAssetsByIdAnalyze'][0])
     {
-        $request = $this->getAssetsByIdAnalyzeRequest($asset_slug, $company_handle, $contentType);
+        $request = $this->getAssetsByIdAnalyzeRequest($company_handle, $asset_slug, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -3249,16 +3249,16 @@ class AssetsApi
      *
      * Process (analyze) an asset with dynamic rate limiting applied via decorator.
      *
-     * @param  string $asset_slug URL-friendly slug for the Asset (required)
      * @param  string $company_handle Human-readable handle for the Company (required)
+     * @param  string $asset_slug URL-friendly slug for the Asset (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAssetsByIdAnalyze'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAssetsByIdAnalyzeAsync($asset_slug, $company_handle, string $contentType = self::contentTypes['getAssetsByIdAnalyze'][0])
+    public function getAssetsByIdAnalyzeAsync($company_handle, $asset_slug, string $contentType = self::contentTypes['getAssetsByIdAnalyze'][0])
     {
-        return $this->getAssetsByIdAnalyzeAsyncWithHttpInfo($asset_slug, $company_handle, $contentType)
+        return $this->getAssetsByIdAnalyzeAsyncWithHttpInfo($company_handle, $asset_slug, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3271,17 +3271,17 @@ class AssetsApi
      *
      * Process (analyze) an asset with dynamic rate limiting applied via decorator.
      *
-     * @param  string $asset_slug URL-friendly slug for the Asset (required)
      * @param  string $company_handle Human-readable handle for the Company (required)
+     * @param  string $asset_slug URL-friendly slug for the Asset (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAssetsByIdAnalyze'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAssetsByIdAnalyzeAsyncWithHttpInfo($asset_slug, $company_handle, string $contentType = self::contentTypes['getAssetsByIdAnalyze'][0])
+    public function getAssetsByIdAnalyzeAsyncWithHttpInfo($company_handle, $asset_slug, string $contentType = self::contentTypes['getAssetsByIdAnalyze'][0])
     {
         $returnType = '\OpenAPI\Client\Model\GetAssetsByIdAnalyze200Response';
-        $request = $this->getAssetsByIdAnalyzeRequest($asset_slug, $company_handle, $contentType);
+        $request = $this->getAssetsByIdAnalyzeRequest($company_handle, $asset_slug, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3322,27 +3322,27 @@ class AssetsApi
     /**
      * Create request for operation 'getAssetsByIdAnalyze'
      *
-     * @param  string $asset_slug URL-friendly slug for the Asset (required)
      * @param  string $company_handle Human-readable handle for the Company (required)
+     * @param  string $asset_slug URL-friendly slug for the Asset (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAssetsByIdAnalyze'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getAssetsByIdAnalyzeRequest($asset_slug, $company_handle, string $contentType = self::contentTypes['getAssetsByIdAnalyze'][0])
+    public function getAssetsByIdAnalyzeRequest($company_handle, $asset_slug, string $contentType = self::contentTypes['getAssetsByIdAnalyze'][0])
     {
-
-        // verify the required parameter 'asset_slug' is set
-        if ($asset_slug === null || (is_array($asset_slug) && count($asset_slug) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $asset_slug when calling getAssetsByIdAnalyze'
-            );
-        }
 
         // verify the required parameter 'company_handle' is set
         if ($company_handle === null || (is_array($company_handle) && count($company_handle) === 0)) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $company_handle when calling getAssetsByIdAnalyze'
+            );
+        }
+
+        // verify the required parameter 'asset_slug' is set
+        if ($asset_slug === null || (is_array($asset_slug) && count($asset_slug) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $asset_slug when calling getAssetsByIdAnalyze'
             );
         }
 
@@ -3357,18 +3357,18 @@ class AssetsApi
 
 
         // path params
-        if ($asset_slug !== null) {
-            $resourcePath = str_replace(
-                '{' . 'asset_slug' . '}',
-                ObjectSerializer::toPathValue($asset_slug),
-                $resourcePath
-            );
-        }
-        // path params
         if ($company_handle !== null) {
             $resourcePath = str_replace(
                 '{' . 'company_handle' . '}',
                 ObjectSerializer::toPathValue($company_handle),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($asset_slug !== null) {
+            $resourcePath = str_replace(
+                '{' . 'asset_slug' . '}',
+                ObjectSerializer::toPathValue($asset_slug),
                 $resourcePath
             );
         }

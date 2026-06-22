@@ -90,6 +90,9 @@ class ConnectionsApi
         'getConnectionsByIdInfoschema' => [
             'application/json',
         ],
+        'getConnectionsByIdSampleData' => [
+            'application/json',
+        ],
         'listConnections' => [
             'application/json',
         ],
@@ -2073,6 +2076,387 @@ class ConnectionsApi
         
 
         $resourcePath = '/companies/{company_id}/connections/{connection_id}/infoschema';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($company_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'company_id' . '}',
+                ObjectSerializer::toPathValue($company_id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($connection_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'connection_id' . '}',
+                ObjectSerializer::toPathValue($connection_id),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('x-api-key');
+        if ($apiKey !== null) {
+            $headers['x-api-key'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation getConnectionsByIdSampleData
+     *
+     * Get a randomized sample of rows from a table on this connection.     Used by the visualization editor to give sellers data to author against.      Query Parameters:         schema_name (required): Schema/dataset name         table_name  (required): Table name         limit       (optional): Max rows to return (default 1000, max 10000)      Returns columnar data — {column_name: [values]} — ready for Plotly&#39;s     dataSources prop. The actual chart at render time will pull fresh data     via the asset&#39;s saved SQL; this is only for authoring preview.
+     *
+     * @param  string $company_id Unique identifier for the Company (required)
+     * @param  string $connection_id Unique identifier for the Connection (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getConnectionsByIdSampleData'] to see the possible values for this operation
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \OpenAPI\Client\Model\GetConnectionsById200Response|\OpenAPI\Client\Model\InlineObject1|\OpenAPI\Client\Model\InlineObject2|\OpenAPI\Client\Model\InlineObject3|\OpenAPI\Client\Model\InlineObject6|\OpenAPI\Client\Model\InlineObject7
+     */
+    public function getConnectionsByIdSampleData($company_id, $connection_id, string $contentType = self::contentTypes['getConnectionsByIdSampleData'][0])
+    {
+        list($response) = $this->getConnectionsByIdSampleDataWithHttpInfo($company_id, $connection_id, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getConnectionsByIdSampleDataWithHttpInfo
+     *
+     * Get a randomized sample of rows from a table on this connection.     Used by the visualization editor to give sellers data to author against.      Query Parameters:         schema_name (required): Schema/dataset name         table_name  (required): Table name         limit       (optional): Max rows to return (default 1000, max 10000)      Returns columnar data — {column_name: [values]} — ready for Plotly&#39;s     dataSources prop. The actual chart at render time will pull fresh data     via the asset&#39;s saved SQL; this is only for authoring preview.
+     *
+     * @param  string $company_id Unique identifier for the Company (required)
+     * @param  string $connection_id Unique identifier for the Connection (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getConnectionsByIdSampleData'] to see the possible values for this operation
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \OpenAPI\Client\Model\GetConnectionsById200Response|\OpenAPI\Client\Model\InlineObject1|\OpenAPI\Client\Model\InlineObject2|\OpenAPI\Client\Model\InlineObject3|\OpenAPI\Client\Model\InlineObject6|\OpenAPI\Client\Model\InlineObject7, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getConnectionsByIdSampleDataWithHttpInfo($company_id, $connection_id, string $contentType = self::contentTypes['getConnectionsByIdSampleData'][0])
+    {
+        $request = $this->getConnectionsByIdSampleDataRequest($company_id, $connection_id, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\OpenAPI\Client\Model\GetConnectionsById200Response',
+                        $request,
+                        $response,
+                    );
+                case 401:
+                    return $this->handleResponseWithDataType(
+                        '\OpenAPI\Client\Model\InlineObject1',
+                        $request,
+                        $response,
+                    );
+                case 403:
+                    return $this->handleResponseWithDataType(
+                        '\OpenAPI\Client\Model\InlineObject2',
+                        $request,
+                        $response,
+                    );
+                case 404:
+                    return $this->handleResponseWithDataType(
+                        '\OpenAPI\Client\Model\InlineObject3',
+                        $request,
+                        $response,
+                    );
+                case 429:
+                    return $this->handleResponseWithDataType(
+                        '\OpenAPI\Client\Model\InlineObject6',
+                        $request,
+                        $response,
+                    );
+                case 500:
+                    return $this->handleResponseWithDataType(
+                        '\OpenAPI\Client\Model\InlineObject7',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\OpenAPI\Client\Model\GetConnectionsById200Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\GetConnectionsById200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\InlineObject1',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\InlineObject2',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\InlineObject3',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\InlineObject6',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\InlineObject7',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getConnectionsByIdSampleDataAsync
+     *
+     * Get a randomized sample of rows from a table on this connection.     Used by the visualization editor to give sellers data to author against.      Query Parameters:         schema_name (required): Schema/dataset name         table_name  (required): Table name         limit       (optional): Max rows to return (default 1000, max 10000)      Returns columnar data — {column_name: [values]} — ready for Plotly&#39;s     dataSources prop. The actual chart at render time will pull fresh data     via the asset&#39;s saved SQL; this is only for authoring preview.
+     *
+     * @param  string $company_id Unique identifier for the Company (required)
+     * @param  string $connection_id Unique identifier for the Connection (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getConnectionsByIdSampleData'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getConnectionsByIdSampleDataAsync($company_id, $connection_id, string $contentType = self::contentTypes['getConnectionsByIdSampleData'][0])
+    {
+        return $this->getConnectionsByIdSampleDataAsyncWithHttpInfo($company_id, $connection_id, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getConnectionsByIdSampleDataAsyncWithHttpInfo
+     *
+     * Get a randomized sample of rows from a table on this connection.     Used by the visualization editor to give sellers data to author against.      Query Parameters:         schema_name (required): Schema/dataset name         table_name  (required): Table name         limit       (optional): Max rows to return (default 1000, max 10000)      Returns columnar data — {column_name: [values]} — ready for Plotly&#39;s     dataSources prop. The actual chart at render time will pull fresh data     via the asset&#39;s saved SQL; this is only for authoring preview.
+     *
+     * @param  string $company_id Unique identifier for the Company (required)
+     * @param  string $connection_id Unique identifier for the Connection (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getConnectionsByIdSampleData'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getConnectionsByIdSampleDataAsyncWithHttpInfo($company_id, $connection_id, string $contentType = self::contentTypes['getConnectionsByIdSampleData'][0])
+    {
+        $returnType = '\OpenAPI\Client\Model\GetConnectionsById200Response';
+        $request = $this->getConnectionsByIdSampleDataRequest($company_id, $connection_id, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getConnectionsByIdSampleData'
+     *
+     * @param  string $company_id Unique identifier for the Company (required)
+     * @param  string $connection_id Unique identifier for the Connection (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getConnectionsByIdSampleData'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getConnectionsByIdSampleDataRequest($company_id, $connection_id, string $contentType = self::contentTypes['getConnectionsByIdSampleData'][0])
+    {
+
+        // verify the required parameter 'company_id' is set
+        if ($company_id === null || (is_array($company_id) && count($company_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $company_id when calling getConnectionsByIdSampleData'
+            );
+        }
+        if (strlen($company_id) > 255) {
+            throw new \InvalidArgumentException('invalid length for "$company_id" when calling ConnectionsApi.getConnectionsByIdSampleData, must be smaller than or equal to 255.');
+        }
+        if (strlen($company_id) < 1) {
+            throw new \InvalidArgumentException('invalid length for "$company_id" when calling ConnectionsApi.getConnectionsByIdSampleData, must be bigger than or equal to 1.');
+        }
+        if (!preg_match("/^[a-zA-Z0-9_-]+$/", $company_id)) {
+            throw new \InvalidArgumentException("invalid value for \"company_id\" when calling ConnectionsApi.getConnectionsByIdSampleData, must conform to the pattern /^[a-zA-Z0-9_-]+$/.");
+        }
+        
+        // verify the required parameter 'connection_id' is set
+        if ($connection_id === null || (is_array($connection_id) && count($connection_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $connection_id when calling getConnectionsByIdSampleData'
+            );
+        }
+        if (strlen($connection_id) > 255) {
+            throw new \InvalidArgumentException('invalid length for "$connection_id" when calling ConnectionsApi.getConnectionsByIdSampleData, must be smaller than or equal to 255.');
+        }
+        if (strlen($connection_id) < 1) {
+            throw new \InvalidArgumentException('invalid length for "$connection_id" when calling ConnectionsApi.getConnectionsByIdSampleData, must be bigger than or equal to 1.');
+        }
+        if (!preg_match("/^[a-zA-Z0-9_-]+$/", $connection_id)) {
+            throw new \InvalidArgumentException("invalid value for \"connection_id\" when calling ConnectionsApi.getConnectionsByIdSampleData, must conform to the pattern /^[a-zA-Z0-9_-]+$/.");
+        }
+        
+
+        $resourcePath = '/companies/{company_id}/connections/{connection_id}/sample-data';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

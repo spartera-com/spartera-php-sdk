@@ -297,6 +297,15 @@ class AssetsTest extends TestCase
     }
 
     /**
+     * Test attribute "top_questions"
+     */
+    public function testPropertyTopQuestions()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "short_code"
      */
     public function testPropertyShortCode()
@@ -354,6 +363,15 @@ class AssetsTest extends TestCase
      * Test attribute "require_customization"
      */
     public function testPropertyRequireCustomization()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "viz_spec"
+     */
+    public function testPropertyVizSpec()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
@@ -567,6 +585,15 @@ class AssetsTest extends TestCase
     }
 
     /**
+     * Test attribute "date_collection_start"
+     */
+    public function testPropertyDateCollectionStart()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "geographic_coverage_type"
      */
     public function testPropertyGeographicCoverageType()
@@ -588,15 +615,6 @@ class AssetsTest extends TestCase
      * Test attribute "data_source_refresh_frequency"
      */
     public function testPropertyDataSourceRefreshFrequency()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "data_source_last_refreshed"
-     */
-    public function testPropertyDataSourceLastRefreshed()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

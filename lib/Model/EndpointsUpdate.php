@@ -70,24 +70,32 @@ class EndpointsUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'approved_by_user_id' => 'string',
         'approved_at' => '\DateTime',
         'sell_in_marketplace' => 'bool',
-        'price_credits' => 'int',
         'name' => 'string',
         'slug' => 'string',
         'description' => 'string',
+        'detailed_description' => 'string',
+        'top_questions' => 'string',
         'source_schema_name' => 'string',
         'source_table_name' => 'string',
         'customer_name' => 'string',
-        'price_usd' => 'float',
         'endpoint_schema' => 'object',
-        'rate_limit_requests' => 'int',
+        'rate_limit_number' => 'int',
         'rate_limit_period' => 'string',
         'rate_limit_granularity' => 'string',
         'access_method' => 'string',
         'access_whitelist' => 'object',
         'status' => 'string',
+        'data_time_period_start' => '\DateTime',
+        'data_time_period_end' => '\DateTime',
+        'date_collection_start' => '\DateTime',
+        'geographic_coverage_type' => 'string',
+        'geographic_coverage_details' => 'string',
+        'data_source_refresh_frequency' => 'string',
         'tags' => 'string',
         'last_accessed' => '\DateTime',
         'max_records_per_request' => 'int',
+        'export_enabled' => 'bool',
+        'max_records_per_export' => 'int',
         'sample_response' => 'object',
         'active' => 'bool'
     ];
@@ -111,24 +119,32 @@ class EndpointsUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'approved_by_user_id' => null,
         'approved_at' => 'date-time',
         'sell_in_marketplace' => null,
-        'price_credits' => 'int64',
         'name' => null,
         'slug' => null,
         'description' => null,
+        'detailed_description' => null,
+        'top_questions' => null,
         'source_schema_name' => null,
         'source_table_name' => null,
         'customer_name' => null,
-        'price_usd' => 'float',
         'endpoint_schema' => null,
-        'rate_limit_requests' => 'int64',
+        'rate_limit_number' => 'int64',
         'rate_limit_period' => null,
         'rate_limit_granularity' => null,
         'access_method' => null,
         'access_whitelist' => null,
         'status' => null,
+        'data_time_period_start' => 'date-time',
+        'data_time_period_end' => 'date-time',
+        'date_collection_start' => 'date-time',
+        'geographic_coverage_type' => null,
+        'geographic_coverage_details' => null,
+        'data_source_refresh_frequency' => null,
         'tags' => null,
         'last_accessed' => 'date-time',
         'max_records_per_request' => 'int64',
+        'export_enabled' => null,
+        'max_records_per_export' => 'int64',
         'sample_response' => null,
         'active' => null
     ];
@@ -150,24 +166,32 @@ class EndpointsUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'approved_by_user_id' => false,
         'approved_at' => false,
         'sell_in_marketplace' => false,
-        'price_credits' => false,
         'name' => false,
         'slug' => false,
         'description' => false,
+        'detailed_description' => false,
+        'top_questions' => false,
         'source_schema_name' => false,
         'source_table_name' => false,
         'customer_name' => false,
-        'price_usd' => false,
         'endpoint_schema' => false,
-        'rate_limit_requests' => false,
+        'rate_limit_number' => false,
         'rate_limit_period' => false,
         'rate_limit_granularity' => false,
         'access_method' => false,
         'access_whitelist' => false,
         'status' => false,
+        'data_time_period_start' => false,
+        'data_time_period_end' => false,
+        'date_collection_start' => false,
+        'geographic_coverage_type' => false,
+        'geographic_coverage_details' => false,
+        'data_source_refresh_frequency' => false,
         'tags' => false,
         'last_accessed' => false,
         'max_records_per_request' => false,
+        'export_enabled' => false,
+        'max_records_per_export' => false,
         'sample_response' => false,
         'active' => false
     ];
@@ -269,24 +293,32 @@ class EndpointsUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'approved_by_user_id' => 'approved_by_user_id',
         'approved_at' => 'approved_at',
         'sell_in_marketplace' => 'sell_in_marketplace',
-        'price_credits' => 'price_credits',
         'name' => 'name',
         'slug' => 'slug',
         'description' => 'description',
+        'detailed_description' => 'detailed_description',
+        'top_questions' => 'top_questions',
         'source_schema_name' => 'source_schema_name',
         'source_table_name' => 'source_table_name',
         'customer_name' => 'customer_name',
-        'price_usd' => 'price_usd',
         'endpoint_schema' => 'endpoint_schema',
-        'rate_limit_requests' => 'rate_limit_requests',
+        'rate_limit_number' => 'rate_limit_number',
         'rate_limit_period' => 'rate_limit_period',
         'rate_limit_granularity' => 'rate_limit_granularity',
         'access_method' => 'access_method',
         'access_whitelist' => 'access_whitelist',
         'status' => 'status',
+        'data_time_period_start' => 'data_time_period_start',
+        'data_time_period_end' => 'data_time_period_end',
+        'date_collection_start' => 'date_collection_start',
+        'geographic_coverage_type' => 'geographic_coverage_type',
+        'geographic_coverage_details' => 'geographic_coverage_details',
+        'data_source_refresh_frequency' => 'data_source_refresh_frequency',
         'tags' => 'tags',
         'last_accessed' => 'last_accessed',
         'max_records_per_request' => 'max_records_per_request',
+        'export_enabled' => 'export_enabled',
+        'max_records_per_export' => 'max_records_per_export',
         'sample_response' => 'sample_response',
         'active' => 'active'
     ];
@@ -308,24 +340,32 @@ class EndpointsUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'approved_by_user_id' => 'setApprovedByUserId',
         'approved_at' => 'setApprovedAt',
         'sell_in_marketplace' => 'setSellInMarketplace',
-        'price_credits' => 'setPriceCredits',
         'name' => 'setName',
         'slug' => 'setSlug',
         'description' => 'setDescription',
+        'detailed_description' => 'setDetailedDescription',
+        'top_questions' => 'setTopQuestions',
         'source_schema_name' => 'setSourceSchemaName',
         'source_table_name' => 'setSourceTableName',
         'customer_name' => 'setCustomerName',
-        'price_usd' => 'setPriceUsd',
         'endpoint_schema' => 'setEndpointSchema',
-        'rate_limit_requests' => 'setRateLimitRequests',
+        'rate_limit_number' => 'setRateLimitNumber',
         'rate_limit_period' => 'setRateLimitPeriod',
         'rate_limit_granularity' => 'setRateLimitGranularity',
         'access_method' => 'setAccessMethod',
         'access_whitelist' => 'setAccessWhitelist',
         'status' => 'setStatus',
+        'data_time_period_start' => 'setDataTimePeriodStart',
+        'data_time_period_end' => 'setDataTimePeriodEnd',
+        'date_collection_start' => 'setDateCollectionStart',
+        'geographic_coverage_type' => 'setGeographicCoverageType',
+        'geographic_coverage_details' => 'setGeographicCoverageDetails',
+        'data_source_refresh_frequency' => 'setDataSourceRefreshFrequency',
         'tags' => 'setTags',
         'last_accessed' => 'setLastAccessed',
         'max_records_per_request' => 'setMaxRecordsPerRequest',
+        'export_enabled' => 'setExportEnabled',
+        'max_records_per_export' => 'setMaxRecordsPerExport',
         'sample_response' => 'setSampleResponse',
         'active' => 'setActive'
     ];
@@ -347,24 +387,32 @@ class EndpointsUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         'approved_by_user_id' => 'getApprovedByUserId',
         'approved_at' => 'getApprovedAt',
         'sell_in_marketplace' => 'getSellInMarketplace',
-        'price_credits' => 'getPriceCredits',
         'name' => 'getName',
         'slug' => 'getSlug',
         'description' => 'getDescription',
+        'detailed_description' => 'getDetailedDescription',
+        'top_questions' => 'getTopQuestions',
         'source_schema_name' => 'getSourceSchemaName',
         'source_table_name' => 'getSourceTableName',
         'customer_name' => 'getCustomerName',
-        'price_usd' => 'getPriceUsd',
         'endpoint_schema' => 'getEndpointSchema',
-        'rate_limit_requests' => 'getRateLimitRequests',
+        'rate_limit_number' => 'getRateLimitNumber',
         'rate_limit_period' => 'getRateLimitPeriod',
         'rate_limit_granularity' => 'getRateLimitGranularity',
         'access_method' => 'getAccessMethod',
         'access_whitelist' => 'getAccessWhitelist',
         'status' => 'getStatus',
+        'data_time_period_start' => 'getDataTimePeriodStart',
+        'data_time_period_end' => 'getDataTimePeriodEnd',
+        'date_collection_start' => 'getDateCollectionStart',
+        'geographic_coverage_type' => 'getGeographicCoverageType',
+        'geographic_coverage_details' => 'getGeographicCoverageDetails',
+        'data_source_refresh_frequency' => 'getDataSourceRefreshFrequency',
         'tags' => 'getTags',
         'last_accessed' => 'getLastAccessed',
         'max_records_per_request' => 'getMaxRecordsPerRequest',
+        'export_enabled' => 'getExportEnabled',
+        'max_records_per_export' => 'getMaxRecordsPerExport',
         'sample_response' => 'getSampleResponse',
         'active' => 'getActive'
     ];
@@ -430,6 +478,24 @@ class EndpointsUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
     public const STATUS_ACTIVE = 'ACTIVE';
     public const STATUS_INACTIVE = 'INACTIVE';
     public const STATUS_DEPRECATED = 'DEPRECATED';
+    public const GEOGRAPHIC_COVERAGE_TYPE__GLOBAL = 'GLOBAL';
+    public const GEOGRAPHIC_COVERAGE_TYPE_CONTINENTAL = 'CONTINENTAL';
+    public const GEOGRAPHIC_COVERAGE_TYPE_REGIONAL = 'REGIONAL';
+    public const GEOGRAPHIC_COVERAGE_TYPE_NATIONAL = 'NATIONAL';
+    public const GEOGRAPHIC_COVERAGE_TYPE_STATE = 'STATE';
+    public const GEOGRAPHIC_COVERAGE_TYPE_LOCAL = 'LOCAL';
+    public const GEOGRAPHIC_COVERAGE_TYPE_CUSTOM = 'CUSTOM';
+    public const GEOGRAPHIC_COVERAGE_TYPE_UNKNOWN = 'UNKNOWN';
+    public const DATA_SOURCE_REFRESH_FREQUENCY_EVERY_SECOND = 'EVERY_SECOND';
+    public const DATA_SOURCE_REFRESH_FREQUENCY_EVERY_MINUTE = 'EVERY_MINUTE';
+    public const DATA_SOURCE_REFRESH_FREQUENCY_EVERY_HOUR = 'EVERY_HOUR';
+    public const DATA_SOURCE_REFRESH_FREQUENCY_EVERY_DAY = 'EVERY_DAY';
+    public const DATA_SOURCE_REFRESH_FREQUENCY_EVERY_WEEK = 'EVERY_WEEK';
+    public const DATA_SOURCE_REFRESH_FREQUENCY_EVERY_MONTH = 'EVERY_MONTH';
+    public const DATA_SOURCE_REFRESH_FREQUENCY_EVERY_QUARTER = 'EVERY_QUARTER';
+    public const DATA_SOURCE_REFRESH_FREQUENCY_EVERY_YEAR = 'EVERY_YEAR';
+    public const DATA_SOURCE_REFRESH_FREQUENCY_NEVER = 'NEVER';
+    public const DATA_SOURCE_REFRESH_FREQUENCY_UNKNOWN = 'UNKNOWN';
 
     /**
      * Gets allowable values of the enum
@@ -507,6 +573,46 @@ class EndpointsUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getGeographicCoverageTypeAllowableValues()
+    {
+        return [
+            self::GEOGRAPHIC_COVERAGE_TYPE__GLOBAL,
+            self::GEOGRAPHIC_COVERAGE_TYPE_CONTINENTAL,
+            self::GEOGRAPHIC_COVERAGE_TYPE_REGIONAL,
+            self::GEOGRAPHIC_COVERAGE_TYPE_NATIONAL,
+            self::GEOGRAPHIC_COVERAGE_TYPE_STATE,
+            self::GEOGRAPHIC_COVERAGE_TYPE_LOCAL,
+            self::GEOGRAPHIC_COVERAGE_TYPE_CUSTOM,
+            self::GEOGRAPHIC_COVERAGE_TYPE_UNKNOWN,
+        ];
+    }
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getDataSourceRefreshFrequencyAllowableValues()
+    {
+        return [
+            self::DATA_SOURCE_REFRESH_FREQUENCY_EVERY_SECOND,
+            self::DATA_SOURCE_REFRESH_FREQUENCY_EVERY_MINUTE,
+            self::DATA_SOURCE_REFRESH_FREQUENCY_EVERY_HOUR,
+            self::DATA_SOURCE_REFRESH_FREQUENCY_EVERY_DAY,
+            self::DATA_SOURCE_REFRESH_FREQUENCY_EVERY_WEEK,
+            self::DATA_SOURCE_REFRESH_FREQUENCY_EVERY_MONTH,
+            self::DATA_SOURCE_REFRESH_FREQUENCY_EVERY_QUARTER,
+            self::DATA_SOURCE_REFRESH_FREQUENCY_EVERY_YEAR,
+            self::DATA_SOURCE_REFRESH_FREQUENCY_NEVER,
+            self::DATA_SOURCE_REFRESH_FREQUENCY_UNKNOWN,
+        ];
+    }
+
+    /**
      * Associative array for storing property values
      *
      * @var mixed[]
@@ -532,24 +638,32 @@ class EndpointsUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('approved_by_user_id', $data ?? [], null);
         $this->setIfExists('approved_at', $data ?? [], null);
         $this->setIfExists('sell_in_marketplace', $data ?? [], null);
-        $this->setIfExists('price_credits', $data ?? [], null);
         $this->setIfExists('name', $data ?? [], null);
         $this->setIfExists('slug', $data ?? [], null);
         $this->setIfExists('description', $data ?? [], null);
+        $this->setIfExists('detailed_description', $data ?? [], null);
+        $this->setIfExists('top_questions', $data ?? [], null);
         $this->setIfExists('source_schema_name', $data ?? [], null);
         $this->setIfExists('source_table_name', $data ?? [], null);
         $this->setIfExists('customer_name', $data ?? [], null);
-        $this->setIfExists('price_usd', $data ?? [], null);
         $this->setIfExists('endpoint_schema', $data ?? [], null);
-        $this->setIfExists('rate_limit_requests', $data ?? [], null);
+        $this->setIfExists('rate_limit_number', $data ?? [], null);
         $this->setIfExists('rate_limit_period', $data ?? [], null);
         $this->setIfExists('rate_limit_granularity', $data ?? [], null);
         $this->setIfExists('access_method', $data ?? [], null);
         $this->setIfExists('access_whitelist', $data ?? [], null);
         $this->setIfExists('status', $data ?? [], null);
+        $this->setIfExists('data_time_period_start', $data ?? [], null);
+        $this->setIfExists('data_time_period_end', $data ?? [], null);
+        $this->setIfExists('date_collection_start', $data ?? [], null);
+        $this->setIfExists('geographic_coverage_type', $data ?? [], null);
+        $this->setIfExists('geographic_coverage_details', $data ?? [], null);
+        $this->setIfExists('data_source_refresh_frequency', $data ?? [], null);
         $this->setIfExists('tags', $data ?? [], null);
         $this->setIfExists('last_accessed', $data ?? [], null);
         $this->setIfExists('max_records_per_request', $data ?? [], null);
+        $this->setIfExists('export_enabled', $data ?? [], null);
+        $this->setIfExists('max_records_per_export', $data ?? [], null);
         $this->setIfExists('sample_response', $data ?? [], null);
         $this->setIfExists('active', $data ?? [], null);
     }
@@ -622,6 +736,24 @@ class EndpointsUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
             $invalidProperties[] = sprintf(
                 "invalid value '%s' for 'status', must be one of '%s'",
                 $this->container['status'],
+                implode("', '", $allowedValues)
+            );
+        }
+
+        $allowedValues = $this->getGeographicCoverageTypeAllowableValues();
+        if (!is_null($this->container['geographic_coverage_type']) && !in_array($this->container['geographic_coverage_type'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'geographic_coverage_type', must be one of '%s'",
+                $this->container['geographic_coverage_type'],
+                implode("', '", $allowedValues)
+            );
+        }
+
+        $allowedValues = $this->getDataSourceRefreshFrequencyAllowableValues();
+        if (!is_null($this->container['data_source_refresh_frequency']) && !in_array($this->container['data_source_refresh_frequency'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'data_source_refresh_frequency', must be one of '%s'",
+                $this->container['data_source_refresh_frequency'],
                 implode("', '", $allowedValues)
             );
         }
@@ -949,33 +1081,6 @@ class EndpointsUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets price_credits
-     *
-     * @return int|null
-     */
-    public function getPriceCredits()
-    {
-        return $this->container['price_credits'];
-    }
-
-    /**
-     * Sets price_credits
-     *
-     * @param int|null $price_credits Credits deducted from the buyer's pool per successful (200 OK) request. Same credit pool as assets. price_usd kept for billing records / dashboards.
-     *
-     * @return self
-     */
-    public function setPriceCredits($price_credits)
-    {
-        if (is_null($price_credits)) {
-            throw new \InvalidArgumentException('non-nullable price_credits cannot be null');
-        }
-        $this->container['price_credits'] = $price_credits;
-
-        return $this;
-    }
-
-    /**
      * Gets name
      *
      * @return string|null
@@ -1057,6 +1162,60 @@ class EndpointsUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets detailed_description
+     *
+     * @return string|null
+     */
+    public function getDetailedDescription()
+    {
+        return $this->container['detailed_description'];
+    }
+
+    /**
+     * Sets detailed_description
+     *
+     * @param string|null $detailed_description Long-form HTML description for product pages and SEO
+     *
+     * @return self
+     */
+    public function setDetailedDescription($detailed_description)
+    {
+        if (is_null($detailed_description)) {
+            throw new \InvalidArgumentException('non-nullable detailed_description cannot be null');
+        }
+        $this->container['detailed_description'] = $detailed_description;
+
+        return $this;
+    }
+
+    /**
+     * Gets top_questions
+     *
+     * @return string|null
+     */
+    public function getTopQuestions()
+    {
+        return $this->container['top_questions'];
+    }
+
+    /**
+     * Sets top_questions
+     *
+     * @param string|null $top_questions Top 3 questions this endpoint can help answer, in English. Stored as JSON array of strings (1-3 items, 15-200 chars each). Strongly encouraged for marketplace endpoints but not required — nudge via UI completeness score, not hard validation.
+     *
+     * @return self
+     */
+    public function setTopQuestions($top_questions)
+    {
+        if (is_null($top_questions)) {
+            throw new \InvalidArgumentException('non-nullable top_questions cannot be null');
+        }
+        $this->container['top_questions'] = $top_questions;
+
+        return $this;
+    }
+
+    /**
      * Gets source_schema_name
      *
      * @return string|null
@@ -1123,7 +1282,7 @@ class EndpointsUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets customer_name
      *
-     * @param string|null $customer_name Named customer for B2B deals (marketplace uses price_credits instead)
+     * @param string|null $customer_name Named customer for B2B deals (pricing handled via asset_price_history)
      *
      * @return self
      */
@@ -1133,33 +1292,6 @@ class EndpointsUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable customer_name cannot be null');
         }
         $this->container['customer_name'] = $customer_name;
-
-        return $this;
-    }
-
-    /**
-     * Gets price_usd
-     *
-     * @return float|null
-     */
-    public function getPriceUsd()
-    {
-        return $this->container['price_usd'];
-    }
-
-    /**
-     * Sets price_usd
-     *
-     * @param float|null $price_usd USD reference price for billing records and seller dashboards
-     *
-     * @return self
-     */
-    public function setPriceUsd($price_usd)
-    {
-        if (is_null($price_usd)) {
-            throw new \InvalidArgumentException('non-nullable price_usd cannot be null');
-        }
-        $this->container['price_usd'] = $price_usd;
 
         return $this;
     }
@@ -1192,28 +1324,28 @@ class EndpointsUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets rate_limit_requests
+     * Gets rate_limit_number
      *
      * @return int|null
      */
-    public function getRateLimitRequests()
+    public function getRateLimitNumber()
     {
-        return $this->container['rate_limit_requests'];
+        return $this->container['rate_limit_number'];
     }
 
     /**
-     * Sets rate_limit_requests
+     * Sets rate_limit_number
      *
-     * @param int|null $rate_limit_requests Number of requests allowed per rate_limit_period
+     * @param int|null $rate_limit_number Number of requests allowed per rate_limit_period
      *
      * @return self
      */
-    public function setRateLimitRequests($rate_limit_requests)
+    public function setRateLimitNumber($rate_limit_number)
     {
-        if (is_null($rate_limit_requests)) {
-            throw new \InvalidArgumentException('non-nullable rate_limit_requests cannot be null');
+        if (is_null($rate_limit_number)) {
+            throw new \InvalidArgumentException('non-nullable rate_limit_number cannot be null');
         }
-        $this->container['rate_limit_requests'] = $rate_limit_requests;
+        $this->container['rate_limit_number'] = $rate_limit_number;
 
         return $this;
     }
@@ -1394,6 +1526,188 @@ class EndpointsUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets data_time_period_start
+     *
+     * @return \DateTime|null
+     */
+    public function getDataTimePeriodStart()
+    {
+        return $this->container['data_time_period_start'];
+    }
+
+    /**
+     * Sets data_time_period_start
+     *
+     * @param \DateTime|null $data_time_period_start Start date of the data time period covered
+     *
+     * @return self
+     */
+    public function setDataTimePeriodStart($data_time_period_start)
+    {
+        if (is_null($data_time_period_start)) {
+            throw new \InvalidArgumentException('non-nullable data_time_period_start cannot be null');
+        }
+        $this->container['data_time_period_start'] = $data_time_period_start;
+
+        return $this;
+    }
+
+    /**
+     * Gets data_time_period_end
+     *
+     * @return \DateTime|null
+     */
+    public function getDataTimePeriodEnd()
+    {
+        return $this->container['data_time_period_end'];
+    }
+
+    /**
+     * Sets data_time_period_end
+     *
+     * @param \DateTime|null $data_time_period_end End date of the data time period covered
+     *
+     * @return self
+     */
+    public function setDataTimePeriodEnd($data_time_period_end)
+    {
+        if (is_null($data_time_period_end)) {
+            throw new \InvalidArgumentException('non-nullable data_time_period_end cannot be null');
+        }
+        $this->container['data_time_period_end'] = $data_time_period_end;
+
+        return $this;
+    }
+
+    /**
+     * Gets date_collection_start
+     *
+     * @return \DateTime|null
+     */
+    public function getDateCollectionStart()
+    {
+        return $this->container['date_collection_start'];
+    }
+
+    /**
+     * Sets date_collection_start
+     *
+     * @param \DateTime|null $date_collection_start When the seller began actively collecting this data. Distinct from data_time_period_start, which describes when the records themselves begin. Backfilled historical data will have date_collection_start > data_time_period_start.
+     *
+     * @return self
+     */
+    public function setDateCollectionStart($date_collection_start)
+    {
+        if (is_null($date_collection_start)) {
+            throw new \InvalidArgumentException('non-nullable date_collection_start cannot be null');
+        }
+        $this->container['date_collection_start'] = $date_collection_start;
+
+        return $this;
+    }
+
+    /**
+     * Gets geographic_coverage_type
+     *
+     * @return string|null
+     */
+    public function getGeographicCoverageType()
+    {
+        return $this->container['geographic_coverage_type'];
+    }
+
+    /**
+     * Sets geographic_coverage_type
+     *
+     * @param string|null $geographic_coverage_type Type of geographic coverage
+     *
+     * @return self
+     */
+    public function setGeographicCoverageType($geographic_coverage_type)
+    {
+        if (is_null($geographic_coverage_type)) {
+            throw new \InvalidArgumentException('non-nullable geographic_coverage_type cannot be null');
+        }
+        $allowedValues = $this->getGeographicCoverageTypeAllowableValues();
+        if (!in_array($geographic_coverage_type, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'geographic_coverage_type', must be one of '%s'",
+                    $geographic_coverage_type,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['geographic_coverage_type'] = $geographic_coverage_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets geographic_coverage_details
+     *
+     * @return string|null
+     */
+    public function getGeographicCoverageDetails()
+    {
+        return $this->container['geographic_coverage_details'];
+    }
+
+    /**
+     * Sets geographic_coverage_details
+     *
+     * @param string|null $geographic_coverage_details Specific regions/countries covered (e.g., 'United States, Canada, Mexico')
+     *
+     * @return self
+     */
+    public function setGeographicCoverageDetails($geographic_coverage_details)
+    {
+        if (is_null($geographic_coverage_details)) {
+            throw new \InvalidArgumentException('non-nullable geographic_coverage_details cannot be null');
+        }
+        $this->container['geographic_coverage_details'] = $geographic_coverage_details;
+
+        return $this;
+    }
+
+    /**
+     * Gets data_source_refresh_frequency
+     *
+     * @return string|null
+     */
+    public function getDataSourceRefreshFrequency()
+    {
+        return $this->container['data_source_refresh_frequency'];
+    }
+
+    /**
+     * Sets data_source_refresh_frequency
+     *
+     * @param string|null $data_source_refresh_frequency How often the source data is refreshed
+     *
+     * @return self
+     */
+    public function setDataSourceRefreshFrequency($data_source_refresh_frequency)
+    {
+        if (is_null($data_source_refresh_frequency)) {
+            throw new \InvalidArgumentException('non-nullable data_source_refresh_frequency cannot be null');
+        }
+        $allowedValues = $this->getDataSourceRefreshFrequencyAllowableValues();
+        if (!in_array($data_source_refresh_frequency, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'data_source_refresh_frequency', must be one of '%s'",
+                    $data_source_refresh_frequency,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['data_source_refresh_frequency'] = $data_source_refresh_frequency;
+
+        return $this;
+    }
+
+    /**
      * Gets tags
      *
      * @return string|null
@@ -1470,6 +1784,60 @@ class EndpointsUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable max_records_per_request cannot be null');
         }
         $this->container['max_records_per_request'] = $max_records_per_request;
+
+        return $this;
+    }
+
+    /**
+     * Gets export_enabled
+     *
+     * @return bool|null
+     */
+    public function getExportEnabled()
+    {
+        return $this->container['export_enabled'];
+    }
+
+    /**
+     * Sets export_enabled
+     *
+     * @param bool|null $export_enabled Whether this endpoint supports bulk export to GCS. When True, buyers can request delivery=gcs with format=csv|parquet. Independent of max_records_per_request, which only governs inline JSON.
+     *
+     * @return self
+     */
+    public function setExportEnabled($export_enabled)
+    {
+        if (is_null($export_enabled)) {
+            throw new \InvalidArgumentException('non-nullable export_enabled cannot be null');
+        }
+        $this->container['export_enabled'] = $export_enabled;
+
+        return $this;
+    }
+
+    /**
+     * Gets max_records_per_export
+     *
+     * @return int|null
+     */
+    public function getMaxRecordsPerExport()
+    {
+        return $this->container['max_records_per_export'];
+    }
+
+    /**
+     * Sets max_records_per_export
+     *
+     * @param int|null $max_records_per_export Hard ceiling on rows returned per GCS export. Separate from max_records_per_request so sellers can offer larger downloads via file delivery without expanding inline JSON responses.
+     *
+     * @return self
+     */
+    public function setMaxRecordsPerExport($max_records_per_export)
+    {
+        if (is_null($max_records_per_export)) {
+            throw new \InvalidArgumentException('non-nullable max_records_per_export cannot be null');
+        }
+        $this->container['max_records_per_export'] = $max_records_per_export;
 
         return $this;
     }

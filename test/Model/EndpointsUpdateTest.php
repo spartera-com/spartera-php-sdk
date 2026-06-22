@@ -180,15 +180,6 @@ class EndpointsUpdateTest extends TestCase
     }
 
     /**
-     * Test attribute "price_credits"
-     */
-    public function testPropertyPriceCredits()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "name"
      */
     public function testPropertyName()
@@ -210,6 +201,24 @@ class EndpointsUpdateTest extends TestCase
      * Test attribute "description"
      */
     public function testPropertyDescription()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "detailed_description"
+     */
+    public function testPropertyDetailedDescription()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "top_questions"
+     */
+    public function testPropertyTopQuestions()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
@@ -243,15 +252,6 @@ class EndpointsUpdateTest extends TestCase
     }
 
     /**
-     * Test attribute "price_usd"
-     */
-    public function testPropertyPriceUsd()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test attribute "endpoint_schema"
      */
     public function testPropertyEndpointSchema()
@@ -261,9 +261,9 @@ class EndpointsUpdateTest extends TestCase
     }
 
     /**
-     * Test attribute "rate_limit_requests"
+     * Test attribute "rate_limit_number"
      */
-    public function testPropertyRateLimitRequests()
+    public function testPropertyRateLimitNumber()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
@@ -315,6 +315,60 @@ class EndpointsUpdateTest extends TestCase
     }
 
     /**
+     * Test attribute "data_time_period_start"
+     */
+    public function testPropertyDataTimePeriodStart()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "data_time_period_end"
+     */
+    public function testPropertyDataTimePeriodEnd()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "date_collection_start"
+     */
+    public function testPropertyDateCollectionStart()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "geographic_coverage_type"
+     */
+    public function testPropertyGeographicCoverageType()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "geographic_coverage_details"
+     */
+    public function testPropertyGeographicCoverageDetails()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "data_source_refresh_frequency"
+     */
+    public function testPropertyDataSourceRefreshFrequency()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "tags"
      */
     public function testPropertyTags()
@@ -336,6 +390,24 @@ class EndpointsUpdateTest extends TestCase
      * Test attribute "max_records_per_request"
      */
     public function testPropertyMaxRecordsPerRequest()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "export_enabled"
+     */
+    public function testPropertyExportEnabled()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "max_records_per_export"
+     */
+    public function testPropertyMaxRecordsPerExport()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

@@ -81,6 +81,9 @@ class EndpointsApi
         'createEndpointsKeys' => [
             'application/json',
         ],
+        'createEndpointsScanColumn' => [
+            'application/json',
+        ],
         'deleteEndpoints' => [
             'application/json',
         ],
@@ -100,6 +103,9 @@ class EndpointsApi
             'application/json',
         ],
         'getEndpointsByIdKeys' => [
+            'application/json',
+        ],
+        'getEndpointsByIdRecommendations' => [
             'application/json',
         ],
         'getEndpointsByIdStats' => [
@@ -991,6 +997,434 @@ class EndpointsApi
 
 
         $resourcePath = '/companies/{company_id}/endpoints/{endpoint_id}/keys';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($company_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'company_id' . '}',
+                ObjectSerializer::toPathValue($company_id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($endpoint_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'endpoint_id' . '}',
+                ObjectSerializer::toPathValue($endpoint_id),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (isset($endpoints_input)) {
+            if (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the body
+                $httpBody = \GuzzleHttp\Utils::jsonEncode(ObjectSerializer::sanitizeForSerialization($endpoints_input));
+            } else {
+                $httpBody = $endpoints_input;
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('x-api-key');
+        if ($apiKey !== null) {
+            $headers['x-api-key'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'POST',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation createEndpointsScanColumn
+     *
+     * POST /companies/{company_id}/endpoints/{endpoint_id}/scan_column
+     *
+     * @param  string $company_id Unique identifier for the Company (required)
+     * @param  string $endpoint_id Unique identifier for the Endpoint (required)
+     * @param  \OpenAPI\Client\Model\EndpointsInput $endpoints_input endpoints_input (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createEndpointsScanColumn'] to see the possible values for this operation
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \OpenAPI\Client\Model\CreateEndpoints200Response|\OpenAPI\Client\Model\InlineObject1|\OpenAPI\Client\Model\InlineObject2|\OpenAPI\Client\Model\InlineObject|\OpenAPI\Client\Model\InlineObject4|\OpenAPI\Client\Model\InlineObject5|\OpenAPI\Client\Model\InlineObject6|\OpenAPI\Client\Model\InlineObject7
+     */
+    public function createEndpointsScanColumn($company_id, $endpoint_id, $endpoints_input, string $contentType = self::contentTypes['createEndpointsScanColumn'][0])
+    {
+        list($response) = $this->createEndpointsScanColumnWithHttpInfo($company_id, $endpoint_id, $endpoints_input, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation createEndpointsScanColumnWithHttpInfo
+     *
+     * POST /companies/{company_id}/endpoints/{endpoint_id}/scan_column
+     *
+     * @param  string $company_id Unique identifier for the Company (required)
+     * @param  string $endpoint_id Unique identifier for the Endpoint (required)
+     * @param  \OpenAPI\Client\Model\EndpointsInput $endpoints_input (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createEndpointsScanColumn'] to see the possible values for this operation
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \OpenAPI\Client\Model\CreateEndpoints200Response|\OpenAPI\Client\Model\InlineObject1|\OpenAPI\Client\Model\InlineObject2|\OpenAPI\Client\Model\InlineObject|\OpenAPI\Client\Model\InlineObject4|\OpenAPI\Client\Model\InlineObject5|\OpenAPI\Client\Model\InlineObject6|\OpenAPI\Client\Model\InlineObject7, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function createEndpointsScanColumnWithHttpInfo($company_id, $endpoint_id, $endpoints_input, string $contentType = self::contentTypes['createEndpointsScanColumn'][0])
+    {
+        $request = $this->createEndpointsScanColumnRequest($company_id, $endpoint_id, $endpoints_input, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\OpenAPI\Client\Model\CreateEndpoints200Response',
+                        $request,
+                        $response,
+                    );
+                case 401:
+                    return $this->handleResponseWithDataType(
+                        '\OpenAPI\Client\Model\InlineObject1',
+                        $request,
+                        $response,
+                    );
+                case 403:
+                    return $this->handleResponseWithDataType(
+                        '\OpenAPI\Client\Model\InlineObject2',
+                        $request,
+                        $response,
+                    );
+                case 400:
+                    return $this->handleResponseWithDataType(
+                        '\OpenAPI\Client\Model\InlineObject',
+                        $request,
+                        $response,
+                    );
+                case 409:
+                    return $this->handleResponseWithDataType(
+                        '\OpenAPI\Client\Model\InlineObject4',
+                        $request,
+                        $response,
+                    );
+                case 422:
+                    return $this->handleResponseWithDataType(
+                        '\OpenAPI\Client\Model\InlineObject5',
+                        $request,
+                        $response,
+                    );
+                case 429:
+                    return $this->handleResponseWithDataType(
+                        '\OpenAPI\Client\Model\InlineObject6',
+                        $request,
+                        $response,
+                    );
+                case 500:
+                    return $this->handleResponseWithDataType(
+                        '\OpenAPI\Client\Model\InlineObject7',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\OpenAPI\Client\Model\CreateEndpoints200Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\CreateEndpoints200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\InlineObject1',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\InlineObject2',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 400:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\InlineObject',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 409:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\InlineObject4',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 422:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\InlineObject5',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\InlineObject6',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\InlineObject7',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation createEndpointsScanColumnAsync
+     *
+     * POST /companies/{company_id}/endpoints/{endpoint_id}/scan_column
+     *
+     * @param  string $company_id Unique identifier for the Company (required)
+     * @param  string $endpoint_id Unique identifier for the Endpoint (required)
+     * @param  \OpenAPI\Client\Model\EndpointsInput $endpoints_input (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createEndpointsScanColumn'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function createEndpointsScanColumnAsync($company_id, $endpoint_id, $endpoints_input, string $contentType = self::contentTypes['createEndpointsScanColumn'][0])
+    {
+        return $this->createEndpointsScanColumnAsyncWithHttpInfo($company_id, $endpoint_id, $endpoints_input, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation createEndpointsScanColumnAsyncWithHttpInfo
+     *
+     * POST /companies/{company_id}/endpoints/{endpoint_id}/scan_column
+     *
+     * @param  string $company_id Unique identifier for the Company (required)
+     * @param  string $endpoint_id Unique identifier for the Endpoint (required)
+     * @param  \OpenAPI\Client\Model\EndpointsInput $endpoints_input (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createEndpointsScanColumn'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function createEndpointsScanColumnAsyncWithHttpInfo($company_id, $endpoint_id, $endpoints_input, string $contentType = self::contentTypes['createEndpointsScanColumn'][0])
+    {
+        $returnType = '\OpenAPI\Client\Model\CreateEndpoints200Response';
+        $request = $this->createEndpointsScanColumnRequest($company_id, $endpoint_id, $endpoints_input, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'createEndpointsScanColumn'
+     *
+     * @param  string $company_id Unique identifier for the Company (required)
+     * @param  string $endpoint_id Unique identifier for the Endpoint (required)
+     * @param  \OpenAPI\Client\Model\EndpointsInput $endpoints_input (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['createEndpointsScanColumn'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function createEndpointsScanColumnRequest($company_id, $endpoint_id, $endpoints_input, string $contentType = self::contentTypes['createEndpointsScanColumn'][0])
+    {
+
+        // verify the required parameter 'company_id' is set
+        if ($company_id === null || (is_array($company_id) && count($company_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $company_id when calling createEndpointsScanColumn'
+            );
+        }
+        if (strlen($company_id) > 255) {
+            throw new \InvalidArgumentException('invalid length for "$company_id" when calling EndpointsApi.createEndpointsScanColumn, must be smaller than or equal to 255.');
+        }
+        if (strlen($company_id) < 1) {
+            throw new \InvalidArgumentException('invalid length for "$company_id" when calling EndpointsApi.createEndpointsScanColumn, must be bigger than or equal to 1.');
+        }
+        if (!preg_match("/^[a-zA-Z0-9_-]+$/", $company_id)) {
+            throw new \InvalidArgumentException("invalid value for \"company_id\" when calling EndpointsApi.createEndpointsScanColumn, must conform to the pattern /^[a-zA-Z0-9_-]+$/.");
+        }
+        
+        // verify the required parameter 'endpoint_id' is set
+        if ($endpoint_id === null || (is_array($endpoint_id) && count($endpoint_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $endpoint_id when calling createEndpointsScanColumn'
+            );
+        }
+        if (strlen($endpoint_id) > 255) {
+            throw new \InvalidArgumentException('invalid length for "$endpoint_id" when calling EndpointsApi.createEndpointsScanColumn, must be smaller than or equal to 255.');
+        }
+        if (strlen($endpoint_id) < 1) {
+            throw new \InvalidArgumentException('invalid length for "$endpoint_id" when calling EndpointsApi.createEndpointsScanColumn, must be bigger than or equal to 1.');
+        }
+        if (!preg_match("/^[a-zA-Z0-9_-]+$/", $endpoint_id)) {
+            throw new \InvalidArgumentException("invalid value for \"endpoint_id\" when calling EndpointsApi.createEndpointsScanColumn, must conform to the pattern /^[a-zA-Z0-9_-]+$/.");
+        }
+        
+        // verify the required parameter 'endpoints_input' is set
+        if ($endpoints_input === null || (is_array($endpoints_input) && count($endpoints_input) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $endpoints_input when calling createEndpointsScanColumn'
+            );
+        }
+
+
+        $resourcePath = '/companies/{company_id}/endpoints/{endpoint_id}/scan_column';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -3694,6 +4128,387 @@ class EndpointsApi
         
 
         $resourcePath = '/companies/{company_id}/endpoints/{endpoint_id}/keys';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+
+        // path params
+        if ($company_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'company_id' . '}',
+                ObjectSerializer::toPathValue($company_id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($endpoint_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'endpoint_id' . '}',
+                ObjectSerializer::toPathValue($endpoint_id),
+                $resourcePath
+            );
+        }
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        // this endpoint requires API key authentication
+        $apiKey = $this->config->getApiKeyWithPrefix('x-api-key');
+        if ($apiKey !== null) {
+            $headers['x-api-key'] = $apiKey;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation getEndpointsByIdRecommendations
+     *
+     * GET /companies/{company_id}/endpoints/{endpoint_id}/recommendations
+     *
+     * @param  string $company_id Unique identifier for the Company (required)
+     * @param  string $endpoint_id Unique identifier for the Endpoint (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEndpointsByIdRecommendations'] to see the possible values for this operation
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \OpenAPI\Client\Model\GetEndpointsByIdConnectionsDescribe200Response|\OpenAPI\Client\Model\InlineObject1|\OpenAPI\Client\Model\InlineObject2|\OpenAPI\Client\Model\InlineObject3|\OpenAPI\Client\Model\InlineObject6|\OpenAPI\Client\Model\InlineObject7
+     */
+    public function getEndpointsByIdRecommendations($company_id, $endpoint_id, string $contentType = self::contentTypes['getEndpointsByIdRecommendations'][0])
+    {
+        list($response) = $this->getEndpointsByIdRecommendationsWithHttpInfo($company_id, $endpoint_id, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getEndpointsByIdRecommendationsWithHttpInfo
+     *
+     * GET /companies/{company_id}/endpoints/{endpoint_id}/recommendations
+     *
+     * @param  string $company_id Unique identifier for the Company (required)
+     * @param  string $endpoint_id Unique identifier for the Endpoint (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEndpointsByIdRecommendations'] to see the possible values for this operation
+     *
+     * @throws \OpenAPI\Client\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \OpenAPI\Client\Model\GetEndpointsByIdConnectionsDescribe200Response|\OpenAPI\Client\Model\InlineObject1|\OpenAPI\Client\Model\InlineObject2|\OpenAPI\Client\Model\InlineObject3|\OpenAPI\Client\Model\InlineObject6|\OpenAPI\Client\Model\InlineObject7, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getEndpointsByIdRecommendationsWithHttpInfo($company_id, $endpoint_id, string $contentType = self::contentTypes['getEndpointsByIdRecommendations'][0])
+    {
+        $request = $this->getEndpointsByIdRecommendationsRequest($company_id, $endpoint_id, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+
+            switch($statusCode) {
+                case 200:
+                    return $this->handleResponseWithDataType(
+                        '\OpenAPI\Client\Model\GetEndpointsByIdConnectionsDescribe200Response',
+                        $request,
+                        $response,
+                    );
+                case 401:
+                    return $this->handleResponseWithDataType(
+                        '\OpenAPI\Client\Model\InlineObject1',
+                        $request,
+                        $response,
+                    );
+                case 403:
+                    return $this->handleResponseWithDataType(
+                        '\OpenAPI\Client\Model\InlineObject2',
+                        $request,
+                        $response,
+                    );
+                case 404:
+                    return $this->handleResponseWithDataType(
+                        '\OpenAPI\Client\Model\InlineObject3',
+                        $request,
+                        $response,
+                    );
+                case 429:
+                    return $this->handleResponseWithDataType(
+                        '\OpenAPI\Client\Model\InlineObject6',
+                        $request,
+                        $response,
+                    );
+                case 500:
+                    return $this->handleResponseWithDataType(
+                        '\OpenAPI\Client\Model\InlineObject7',
+                        $request,
+                        $response,
+                    );
+            }
+
+            
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            return $this->handleResponseWithDataType(
+                '\OpenAPI\Client\Model\GetEndpointsByIdConnectionsDescribe200Response',
+                $request,
+                $response,
+            );
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\GetEndpointsByIdConnectionsDescribe200Response',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 401:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\InlineObject1',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 403:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\InlineObject2',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 404:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\InlineObject3',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 429:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\InlineObject6',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+                case 500:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\OpenAPI\Client\Model\InlineObject7',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    throw $e;
+            }
+        
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getEndpointsByIdRecommendationsAsync
+     *
+     * GET /companies/{company_id}/endpoints/{endpoint_id}/recommendations
+     *
+     * @param  string $company_id Unique identifier for the Company (required)
+     * @param  string $endpoint_id Unique identifier for the Endpoint (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEndpointsByIdRecommendations'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getEndpointsByIdRecommendationsAsync($company_id, $endpoint_id, string $contentType = self::contentTypes['getEndpointsByIdRecommendations'][0])
+    {
+        return $this->getEndpointsByIdRecommendationsAsyncWithHttpInfo($company_id, $endpoint_id, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getEndpointsByIdRecommendationsAsyncWithHttpInfo
+     *
+     * GET /companies/{company_id}/endpoints/{endpoint_id}/recommendations
+     *
+     * @param  string $company_id Unique identifier for the Company (required)
+     * @param  string $endpoint_id Unique identifier for the Endpoint (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEndpointsByIdRecommendations'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getEndpointsByIdRecommendationsAsyncWithHttpInfo($company_id, $endpoint_id, string $contentType = self::contentTypes['getEndpointsByIdRecommendations'][0])
+    {
+        $returnType = '\OpenAPI\Client\Model\GetEndpointsByIdConnectionsDescribe200Response';
+        $request = $this->getEndpointsByIdRecommendationsRequest($company_id, $endpoint_id, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getEndpointsByIdRecommendations'
+     *
+     * @param  string $company_id Unique identifier for the Company (required)
+     * @param  string $endpoint_id Unique identifier for the Endpoint (required)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getEndpointsByIdRecommendations'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getEndpointsByIdRecommendationsRequest($company_id, $endpoint_id, string $contentType = self::contentTypes['getEndpointsByIdRecommendations'][0])
+    {
+
+        // verify the required parameter 'company_id' is set
+        if ($company_id === null || (is_array($company_id) && count($company_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $company_id when calling getEndpointsByIdRecommendations'
+            );
+        }
+        if (strlen($company_id) > 255) {
+            throw new \InvalidArgumentException('invalid length for "$company_id" when calling EndpointsApi.getEndpointsByIdRecommendations, must be smaller than or equal to 255.');
+        }
+        if (strlen($company_id) < 1) {
+            throw new \InvalidArgumentException('invalid length for "$company_id" when calling EndpointsApi.getEndpointsByIdRecommendations, must be bigger than or equal to 1.');
+        }
+        if (!preg_match("/^[a-zA-Z0-9_-]+$/", $company_id)) {
+            throw new \InvalidArgumentException("invalid value for \"company_id\" when calling EndpointsApi.getEndpointsByIdRecommendations, must conform to the pattern /^[a-zA-Z0-9_-]+$/.");
+        }
+        
+        // verify the required parameter 'endpoint_id' is set
+        if ($endpoint_id === null || (is_array($endpoint_id) && count($endpoint_id) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $endpoint_id when calling getEndpointsByIdRecommendations'
+            );
+        }
+        if (strlen($endpoint_id) > 255) {
+            throw new \InvalidArgumentException('invalid length for "$endpoint_id" when calling EndpointsApi.getEndpointsByIdRecommendations, must be smaller than or equal to 255.');
+        }
+        if (strlen($endpoint_id) < 1) {
+            throw new \InvalidArgumentException('invalid length for "$endpoint_id" when calling EndpointsApi.getEndpointsByIdRecommendations, must be bigger than or equal to 1.');
+        }
+        if (!preg_match("/^[a-zA-Z0-9_-]+$/", $endpoint_id)) {
+            throw new \InvalidArgumentException("invalid value for \"endpoint_id\" when calling EndpointsApi.getEndpointsByIdRecommendations, must conform to the pattern /^[a-zA-Z0-9_-]+$/.");
+        }
+        
+
+        $resourcePath = '/companies/{company_id}/endpoints/{endpoint_id}/recommendations';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

@@ -97,6 +97,18 @@ class EndpointsApiTest extends TestCase
     }
 
     /**
+     * Test case for createEndpointsScanColumn
+     *
+     * POST /companies/{company_id}/endpoints/{endpoint_id}/scan_column.
+     *
+     */
+    public function testCreateEndpointsScanColumn()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test case for deleteEndpoints
      *
      * Delete single endpoint by ID.
@@ -175,6 +187,18 @@ class EndpointsApiTest extends TestCase
      *
      */
     public function testGetEndpointsByIdKeys()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test case for getEndpointsByIdRecommendations
+     *
+     * GET /companies/{company_id}/endpoints/{endpoint_id}/recommendations.
+     *
+     */
+    public function testGetEndpointsByIdRecommendations()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

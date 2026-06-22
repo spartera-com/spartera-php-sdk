@@ -99,7 +99,7 @@ try {
 ## `createAssetsAnalyze()`
 
 ```php
-createAssetsAnalyze($asset_slug, $company_handle, $assets_input): \OpenAPI\Client\Model\CreateAssetsAnalyze200Response
+createAssetsAnalyze($company_handle, $asset_slug, $assets_input): \OpenAPI\Client\Model\CreateAssetsAnalyze200Response
 ```
 
 Process (analyze) an asset with dynamic rate limiting applied via decorator.
@@ -123,12 +123,12 @@ $apiInstance = new OpenAPI\Client\Api\AssetsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$asset_slug = 'asset_slug_example'; // string | URL-friendly slug for the Asset
 $company_handle = 'company_handle_example'; // string | Human-readable handle for the Company
+$asset_slug = 'asset_slug_example'; // string | URL-friendly slug for the Asset
 $assets_input = new \OpenAPI\Client\Model\AssetsInput(); // \OpenAPI\Client\Model\AssetsInput
 
 try {
-    $result = $apiInstance->createAssetsAnalyze($asset_slug, $company_handle, $assets_input);
+    $result = $apiInstance->createAssetsAnalyze($company_handle, $asset_slug, $assets_input);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AssetsApi->createAssetsAnalyze: ', $e->getMessage(), PHP_EOL;
@@ -139,8 +139,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **asset_slug** | **string**| URL-friendly slug for the Asset | |
 | **company_handle** | **string**| Human-readable handle for the Company | |
+| **asset_slug** | **string**| URL-friendly slug for the Asset | |
 | **assets_input** | [**\OpenAPI\Client\Model\AssetsInput**](../Model/AssetsInput.md)|  | |
 
 ### Return type
@@ -477,7 +477,7 @@ try {
 ## `getAssetsByIdAnalyze()`
 
 ```php
-getAssetsByIdAnalyze($asset_slug, $company_handle): \OpenAPI\Client\Model\GetAssetsByIdAnalyze200Response
+getAssetsByIdAnalyze($company_handle, $asset_slug): \OpenAPI\Client\Model\GetAssetsByIdAnalyze200Response
 ```
 
 Process (analyze) an asset with dynamic rate limiting applied via decorator.
@@ -501,11 +501,11 @@ $apiInstance = new OpenAPI\Client\Api\AssetsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$asset_slug = 'asset_slug_example'; // string | URL-friendly slug for the Asset
 $company_handle = 'company_handle_example'; // string | Human-readable handle for the Company
+$asset_slug = 'asset_slug_example'; // string | URL-friendly slug for the Asset
 
 try {
-    $result = $apiInstance->getAssetsByIdAnalyze($asset_slug, $company_handle);
+    $result = $apiInstance->getAssetsByIdAnalyze($company_handle, $asset_slug);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AssetsApi->getAssetsByIdAnalyze: ', $e->getMessage(), PHP_EOL;
@@ -516,8 +516,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **asset_slug** | **string**| URL-friendly slug for the Asset | |
 | **company_handle** | **string**| Human-readable handle for the Company | |
+| **asset_slug** | **string**| URL-friendly slug for the Asset | |
 
 ### Return type
 

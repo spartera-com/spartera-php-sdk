@@ -298,6 +298,8 @@ class Connections implements ModelInterface, ArrayAccess, \JsonSerializable
     public const CREDENTIAL_TYPE_NONE = 'NONE';
     public const CREDENTIAL_TYPE_OAUTH = 'OAUTH';
     public const CREDENTIAL_TYPE_JSON = 'JSON';
+    public const CREDENTIAL_TYPE_KEY_PAIR = 'KEY_PAIR';
+    public const CREDENTIAL_TYPE_CLIENT_SECRET = 'CLIENT_SECRET';
 
     /**
      * Gets allowable values of the enum
@@ -315,6 +317,8 @@ class Connections implements ModelInterface, ArrayAccess, \JsonSerializable
             self::CREDENTIAL_TYPE_NONE,
             self::CREDENTIAL_TYPE_OAUTH,
             self::CREDENTIAL_TYPE_JSON,
+            self::CREDENTIAL_TYPE_KEY_PAIR,
+            self::CREDENTIAL_TYPE_CLIENT_SECRET,
         ];
     }
 
@@ -578,7 +582,7 @@ class Connections implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets credential_type
      *
-     * @param string|null $credential_type Optional. One of: SERVICE_ACCOUNT, USERNAME_PASSWORD, API_KEY, SERVICE_IDENTITY, ACCESS_KEY, … (8 total).
+     * @param string|null $credential_type Optional. One of: SERVICE_ACCOUNT, USERNAME_PASSWORD, API_KEY, SERVICE_IDENTITY, ACCESS_KEY, … (10 total).
      *
      * @return self
      */

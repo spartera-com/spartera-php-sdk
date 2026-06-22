@@ -83,6 +83,7 @@ class Assets implements ModelInterface, ArrayAccess, \JsonSerializable
         'asset_schema' => 'object',
         'visibility' => 'string',
         'tags' => 'string',
+        'top_questions' => 'string',
         'short_code' => 'string',
         'restricted_domains' => 'string',
         'sql_logic' => 'string',
@@ -90,6 +91,7 @@ class Assets implements ModelInterface, ArrayAccess, \JsonSerializable
         'source_table_name' => 'string',
         'sell_in_marketplace' => 'bool',
         'require_customization' => 'bool',
+        'viz_spec' => 'object',
         'viz_chart_library' => 'string',
         'viz_chart_type' => 'string',
         'viz_dep_var_col_name' => 'string',
@@ -113,10 +115,10 @@ class Assets implements ModelInterface, ArrayAccess, \JsonSerializable
         'next_run' => '\DateTime',
         'data_time_period_start' => '\DateTime',
         'data_time_period_end' => '\DateTime',
+        'date_collection_start' => '\DateTime',
         'geographic_coverage_type' => 'string',
         'geographic_coverage_details' => 'string',
         'data_source_refresh_frequency' => 'string',
-        'data_source_last_refreshed' => '\DateTime',
         'rate_limit_number' => 'int',
         'rate_limit_period' => 'string',
         'rate_limit_granularity' => 'string'
@@ -154,6 +156,7 @@ class Assets implements ModelInterface, ArrayAccess, \JsonSerializable
         'asset_schema' => null,
         'visibility' => null,
         'tags' => null,
+        'top_questions' => null,
         'short_code' => null,
         'restricted_domains' => null,
         'sql_logic' => null,
@@ -161,6 +164,7 @@ class Assets implements ModelInterface, ArrayAccess, \JsonSerializable
         'source_table_name' => null,
         'sell_in_marketplace' => null,
         'require_customization' => null,
+        'viz_spec' => null,
         'viz_chart_library' => null,
         'viz_chart_type' => null,
         'viz_dep_var_col_name' => null,
@@ -184,10 +188,10 @@ class Assets implements ModelInterface, ArrayAccess, \JsonSerializable
         'next_run' => 'date-time',
         'data_time_period_start' => 'date-time',
         'data_time_period_end' => 'date-time',
+        'date_collection_start' => 'date-time',
         'geographic_coverage_type' => null,
         'geographic_coverage_details' => null,
         'data_source_refresh_frequency' => null,
-        'data_source_last_refreshed' => 'date-time',
         'rate_limit_number' => 'int64',
         'rate_limit_period' => null,
         'rate_limit_granularity' => null
@@ -223,6 +227,7 @@ class Assets implements ModelInterface, ArrayAccess, \JsonSerializable
         'asset_schema' => false,
         'visibility' => false,
         'tags' => false,
+        'top_questions' => false,
         'short_code' => false,
         'restricted_domains' => false,
         'sql_logic' => false,
@@ -230,6 +235,7 @@ class Assets implements ModelInterface, ArrayAccess, \JsonSerializable
         'source_table_name' => false,
         'sell_in_marketplace' => false,
         'require_customization' => false,
+        'viz_spec' => false,
         'viz_chart_library' => false,
         'viz_chart_type' => false,
         'viz_dep_var_col_name' => false,
@@ -253,10 +259,10 @@ class Assets implements ModelInterface, ArrayAccess, \JsonSerializable
         'next_run' => false,
         'data_time_period_start' => false,
         'data_time_period_end' => false,
+        'date_collection_start' => false,
         'geographic_coverage_type' => false,
         'geographic_coverage_details' => false,
         'data_source_refresh_frequency' => false,
-        'data_source_last_refreshed' => false,
         'rate_limit_number' => false,
         'rate_limit_period' => false,
         'rate_limit_granularity' => false
@@ -372,6 +378,7 @@ class Assets implements ModelInterface, ArrayAccess, \JsonSerializable
         'asset_schema' => 'asset_schema',
         'visibility' => 'visibility',
         'tags' => 'tags',
+        'top_questions' => 'top_questions',
         'short_code' => 'short_code',
         'restricted_domains' => 'restricted_domains',
         'sql_logic' => 'sql_logic',
@@ -379,6 +386,7 @@ class Assets implements ModelInterface, ArrayAccess, \JsonSerializable
         'source_table_name' => 'source_table_name',
         'sell_in_marketplace' => 'sell_in_marketplace',
         'require_customization' => 'require_customization',
+        'viz_spec' => 'viz_spec',
         'viz_chart_library' => 'viz_chart_library',
         'viz_chart_type' => 'viz_chart_type',
         'viz_dep_var_col_name' => 'viz_dep_var_col_name',
@@ -402,10 +410,10 @@ class Assets implements ModelInterface, ArrayAccess, \JsonSerializable
         'next_run' => 'next_run',
         'data_time_period_start' => 'data_time_period_start',
         'data_time_period_end' => 'data_time_period_end',
+        'date_collection_start' => 'date_collection_start',
         'geographic_coverage_type' => 'geographic_coverage_type',
         'geographic_coverage_details' => 'geographic_coverage_details',
         'data_source_refresh_frequency' => 'data_source_refresh_frequency',
-        'data_source_last_refreshed' => 'data_source_last_refreshed',
         'rate_limit_number' => 'rate_limit_number',
         'rate_limit_period' => 'rate_limit_period',
         'rate_limit_granularity' => 'rate_limit_granularity'
@@ -441,6 +449,7 @@ class Assets implements ModelInterface, ArrayAccess, \JsonSerializable
         'asset_schema' => 'setAssetSchema',
         'visibility' => 'setVisibility',
         'tags' => 'setTags',
+        'top_questions' => 'setTopQuestions',
         'short_code' => 'setShortCode',
         'restricted_domains' => 'setRestrictedDomains',
         'sql_logic' => 'setSqlLogic',
@@ -448,6 +457,7 @@ class Assets implements ModelInterface, ArrayAccess, \JsonSerializable
         'source_table_name' => 'setSourceTableName',
         'sell_in_marketplace' => 'setSellInMarketplace',
         'require_customization' => 'setRequireCustomization',
+        'viz_spec' => 'setVizSpec',
         'viz_chart_library' => 'setVizChartLibrary',
         'viz_chart_type' => 'setVizChartType',
         'viz_dep_var_col_name' => 'setVizDepVarColName',
@@ -471,10 +481,10 @@ class Assets implements ModelInterface, ArrayAccess, \JsonSerializable
         'next_run' => 'setNextRun',
         'data_time_period_start' => 'setDataTimePeriodStart',
         'data_time_period_end' => 'setDataTimePeriodEnd',
+        'date_collection_start' => 'setDateCollectionStart',
         'geographic_coverage_type' => 'setGeographicCoverageType',
         'geographic_coverage_details' => 'setGeographicCoverageDetails',
         'data_source_refresh_frequency' => 'setDataSourceRefreshFrequency',
-        'data_source_last_refreshed' => 'setDataSourceLastRefreshed',
         'rate_limit_number' => 'setRateLimitNumber',
         'rate_limit_period' => 'setRateLimitPeriod',
         'rate_limit_granularity' => 'setRateLimitGranularity'
@@ -510,6 +520,7 @@ class Assets implements ModelInterface, ArrayAccess, \JsonSerializable
         'asset_schema' => 'getAssetSchema',
         'visibility' => 'getVisibility',
         'tags' => 'getTags',
+        'top_questions' => 'getTopQuestions',
         'short_code' => 'getShortCode',
         'restricted_domains' => 'getRestrictedDomains',
         'sql_logic' => 'getSqlLogic',
@@ -517,6 +528,7 @@ class Assets implements ModelInterface, ArrayAccess, \JsonSerializable
         'source_table_name' => 'getSourceTableName',
         'sell_in_marketplace' => 'getSellInMarketplace',
         'require_customization' => 'getRequireCustomization',
+        'viz_spec' => 'getVizSpec',
         'viz_chart_library' => 'getVizChartLibrary',
         'viz_chart_type' => 'getVizChartType',
         'viz_dep_var_col_name' => 'getVizDepVarColName',
@@ -540,10 +552,10 @@ class Assets implements ModelInterface, ArrayAccess, \JsonSerializable
         'next_run' => 'getNextRun',
         'data_time_period_start' => 'getDataTimePeriodStart',
         'data_time_period_end' => 'getDataTimePeriodEnd',
+        'date_collection_start' => 'getDateCollectionStart',
         'geographic_coverage_type' => 'getGeographicCoverageType',
         'geographic_coverage_details' => 'getGeographicCoverageDetails',
         'data_source_refresh_frequency' => 'getDataSourceRefreshFrequency',
-        'data_source_last_refreshed' => 'getDataSourceLastRefreshed',
         'rate_limit_number' => 'getRateLimitNumber',
         'rate_limit_period' => 'getRateLimitPeriod',
         'rate_limit_granularity' => 'getRateLimitGranularity'
@@ -639,15 +651,15 @@ class Assets implements ModelInterface, ArrayAccess, \JsonSerializable
     public const GEOGRAPHIC_COVERAGE_TYPE_LOCAL = 'LOCAL';
     public const GEOGRAPHIC_COVERAGE_TYPE_CUSTOM = 'CUSTOM';
     public const GEOGRAPHIC_COVERAGE_TYPE_UNKNOWN = 'UNKNOWN';
-    public const DATA_SOURCE_REFRESH_FREQUENCY_REAL_TIME = 'REAL_TIME';
-    public const DATA_SOURCE_REFRESH_FREQUENCY_HOURLY = 'HOURLY';
-    public const DATA_SOURCE_REFRESH_FREQUENCY_DAILY = 'DAILY';
-    public const DATA_SOURCE_REFRESH_FREQUENCY_WEEKLY = 'WEEKLY';
-    public const DATA_SOURCE_REFRESH_FREQUENCY_MONTHLY = 'MONTHLY';
-    public const DATA_SOURCE_REFRESH_FREQUENCY_QUARTERLY = 'QUARTERLY';
-    public const DATA_SOURCE_REFRESH_FREQUENCY_ANNUAL = 'ANNUAL';
-    public const DATA_SOURCE_REFRESH_FREQUENCY_ONE_TIME = 'ONE_TIME';
-    public const DATA_SOURCE_REFRESH_FREQUENCY_CUSTOM = 'CUSTOM';
+    public const DATA_SOURCE_REFRESH_FREQUENCY_EVERY_SECOND = 'EVERY_SECOND';
+    public const DATA_SOURCE_REFRESH_FREQUENCY_EVERY_MINUTE = 'EVERY_MINUTE';
+    public const DATA_SOURCE_REFRESH_FREQUENCY_EVERY_HOUR = 'EVERY_HOUR';
+    public const DATA_SOURCE_REFRESH_FREQUENCY_EVERY_DAY = 'EVERY_DAY';
+    public const DATA_SOURCE_REFRESH_FREQUENCY_EVERY_WEEK = 'EVERY_WEEK';
+    public const DATA_SOURCE_REFRESH_FREQUENCY_EVERY_MONTH = 'EVERY_MONTH';
+    public const DATA_SOURCE_REFRESH_FREQUENCY_EVERY_QUARTER = 'EVERY_QUARTER';
+    public const DATA_SOURCE_REFRESH_FREQUENCY_EVERY_YEAR = 'EVERY_YEAR';
+    public const DATA_SOURCE_REFRESH_FREQUENCY_NEVER = 'NEVER';
     public const DATA_SOURCE_REFRESH_FREQUENCY_UNKNOWN = 'UNKNOWN';
     public const RATE_LIMIT_PERIOD_SECOND = 'SECOND';
     public const RATE_LIMIT_PERIOD_MINUTE = 'MINUTE';
@@ -836,15 +848,15 @@ class Assets implements ModelInterface, ArrayAccess, \JsonSerializable
     public function getDataSourceRefreshFrequencyAllowableValues()
     {
         return [
-            self::DATA_SOURCE_REFRESH_FREQUENCY_REAL_TIME,
-            self::DATA_SOURCE_REFRESH_FREQUENCY_HOURLY,
-            self::DATA_SOURCE_REFRESH_FREQUENCY_DAILY,
-            self::DATA_SOURCE_REFRESH_FREQUENCY_WEEKLY,
-            self::DATA_SOURCE_REFRESH_FREQUENCY_MONTHLY,
-            self::DATA_SOURCE_REFRESH_FREQUENCY_QUARTERLY,
-            self::DATA_SOURCE_REFRESH_FREQUENCY_ANNUAL,
-            self::DATA_SOURCE_REFRESH_FREQUENCY_ONE_TIME,
-            self::DATA_SOURCE_REFRESH_FREQUENCY_CUSTOM,
+            self::DATA_SOURCE_REFRESH_FREQUENCY_EVERY_SECOND,
+            self::DATA_SOURCE_REFRESH_FREQUENCY_EVERY_MINUTE,
+            self::DATA_SOURCE_REFRESH_FREQUENCY_EVERY_HOUR,
+            self::DATA_SOURCE_REFRESH_FREQUENCY_EVERY_DAY,
+            self::DATA_SOURCE_REFRESH_FREQUENCY_EVERY_WEEK,
+            self::DATA_SOURCE_REFRESH_FREQUENCY_EVERY_MONTH,
+            self::DATA_SOURCE_REFRESH_FREQUENCY_EVERY_QUARTER,
+            self::DATA_SOURCE_REFRESH_FREQUENCY_EVERY_YEAR,
+            self::DATA_SOURCE_REFRESH_FREQUENCY_NEVER,
             self::DATA_SOURCE_REFRESH_FREQUENCY_UNKNOWN,
         ];
     }
@@ -918,6 +930,7 @@ class Assets implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('asset_schema', $data ?? [], null);
         $this->setIfExists('visibility', $data ?? [], null);
         $this->setIfExists('tags', $data ?? [], null);
+        $this->setIfExists('top_questions', $data ?? [], null);
         $this->setIfExists('short_code', $data ?? [], null);
         $this->setIfExists('restricted_domains', $data ?? [], null);
         $this->setIfExists('sql_logic', $data ?? [], null);
@@ -925,6 +938,7 @@ class Assets implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('source_table_name', $data ?? [], null);
         $this->setIfExists('sell_in_marketplace', $data ?? [], null);
         $this->setIfExists('require_customization', $data ?? [], null);
+        $this->setIfExists('viz_spec', $data ?? [], null);
         $this->setIfExists('viz_chart_library', $data ?? [], null);
         $this->setIfExists('viz_chart_type', $data ?? [], null);
         $this->setIfExists('viz_dep_var_col_name', $data ?? [], null);
@@ -948,10 +962,10 @@ class Assets implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('next_run', $data ?? [], null);
         $this->setIfExists('data_time_period_start', $data ?? [], null);
         $this->setIfExists('data_time_period_end', $data ?? [], null);
+        $this->setIfExists('date_collection_start', $data ?? [], null);
         $this->setIfExists('geographic_coverage_type', $data ?? [], null);
         $this->setIfExists('geographic_coverage_details', $data ?? [], null);
         $this->setIfExists('data_source_refresh_frequency', $data ?? [], null);
-        $this->setIfExists('data_source_last_refreshed', $data ?? [], null);
         $this->setIfExists('rate_limit_number', $data ?? [], null);
         $this->setIfExists('rate_limit_period', $data ?? [], null);
         $this->setIfExists('rate_limit_granularity', $data ?? [], null);
@@ -1835,6 +1849,33 @@ class Assets implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets top_questions
+     *
+     * @return string|null
+     */
+    public function getTopQuestions()
+    {
+        return $this->container['top_questions'];
+    }
+
+    /**
+     * Sets top_questions
+     *
+     * @param string|null $top_questions Top 3 questions this asset can help answer, in English. Stored as JSON array of strings (1-3 items, 15-200 chars each). Required for marketplace assets.
+     *
+     * @return self
+     */
+    public function setTopQuestions($top_questions)
+    {
+        if (is_null($top_questions)) {
+            throw new \InvalidArgumentException('non-nullable top_questions cannot be null');
+        }
+        $this->container['top_questions'] = $top_questions;
+
+        return $this;
+    }
+
+    /**
      * Gets short_code
      *
      * @return string|null
@@ -2019,6 +2060,33 @@ class Assets implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable require_customization cannot be null');
         }
         $this->container['require_customization'] = $require_customization;
+
+        return $this;
+    }
+
+    /**
+     * Gets viz_spec
+     *
+     * @return object|null
+     */
+    public function getVizSpec()
+    {
+        return $this->container['viz_spec'];
+    }
+
+    /**
+     * Sets viz_spec
+     *
+     * @param object|null $viz_spec Plotly figure JSON describing the visualization. Authored via the visual editor or via API. When populated, takes precedence over the legacy viz_* fields. Shape follows Plotly's figure schema: {data: [{type: '...', xsrc: '...', ...}], layout: {...}}. Column references use *src keys (xsrc, ysrc, labelssrc, etc.) and are hydrated with actual data at render time.
+     *
+     * @return self
+     */
+    public function setVizSpec($viz_spec)
+    {
+        if (is_null($viz_spec)) {
+            throw new \InvalidArgumentException('non-nullable viz_spec cannot be null');
+        }
+        $this->container['viz_spec'] = $viz_spec;
 
         return $this;
     }
@@ -2705,6 +2773,33 @@ class Assets implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets date_collection_start
+     *
+     * @return \DateTime|null
+     */
+    public function getDateCollectionStart()
+    {
+        return $this->container['date_collection_start'];
+    }
+
+    /**
+     * Sets date_collection_start
+     *
+     * @param \DateTime|null $date_collection_start When the seller began actively collecting this data. Distinct from data_time_period_start, which describes when the records themselves begin. Backfilled historical data will have date_collection_start > data_time_period_start.
+     *
+     * @return self
+     */
+    public function setDateCollectionStart($date_collection_start)
+    {
+        if (is_null($date_collection_start)) {
+            throw new \InvalidArgumentException('non-nullable date_collection_start cannot be null');
+        }
+        $this->container['date_collection_start'] = $date_collection_start;
+
+        return $this;
+    }
+
+    /**
      * Gets geographic_coverage_type
      *
      * @return string|null
@@ -2801,33 +2896,6 @@ class Assets implements ModelInterface, ArrayAccess, \JsonSerializable
             );
         }
         $this->container['data_source_refresh_frequency'] = $data_source_refresh_frequency;
-
-        return $this;
-    }
-
-    /**
-     * Gets data_source_last_refreshed
-     *
-     * @return \DateTime|null
-     */
-    public function getDataSourceLastRefreshed()
-    {
-        return $this->container['data_source_last_refreshed'];
-    }
-
-    /**
-     * Sets data_source_last_refreshed
-     *
-     * @param \DateTime|null $data_source_last_refreshed When the source data was last refreshed
-     *
-     * @return self
-     */
-    public function setDataSourceLastRefreshed($data_source_last_refreshed)
-    {
-        if (is_null($data_source_last_refreshed)) {
-            throw new \InvalidArgumentException('non-nullable data_source_last_refreshed cannot be null');
-        }
-        $this->container['data_source_last_refreshed'] = $data_source_last_refreshed;
 
         return $this;
     }

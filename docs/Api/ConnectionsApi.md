@@ -11,6 +11,7 @@ All URIs are relative to https://api.spartera.com, except if the operation defin
 | [**getConnectionsById()**](ConnectionsApi.md#getConnectionsById) | **GET** /companies/{company_id}/connections/{connection_id} | Get single connection by ID |
 | [**getConnectionsById2()**](ConnectionsApi.md#getConnectionsById2) | **GET** /companies/{company_id}/connections/{connection_id}/test | Test the specified connection |
 | [**getConnectionsByIdInfoschema()**](ConnectionsApi.md#getConnectionsByIdInfoschema) | **GET** /companies/{company_id}/connections/{connection_id}/infoschema | Retrieve the information schema for the specified connection |
+| [**getConnectionsByIdSampleData()**](ConnectionsApi.md#getConnectionsByIdSampleData) | **GET** /companies/{company_id}/connections/{connection_id}/sample-data | Get a randomized sample of rows from a table on this connection.     Used by the visualization editor to give sellers data to author against.      Query Parameters:         schema_name (required): Schema/dataset name         table_name  (required): Table name         limit       (optional): Max rows to return (default 1000, max 10000)      Returns columnar data — {column_name: [values]} — ready for Plotly&#39;s     dataSources prop. The actual chart at render time will pull fresh data     via the asset&#39;s saved SQL; this is only for authoring preview. |
 | [**listConnections()**](ConnectionsApi.md#listConnections) | **GET** /companies/{company_id}/connections | Get all connections for a specific company |
 | [**updateConnections()**](ConnectionsApi.md#updateConnections) | **PATCH** /companies/{company_id}/connections/{connection_id} | Update an existing connection by ID |
 
@@ -308,6 +309,68 @@ try {
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ConnectionsApi->getConnectionsByIdInfoschema: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **company_id** | **string**| Unique identifier for the Company | |
+| **connection_id** | **string**| Unique identifier for the Connection | |
+
+### Return type
+
+[**\OpenAPI\Client\Model\GetConnectionsById200Response**](../Model/GetConnectionsById200Response.md)
+
+### Authorization
+
+[ApiKeyAuth](../../README.md#ApiKeyAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getConnectionsByIdSampleData()`
+
+```php
+getConnectionsByIdSampleData($company_id, $connection_id): \OpenAPI\Client\Model\GetConnectionsById200Response
+```
+
+Get a randomized sample of rows from a table on this connection.     Used by the visualization editor to give sellers data to author against.      Query Parameters:         schema_name (required): Schema/dataset name         table_name  (required): Table name         limit       (optional): Max rows to return (default 1000, max 10000)      Returns columnar data — {column_name: [values]} — ready for Plotly's     dataSources prop. The actual chart at render time will pull fresh data     via the asset's saved SQL; this is only for authoring preview.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+// Configure API key authorization: ApiKeyAuth
+$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKey('x-api-key', 'YOUR_API_KEY');
+// Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+// $config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setApiKeyPrefix('x-api-key', 'Bearer');
+
+
+$apiInstance = new OpenAPI\Client\Api\ConnectionsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$company_id = 'company_id_example'; // string | Unique identifier for the Company
+$connection_id = 'connection_id_example'; // string | Unique identifier for the Connection
+
+try {
+    $result = $apiInstance->getConnectionsByIdSampleData($company_id, $connection_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ConnectionsApi->getConnectionsByIdSampleData: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
